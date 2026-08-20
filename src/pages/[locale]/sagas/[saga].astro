@@ -1,0 +1,18 @@
+---
+import SagaDetailPage from '../../../components/SagaDetailPage.astro';
+import MistbornSagaPage from '../../../components/MistbornSagaPage.astro';
+import { getSections } from '../../../data/catalogue';
+import { locales } from '../../../data/i18n';
+import type { Locale } from '../../../data/locales';
+
+export function getStaticPaths() {
+  return locales.filter((locale) => locale !== 'en').flatMap((locale) =>
+    getSections('sagas', locale).map((saga) => ({ params: { locale, saga: saga.id } })),
+  );
+}
+
+const locale = Astro.params.locale as Exclude<Locale, 'en'>;
+const sagaId = Astro.params.saga as string;
+---
+
+{sagaId === 'mistborn' ? <MistbornSagaPage locale={locale} /> : <SagaDetailPage locale={locale} sagaId={sagaId} />}

@@ -118,7 +118,16 @@ export const getBookCollections = (locale: Locale): BookCollection[] => {
     });
   }
 
-  const arcanumWorks = sortWorks(works.filter((work) => work.id === 'arcanum-unbounded' || work.collectionIds?.includes('arcanum-unbounded'))).map(mapWork);
+  const arcanumWorks = works
+    .filter((work) => work.id === 'arcanum-unbounded' || work.collectionIds?.includes('arcanum-unbounded'))
+    .sort((first, second) => {
+      if (first.id === 'arcanum-unbounded') return -1;
+      if (second.id === 'arcanum-unbounded') return 1;
+
+      return (first.publicationYear - second.publicationYear)
+        || ((first.publicationOrder ?? Number.MAX_SAFE_INTEGER) - (second.publicationOrder ?? Number.MAX_SAFE_INTEGER));
+    })
+    .map(mapWork);
   if (arcanumWorks.length > 0) {
     sagaGroups.push({
       id: 'arcanum-unbounded',
