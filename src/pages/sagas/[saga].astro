@@ -1,0 +1,13 @@
+---
+import SagaDetailPage from '../../components/SagaDetailPage.astro';
+import MistbornSagaPage from '../../components/MistbornSagaPage.astro';
+import { getSections } from '../../data/catalogue';
+
+export function getStaticPaths() {
+  return getSections('sagas', 'en').map((saga) => ({ params: { saga: saga.id } }));
+}
+
+const sagaId = Astro.params.saga as string;
+---
+
+{sagaId === 'mistborn' ? <MistbornSagaPage locale="en" /> : <SagaDetailPage locale="en" sagaId={sagaId} />}

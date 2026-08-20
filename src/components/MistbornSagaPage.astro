@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = (key: string, replacements?: Record<string, string>) => getTranslation(locale, key, replacements);
+const path = (value: string) => getLocalizedPath(locale, value);
+
+const eraOneBooks = [
+  { id: 'the-final-empire', year: '2006', note: 'mistbornPage.books.finalEmpire' },
+  { id: 'the-well-of-ascension', year: '2007', note: 'mistbornPage.books.wellOfAscension' },
+  { id: 'the-hero-of-ages', year: '2008', note: 'mistbornPage.books.heroOfAges' },
+  { id: 'the-eleventh-metal', year: '2011', note: 'mistbornPage.books.eleventhMetal' },
+  { id: 'mistborn-secret-history', year: '2016', note: 'mistbornPage.books.secretHistory' },
+];
+
+const eraTwoBooks = [
+  { id: 'the-alloy-of-law', year: '2011', note: 'mistbornPage.books.alloyOfLaw' },
+  { id: 'allomancer-jak', year: '2014', note: 'mistbornPage.books.allomancerJak' },
+  { id: 'shadows-of-self', year: '2015', note: 'mistbornPage.books.shadowsOfSelf' },
+  { id: 'the-bands-of-mourning', year: '2016', note: 'mistbornPage.books.bandsOfMourning' },
+  { id: 'the-lost-metal', year: '2022', note: 'mistbornPage.books.lostMetal' },
+];
+
+const workTitle = (id: string) => {
+  const keys: Record<string, string> = {
+    'the-final-empire': 'works.theFinalEmpire',
+    'the-well-of-ascension': 'works.theWellOfAscension',
+    'the-hero-of-ages': 'works.theHeroOfAges',
+    'the-eleventh-metal': 'works.theEleventhMetal',
+    'mistborn-secret-history': 'works.mistbornSecretHistory',
+    'the-alloy-of-law': 'works.theAlloyOfLaw',
+    'allomancer-jak': 'works.allomancerJak',
+    'shadows-of-self': 'works.shadowsOfSelf',
+    'the-bands-of-mourning': 'works.theBandsOfMourning',
+    'the-lost-metal': 'works.theLostMetal',
+  };
+  return t(keys[id]);
+};
+---
+
+<BaseLayout title={`Cosmereando — ${t('sagas.mistborn')}`} description={t('mistbornPage.intro.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="main-content mistborn-page">
+        <a class="saga-detail-page__back" href={path('/sagas')}>← {t('mistbornPage.back')}</a>
+
+        <header class="mistborn-page__header" id="introduction" aria-labelledby="mistborn-heading">
+          <div>
+            <p class="eyebrow">{t('mistbornPage.intro.eyebrow')}</p>
+            <h1 id="mistborn-heading">{t('sagas.mistborn')}</h1>
+            <p>{t('mistbornPage.intro.description')}</p>
+          </div>
+          <div class="mistborn-page__header-meta">
+            <span>{t('mistbornPage.intro.planet')}</span>
+            <strong>Scadrial</strong>
+          </div>
+        </header>
+
+        <ImagePlaceholder label={t('mistbornPage.intro.imageLabel')} dimensions={t('mistbornPage.intro.imageDimensions')} imageText={t('common.imageHere')} variant="feature" />
+
+        <section class="mistborn-page__warning" id="reading-note" aria-labelledby="reading-note-heading">
+          <span class="mistborn-page__warning-symbol" aria-hidden="true">!</span>
+          <div>
+            <p class="section-kicker">{t('mistbornPage.warning.kicker')}</p>
+            <h2 id="reading-note-heading">{t('mistbornPage.warning.heading')}</h2>
+            <p>{t('mistbornPage.warning.text')}</p>
+            <p class="mistborn-page__warning-action">{t('mistbornPage.warning.action')}</p>
+          </div>
+        </section>
+
+        <section class="mistborn-page__eras" id="publication-order" aria-labelledby="publication-order-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('mistbornPage.eras.kicker')}</p>
+            <h2 id="publication-order-heading">{t('mistbornPage.eras.heading')}</h2>
+            <p>{t('mistbornPage.eras.description')}</p>
+          </div>
+
+          <div class="mistborn-era" id="era-1">
+            <div class="mistborn-era__heading">
+              <span class="mistborn-era__number">01</span>
+              <div>
+                <p class="section-kicker">{t('mistbornPage.era1.kicker')}</p>
+                <h3>{t('mistbornPage.era1.heading')}</h3>
+                <p>{t('mistbornPage.era1.description')}</p>
+              </div>
+            </div>
+            <ol class="mistborn-book-list">
+              {eraOneBooks.map((book) => (
+                <li class="mistborn-book-list__item">
+                  <span class="mistborn-book-list__year">{book.year}</span>
+                  <div>
+                    <h4>{workTitle(book.id)}</h4>
+                    <p>{t(book.note)}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div class="mistborn-era" id="era-2">
+            <div class="mistborn-era__heading">
+              <span class="mistborn-era__number">02</span>
+              <div>
+                <p class="section-kicker">{t('mistbornPage.era2.kicker')}</p>
+                <h3>{t('mistbornPage.era2.heading')}</h3>
+                <p>{t('mistbornPage.era2.description')}</p>
+              </div>
+            </div>
+            <ol class="mistborn-book-list">
+              {eraTwoBooks.map((book) => (
+                <li class="mistborn-book-list__item">
+                  <span class="mistborn-book-list__year">{book.year}</span>
+                  <div>
+                    <h4>{workTitle(book.id)}</h4>
+                    <p>{t(book.note)}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section class="mistborn-page__magic" id="magic" aria-labelledby="magic-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('mistbornPage.magic.kicker')}</p>
+            <h2 id="magic-heading">{t('mistbornPage.magic.heading')}</h2>
+            <p>{t('mistbornPage.magic.description')}</p>
+          </div>
+          <div class="mistborn-magic-grid">
+            {['allomancy', 'feruchemy', 'hemalurgy'].map((system, index) => (
+              <article class="mistborn-magic-card">
+                <span class="mistborn-magic-card__number">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{t(`mistbornPage.magic.${system}.title`)}</h3>
+                <p>{t(`mistbornPage.magic.${system}.text`)}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="mistborn-page__curiosities" id="curiosities" aria-labelledby="curiosities-heading">
+          <p class="section-kicker">{t('mistbornPage.curiosities.kicker')}</p>
+          <h2 id="curiosities-heading">{t('mistbornPage.curiosities.heading')}</h2>
+          <ul>
+            <li>{t('mistbornPage.curiosities.first')}</li>
+            <li>{t('mistbornPage.curiosities.second')}</li>
+            <li>{t('mistbornPage.curiosities.third')}</li>
+          </ul>
+        </section>
+      </main>
+      <TableOfContents title={t('mistbornPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('mistbornPage.toc.introduction') },
+        { id: 'reading-note', label: t('mistbornPage.toc.readingNote') },
+        { id: 'publication-order', label: t('mistbornPage.toc.publicationOrder') },
+        { id: 'magic', label: t('mistbornPage.toc.magic') },
+        { id: 'curiosities', label: t('mistbornPage.toc.curiosities') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

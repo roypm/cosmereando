@@ -95,6 +95,73 @@
     "tableOfContents": "On this page",
     "toc": { "introduction": "Introduction", "why": "Why routes exist", "routes": "The three routes", "overview": "Route overview", "content": "What comes next" }
   },
+  "sagaPage": {
+    "intro": {
+      "eyebrow": "The constellation",
+      "heading": "Worlds with their own gravity.",
+      "description": "Sagas gather stories that share a world, a history or a long-running set of questions. Use this index to understand what belongs together before opening any individual file.",
+      "indexLabel": "Sagas in the catalogue",
+      "indexText": "worlds and collections"
+    },
+    "orientation": {
+      "kicker": "Read the shape first",
+      "heading": "Every saga is a different kind of door.",
+      "description": "Some sagas unfold across several novels. Others begin with a single book or collect stories that widen the Cosmere around a central idea. The pages below will grow into a spoiler-aware map of those differences.",
+      "imageLabel": "A constellation of saga connections",
+      "imageDimensions": "3:2 · saga map placeholder"
+    },
+    "directory": {
+      "kicker": "The index",
+      "heading": "Choose a story family.",
+      "description": "Open a saga file for its current placeholder structure, then return later as its works, worlds and connections are added.",
+      "cards": {
+        "mistborn": "A cycle of revolutions, metals and changing eras on Scadrial.",
+        "the-stormlight-archive": "An epic history of Roshar, Radiants and returning storms.",
+        "white-sand": "A graphic saga shaped by the harsh light and cultures of Taldain.",
+        "arcanum-unbounded": "An anthology that gathers Cosmere stories and gives them a wider frame."
+      }
+    },
+    "tableOfContents": "On this page",
+    "toc": { "introduction": "The constellation", "orientation": "How to read the index", "directory": "The saga index" },
+    "detail": {
+      "back": "Back to sagas",
+      "eyebrow": "Saga file",
+      "description": "This is the placeholder page for {title}. Its reading context, works, world and connections will be developed here.",
+      "imageLabel": "{title} visual placeholder",
+      "imageDimensions": "16:9 · saga image placeholder",
+      "sections": {
+        "overview": { "kicker": "The frame", "heading": "Overview" },
+        "works": { "kicker": "The catalogue", "heading": "Works" },
+        "connections": { "kicker": "The wider Cosmere", "heading": "World and connections" }
+      },
+      "tableOfContents": "Saga file",
+      "toc": { "introduction": "Introduction", "overview": "Overview", "works": "Works", "connections": "World and connections" }
+    }
+  },
+  "mistbornPage": {
+    "back": "Back to sagas",
+    "intro": { "eyebrow": "Saga file", "description": "Mistborn is the story of Scadrial across two published eras: an original epic fantasy trilogy and a later series shaped by a changing society, new technology and the legacy of what came before.", "planet": "World", "imageLabel": "Scadrial and its metallic arts", "imageDimensions": "16:9 · Mistborn image placeholder" },
+    "warning": { "kicker": "Optional spoiler note", "heading": "Do you want to know how Era 2 relates to Era 1?", "text": "Era 2 takes place centuries later. Reading its Era 2 section may give you a clue about what happens to the Era 1 characters. It is not a major or particularly important spoiler, but the clue is there.", "action": "If you are curious, read it. If you would rather not know, skip only Era 2 and continue to the Metallic Arts." },
+    "eras": { "kicker": "Publication map", "heading": "Two eras, one changing world.", "description": "The list below presents the novels and short fiction from each era in publication order. Notes indicate when a companion story is best read at a different point." },
+    "era1": { "kicker": "Era 1", "heading": "The original trilogy", "description": "An epic fantasy of rebellion, power and the cost of remaking a world. These three novels form a complete main story." },
+    "era2": { "kicker": "Era 2", "heading": "The Wax and Wayne series", "description": "A new stage of Scadrial, with railways, firearms, investigation and a different relationship with the Metallic Arts." },
+    "books": {
+      "finalEmpire": "The opening novel: a heist against an apparently eternal empire and the first major doorway into Allomancy.",
+      "wellOfAscension": "The second novel: the former rebels must govern, defend their new city and confront the consequences of victory.",
+      "heroOfAges": "The third novel: the story deepens its questions about power, responsibility and the people caught between them.",
+      "eleventhMetal": "A short prequel about Kelsier, published in 2011. Read it after the trilogy if you want to keep the original reading experience clean.",
+      "secretHistory": "A companion novella with major Era 1 spoilers and a minor spoiler for The Bands of Mourning. It is best saved until after that Era 2 novel.",
+      "alloyOfLaw": "The first Era 2 novel, introducing Wax, Wayne and a society where the Metallic Arts meet a Western-inspired industrial age.",
+      "allomancerJak": "A humorous short story published as supplementary material for The Alloy of Law and later collected in Arcanum Unbounded. Read it after The Alloy of Law.",
+      "shadowsOfSelf": "The second Era 2 novel, expanding the political and personal consequences of the world Wax and Wayne inhabit.",
+      "bandsOfMourning": "The third Era 2 novel, deepening the links between Scadrial’s past, present and wider Cosmere context.",
+      "lostMetal": "The fourth Era 2 novel and the conclusion of the Wax and Wayne sequence."
+    },
+    "magic": { "kicker": "Scadrian systems", "heading": "Three Metallic Arts.", "description": "Allomancy, Feruchemy and Hemalurgy use metal as a focus, but they work in different ways and express different relationships with power, identity and sacrifice.", "allomancy": { "title": "Allomancy", "text": "An Allomancer burns metals to trigger specific abilities. The metal acts as a key or catalyst, while the power comes from an external source. A Mistborn can use many metals; a Misting is limited to one." }, "feruchemy": { "title": "Feruchemy", "text": "A Feruchemist stores an attribute—such as strength, memory or speed—in a metalmind and retrieves it later. The power is personal and balanced: what is stored must first be given up." }, "hemalurgy": { "title": "Hemalurgy", "text": "Hemalurgy transfers attributes between people through metal spikes. It can grant or alter abilities, but the transfer comes with loss and is tied to the most dangerous secrets of Scadrial." } },
+    "curiosities": { "kicker": "A few extra metals", "heading": "Curiosities to keep in mind", "first": "Brandon planned Mistborn as a trilogy of trilogies, so the eras are part of a much longer design for Scadrial.", "second": "The original concept began with a crew of thieves and the question of which powers would make each specialist better at their job.", "third": "The Alloy of Law began as a shorter story set between larger Mistborn projects before growing into the Wax and Wayne series." },
+    "tableOfContents": "Mistborn file",
+    "toc": { "introduction": "Introduction", "readingNote": "Reading note", "publicationOrder": "Publication order", "magic": "Metallic Arts", "curiosities": "Curiosities" }
+  },
   "navigation": {
     "routes": { "title": "Routes" },
     "books": { "title": "Books" },
@@ -112,9 +179,8 @@
   "sagas": {
     "mistborn": "Mistborn",
     "theStormlightArchive": "The Stormlight Archive",
-    "elantris": "Elantris",
-    "warbreaker": "Warbreaker",
-    "whiteSand": "White Sand"
+    "whiteSand": "White Sand",
+    "arcanumUnbounded": "Arcanum Unbounded"
   },
   "planets": {
     "scadrial": "Scadrial",

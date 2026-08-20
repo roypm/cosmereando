@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import { getSections } from '../data/catalogue';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  locale: Locale;
+  sagaId: string;
+}
+
+const { locale, sagaId } = Astro.props;
+const t = (key: string, replacements?: Record<string, string>) => getTranslation(locale, key, replacements);
+const saga = getSections('sagas', locale).find((section) => section.id === sagaId);
+
+if (!saga) {
+  throw new Error(`Unknown saga: ${sagaId}`);
+}
+---
+
+<BaseLayout title={`Cosmereando — ${saga.label}`} description={t('sagaPage.detail.description', { title: saga.label })} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="main-content saga-detail-page">
+        <a class="saga-detail-page__back" href={getLocalizedPath(locale, '/sagas')}>← {t('sagaPage.detail.back')}</a>
+        <header class="saga-detail-page__header" id="introduction" aria-labelledby="saga-heading">
+          <p class="eyebrow">{t('sagaPage.detail.eyebrow')}</p>
+          <p class="saga-detail-page__index">{sagaId}</p>
+          <h1 id="saga-heading">{saga.label}</h1>
+          <p>{t('sagaPage.detail.description', { title: saga.label })}</p>
+        </header>
+
+        <ImagePlaceholder label={t('sagaPage.detail.imageLabel', { title: saga.label })} dimensions={t('sagaPage.detail.imageDimensions')} imageText={t('common.imageHere')} variant="feature" />
+
+        <section class="saga-detail-page__section" id="overview" aria-labelledby="overview-heading">
+          <span class="saga-detail-page__section-number">01</span>
+          <div>
+            <p class="section-kicker">{t('sagaPage.detail.sections.overview.kicker')}</p>
+            <h2 id="overview-heading">{t('sagaPage.detail.sections.overview.heading')}</h2>
+            <p>{t('common.placeholderSection')}</p>
+          </div>
+        </section>
+
+        <section class="saga-detail-page__section" id="works" aria-labelledby="works-heading">
+          <span class="saga-detail-page__section-number">02</span>
+          <div>
+            <p class="section-kicker">{t('sagaPage.detail.sections.works.kicker')}</p>
+            <h2 id="works-heading">{t('sagaPage.detail.sections.works.heading')}</h2>
+            <p>{t('common.placeholderSection')}</p>
+          </div>
+        </section>
+
+        <section class="saga-detail-page__section" id="connections" aria-labelledby="connections-heading">
+          <span class="saga-detail-page__section-number">03</span>
+          <div>
+            <p class="section-kicker">{t('sagaPage.detail.sections.connections.kicker')}</p>
+            <h2 id="connections-heading">{t('sagaPage.detail.sections.connections.heading')}</h2>
+            <p>{t('common.placeholderSection')}</p>
+          </div>
+        </section>
+      </main>
+      <TableOfContents title={t('sagaPage.detail.tableOfContents')} items={[
+        { id: 'introduction', label: t('sagaPage.detail.toc.introduction') },
+        { id: 'overview', label: t('sagaPage.detail.toc.overview') },
+        { id: 'works', label: t('sagaPage.detail.toc.works') },
+        { id: 'connections', label: t('sagaPage.detail.toc.connections') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>
