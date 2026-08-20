@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getSections } from '../data/catalogue';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = (key: string) => getTranslation(locale, key);
+const path = (value: string) => getLocalizedPath(locale, value);
+const routeSections = getSections('routes', locale);
+
+const routeContent: Record<string, string> = {
+  'community-routes': t('routePage.cards.community'),
+  'publication-order': t('routePage.cards.publication'),
+  'my-journey': t('routePage.cards.myJourney'),
+};
+---
+
+<BaseLayout title={`Cosmereando — ${t('pages.routes.title')}`} description={t('pages.routes.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="main-content">
+        <section class="hero routes-page__hero" id="introduction" aria-labelledby="routes-heading">
+          <div class="hero__layout">
+            <div class="hero__content">
+              <p class="eyebrow">{t('routePage.intro.eyebrow')}</p>
+              <h1 id="routes-heading">{t('routePage.intro.heading')}</h1>
+              <p class="hero__intro">{t('routePage.intro.description')}</p>
+            </div>
+            <ImagePlaceholder label={t('routePage.intro.imageLabel')} dimensions={t('routePage.intro.imageDimensions')} imageText={t('common.imageHere')} variant="hero" />
+          </div>
+        </section>
+
+        <section class="content-section" id="why-routes" aria-labelledby="why-routes-heading">
+          <p class="section-kicker">{t('routePage.why.kicker')}</p>
+          <h2 id="why-routes-heading">{t('routePage.why.heading')}</h2>
+          <p>{t('routePage.why.description')}</p>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="info-card__number">01</span>
+              <h3>{t('routePage.why.entry.title')}</h3>
+              <p>{t('routePage.why.entry.text')}</p>
+            </article>
+            <article class="info-card">
+              <span class="info-card__number">02</span>
+              <h3>{t('routePage.why.context.title')}</h3>
+              <p>{t('routePage.why.context.text')}</p>
+            </article>
+            <article class="info-card">
+              <span class="info-card__number">03</span>
+              <h3>{t('routePage.why.pace.title')}</h3>
+              <p>{t('routePage.why.pace.text')}</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section content-section--quiet" id="available-routes" aria-labelledby="available-routes-heading">
+          <p class="section-kicker">{t('routePage.routes.kicker')}</p>
+          <h2 id="available-routes-heading">{t('routePage.routes.heading')}</h2>
+          <p>{t('routePage.routes.description')}</p>
+          <div class="preview-grid routes-page__grid">
+            {routeSections.map((route) => (
+              <a class="preview-card" href={path(`/routes/${route.id}`)}>
+                <span class="preview-card__number">{String(routeSections.indexOf(route) + 1).padStart(2, '0')}</span>
+                <h3>{route.label}</h3>
+                <p>{routeContent[route.id]}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+      </main>
+      <TableOfContents title={t('routePage.tableOfContents')} items={[
+        { id: 'introduction', label: t('routePage.toc.introduction') },
+        { id: 'why-routes', label: t('routePage.toc.why') },
+        { id: 'available-routes', label: t('routePage.toc.routes') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

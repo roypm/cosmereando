@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getBookCollections } from '../data/catalogue';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const t = (key: string) => getTranslation(locale, key);
+const path = (value: string) => getLocalizedPath(locale, value);
+const collections = getBookCollections(locale);
+const bookCount = new Set(collections.flatMap((collection) => [
+  ...collection.works,
+  ...(collection.subsections?.flatMap((subsection) => subsection.works) ?? []),
+]).map((work) => work.id)).size;
+---
+
+<BaseLayout title={`Cosmereando — ${t('pages.books.title')}`} description={t('pages.books.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="main-content books-page">
+        <section class="books-page__intro" id="introduction" aria-labelledby="books-heading">
+          <div>
+            <p class="eyebrow">{t('books.eyebrow')}</p>
+            <h1 id="books-heading">{t('books.heading')}</h1>
+            <p class="books-page__lead">{t('books.description')}</p>
+          </div>
+          <div class="books-page__index" aria-label={t('books.indexLabel')}>
+            <span class="books-page__index-number">{String(bookCount).padStart(2, '0')}</span>
+            <span>{t('books.catalogueCount')}</span>
+          </div>
+        </section>
+
+        <section class="books-page__catalogue" id="catalogue" aria-labelledby="catalogue-heading">
+          <div class="books-page__section-heading">
+            <div>
+              <p class="section-kicker">{t('books.catalogueKicker')}</p>
+              <h2 id="catalogue-heading">{t('books.catalogueHeading')}</h2>
+            </div>
+            <p>{t('books.catalogueDescription')}</p>
+          </div>
+
+          {collections.map((collection, collectionIndex) => (
+            <section class="book-collection" id={collection.id} aria-labelledby={`${collection.id}-heading`}>
+              <div class="book-collection__heading">
+                <span class="book-collection__number">{String(collectionIndex + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 id={`${collection.id}-heading`}>{collection.label}</h3>
+                  {collection.sagaHref && <a href={collection.sagaHref}>{t('books.viewSaga')} <span aria-hidden="true">→</span></a>}
+                </div>
+              </div>
+              {collection.subsections ? collection.subsections.map((subsection) => (
+                <div class="book-subcollection" id={subsection.id}>
+                  <h4 class="book-subcollection__heading">{subsection.label}</h4>
+                  <div class="book-grid">
+                    {subsection.works.map((work, workIndex) => (
+                      <a class="book-card" href={collection.sagaHref ?? path('/books')} data-work-type={work.typeKey}>
+                        <ImagePlaceholder label={work.title} dimensions={t('books.coverDimensions')} imageText={t('common.imageHere')} variant="portrait" />
+                        <span class="book-card__number">{String(workIndex + 1).padStart(2, '0')}</span>
+                        <h4>{work.title}</h4>
+                        <span class="book-card__type">{work.type}</span>
+                        <span class="book-card__year">{work.publicationYear}</span>
+                        {work.arcanumStatus && <span class="book-card__origin">{t(`books.arcanumStatus.${work.arcanumStatus}`)}</span>}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )) : (
+                <div class="book-grid">
+                  {collection.works.map((work, workIndex) => (
+                    <a class="book-card" href={collection.sagaHref ?? path('/books')} data-work-type={work.typeKey}>
+                      <ImagePlaceholder label={work.title} dimensions={t('books.coverDimensions')} imageText={t('common.imageHere')} variant="portrait" />
+                      <span class="book-card__number">{String(workIndex + 1).padStart(2, '0')}</span>
+                      <h4>{work.title}</h4>
+                      <span class="book-card__type">{work.type}</span>
+                      <span class="book-card__year">{work.publicationYear}</span>
+                      {work.arcanumStatus && <span class="book-card__origin">{t(`books.arcanumStatus.${work.arcanumStatus}`)}</span>}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </section>
+          ))}
+        </section>
+      </main>
+      <TableOfContents title={t('books.tableOfContents')} items={[
+        { id: 'introduction', label: t('books.toc.introduction') },
+        { id: 'catalogue', label: t('books.toc.catalogue') },
+        ...collections.map((collection) => ({ id: collection.id, label: collection.label })),
+        ...collections.flatMap((collection) => collection.subsections?.map((subsection) => ({ id: subsection.id, label: subsection.label })) ?? []),
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

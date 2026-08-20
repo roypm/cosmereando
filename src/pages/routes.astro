@@ -1,15 +1,5 @@
 ---
-import PlaceholderPage from '../components/PlaceholderPage.astro';
-import { getSections } from '../data/catalogue';
-import { getTranslation } from '../data/i18n';
-
-const title = getTranslation('en', 'pages.routes.title');
-const description = getTranslation('en', 'pages.routes.description');
+import RoutesPage from '../components/RoutesPage.astro';
 ---
 
-<PlaceholderPage
-  locale="en"
-  title={title}
-  description={description}
-  sections={getSections('routes', 'en')}
-/>
+<RoutesPage locale="en" />

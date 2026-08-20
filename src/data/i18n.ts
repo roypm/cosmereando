@@ -27,15 +27,21 @@ export const getLocaleLabel = (locale: Locale): string => localeConfig[locale].l
 
 export const getLocaleName = (locale: Locale): string => localeConfig[locale].name;
 
+const getBasePath = (): string => import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export const getLocalizedPath = (locale: Locale, path: string): string =>
-  `${import.meta.env.BASE_URL.replace(/\/$/, '')}${getLocalePrefix(locale)}${path.startsWith('/') ? path : `/${path}`}`;
+  `${getBasePath()}${getLocalePrefix(locale)}${path.startsWith('/') ? path : `/${path}`}`;
 
 export const getCanonicalPath = (pathname: string): string => {
+  const basePath = getBasePath();
+  const pathWithoutBase = basePath && (pathname === basePath || pathname.startsWith(`${basePath}/`))
+    ? pathname.slice(basePath.length) || '/'
+    : pathname || '/';
   const localizedPrefix = locales.filter((locale) => locale !== defaultLocale).find(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+    (locale) => pathWithoutBase === `/${locale}` || pathWithoutBase.startsWith(`/${locale}/`),
   );
 
-  if (!localizedPrefix) return pathname || '/';
-  const canonicalPath = pathname.slice(localizedPrefix.length + 1);
+  if (!localizedPrefix) return pathWithoutBase;
+  const canonicalPath = pathWithoutBase.slice(localizedPrefix.length + 1);
   return canonicalPath || '/';
 };

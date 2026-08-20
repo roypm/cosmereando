@@ -1,0 +1,12 @@
+---
+import RouteDetailPage from '../../components/RouteDetailPage.astro';
+import { getSections } from '../../data/catalogue';
+
+export function getStaticPaths() {
+  return getSections('routes', 'en').map((route) => ({ params: { route: route.id } }));
+}
+
+const routeId = Astro.params.route as string;
+---
+
+<RouteDetailPage locale="en" routeId={routeId} />

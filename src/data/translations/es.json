@@ -18,21 +18,99 @@
     "toggleSubmenu": "Mostrar el submenú de {label}",
     "placeholderSection": "Esta sección se ampliará con el contenido del catálogo de Cosmereando."
   },
+  "notFound": {
+    "title": "Esta página se ha perdido en el Reino Cognitivo.",
+    "description": "El camino que has seguido parece haberse escapado del mapa. Hasta una Esquirla puede perderse.",
+    "returnHome": "Volver al Cosmere",
+    "visualLabel": "Una Esquirla perdida flotando por el espacio"
+  },
+  "routePage": {
+    "intro": {
+      "eyebrow": "Rutas de lectura",
+      "heading": "Elige cómo quieres recorrer el Cosmere.",
+      "description": "El Cosmere es lo bastante grande como para que el primer paso parezca difícil. Estas rutas ofrecen una forma clara de entrar sin convertir la lectura en deberes ni quitarle emoción al descubrimiento.",
+      "imageLabel": "Un mapa esperando las tres rutas de lectura",
+      "imageDimensions": "16:9 · marcador de mapa de rutas"
+    },
+    "why": {
+      "kicker": "Por qué existen las rutas",
+      "heading": "No hay una única forma correcta de leerlo.",
+      "description": "Cada lector busca algo distinto: una introducción acogedora, una visión más amplia del universo o el registro de un recorrido personal. Una ruta es una herramienta, no una norma.",
+      "entry": { "title": "Encuentra el primer paso", "text": "Una ruta puede eliminar la duda de elegir el primer libro y ayudarte a empezar con confianza." },
+      "context": { "title": "Construye el contexto", "text": "El orden de las historias puede cambiar la forma en que aparecen las conexiones, las ideas recurrentes y los distintos mundos." },
+      "pace": { "title": "Lee a tu ritmo", "text": "Puedes seguir un camino recomendado, detenerte cuando quieras y hacer tuyo el recorrido." }
+    },
+    "routes": {
+      "kicker": "Tres formas de entrar",
+      "heading": "Elige el viaje que encaje contigo.",
+      "description": "Cosmereando incluye tres rutas. Cada una tiene un propósito distinto y su lista completa de lectura se explicará en su propia página, sin spoilers aquí."
+    },
+    "cards": {
+      "community": "Una introducción pensada para lectores que quieren descubrir el universo de forma equilibrada.",
+      "publication": "Una forma de observar cómo crece el Cosmere siguiendo el orden en que aparecieron sus historias.",
+      "myJourney": "Un recorrido personal que muestra cómo empezó y fue creciendo esta guía."
+    },
+    "details": {
+      "community": {
+        "eyebrow": "Una ruta acogedora",
+        "intro": "{route} está pensada como una primera conversación equilibrada con el Cosmere: suficiente variedad para intuir su escala sin convertir el comienzo en una lista de tareas.",
+        "imageLabel": "Una puerta de entrada a {route}", "imageDimensions": "16:9 · marcador de imagen de ruta",
+        "overview": { "kicker": "La idea", "heading": "Empieza con equilibrio y sigue tu curiosidad.", "text": "Esta ruta pone la experiencia del lector en primer plano. Deja espacio para gustos distintos y mantiene las conexiones más amplias en segundo plano hasta que quieras buscarlas." },
+        "cards": {
+          "focus": { "title": "Un primer paso claro", "text": "El inicio busca resultar accesible y representativo de todo lo que puede ofrecer el Cosmere." },
+          "flexibility": { "title": "Espacio para cambiar", "text": "La ruta propone una dirección, no un ritmo obligatorio ni un plan de lectura perfecto." },
+          "balance": { "title": "Una muestra amplia", "text": "Los distintos tonos y mundos construyen poco a poco una visión del universo sin revelar sus sorpresas más profundas." }
+        },
+        "next": { "kicker": "Lo que añadirá esta página", "heading": "Una guía práctica para elegir el siguiente paso.", "text": "La ruta completa incluirá el orden de lectura, motivos breves para cada elección y notas con cuidado frente a los spoilers." },
+        "toc": { "overview": "Cómo funciona esta ruta", "next": "Lo que añadirá esta página" }
+      },
+      "publication": {
+        "eyebrow": "Una ruta histórica",
+        "intro": "{route} sigue el Cosmere como una obra publicada en evolución, dejando que cada etapa muestre cómo creció el universo compartido con el tiempo.",
+        "imageLabel": "Una línea temporal para {route}", "imageDimensions": "16:9 · marcador de línea temporal",
+        "overview": { "kicker": "Lee la historia", "heading": "Observa cómo crece el universo lanzamiento a lanzamiento.", "text": "El orden de publicación ofrece un contexto diferente. En lugar de empezar por la visión más amplia, descubres las ideas tal como las encontraron originalmente sus lectores." },
+        "sequence": {
+          "first": { "title": "Los primeros cimientos", "text": "Comienza por la primera puerta publicada y observa cómo el universo establece su propio lenguaje." },
+          "second": { "title": "Un horizonte más amplio", "text": "Avanza por las publicaciones posteriores mientras nuevos mundos, tonos y posibilidades se suman a la conversación." },
+          "third": { "title": "Conexiones en movimiento", "text": "Deja que los hilos recurrentes aparezcan a su ritmo y contempla cómo evoluciona el proyecto." }
+        },
+        "next": { "kicker": "Lo que añadirá esta página", "heading": "Una línea temporal para lectores curiosos.", "text": "La ruta completa situará cada paso en su contexto y explicará qué experiencia ofrece cada etapa sin convertir la guía en un catálogo de spoilers." },
+        "toc": { "overview": "La forma de la línea temporal", "next": "Lo que añadirá esta página" }
+      },
+      "myJourney": {
+        "eyebrow": "Una ruta personal",
+        "intro": "{route} es la ruta que está detrás de Cosmereando: un registro de decisiones, descubrimientos y cambios surgidos al convertir una experiencia personal de lectura en una guía útil.",
+        "imageLabel": "Un cuaderno para {route}", "imageDimensions": "16:9 · marcador de nota de viaje",
+        "overview": { "kicker": "El punto de partida", "heading": "Una ruta también puede ser un registro.", "text": "Esta página será más reflexiva que normativa. Explicará por qué tomó forma la ruta y qué preguntas ayudaron a decidir qué debía incluir." },
+        "note": { "label": "Una nota del recorrido", "text": "El objetivo no es encontrar un orden verdadero. Es recordar qué hizo atractivo cada paso, qué contexto necesitaba y cómo podría sentirse alguien que llega allí por primera vez." },
+        "next": { "kicker": "Construida con el tiempo", "heading": "La guía crecerá junto a la lectura.", "text": "La ruta terminada conservará su mirada personal, pero hará que cada recomendación sea fácil de entender y de revisar." },
+        "cards": {
+          "origin": { "title": "Dónde empezó", "text": "Las primeras decisiones nacieron de buscar una forma amable de entrar en un universo que desde fuera puede parecer enorme." },
+          "changes": { "title": "Qué ha cambiado", "text": "Los nuevos libros y descubrimientos pueden transformar la ruta, por lo que seguirá abierta a revisiones." },
+          "criteria": { "title": "Qué importa", "text": "La claridad, el disfrute y un contexto honesto guían las decisiones más que completar una lista perfecta." }
+        },
+        "toc": { "overview": "El punto de partida", "next": "Construida con el tiempo" }
+      }
+    },
+    "tableOfContents": "En esta página",
+    "toc": { "introduction": "Introducción", "why": "Por qué existen las rutas", "routes": "Las tres rutas", "overview": "Resumen de la ruta", "content": "Lo que vendrá" }
+  },
   "navigation": { "routes": { "title": "Rutas" }, "books": { "title": "Libros" }, "sagas": { "title": "Sagas" }, "planets": { "title": "Planetas" } },
   "routes": { "community": "Rutas comunitarias", "publication": "Orden de publicación", "myJourney": "Mi recorrido" },
-  "works": { "theFinalEmpire": "El imperio final", "theWellOfAscension": "El pozo de la ascensión", "theHeroOfAges": "El héroe de las eras", "theWayOfKings": "El camino de los reyes", "wordsOfRadiance": "Palabras radiantes", "oathbringer": "Juramentada", "rhythmOfWar": "El ritmo de la guerra", "elantris": "Elantris", "warbreaker": "El aliento de los dioses", "tressOfTheEmeraldSea": "Trenza del mar Esmeralda", "theSunlitMan": "El hombre iluminado" },
-  "sagas": { "mistborn": "Nacidos de la bruma", "theStormlightArchive": "El archivo de las tormentas", "skyward": "Escuadrón", "elantris": "Elantris", "warbreaker": "El aliento de los dioses", "whiteSand": "Arena blanca" },
+  "works": { "theFinalEmpire": "El imperio final", "theWellOfAscension": "El pozo de la ascensión", "theHeroOfAges": "El héroe de las eras", "theAlloyOfLaw": "Aleación de ley", "shadowsOfSelf": "Sombras de identidad", "theBandsOfMourning": "Brazales de duelo", "theLostMetal": "El metal perdido", "theEleventhMetal": "El undécimo metal", "mistbornSecretHistory": "Nacidos de la bruma: Historia secreta", "allomancerJak": "Allomante Jak y los pozos de Eltania", "theWayOfKings": "El camino de los reyes", "wordsOfRadiance": "Palabras radiantes", "oathbringer": "Juramentada", "rhythmOfWar": "El ritmo de la guerra", "windAndTruth": "Viento y verdad", "edgedancer": "Danzante del filo", "dawnshard": "Esquirla del amanecer", "elsecaller": "Nominadora de lo Otro", "kingLopen": "El rey Lopen el Primero de Alethkar", "elantris": "Elantris", "theHopeOfElantris": "La esperanza de Elantris", "warbreaker": "El aliento de los dioses", "whiteSandVolume1": "Arena blanca, volumen 1", "whiteSandVolume2": "Arena blanca, volumen 2", "whiteSandVolume3": "Arena blanca, volumen 3", "theEmperorsSoul": "El alma del emperador", "shadowsForSilence": "Sombras por silencio en los bosques del infierno", "sixthOfTheDusk": "Sexto del ocaso", "whiteSandExcerpt": "Fragmento de Arena blanca", "tressOfTheEmeraldSea": "Trenza del mar Esmeralda", "yumiAndTheNightmarePainter": "Yumi y el pintor de pesadillas", "theSunlitMan": "El hombre iluminado", "islesOfTheEmberdark": "Islas del Mar de Brasas", "arcanumUnbounded": "Arcanum Ilimitado" },
+  "sagas": { "mistborn": "Nacidos de la bruma", "theStormlightArchive": "El archivo de las tormentas", "elantris": "Elantris", "warbreaker": "El aliento de los dioses", "whiteSand": "Arena blanca" },
   "planets": { "scadrial": "Scadrial", "roshar": "Roshar", "nalthis": "Nalthis", "sel": "Sel", "taldain": "Taldain", "lumar": "Lumar", "canticle": "Cántico", "komashi": "Komashi" },
+  "books": { "eyebrow": "Catálogo del Cosmere", "heading": "Encuentra tu próximo mundo.", "description": "Una estantería visual de las obras publicadas del Cosmere, ordenadas por la saga o el mundo al que pertenecen. Empieza por un título y sigue sus conexiones cuando quieras.", "indexLabel": "Resumen del catálogo", "catalogueCount": "obras en este primer catálogo", "catalogueKicker": "La colección", "catalogueHeading": "Historias agrupadas por su destino", "catalogueDescription": "Los grupos dan a cada libro un poco de contexto sin imponerte un orden de lectura.", "standalone": "Independientes", "arcanumUnbounded": "Arcanum Ilimitado", "viewSaga": "Explorar saga", "coverDimensions": "2:3 · marcador de portada", "tableOfContents": "En esta página", "toc": { "introduction": "Introducción", "catalogue": "El catálogo" }, "subsections": { "era1": "Era 1 · La trilogía original", "era2": "Era 2 · Wax y Wayne" }, "types": { "novel": "Novela", "novella": "Novela corta", "short-story": "Relato", "graphic-novel": "Novela gráfica", "anthology": "Colección", "excerpt": "Fragmento" }, "arcanumStatus": { "arcanum-original": "Publicado por primera vez en Arcanum Ilimitado", "previously-published": "Publicado anteriormente · incluido en Arcanum Ilimitado" } },
   "home": {
     "title": "Cosmereando — Guía del lector del Cosmere",
-    "description": "Un punto de partida claro y acogedor para explorar el Cosmere de Brandon Sanderson.",
-    "hero": { "eyebrow": "Guía del lector del Cosmere", "heading": "Comienza tu viaje entre las estrellas.", "intro": "Un lugar tranquilo y claro para descubrir el universo compartido de Brandon Sanderson, historia a historia.", "discover": "Descubre el Cosmere", "imageLabel": "Imagen de bienvenida", "imageDimensions": "16:9 · imagen editorial panorámica" },
-    "cosmere": { "kicker": "La visión general", "heading": "¿Qué es el Cosmere?", "description": "El Cosmere es un escenario compartido por muchas historias de fantasía de Brandon Sanderson. Cada saga tiene su propio mundo, personajes y reglas, mientras el universo más amplio les da silenciosamente un lugar común entre las estrellas.", "worlds": { "title": "Muchos mundos", "text": "Cada planeta ofrece una atmósfera, una historia y una forma distinta de vivir la fantasía." }, "doors": { "title": "Distintas puertas de entrada", "text": "Algunas historias comienzan con grandes batallas y otras con misterio, descubrimiento o tensión política." }, "universe": { "title": "Un universo mayor", "text": "Los libros se pueden disfrutar por separado y, al mismo tiempo, forman parte de algo mucho más grande." } },
-    "author": { "kicker": "El autor", "heading": "¿Quién lo creó?", "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por sus mundos detallados, sus sistemas de magia innovadores y sus ambiciosas historias largas. El Cosmere es el escenario que conecta muchas de sus novelas y obras breves de fantasía.", "imageLabel": "Retrato del autor", "imageDimensions": "2:3 · retrato vertical" },
-    "whyRead": { "kicker": "Una razón para empezar", "heading": "¿Por qué leer el Cosmere?", "start": { "title": "Empieza donde quieras", "text": "Las historias independientes y las distintas sagas permiten encontrar un punto de entrada adecuado para cada lector." }, "curiosity": { "title": "Sigue tu curiosidad", "text": "Explora nuevos planetas, culturas y sistemas de magia a tu propio ritmo." }, "discovering": { "title": "Sigue descubriendo", "text": "El catálogo ofrece un recorrido largo sin sentirse como una única historia interminable." } },
-    "routes": { "kicker": "Empieza aquí", "heading": "Elige tu ruta", "description": "Encuentra un orden de lectura que encaje con tu forma de entrar en el Cosmere.", "communityText": "Formas populares en que los lectores recomiendan explorar el universo.", "publicationText": "Sigue el Cosmere según el orden en que se publicaron sus historias.", "journeyText": "Conoce el recorrido personal que inspiró Cosmereando." },
-    "library": { "kicker": "La biblioteca", "heading": "Libros, sagas y planetas", "description": "Explora las historias por la saga a la que pertenecen o el planeta en el que transcurren.", "books": "Ver libros", "sagas": "Ver sagas", "planets": "Ver planetas" },
+    "description": "Un punto de partida claro para explorar el universo interconectado de mundos, magia e historias de Brandon Sanderson.",
+    "hero": { "eyebrow": "Guía del lector del Cosmere", "heading": "Un universo.\nMuchos mundos.\nInfinitas historias.", "intro": "El Cosmere es el universo de fantasía interconectado de Brandon Sanderson: historias independientes con identidad propia, unidas por conexiones más profundas para quienes sienten curiosidad.", "discover": "Descubre sus conexiones", "imageLabel": "Imagen de bienvenida", "imageDimensions": "16:9 · imagen editorial panorámica" },
+    "cosmere": { "kicker": "La visión general", "heading": "¿Qué es el Cosmere?", "description": "El Cosmere es el nombre del universo interconectado que reúne muchas de las historias de fantasía épica de Brandon Sanderson. Sus mundos tienen historias, culturas y sistemas de magia distintos, pero comparten un escenario mayor y una historia que avanza bajo la superficie.", "worlds": { "title": "Muchos mundos", "text": "Scadrial, Roshar y otros planetas aportan su propia historia, atmósfera y reglas para el funcionamiento de la magia." }, "doors": { "title": "Distintas puertas de entrada", "text": "Puedes entrar mediante un golpe, un misterio político, una guerra épica o una aventura autoconclusiva. No hay un único comienzo correcto." }, "universe": { "title": "Conexiones por descubrir", "text": "Nombres, personajes e ideas recurrentes recompensan la atención, aunque la mayoría de historias también funcionan por sí solas." } },
+    "author": { "kicker": "El autor", "heading": "Un constructor de mundos conectados", "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por su construcción de mundos, sus sistemas de magia innovadores y sus ambiciosas historias largas. Elantris, publicada en 2005, fue su primera novela publicada y la primera historia que lanzó dentro del Cosmere. Detrás de libros y sagas independientes, lleva años construyendo un universo mucho mayor.", "imageLabel": "Retrato del autor", "imageDimensions": "2:3 · retrato vertical" },
+    "whyRead": { "kicker": "Una razón para empezar", "heading": "¿Por qué leer el Cosmere?", "start": { "title": "Empieza donde quieras", "text": "Muchos libros pueden leerse de forma independiente. Elige la primera historia por el tipo de experiencia que buscas, no por miedo a equivocarte de orden." }, "curiosity": { "title": "Sigue las pistas", "text": "Fíjate en los detalles recurrentes, especialmente en un viajero llamado Hoid, y deja que las conexiones aparezcan a su ritmo." }, "discovering": { "title": "Sigue descubriendo", "text": "El Cosmere funciona en dos niveles: una historia inmediata que puedes disfrutar hoy y un universo mayor que se vuelve más claro con el tiempo." } },
+    "routes": { "kicker": "Empieza aquí", "heading": "Elige tu ruta", "description": "No existe un orden universalmente correcto. Aquí encontrarás varias formas de entrar en el Cosmere según cuánto contexto y conexión quieras desde el principio.", "communityText": "Una ruta acogedora para conocer de forma equilibrada los mundos y las ideas principales.", "publicationText": "Sigue las historias según su orden de publicación y observa cómo crece el universo compartido.", "journeyText": "Conoce el recorrido personal que inspiró Cosmereando." },
+    "library": { "kicker": "La biblioteca", "heading": "Libros, sagas y planetas", "description": "Explora novelas, novelas cortas, relatos y novelas gráficas por la saga a la que pertenecen o el planeta en el que transcurren.", "books": "Ver libros", "sagas": "Ver sagas", "planets": "Ver planetas" },
     "tableOfContents": "En esta página", "toc": { "introduction": "Introducción", "cosmere": "¿Qué es el Cosmere?", "author": "El autor", "whyRead": "¿Por qué leerlo?", "routes": "Rutas de lectura", "library": "La biblioteca" }
   },
-  "pages": { "books": { "title": "Libros", "description": "Aquí se organizará el catálogo completo de obras del Cosmere por saga y obra independiente." }, "routes": { "title": "Rutas de lectura", "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere." }, "sagas": { "title": "Sagas", "description": "Cada saga del Cosmere tendrá aquí su propia página guiada con sus obras y su planeta relacionado." }, "planets": { "title": "Planetas", "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados." }, "credits": { "title": "Créditos", "description": "Aquí aparecerán los autores de las imágenes, las fuentes y los reconocimientos del proyecto." }, "imageLabel": "Imagen de portada de {title}", "imageDimensions": "3:2 · imagen de cabecera de sección" }
+  "pages": { "books": { "title": "Libros", "description": "Explora las obras publicadas del Cosmere agrupadas por saga y por historia independiente." }, "routes": { "title": "Rutas de lectura", "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere." }, "sagas": { "title": "Sagas", "description": "Cada saga del Cosmere tendrá aquí su propia página guiada con sus obras y su planeta relacionado." }, "planets": { "title": "Planetas", "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados." }, "credits": { "title": "Créditos", "description": "Aquí aparecerán los autores de las imágenes, las fuentes y los reconocimientos del proyecto." }, "imageLabel": "Imagen de portada de {title}", "imageDimensions": "3:2 · imagen de cabecera de sección" }
 }

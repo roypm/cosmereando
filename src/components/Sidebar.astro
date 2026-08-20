@@ -1,6 +1,6 @@
 ---
 import packageJson from '../../package.json';
-import { getLocalizedPath, getTranslation } from '../data/i18n';
+import { getCanonicalPath, getLocalizedPath, getTranslation } from '../data/i18n';
 import { getNavigationGroups } from '../data/catalogue';
 import type { Locale } from '../data/locales';
 
@@ -11,11 +11,17 @@ interface Props {
 const { locale } = Astro.props;
 const navigationGroups = getNavigationGroups(locale);
 
-const currentPath = Astro.url.pathname;
+const currentPath = getCanonicalPath(Astro.url.pathname);
 const siteVersion = packageJson.version;
 const homeHref = getLocalizedPath(locale, '/');
-const isCurrent = (href: string) => currentPath === href || (href !== '/' && currentPath === `${href}/`);
-const isCurrentGroup = (href: string) => currentPath === href || currentPath.startsWith(`${href}/`);
+const isCurrent = (href: string) => {
+  const canonicalHref = getCanonicalPath(href);
+  return currentPath === canonicalHref || (canonicalHref !== '/' && currentPath === `${canonicalHref}/`);
+};
+const isCurrentGroup = (href: string) => {
+  const canonicalHref = getCanonicalPath(href);
+  return currentPath === canonicalHref || currentPath.startsWith(`${canonicalHref}/`);
+};
 ---
 
 <aside class="sidebar" aria-label={getTranslation(locale, 'common.mainNavigation')}>

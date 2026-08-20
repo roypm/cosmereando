@@ -1,0 +1,17 @@
+---
+import RouteDetailPage from '../../../components/RouteDetailPage.astro';
+import { getSections } from '../../../data/catalogue';
+import { locales } from '../../../data/i18n';
+import type { Locale } from '../../../data/locales';
+
+export function getStaticPaths() {
+  return locales.filter((locale) => locale !== 'en').flatMap((locale) =>
+    getSections('routes', locale).map((route) => ({ params: { locale, route: route.id } })),
+  );
+}
+
+const locale = Astro.params.locale as Exclude<Locale, 'en'>;
+const routeId = Astro.params.route as string;
+---
+
+<RouteDetailPage locale={locale} routeId={routeId} />

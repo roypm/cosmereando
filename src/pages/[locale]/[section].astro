@@ -1,5 +1,7 @@
 ---
 import PlaceholderPage from '../../components/PlaceholderPage.astro';
+import BooksPage from '../../components/BooksPage.astro';
+import RoutesPage from '../../components/RoutesPage.astro';
 import { getSections } from '../../data/catalogue';
 import { getTranslation, locales } from '../../data/i18n';
 import {
@@ -23,4 +25,10 @@ const source = section === 'books' ? 'works' : section;
 const sections = section === 'credits' ? [] : getSections(source as 'routes' | 'works' | 'sagas' | 'planets', locale);
 ---
 
-<PlaceholderPage locale={locale} title={title} description={description} sections={sections} />
+{section === 'books' ? (
+  <BooksPage locale={locale} />
+) : section === 'routes' ? (
+  <RoutesPage locale={locale} />
+) : (
+  <PlaceholderPage locale={locale} title={title} description={description} sections={sections} />
+)}
