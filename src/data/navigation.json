@@ -1,0 +1,26 @@
+[
+  {
+    "id": "routes",
+    "href": "/routes",
+    "labelKey": "navigation.routes.title",
+    "source": "routes"
+  },
+  {
+    "id": "works",
+    "href": "/books",
+    "labelKey": "navigation.books.title",
+    "source": "works"
+  },
+  {
+    "id": "sagas",
+    "href": "/sagas",
+    "labelKey": "navigation.sagas.title",
+    "source": "sagas"
+  },
+  {
+    "id": "planets",
+    "href": "/planets",
+    "labelKey": "navigation.planets.title",
+    "source": "planets"
+  }
+]

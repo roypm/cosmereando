@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import Sidebar from './Sidebar.astro';
+import { getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  title: string;
+  description: string;
+  sections?: { id: string; label: string }[];
+  locale: Locale;
+}
+
+const { title, description, sections = [], locale } = Astro.props;
+const t = (key: string, replacements?: Record<string, string>) => getTranslation(locale, key, replacements);
+---
+
+<BaseLayout title={`Cosmereando — ${title}`} description={description} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="placeholder-page">
+        <p class="eyebrow">Cosmereando</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <ImagePlaceholder label={t('pages.imageLabel', { title })} dimensions={t('pages.imageDimensions')} imageText={t('common.imageHere')} />
+        <a class="primary-link" href={locale === 'en' ? '/' : `/${locale}/`}>{t('common.returnHome')}</a>
+        {sections.map((section) => (
+          <section class="placeholder-page__section" id={section.id} aria-labelledby={`${section.id}-heading`}>
+            <h2 id={`${section.id}-heading`}>{section.label}</h2>
+            <p>{t('common.placeholderSection')}</p>
+          </section>
+        ))}
+      </main>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,10 @@
+[
+  { "id": "scadrial", "slug": "scadrial", "labelKey": "planets.scadrial" },
+  { "id": "roshar", "slug": "roshar", "labelKey": "planets.roshar" },
+  { "id": "nalthis", "slug": "nalthis", "labelKey": "planets.nalthis" },
+  { "id": "sel", "slug": "sel", "labelKey": "planets.sel" },
+  { "id": "taldain", "slug": "taldain", "labelKey": "planets.taldain" },
+  { "id": "lumar", "slug": "lumar", "labelKey": "planets.lumar" },
+  { "id": "canticle", "slug": "canticle", "labelKey": "planets.canticle" },
+  { "id": "komashi", "slug": "komashi", "labelKey": "planets.komashi" }
+]

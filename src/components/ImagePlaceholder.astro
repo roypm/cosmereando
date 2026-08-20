@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  dimensions: string;
+  imageText?: string;
+  variant?: 'hero' | 'feature' | 'portrait';
+}
+
+const { label, dimensions, imageText = 'Image here', variant = 'feature' } = Astro.props;
+---
+
+<div class:list={['image-placeholder', `image-placeholder--${variant}`]} role="img" aria-label={`${label} image placeholder`}>
+  <span class="image-placeholder__label">{imageText}</span>
+  <span class="image-placeholder__details">{label} · {dimensions}</span>
+</div>

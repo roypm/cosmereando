@@ -1,0 +1,13 @@
+[
+  { "id": "the-final-empire", "slug": "the-final-empire", "labelKey": "works.theFinalEmpire" },
+  { "id": "the-well-of-ascension", "slug": "the-well-of-ascension", "labelKey": "works.theWellOfAscension" },
+  { "id": "the-hero-of-ages", "slug": "the-hero-of-ages", "labelKey": "works.theHeroOfAges" },
+  { "id": "the-way-of-kings", "slug": "the-way-of-kings", "labelKey": "works.theWayOfKings" },
+  { "id": "words-of-radiance", "slug": "words-of-radiance", "labelKey": "works.wordsOfRadiance" },
+  { "id": "oathbringer", "slug": "oathbringer", "labelKey": "works.oathbringer" },
+  { "id": "rhythm-of-war", "slug": "rhythm-of-war", "labelKey": "works.rhythmOfWar" },
+  { "id": "elantris", "slug": "elantris", "labelKey": "works.elantris" },
+  { "id": "warbreaker", "slug": "warbreaker", "labelKey": "works.warbreaker" },
+  { "id": "tress-of-the-emerald-sea", "slug": "tress-of-the-emerald-sea", "labelKey": "works.tressOfTheEmeraldSea" },
+  { "id": "the-sunlit-man", "slug": "the-sunlit-man", "labelKey": "works.theSunlitMan" }
+]

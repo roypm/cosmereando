@@ -1,0 +1,69 @@
+---
+interface TableOfContentsItem {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  items: TableOfContentsItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<aside class="table-of-contents" aria-label={title}>
+  <p class="table-of-contents__title">{title}</p>
+  <nav>
+    <ol class="table-of-contents__list">
+      {items.map((item) => (
+        <li>
+          <a class="table-of-contents__link" href={`#${item.id}`} data-section-id={item.id}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+</aside>
+
+<script>
+  const tableOfContentsLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>('[data-section-id]'),
+  );
+  const tableOfContentsSections = tableOfContentsLinks
+    .map((link) => document.getElementById(link.dataset.sectionId ?? ''))
+    .filter((section): section is HTMLElement => section !== null);
+
+  const setActiveSection = (sectionId: string) => {
+    tableOfContentsLinks.forEach((link) => {
+      const isActive = link.dataset.sectionId === sectionId;
+      link.classList.toggle('table-of-contents__link--active', isActive);
+
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  if (tableOfContentsSections.length > 0) {
+    setActiveSection(tableOfContentsSections[0].id);
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((firstEntry, secondEntry) => firstEntry.boundingClientRect.top - secondEntry.boundingClientRect.top)[0];
+
+        if (visibleEntry) {
+          setActiveSection((visibleEntry.target as HTMLElement).id);
+        }
+      },
+      { rootMargin: '-10% 0px -70% 0px' },
+    );
+
+    tableOfContentsSections.forEach((section) => sectionObserver.observe(section));
+  }
+</script>
