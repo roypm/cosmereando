@@ -7,6 +7,14 @@
 
 Read both files before making changes that affect the product, architecture or code style.
 
+## Editorial sources
+
+- Use [Coppermind](https://coppermind.net/wiki/Coppermind:Welcome) as a research reference for Cosmere terminology, worldbuilding, characters, relationships, chronology and cross-references between stories.
+- Use [Brandon Sanderson's official website](https://www.brandonsanderson.com/) as the primary source for official book information, author details, official descriptions, publication updates and announcements.
+- Paraphrase and adapt researched information for Cosmereando; do not copy source text verbatim.
+- Compare sources when possible and prioritize the official website when sources disagree.
+- Treat unconfirmed details cautiously and identify uncertainty when appropriate.
+
 ## Project
 
 - This is a static Astro website.

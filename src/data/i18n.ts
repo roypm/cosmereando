@@ -28,7 +28,7 @@ export const getLocaleLabel = (locale: Locale): string => localeConfig[locale].l
 export const getLocaleName = (locale: Locale): string => localeConfig[locale].name;
 
 export const getLocalizedPath = (locale: Locale, path: string): string =>
-  `${getLocalePrefix(locale)}${path.startsWith('/') ? path : `/${path}`}`;
+  `${import.meta.env.BASE_URL.replace(/\/$/, '')}${getLocalePrefix(locale)}${path.startsWith('/') ? path : `/${path}`}`;
 
 export const getCanonicalPath = (pathname: string): string => {
   const localizedPrefix = locales.filter((locale) => locale !== defaultLocale).find(

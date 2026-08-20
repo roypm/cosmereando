@@ -19,6 +19,15 @@ const isCurrentGroup = (href: string) => currentPath === href || currentPath.sta
 ---
 
 <aside class="sidebar" aria-label={getTranslation(locale, 'common.mainNavigation')}>
+  <div class="sidebar__header" aria-hidden="true">
+    <svg class="sidebar__header-art" viewBox="0 0 240 120" focusable="false">
+      <path d="m120 5 37 38-37 72-37-72Z" />
+      <path d="m120 5 0 110M83 43l37 15 37-15M99 75l21-17 21 17" />
+      <path class="sidebar__header-core" d="m120 58 21 17-21 40-21-40Z" />
+      <path d="m120 5 21 70M120 5 99 75" />
+      <path d="M61 22h12M67 16v12M179 96h12M185 90v12" />
+    </svg>
+  </div>
   <nav class="sidebar__navigation">
     <a class:list={['sidebar__link', { 'sidebar__link--active': isCurrent(homeHref) }]} href={homeHref} aria-current={isCurrent(homeHref) ? 'page' : undefined}>{getTranslation(locale, 'common.home')}</a>
 

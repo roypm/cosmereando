@@ -1,8 +1,6 @@
 {
   "common": {
     "home": "Home",
-    "repository": "Repository",
-    "language": "Language",
     "changeLanguage": "Change language",
     "changeToLanguage": "Change to {language}",
     "toggleTheme": "Toggle color theme",

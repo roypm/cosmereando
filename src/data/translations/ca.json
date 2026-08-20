@@ -1,8 +1,6 @@
 {
   "common": {
     "home": "Inici",
-    "repository": "Repositori",
-    "language": "Idioma",
     "changeLanguage": "Canviar idioma",
     "changeToLanguage": "Canviar a {language}",
     "toggleTheme": "Canviar tema de color",
