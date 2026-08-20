@@ -1,0 +1,124 @@
+{
+  "common": {
+    "home": "Home",
+    "changeLanguage": "Change language",
+    "changeToLanguage": "Change to {language}",
+    "toggleTheme": "Toggle color theme",
+    "abstractGalaxy": "Abstract galaxy",
+    "sitePreferences": "Site preferences",
+    "mainNavigation": "Main navigation",
+    "projectLinks": "Project links",
+    "lastUpdated": "Last updated: 20 August 2026",
+    "version": "Version",
+    "createdBy": "Created by",
+    "credits": "Credits",
+    "linkedin": "LinkedIn",
+    "returnHome": "← Return to Home",
+    "imageHere": "Image here",
+    "toggleSubmenu": "Toggle {label} submenu",
+    "placeholderSection": "This section will be expanded with Cosmereando’s catalogue content."
+  },
+  "navigation": {
+    "routes": { "title": "Routes" },
+    "books": { "title": "Books" },
+    "sagas": { "title": "Sagas" },
+    "planets": { "title": "Planets" }
+  },
+  "routes": {
+    "community": "Community routes",
+    "publication": "Publication order",
+    "myJourney": "My journey"
+  },
+  "works": {
+    "theFinalEmpire": "The Final Empire",
+    "theWellOfAscension": "The Well of Ascension",
+    "theHeroOfAges": "The Hero of Ages",
+    "theWayOfKings": "The Way of Kings",
+    "wordsOfRadiance": "Words of Radiance",
+    "oathbringer": "Oathbringer",
+    "rhythmOfWar": "Rhythm of War",
+    "elantris": "Elantris",
+    "warbreaker": "Warbreaker",
+    "tressOfTheEmeraldSea": "Tress of the Emerald Sea",
+    "theSunlitMan": "The Sunlit Man"
+  },
+  "sagas": {
+    "mistborn": "Mistborn",
+    "theStormlightArchive": "The Stormlight Archive",
+    "skyward": "Skyward",
+    "elantris": "Elantris",
+    "warbreaker": "Warbreaker",
+    "whiteSand": "White Sand"
+  },
+  "planets": {
+    "scadrial": "Scadrial",
+    "roshar": "Roshar",
+    "nalthis": "Nalthis",
+    "sel": "Sel",
+    "taldain": "Taldain",
+    "lumar": "Lumar",
+    "canticle": "Canticle",
+    "komashi": "Komashi"
+  },
+  "home": {
+    "title": "Cosmereando — A reader’s guide to the Cosmere",
+    "description": "A clear and welcoming starting point for exploring Brandon Sanderson’s Cosmere.",
+    "hero": {
+      "eyebrow": "A reader’s guide to the Cosmere",
+      "heading": "Begin your journey among the stars.",
+      "intro": "A calm, clear place to discover Brandon Sanderson’s shared universe, one story at a time.",
+      "discover": "Discover the Cosmere",
+      "imageLabel": "Welcome image",
+      "imageDimensions": "16:9 · wide editorial image"
+    },
+    "cosmere": {
+      "kicker": "The big picture",
+      "heading": "What is the Cosmere?",
+      "description": "The Cosmere is a shared setting across many of Brandon Sanderson’s fantasy stories. Each saga has its own world, characters and rules, while the wider universe quietly gives them a common place in the stars.",
+      "worlds": { "title": "Many worlds", "text": "Every planet offers a distinct atmosphere, history and way to experience fantasy." },
+      "doors": { "title": "Different doors in", "text": "Some stories begin with epic battles, others with mystery, discovery or political tension." },
+      "universe": { "title": "One larger universe", "text": "The books can be enjoyed on their own while still belonging to something much larger." }
+    },
+    "author": {
+      "kicker": "The author",
+      "heading": "Who created it?",
+      "text": "Brandon Sanderson is an American fantasy author known for detailed worlds, inventive magic systems and ambitious long-form storytelling. The Cosmere is the setting that connects many of his fantasy novels and shorter works.",
+      "imageLabel": "Author portrait",
+      "imageDimensions": "2:3 · vertical portrait"
+    },
+    "whyRead": {
+      "kicker": "A reason to begin",
+      "heading": "Why read the Cosmere?",
+      "start": { "title": "Start where you like", "text": "Standalone stories and different sagas make it possible to find an entry point that suits you." },
+      "curiosity": { "title": "Follow your curiosity", "text": "Explore new planets, cultures and systems of magic at your own pace." },
+      "discovering": { "title": "Keep discovering", "text": "The catalogue is broad enough to offer a long reading journey without feeling like one single story." }
+    },
+    "routes": {
+      "kicker": "Start here",
+      "heading": "Choose your route",
+      "description": "Find a reading order that matches the way you want to enter the Cosmere.",
+      "communityText": "Popular ways readers recommend exploring the universe.",
+      "publicationText": "Follow the Cosmere by the order in which its stories were published.",
+      "journeyText": "See the personal path that inspired Cosmereando."
+    },
+    "library": {
+      "kicker": "The library",
+      "heading": "Books, sagas and planets",
+      "description": "Explore the stories by the saga they belong to or the planet where they unfold.",
+      "books": "Browse books",
+      "sagas": "Browse sagas",
+      "planets": "Browse planets"
+    },
+    "tableOfContents": "On this page",
+    "toc": { "introduction": "Introduction", "cosmere": "What is the Cosmere?", "author": "The author", "whyRead": "Why read it?", "routes": "Reading routes", "library": "The library" }
+  },
+  "pages": {
+    "books": { "title": "Books", "description": "The complete catalogue of Cosmere works will be organised here by saga and standalone work." },
+    "routes": { "title": "Reading Routes", "description": "Community recommendations, publication order and the personal journey through the Cosmere will live here." },
+    "sagas": { "title": "Sagas", "description": "Each Cosmere saga will have its own guided page with its works and related planet." },
+    "planets": { "title": "Planets", "description": "Planet pages will collect their related sagas, works, maps and magic systems." },
+    "credits": { "title": "Credits", "description": "Image authors, sources and project acknowledgements will be listed here." },
+    "imageLabel": "{title} cover image",
+    "imageDimensions": "3:2 · section header image"
+  }
+}

@@ -1,0 +1,13 @@
+---
+import PlaceholderPage from '../components/PlaceholderPage.astro';
+import { getTranslation } from '../data/i18n';
+
+const title = getTranslation('en', 'pages.credits.title');
+const description = getTranslation('en', 'pages.credits.description');
+---
+
+<PlaceholderPage
+  locale="en"
+  title={title}
+  description={description}
+/>

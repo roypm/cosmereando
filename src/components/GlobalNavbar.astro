@@ -1,0 +1,122 @@
+---
+import { getCanonicalPath, getLocalizedPath, getLocaleLabel, getLocaleName, getTranslation, locales } from '../data/i18n';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const canonicalPath = getCanonicalPath(Astro.url.pathname);
+---
+
+<header class="global-navbar">
+  <a class="brand" href={getLocalizedPath(locale, '/')} aria-label="Cosmereando">
+    <svg class="brand__mark" viewBox="0 0 64 64" role="img" aria-label={getTranslation(locale, 'common.abstractGalaxy')}>
+      <title>{getTranslation(locale, 'common.abstractGalaxy')}</title>
+      <circle cx="32" cy="32" r="4.25" />
+      <path d="M32 32c5-4 12-3 14 2 2 6-4 12-12 13-11 1-20-5-20-14 0-11 12-20 24-19 14 1 24 11 23 22-1 13-15 23-29 23-15 0-26-9-25-21" />
+      <path d="M32 32c-3 4-2 9 3 11 6 3 15-1 18-8 4-9-2-19-12-23-12-5-26 0-32 9-7 10-4 22 6 29" />
+      <circle cx="12" cy="18" r="1.25" />
+      <circle cx="51" cy="13" r="1.25" />
+      <circle cx="8" cy="42" r="1" />
+      <circle cx="54" cy="48" r="1" />
+    </svg>
+    <span class="brand__name">Cosmereando</span>
+  </a>
+
+  <nav class="global-navbar__links" aria-label={getTranslation(locale, 'common.projectLinks')}>
+    <a href="https://github.com/roypm/cosmereando" target="_blank" rel="noreferrer">
+      <svg class="github-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+        <path fill="currentColor" d="M12 2.5a9.5 9.5 0 0 0-3 18.52c.48.09.65-.21.65-.46v-1.63c-2.65.58-3.21-1.12-3.21-1.12-.44-1.1-1.07-1.4-1.07-1.4-.87-.6.07-.59.07-.59.96.07 1.47.99 1.47.99.86 1.47 2.25 1.05 2.8.8.09-.63.34-1.05.61-1.29-2.12-.24-4.35-1.06-4.35-4.72 0-1.04.37-1.9.99-2.57-.1-.24-.43-1.22.1-2.54 0 0 .81-.26 2.62.98A9.1 9.1 0 0 1 12 8.16c.82 0 1.64.11 2.4.33 1.81-1.24 2.62-.98 2.62-.98.53 1.32.2 2.3.1 2.54.62.67.99 1.53.99 2.57 0 3.67-2.24 4.48-4.37 4.71.35.3.65.88.65 1.78v2.64c0 .25.17.55.66.46A9.5 9.5 0 0 0 12 2.5Z" />
+      </svg>
+    </a>
+  </nav>
+
+  <div class="global-navbar__controls" aria-label={getTranslation(locale, 'common.sitePreferences')}>
+    <details class="language-switcher">
+      <summary class="language-switcher__trigger" aria-label={getTranslation(locale, 'common.changeLanguage')}>
+        <span class="language-switcher__current">{getLocaleLabel(locale)}</span>
+        <svg class="language-switcher__arrow" aria-hidden="true" viewBox="0 0 12 8" focusable="false">
+          <path d="m1 1 5 5 5-5" />
+        </svg>
+      </summary>
+      <div class="language-switcher__menu">
+      {locales.map((targetLocale) => (
+        <a
+          class:list={['language-switcher__option', { 'language-switcher__option--active': targetLocale === locale }]}
+          href={getLocalizedPath(targetLocale, canonicalPath)}
+          aria-current={targetLocale === locale ? 'page' : undefined}
+          aria-label={getTranslation(locale, 'common.changeToLanguage', { language: getLocaleName(targetLocale) })}
+          title={getLocaleName(targetLocale)}
+        >
+          <span>{getLocaleLabel(targetLocale)}</span>
+          <span>{getLocaleName(targetLocale)}</span>
+        </a>
+      ))}
+      </div>
+    </details>
+    <button
+      type="button"
+      class="control-button"
+      data-theme-toggle
+      aria-label={getTranslation(locale, 'common.toggleTheme')}
+      aria-pressed="false"
+    >
+      <svg class="interface-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+        <g class="theme-icon--sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7">
+          <circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none" />
+          <path d="M12 2.75v2M12 19.25v2M2.75 12h2M19.25 12h2M5.46 5.46l1.42 1.42M17.12 17.12l1.42 1.42M5.46 18.54l1.42-1.42M17.12 6.88l1.42-1.42" />
+        </g>
+        <path class="theme-icon--moon" fill="currentColor" d="M12 3a9 9 0 1 0 8.55 11.8A7 7 0 0 1 9.2 6.45 8.95 8.95 0 0 1 12 3Z" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+  const languageSwitcher = document.querySelector<HTMLDetailsElement>('.language-switcher');
+
+  const closeLanguageSwitcher = (restoreFocus = false) => {
+    if (!languageSwitcher?.open) return;
+
+    languageSwitcher.open = false;
+    if (restoreFocus) languageSwitcher.querySelector<HTMLElement>('.language-switcher__trigger')?.focus();
+  };
+
+  const updateThemeButton = () => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    themeToggle?.setAttribute('aria-pressed', String(isDark));
+  };
+
+  themeToggle?.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+
+    try {
+      localStorage.setItem('cosmereando-theme', nextTheme);
+    } catch {
+      // Theme remains active for the current page when storage is unavailable.
+    }
+
+    updateThemeButton();
+  });
+
+  updateThemeButton();
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) {
+      closeLanguageSwitcher();
+      return;
+    }
+
+    if (languageSwitcher?.contains(event.target)) return;
+
+    closeLanguageSwitcher();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLanguageSwitcher(true);
+  });
+</script>

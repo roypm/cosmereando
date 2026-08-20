@@ -1,0 +1,38 @@
+{
+  "common": {
+    "home": "Inicio",
+    "changeLanguage": "Cambiar idioma",
+    "changeToLanguage": "Cambiar a {language}",
+    "toggleTheme": "Cambiar tema de color",
+    "abstractGalaxy": "Galaxia abstracta",
+    "sitePreferences": "Preferencias del sitio",
+    "mainNavigation": "Navegación principal",
+    "projectLinks": "Enlaces del proyecto",
+    "lastUpdated": "Última actualización: 20 de agosto de 2026",
+    "version": "Versión",
+    "createdBy": "Creado por",
+    "credits": "Créditos",
+    "linkedin": "LinkedIn",
+    "returnHome": "← Volver al inicio",
+    "imageHere": "Imagen aquí",
+    "toggleSubmenu": "Mostrar el submenú de {label}",
+    "placeholderSection": "Esta sección se ampliará con el contenido del catálogo de Cosmereando."
+  },
+  "navigation": { "routes": { "title": "Rutas" }, "books": { "title": "Libros" }, "sagas": { "title": "Sagas" }, "planets": { "title": "Planetas" } },
+  "routes": { "community": "Rutas comunitarias", "publication": "Orden de publicación", "myJourney": "Mi recorrido" },
+  "works": { "theFinalEmpire": "El imperio final", "theWellOfAscension": "El pozo de la ascensión", "theHeroOfAges": "El héroe de las eras", "theWayOfKings": "El camino de los reyes", "wordsOfRadiance": "Palabras radiantes", "oathbringer": "Juramentada", "rhythmOfWar": "El ritmo de la guerra", "elantris": "Elantris", "warbreaker": "El aliento de los dioses", "tressOfTheEmeraldSea": "Trenza del mar Esmeralda", "theSunlitMan": "El hombre iluminado" },
+  "sagas": { "mistborn": "Nacidos de la bruma", "theStormlightArchive": "El archivo de las tormentas", "skyward": "Escuadrón", "elantris": "Elantris", "warbreaker": "El aliento de los dioses", "whiteSand": "Arena blanca" },
+  "planets": { "scadrial": "Scadrial", "roshar": "Roshar", "nalthis": "Nalthis", "sel": "Sel", "taldain": "Taldain", "lumar": "Lumar", "canticle": "Cántico", "komashi": "Komashi" },
+  "home": {
+    "title": "Cosmereando — Guía del lector del Cosmere",
+    "description": "Un punto de partida claro y acogedor para explorar el Cosmere de Brandon Sanderson.",
+    "hero": { "eyebrow": "Guía del lector del Cosmere", "heading": "Comienza tu viaje entre las estrellas.", "intro": "Un lugar tranquilo y claro para descubrir el universo compartido de Brandon Sanderson, historia a historia.", "discover": "Descubre el Cosmere", "imageLabel": "Imagen de bienvenida", "imageDimensions": "16:9 · imagen editorial panorámica" },
+    "cosmere": { "kicker": "La visión general", "heading": "¿Qué es el Cosmere?", "description": "El Cosmere es un escenario compartido por muchas historias de fantasía de Brandon Sanderson. Cada saga tiene su propio mundo, personajes y reglas, mientras el universo más amplio les da silenciosamente un lugar común entre las estrellas.", "worlds": { "title": "Muchos mundos", "text": "Cada planeta ofrece una atmósfera, una historia y una forma distinta de vivir la fantasía." }, "doors": { "title": "Distintas puertas de entrada", "text": "Algunas historias comienzan con grandes batallas y otras con misterio, descubrimiento o tensión política." }, "universe": { "title": "Un universo mayor", "text": "Los libros se pueden disfrutar por separado y, al mismo tiempo, forman parte de algo mucho más grande." } },
+    "author": { "kicker": "El autor", "heading": "¿Quién lo creó?", "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por sus mundos detallados, sus sistemas de magia innovadores y sus ambiciosas historias largas. El Cosmere es el escenario que conecta muchas de sus novelas y obras breves de fantasía.", "imageLabel": "Retrato del autor", "imageDimensions": "2:3 · retrato vertical" },
+    "whyRead": { "kicker": "Una razón para empezar", "heading": "¿Por qué leer el Cosmere?", "start": { "title": "Empieza donde quieras", "text": "Las historias independientes y las distintas sagas permiten encontrar un punto de entrada adecuado para cada lector." }, "curiosity": { "title": "Sigue tu curiosidad", "text": "Explora nuevos planetas, culturas y sistemas de magia a tu propio ritmo." }, "discovering": { "title": "Sigue descubriendo", "text": "El catálogo ofrece un recorrido largo sin sentirse como una única historia interminable." } },
+    "routes": { "kicker": "Empieza aquí", "heading": "Elige tu ruta", "description": "Encuentra un orden de lectura que encaje con tu forma de entrar en el Cosmere.", "communityText": "Formas populares en que los lectores recomiendan explorar el universo.", "publicationText": "Sigue el Cosmere según el orden en que se publicaron sus historias.", "journeyText": "Conoce el recorrido personal que inspiró Cosmereando." },
+    "library": { "kicker": "La biblioteca", "heading": "Libros, sagas y planetas", "description": "Explora las historias por la saga a la que pertenecen o el planeta en el que transcurren.", "books": "Ver libros", "sagas": "Ver sagas", "planets": "Ver planetas" },
+    "tableOfContents": "En esta página", "toc": { "introduction": "Introducción", "cosmere": "¿Qué es el Cosmere?", "author": "El autor", "whyRead": "¿Por qué leerlo?", "routes": "Rutas de lectura", "library": "La biblioteca" }
+  },
+  "pages": { "books": { "title": "Libros", "description": "Aquí se organizará el catálogo completo de obras del Cosmere por saga y obra independiente." }, "routes": { "title": "Rutas de lectura", "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere." }, "sagas": { "title": "Sagas", "description": "Cada saga del Cosmere tendrá aquí su propia página guiada con sus obras y su planeta relacionado." }, "planets": { "title": "Planetas", "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados." }, "credits": { "title": "Créditos", "description": "Aquí aparecerán los autores de las imágenes, las fuentes y los reconocimientos del proyecto." }, "imageLabel": "Imagen de portada de {title}", "imageDimensions": "3:2 · imagen de cabecera de sección" }
+}

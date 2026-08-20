@@ -1,0 +1,128 @@
+---
+import packageJson from '../../package.json';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import { getNavigationGroups } from '../data/catalogue';
+import type { Locale } from '../data/locales';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const navigationGroups = getNavigationGroups(locale);
+
+const currentPath = Astro.url.pathname;
+const siteVersion = packageJson.version;
+const homeHref = getLocalizedPath(locale, '/');
+const isCurrent = (href: string) => currentPath === href || (href !== '/' && currentPath === `${href}/`);
+const isCurrentGroup = (href: string) => currentPath === href || currentPath.startsWith(`${href}/`);
+---
+
+<aside class="sidebar" aria-label={getTranslation(locale, 'common.mainNavigation')}>
+  <div class="sidebar__header" aria-hidden="true">
+    <svg class="sidebar__header-art" viewBox="0 0 240 120" focusable="false">
+      <path d="m120 5 37 38-37 72-37-72Z" />
+      <path d="m120 5 0 110M83 43l37 15 37-15M99 75l21-17 21 17" />
+      <path class="sidebar__header-core" d="m120 58 21 17-21 40-21-40Z" />
+      <path d="m120 5 21 70M120 5 99 75" />
+      <path d="M61 22h12M67 16v12M179 96h12M185 90v12" />
+    </svg>
+  </div>
+  <nav class="sidebar__navigation">
+    <a class:list={['sidebar__link', { 'sidebar__link--active': isCurrent(homeHref) }]} href={homeHref} aria-current={isCurrent(homeHref) ? 'page' : undefined}>{getTranslation(locale, 'common.home')}</a>
+
+    {navigationGroups.map((group) => (
+      <div class="sidebar__group">
+        <div class="sidebar__group-header">
+          <a class:list={['sidebar__group-link', { 'sidebar__group-link--active': isCurrentGroup(group.href) }]} href={group.href} aria-current={isCurrent(group.href) ? 'page' : undefined}>{group.label}</a>
+          <details class="sidebar__submenu" name="sidebar-submenus">
+            <summary class="sidebar__toggle" aria-label={getTranslation(locale, 'common.toggleSubmenu', { label: group.label })}></summary>
+            <div class="sidebar__submenu-panel">
+              {group.items.map((item) => <a class="sidebar__sublink" href={item.href}>{item.label}</a>)}
+            </div>
+          </details>
+        </div>
+      </div>
+    ))}
+  </nav>
+
+  <footer class="site-footer">
+    <span>{getTranslation(locale, 'common.lastUpdated')}</span>
+    <span>{getTranslation(locale, 'common.version')}: {siteVersion}</span>
+    <span>{getTranslation(locale, 'common.createdBy')} <a href="https://github.com/roypm" target="_blank" rel="noreferrer">roypm</a></span>
+    <a href="https://www.linkedin.com/in/roy-pi%C3%B1ol-molina/" target="_blank" rel="noreferrer">{getTranslation(locale, 'common.linkedin')}</a>
+    <a href={getLocalizedPath(locale, '/credits')} aria-current={isCurrent(getLocalizedPath(locale, '/credits')) ? 'page' : undefined}>{getTranslation(locale, 'common.credits')}</a>
+  </footer>
+</aside>
+
+<script>
+  const navigationGroups = document.querySelectorAll<HTMLElement>('.sidebar__group');
+  const sidebar = document.querySelector<HTMLElement>('.sidebar');
+  const submenus = Array.from(document.querySelectorAll<HTMLDetailsElement>('.sidebar__submenu'));
+
+  const closeSubmenus = (restoreFocus = false) => {
+    submenus.forEach((submenu) => {
+      if (!submenu.open) return;
+
+      submenu.open = false;
+      if (restoreFocus) submenu.querySelector<HTMLElement>('.sidebar__toggle')?.focus();
+    });
+  };
+
+  const updateSubmenuPosition = (navigationGroup: HTMLElement, submenu: HTMLDetailsElement) => {
+    const panel = submenu.querySelector<HTMLElement>('.sidebar__submenu-panel');
+    if (!panel) return;
+
+    const groupTop = navigationGroup.getBoundingClientRect().top;
+    const panelHeight = panel.getBoundingClientRect().height;
+    const maximumTop = window.innerHeight - panelHeight - 16;
+    const panelTop = Math.max(16, Math.min(groupTop, maximumTop));
+    panel.style.setProperty('--submenu-top', `${panelTop}px`);
+  };
+
+  navigationGroups.forEach((navigationGroup) => {
+    const submenu = navigationGroup.querySelector<HTMLDetailsElement>('.sidebar__submenu');
+    if (!submenu) return;
+
+    submenu.addEventListener('toggle', () => {
+      if (!submenu.open) return;
+
+      navigationGroups.forEach((otherGroup) => {
+        const otherSubmenu = otherGroup.querySelector<HTMLDetailsElement>('.sidebar__submenu');
+        if (otherSubmenu && otherSubmenu !== submenu) otherSubmenu.open = false;
+      });
+
+      requestAnimationFrame(() => updateSubmenuPosition(navigationGroup, submenu));
+    });
+
+    submenu.querySelectorAll<HTMLAnchorElement>('.sidebar__sublink').forEach((link) => {
+      link.addEventListener('click', () => closeSubmenus());
+    });
+  });
+
+  const updateOpenSubmenus = () => {
+    navigationGroups.forEach((navigationGroup) => {
+      const submenu = navigationGroup.querySelector<HTMLDetailsElement>('.sidebar__submenu');
+      if (submenu?.open) updateSubmenuPosition(navigationGroup, submenu);
+    });
+  };
+
+  window.addEventListener('resize', updateOpenSubmenus);
+  sidebar?.addEventListener('scroll', updateOpenSubmenus);
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) {
+      closeSubmenus();
+      return;
+    }
+
+    const clickedSubmenu = event.target.closest('.sidebar__submenu');
+    if (sidebar?.contains(event.target) && clickedSubmenu) return;
+
+    closeSubmenus();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeSubmenus(true);
+  });
+</script>

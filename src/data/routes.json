@@ -1,0 +1,5 @@
+[
+  { "id": "community-routes", "labelKey": "routes.community" },
+  { "id": "publication-order", "labelKey": "routes.publication" },
+  { "id": "my-journey", "labelKey": "routes.myJourney" }
+]
