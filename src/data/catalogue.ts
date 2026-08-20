@@ -6,7 +6,7 @@ import worksData from './works.json';
 import { defaultLocale, locales, translations } from './locales';
 import { getLocalizedPath, getTranslation } from './i18n';
 import type { Locale } from './locales';
-import type { NavigationEntryData, NavigationGroupData } from './types';
+import type { NavigationEntryData, NavigationGroupData, WorkData } from './types';
 
 export interface NavigationItem {
   id: string;
@@ -25,6 +25,21 @@ interface CatalogueEntryData extends NavigationEntryData {
   slug?: string;
 }
 
+export interface BookCollection {
+  id: string;
+  label: string;
+  sagaHref?: string;
+  works: {
+    id: string;
+    title: string;
+    type: string;
+    typeKey: WorkData['typeKey'];
+    publicationYear: number;
+    arcanumStatus?: WorkData['arcanumStatus'];
+  }[];
+  subsections?: { id: string; label: string; works: BookCollection['works'] }[];
+}
+
 const navigationGroups = navigationData as NavigationGroupData[];
 const catalogueSources: Record<NavigationGroupData['source'], CatalogueEntryData[]> = {
   routes: routesData,
@@ -36,11 +51,14 @@ const catalogueSources: Record<NavigationGroupData['source'], CatalogueEntryData
 const getItems = (locale: Locale, group: NavigationGroupData): NavigationItem[] =>
   catalogueSources[group.source].map((item) => {
     const anchor = item.slug ?? item.id;
+    const href = group.source === 'routes'
+      ? getLocalizedPath(locale, `${group.href}/${item.id}`)
+      : `${getLocalizedPath(locale, group.href)}#${anchor}`;
 
     return {
       id: item.id,
       label: getTranslation(locale, item.labelKey),
-      href: `${getLocalizedPath(locale, group.href)}#${anchor}`,
+      href,
     };
   });
 
@@ -57,6 +75,60 @@ export const getSections = (source: NavigationGroupData['source'], locale: Local
     id: item.slug ?? item.id,
     label: getTranslation(locale, item.labelKey),
   }));
+
+export const getBookCollections = (locale: Locale): BookCollection[] => {
+  const works = worksData as WorkData[];
+  const mapWork = (work: WorkData) => ({
+    id: work.id,
+    title: getTranslation(locale, work.labelKey),
+    type: getTranslation(locale, `books.types.${work.typeKey}`),
+    typeKey: work.typeKey,
+    publicationYear: work.publicationYear,
+    arcanumStatus: work.arcanumStatus,
+  });
+  const sortWorks = (items: WorkData[]) => [...items].sort((first, second) =>
+    (first.publicationOrder ?? Number.MAX_SAFE_INTEGER) - (second.publicationOrder ?? Number.MAX_SAFE_INTEGER));
+  const sagaGroups: BookCollection[] = sagasData.map((saga) => ({
+    id: saga.id,
+    label: getTranslation(locale, saga.labelKey),
+    sagaHref: `${getLocalizedPath(locale, '/sagas')}#${saga.slug}`,
+    works: sortWorks(works.filter((work) => work.sagaId === saga.id && !work.collectionIds?.includes('arcanum-unbounded'))).map(mapWork),
+  })).filter((saga) => saga.works.length > 0);
+
+  const mistborn = sagaGroups.find((saga) => saga.id === 'mistborn');
+  if (mistborn) {
+    const eraWorks = (era: WorkData['era']) => sortWorks(works.filter((work) => work.sagaId === 'mistborn' && work.era === era && !work.collectionIds?.includes('arcanum-unbounded'))).map(mapWork);
+    mistborn.subsections = [
+      { id: 'mistborn-era-1', label: getTranslation(locale, 'books.subsections.era1'), works: eraWorks('era-1') },
+      { id: 'mistborn-era-2', label: getTranslation(locale, 'books.subsections.era2'), works: eraWorks('era-2') },
+    ];
+    mistborn.works = [];
+  }
+
+  const standaloneWorks = sortWorks(works.filter((work) =>
+    !work.sagaId && work.id !== 'arcanum-unbounded' && !work.collectionIds?.includes('arcanum-unbounded'),
+  )).map(mapWork);
+
+  if (standaloneWorks.length > 0) {
+    sagaGroups.push({
+      id: 'standalone',
+      label: getTranslation(locale, 'books.standalone'),
+      sagaHref: undefined,
+      works: standaloneWorks,
+    });
+  }
+
+  const arcanumWorks = sortWorks(works.filter((work) => work.id === 'arcanum-unbounded' || work.collectionIds?.includes('arcanum-unbounded'))).map(mapWork);
+  if (arcanumWorks.length > 0) {
+    sagaGroups.push({
+      id: 'arcanum-unbounded',
+      label: getTranslation(locale, 'books.arcanumUnbounded'),
+      works: arcanumWorks,
+    });
+  }
+
+  return sagaGroups;
+};
 
 const ensureUniqueIds = (items: NavigationEntryData[], source: string) => {
   const ids = new Set<string>();

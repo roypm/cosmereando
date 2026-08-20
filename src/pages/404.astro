@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from '../components/GlobalNavbar.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+
+const locale = 'en';
+const t = (key: string) => getTranslation(locale, key);
+---
+
+<BaseLayout title={`Cosmereando — ${t('notFound.title')}`} description={t('notFound.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <main class="not-found">
+        <div class="not-found__visual">
+          <svg class="not-found__art" viewBox="0 0 320 220" role="img" aria-label={t('notFound.visualLabel')}>
+            <g class="not-found__orbit" aria-hidden="true">
+              <ellipse cx="160" cy="108" rx="124" ry="42" transform="rotate(-16 160 108)" />
+              <ellipse cx="160" cy="108" rx="94" ry="25" transform="rotate(-16 160 108)" />
+            </g>
+            <g class="not-found__shard" aria-hidden="true">
+              <path class="not-found__shard-outline" d="m160 24 39 43-13 78-26 26-26-26-13-78Z" />
+              <path d="m160 24 0 147M121 67l39 18 39-18M134 145l26-60 26 60" />
+              <path class="not-found__shard-core" d="m160 85 26 60-26 26-26-26Z" />
+            </g>
+            <g class="not-found__stars" aria-hidden="true">
+              <path d="M47 43v16M39 51h16M269 55v12M263 61h12M76 175v10M71 180h10" />
+              <circle cx="250" cy="155" r="2" />
+              <circle cx="64" cy="91" r="2" />
+            </g>
+          </svg>
+        </div>
+        <p class="eyebrow">404 · Lost in the Cosmere</p>
+        <h1>{t('notFound.title')}</h1>
+        <p class="not-found__description">{t('notFound.description')}</p>
+        <a class="primary-link not-found__link" href={getLocalizedPath(locale, '/')}>{t('notFound.returnHome')}</a>
+      </main>
+    </div>
+  </div>
+</BaseLayout>

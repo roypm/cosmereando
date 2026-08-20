@@ -18,21 +18,99 @@
     "toggleSubmenu": "Mostrar el submenú de {label}",
     "placeholderSection": "Aquesta secció s’ampliarà amb el contingut del catàleg de Cosmereando."
   },
+  "notFound": {
+    "title": "Aquesta pàgina s’ha perdut al Regne Cognitiu.",
+    "description": "El camí que has seguit sembla haver fugit del mapa. Fins i tot una Esquirla pot perdre’s.",
+    "returnHome": "Tornar al Cosmere",
+    "visualLabel": "Una Esquirla perduda flotant per l’espai"
+  },
+  "routePage": {
+    "intro": {
+      "eyebrow": "Rutes de lectura",
+      "heading": "Tria com vols recórrer el Cosmere.",
+      "description": "El Cosmere és prou gran perquè el primer pas sembli difícil. Aquestes rutes ofereixen una manera clara d’entrar-hi sense convertir la lectura en deures ni treure-li l’emoció del descobriment.",
+      "imageLabel": "Un mapa esperant les tres rutes de lectura",
+      "imageDimensions": "16:9 · marcador de mapa de rutes"
+    },
+    "why": {
+      "kicker": "Per què existeixen les rutes",
+      "heading": "No hi ha una única manera correcta de llegir-lo.",
+      "description": "Cada lector busca una cosa diferent: una introducció acollidora, una visió més àmplia de l’univers o el registre d’un recorregut personal. Una ruta és una eina, no una norma.",
+      "entry": { "title": "Troba el primer pas", "text": "Una ruta pot eliminar el dubte de triar el primer llibre i ajudar-te a començar amb confiança." },
+      "context": { "title": "Construeix el context", "text": "L’ordre de les històries pot canviar la manera com apareixen les connexions, les idees recurrents i els diferents mons." },
+      "pace": { "title": "Llegeix al teu ritme", "text": "Pots seguir un camí recomanat, aturar-te quan vulguis i fer teu el recorregut." }
+    },
+    "routes": {
+      "kicker": "Tres maneres d’entrar-hi",
+      "heading": "Tria el viatge que encaixi amb tu.",
+      "description": "Cosmereando inclou tres rutes. Cadascuna té un propòsit diferent i la seva llista completa de lectura s’explicarà a la seva pròpia pàgina, sense espòilers aquí."
+    },
+    "cards": {
+      "community": "Una introducció pensada per a lectors que volen descobrir l’univers d’una manera equilibrada.",
+      "publication": "Una manera d’observar com creix el Cosmere seguint l’ordre en què van aparèixer les seves històries.",
+      "myJourney": "Un recorregut personal que mostra com va començar i créixer aquesta guia."
+    },
+    "details": {
+      "community": {
+        "eyebrow": "Una ruta acollidora",
+        "intro": "{route} està pensada com una primera conversa equilibrada amb el Cosmere: prou varietat per intuir-ne l’escala sense convertir el començament en una llista de tasques.",
+        "imageLabel": "Una porta d’entrada a {route}", "imageDimensions": "16:9 · marcador d’imatge de ruta",
+        "overview": { "kicker": "La idea", "heading": "Comença amb equilibri i segueix la teva curiositat.", "text": "Aquesta ruta posa l’experiència del lector en primer pla. Deixa espai per a gustos diferents i manté les connexions més àmplies en segon pla fins que les vulguis buscar." },
+        "cards": {
+          "focus": { "title": "Un primer pas clar", "text": "L’inici vol ser accessible i representatiu de tot el que pot oferir el Cosmere." },
+          "flexibility": { "title": "Espai per canviar", "text": "La ruta proposa una direcció, no un ritme obligatori ni un pla de lectura perfecte." },
+          "balance": { "title": "Una mostra àmplia", "text": "Els diferents tons i mons construeixen a poc a poc una visió de l’univers sense revelar-ne les sorpreses més profundes." }
+        },
+        "next": { "kicker": "El que afegirà aquesta pàgina", "heading": "Una guia pràctica per triar el pas següent.", "text": "La ruta completa inclourà l’ordre de lectura, motius breus per a cada elecció i notes curoses amb els espòilers." },
+        "toc": { "overview": "Com funciona aquesta ruta", "next": "El que afegirà aquesta pàgina" }
+      },
+      "publication": {
+        "eyebrow": "Una ruta històrica",
+        "intro": "{route} segueix el Cosmere com una obra publicada en evolució, deixant que cada etapa mostri com va créixer l’univers compartit amb el temps.",
+        "imageLabel": "Una línia temporal per a {route}", "imageDimensions": "16:9 · marcador de línia temporal",
+        "overview": { "kicker": "Llegeix la història", "heading": "Observa com creix l’univers publicació rere publicació.", "text": "L’ordre de publicació ofereix un context diferent. En lloc de començar per la visió més àmplia, descobreixes les idees tal com les van trobar originalment els lectors." },
+        "sequence": {
+          "first": { "title": "Els primers fonaments", "text": "Comença per la primera porta publicada i observa com l’univers estableix el seu propi llenguatge." },
+          "second": { "title": "Un horitzó més ampli", "text": "Avança per les publicacions posteriors mentre nous mons, tons i possibilitats se sumen a la conversa." },
+          "third": { "title": "Connexions en moviment", "text": "Deixa que els fils recurrents apareguin al seu ritme i contempla com evoluciona el projecte." }
+        },
+        "next": { "kicker": "El que afegirà aquesta pàgina", "heading": "Una línia temporal per a lectors curiosos.", "text": "La ruta completa situarà cada pas en el seu context i explicarà quina experiència ofereix cada etapa sense convertir la guia en un catàleg d’espòilers." },
+        "toc": { "overview": "La forma de la línia temporal", "next": "El que afegirà aquesta pàgina" }
+      },
+      "myJourney": {
+        "eyebrow": "Una ruta personal",
+        "intro": "{route} és la ruta que hi ha darrere de Cosmereando: un registre de decisions, descobriments i canvis sorgits en convertir una experiència personal de lectura en una guia útil.",
+        "imageLabel": "Un quadern per a {route}", "imageDimensions": "16:9 · marcador de nota de viatge",
+        "overview": { "kicker": "El punt de partida", "heading": "Una ruta també pot ser un registre.", "text": "Aquesta pàgina serà més reflexiva que normativa. Explicarà per què va prendre forma la ruta i quines preguntes van ajudar a decidir què hi havia d’incloure." },
+        "note": { "label": "Una nota del recorregut", "text": "L’objectiu no és trobar un ordre veritable. És recordar què va fer atractiu cada pas, quin context necessitava i com podria sentir-se algú que hi arriba per primera vegada." },
+        "next": { "kicker": "Construïda amb el temps", "heading": "La guia creixerà al costat de la lectura.", "text": "La ruta acabada conservarà la seva mirada personal, però farà que cada recomanació sigui fàcil d’entendre i de revisar." },
+        "cards": {
+          "origin": { "title": "On va començar", "text": "Les primeres decisions van néixer de buscar una manera amable d’entrar en un univers que des de fora pot semblar enorme." },
+          "changes": { "title": "Què ha canviat", "text": "Els llibres i descobriments nous poden transformar la ruta, que continuarà oberta a revisions." },
+          "criteria": { "title": "Què importa", "text": "La claredat, el gaudi i un context honest guien les decisions més que completar una llista perfecta." }
+        },
+        "toc": { "overview": "El punt de partida", "next": "Construïda amb el temps" }
+      }
+    },
+    "tableOfContents": "En aquesta pàgina",
+    "toc": { "introduction": "Introducció", "why": "Per què existeixen les rutes", "routes": "Les tres rutes", "overview": "Resum de la ruta", "content": "El que vindrà" }
+  },
   "navigation": { "routes": { "title": "Rutes" }, "books": { "title": "Llibres" }, "sagas": { "title": "Sagues" }, "planets": { "title": "Planetes" } },
   "routes": { "community": "Rutes comunitàries", "publication": "Ordre de publicació", "myJourney": "El meu recorregut" },
-  "works": { "theFinalEmpire": "L’imperi final", "theWellOfAscension": "El pou de l’ascensió", "theHeroOfAges": "L’heroi de les eres", "theWayOfKings": "El camí dels reis", "wordsOfRadiance": "Paraules radiants", "oathbringer": "Juramentada", "rhythmOfWar": "El ritme de la guerra", "elantris": "Elantris", "warbreaker": "L’alè dels déus", "tressOfTheEmeraldSea": "Trena del mar Esmeralda", "theSunlitMan": "L’home il·luminat" },
-  "sagas": { "mistborn": "Nascuts de la boira", "theStormlightArchive": "L’arxiu de les tempestes", "skyward": "Esquadró", "elantris": "Elantris", "warbreaker": "L’alè dels déus", "whiteSand": "Sorra blanca" },
+  "works": { "theFinalEmpire": "L’imperi final", "theWellOfAscension": "El pou de l’ascensió", "theHeroOfAges": "L’heroi de les eres", "theAlloyOfLaw": "La llei de l’aliatge", "shadowsOfSelf": "Ombres d’un mateix", "theBandsOfMourning": "Les bandes del dol", "theLostMetal": "El metall perdut", "theEleventhMetal": "L’onzè metall", "mistbornSecretHistory": "Nascuts de la boira: Història secreta", "allomancerJak": "Allomante Jak i els pous d’Eltania", "theWayOfKings": "El camí dels reis", "wordsOfRadiance": "Paraules radiants", "oathbringer": "Juramentada", "rhythmOfWar": "El ritme de la guerra", "windAndTruth": "Vent i veritat", "edgedancer": "Ballarí de tall", "dawnshard": "Esquirla de l’alba", "elsecaller": "Nominadora de l’altre", "kingLopen": "El rei Lopen el Primer d’Alethkar", "elantris": "Elantris", "theHopeOfElantris": "L’esperança d’Elantris", "warbreaker": "L’alè dels déus", "whiteSandVolume1": "Sorra blanca, volum 1", "whiteSandVolume2": "Sorra blanca, volum 2", "whiteSandVolume3": "Sorra blanca, volum 3", "theEmperorsSoul": "L’ànima de l’emperador", "shadowsForSilence": "Ombres pel silenci als boscos de l’infern", "sixthOfTheDusk": "Sisè del crepuscle", "whiteSandExcerpt": "Fragment de Sorra blanca", "tressOfTheEmeraldSea": "Trena del mar Esmeralda", "yumiAndTheNightmarePainter": "Yumi i el pintor de malsons", "theSunlitMan": "L’home il·luminat", "islesOfTheEmberdark": "Illes del mar de brases", "arcanumUnbounded": "Arcanum Il·limitat" },
+  "sagas": { "mistborn": "Nascuts de la boira", "theStormlightArchive": "L’arxiu de les tempestes", "elantris": "Elantris", "warbreaker": "L’alè dels déus", "whiteSand": "Sorra blanca" },
   "planets": { "scadrial": "Scadrial", "roshar": "Roshar", "nalthis": "Nalthis", "sel": "Sel", "taldain": "Taldain", "lumar": "Lumar", "canticle": "Càntic", "komashi": "Komashi" },
+  "books": { "eyebrow": "Catàleg del Cosmere", "heading": "Troba el teu pròxim món.", "description": "Una prestatgeria visual de les obres publicades del Cosmere, ordenades per la saga o el món al qual pertanyen. Comença per un títol i segueix-ne les connexions quan vulguis.", "indexLabel": "Resum del catàleg", "catalogueCount": "obres en aquest primer catàleg", "catalogueKicker": "La col·lecció", "catalogueHeading": "Històries agrupades pel seu destí", "catalogueDescription": "Els grups donen a cada llibre una mica de context sense imposar-te un ordre de lectura.", "standalone": "Independents", "arcanumUnbounded": "Arcanum Il·limitat", "viewSaga": "Explora la saga", "coverDimensions": "2:3 · marcador de portada", "tableOfContents": "En aquesta pàgina", "toc": { "introduction": "Introducció", "catalogue": "El catàleg" }, "subsections": { "era1": "Era 1 · La trilogia original", "era2": "Era 2 · Wax i Wayne" }, "types": { "novel": "Novel·la", "novella": "Novel·la curta", "short-story": "Relat", "graphic-novel": "Novel·la gràfica", "anthology": "Col·lecció", "excerpt": "Fragment" }, "arcanumStatus": { "arcanum-original": "Publicat per primera vegada a Arcanum Il·limitat", "previously-published": "Publicat anteriorment · inclòs a Arcanum Il·limitat" } },
   "home": {
     "title": "Cosmereando — Guia del lector del Cosmere",
-    "description": "Un punt de partida clar i acollidor per explorar el Cosmere de Brandon Sanderson.",
-    "hero": { "eyebrow": "Guia del lector del Cosmere", "heading": "Comença el teu viatge entre les estrelles.", "intro": "Un lloc tranquil i clar per descobrir l’univers compartit de Brandon Sanderson, història a història.", "discover": "Descobreix el Cosmere", "imageLabel": "Imatge de benvinguda", "imageDimensions": "16:9 · imatge editorial panoràmica" },
-    "cosmere": { "kicker": "La visió general", "heading": "Què és el Cosmere?", "description": "El Cosmere és un escenari compartit per moltes històries de fantasia de Brandon Sanderson. Cada saga té el seu propi món, personatges i regles, mentre l’univers més ampli els dona silenciosament un lloc comú entre les estrelles.", "worlds": { "title": "Molts mons", "text": "Cada planeta ofereix una atmosfera, una història i una manera diferent de viure la fantasia." }, "doors": { "title": "Diferents portes d’entrada", "text": "Algunes històries comencen amb grans batalles i d’altres amb misteri, descobriment o tensió política." }, "universe": { "title": "Un univers més gran", "text": "Els llibres es poden gaudir per separat i, alhora, formen part d’alguna cosa molt més gran." } },
-    "author": { "kicker": "L’autor", "heading": "Qui el va crear?", "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut pels seus mons detallats, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. El Cosmere és l’escenari que connecta moltes de les seves novel·les i obres breus de fantasia.", "imageLabel": "Retrat de l’autor", "imageDimensions": "2:3 · retrat vertical" },
-    "whyRead": { "kicker": "Una raó per començar", "heading": "Per què llegir el Cosmere?", "start": { "title": "Comença on vulguis", "text": "Les històries independents i les diferents sagues permeten trobar un punt d’entrada adequat per a cada lector." }, "curiosity": { "title": "Segueix la teva curiositat", "text": "Explora nous planetes, cultures i sistemes de màgia al teu ritme." }, "discovering": { "title": "Continua descobrint", "text": "El catàleg ofereix un recorregut llarg sense semblar una única història interminable." } },
-    "routes": { "kicker": "Comença aquí", "heading": "Tria la teva ruta", "description": "Troba un ordre de lectura que encaixi amb la teva manera d’entrar al Cosmere.", "communityText": "Maneres populars en què els lectors recomanen explorar l’univers.", "publicationText": "Segueix el Cosmere segons l’ordre en què es van publicar les seves històries.", "journeyText": "Descobreix el recorregut personal que va inspirar Cosmereando." },
-    "library": { "kicker": "La biblioteca", "heading": "Llibres, sagues i planetes", "description": "Explora les històries per la saga a la qual pertanyen o el planeta on transcorren.", "books": "Veure llibres", "sagas": "Veure sagues", "planets": "Veure planetes" },
+    "description": "Un punt de partida clar per explorar l’univers interconnectat de mons, màgia i històries de Brandon Sanderson.",
+    "hero": { "eyebrow": "Guia del lector del Cosmere", "heading": "Un univers.\nMolts mons.\nInfinites històries.", "intro": "El Cosmere és l’univers de fantasia interconnectat de Brandon Sanderson: històries independents amb identitat pròpia, unides per connexions més profundes per a qui té curiositat.", "discover": "Descobreix-ne les connexions", "imageLabel": "Imatge de benvinguda", "imageDimensions": "16:9 · imatge editorial panoràmica" },
+    "cosmere": { "kicker": "La visió general", "heading": "Què és el Cosmere?", "description": "El Cosmere és el nom de l’univers interconnectat que reuneix moltes de les històries de fantasia èpica de Brandon Sanderson. Els seus mons tenen històries, cultures i sistemes de màgia diferents, però comparteixen un escenari més gran i una història que avança sota la superfície.", "worlds": { "title": "Molts mons", "text": "Scadrial, Roshar i altres planetes aporten la seva pròpia història, atmosfera i regles sobre el funcionament de la màgia." }, "doors": { "title": "Diferents portes d’entrada", "text": "Pots entrar-hi mitjançant un cop, un misteri polític, una guerra èpica o una aventura autoconclusiva. No hi ha un únic començament correcte." }, "universe": { "title": "Connexions per descobrir", "text": "Noms, personatges i idees recurrents recompensen l’atenció, encara que la majoria d’històries també funcionen per si soles." } },
+    "author": { "kicker": "L’autor", "heading": "Un constructor de mons connectats", "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut per la seva construcció de mons, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. Elantris, publicada el 2005, va ser la seva primera novel·la publicada i la primera història que va llançar dins del Cosmere. Darrere de llibres i sagues independents, fa anys que construeix un univers molt més gran.", "imageLabel": "Retrat de l’autor", "imageDimensions": "2:3 · retrat vertical" },
+    "whyRead": { "kicker": "Una raó per començar", "heading": "Per què llegir el Cosmere?", "start": { "title": "Comença on vulguis", "text": "Molts llibres es poden llegir de manera independent. Tria la primera història pel tipus d’experiència que busques, no per por d’equivocar-te d’ordre." }, "curiosity": { "title": "Segueix les pistes", "text": "Fixa’t en els detalls recurrents, especialment en un viatger anomenat Hoid, i deixa que les connexions apareguin al seu ritme." }, "discovering": { "title": "Continua descobrint", "text": "El Cosmere funciona en dos nivells: una història immediata que pots gaudir avui i un univers més gran que es torna més clar amb el temps." } },
+    "routes": { "kicker": "Comença aquí", "heading": "Tria la teva ruta", "description": "No existeix un ordre universalment correcte. Aquí trobaràs diverses maneres d’entrar al Cosmere segons quant context i connexió vulguis des del principi.", "communityText": "Una ruta acollidora per conèixer de manera equilibrada els mons i les idees principals.", "publicationText": "Segueix les històries segons l’ordre de publicació i observa com creix l’univers compartit.", "journeyText": "Descobreix el recorregut personal que va inspirar Cosmereando." },
+    "library": { "kicker": "La biblioteca", "heading": "Llibres, sagues i planetes", "description": "Explora novel·les, novel·les curtes, relats i novel·les gràfiques per la saga a la qual pertanyen o el planeta on transcorren.", "books": "Veure llibres", "sagas": "Veure sagues", "planets": "Veure planetes" },
     "tableOfContents": "En aquesta pàgina", "toc": { "introduction": "Introducció", "cosmere": "Què és el Cosmere?", "author": "L’autor", "whyRead": "Per què llegir-lo?", "routes": "Rutes de lectura", "library": "La biblioteca" }
   },
-  "pages": { "books": { "title": "Llibres", "description": "Aquí s’organitzarà el catàleg complet d’obres del Cosmere per saga i obra independent." }, "routes": { "title": "Rutes de lectura", "description": "Aquí hi haurà les recomanacions comunitàries, l’ordre de publicació i el recorregut personal pel Cosmere." }, "sagas": { "title": "Sagues", "description": "Cada saga del Cosmere tindrà aquí la seva pròpia pàgina guiada amb les seves obres i el seu planeta relacionat." }, "planets": { "title": "Planetes", "description": "Les pàgines de planetes reuniran les seves sagues, obres, mapes i sistemes de màgia relacionats." }, "credits": { "title": "Crèdits", "description": "Aquí apareixeran els autors de les imatges, les fonts i els reconeixements del projecte." }, "imageLabel": "Imatge de portada de {title}", "imageDimensions": "3:2 · imatge de capçalera de secció" }
+  "pages": { "books": { "title": "Llibres", "description": "Explora les obres publicades del Cosmere agrupades per saga i per història independent." }, "routes": { "title": "Rutes de lectura", "description": "Aquí hi haurà les recomanacions comunitàries, l’ordre de publicació i el recorregut personal pel Cosmere." }, "sagas": { "title": "Sagues", "description": "Cada saga del Cosmere tindrà aquí la seva pròpia pàgina guiada amb les seves obres i el seu planeta relacionat." }, "planets": { "title": "Planetes", "description": "Les pàgines de planetes reuniran les seves sagues, obres, mapes i sistemes de màgia relacionats." }, "credits": { "title": "Crèdits", "description": "Aquí apareixeran els autors de les imatges, les fonts i els reconeixements del projecte." }, "imageLabel": "Imatge de portada de {title}", "imageDimensions": "3:2 · imatge de capçalera de secció" }
 }

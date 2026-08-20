@@ -1,7 +1,6 @@
 [
   { "id": "mistborn", "slug": "mistborn", "labelKey": "sagas.mistborn" },
   { "id": "the-stormlight-archive", "slug": "the-stormlight-archive", "labelKey": "sagas.theStormlightArchive" },
-  { "id": "skyward", "slug": "skyward", "labelKey": "sagas.skyward" },
   { "id": "elantris", "slug": "elantris", "labelKey": "sagas.elantris" },
   { "id": "warbreaker", "slug": "warbreaker", "labelKey": "sagas.warbreaker" },
   { "id": "white-sand", "slug": "white-sand", "labelKey": "sagas.whiteSand" }
