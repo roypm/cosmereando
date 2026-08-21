@@ -1,12 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlobalNavbar from './GlobalNavbar.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import EditorialImage from './EditorialImage.astro';
 import Sidebar from './Sidebar.astro';
 import TableOfContents from './TableOfContents.astro';
+import PageTrail from './PageTrail.astro';
+import PageReturn from './PageReturn.astro';
 import { getSections } from '../data/catalogue';
 import { getTranslation } from '../data/i18n';
 import type { Locale } from '../data/locales';
+import constellationMap from '../assets/images/general/cosmere_worlds_map.webp';
+import communityRoute from '../assets/images/general/cosmere_character_artwork.webp';
+import journeyRoute from '../assets/images/general/cosmere_dual_character_artwork.webp';
 
 interface Props {
   locale: Locale;
@@ -23,6 +28,7 @@ if (!route) {
 const t = (key: string, replacements: Record<string, string> = {}) => getTranslation(locale, key, replacements);
 const detailType = routeId === 'community-routes' ? 'community' : routeId === 'publication-order' ? 'publication' : 'myJourney';
 const detailKey = `routePage.details.${detailType}`;
+const routeImage = detailType === 'community' ? communityRoute : detailType === 'myJourney' ? journeyRoute : constellationMap;
 ---
 
 <BaseLayout title={`Cosmereando — ${route.label}`} description={t(`${detailKey}.intro`, { route: route.label })} locale={locale}>
@@ -30,6 +36,7 @@ const detailKey = `routePage.details.${detailType}`;
     <Sidebar locale={locale} />
     <div class="page-layout">
       <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.routes.title'), href: '/routes' }, { label: route.label }]} />
       <main class="main-content">
         <section class="hero route-detail__hero" id="introduction" aria-labelledby="route-heading">
           <div class="hero__layout">
@@ -38,7 +45,7 @@ const detailKey = `routePage.details.${detailType}`;
               <h1 id="route-heading">{route.label}</h1>
               <p class="hero__intro">{t(`${detailKey}.intro`, { route: route.label })}</p>
             </div>
-            <ImagePlaceholder label={t(`${detailKey}.imageLabel`, { route: route.label })} dimensions={t(`${detailKey}.imageDimensions`)} imageText={t('common.imageHere')} variant="hero" />
+            <EditorialImage src={routeImage} alt={t(`${detailKey}.imageLabel`, { route: route.label })} variant="hero" />
           </div>
         </section>
 
@@ -104,6 +111,7 @@ const detailKey = `routePage.details.${detailType}`;
             </section>
           </>
         )}
+        <PageReturn locale={locale} href="/routes" label={t('navigation.routes.title')} />
       </main>
       <TableOfContents title={t('routePage.tableOfContents')} items={[
         { id: 'introduction', label: t('routePage.toc.introduction') },

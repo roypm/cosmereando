@@ -11,6 +11,18 @@ const canonicalPath = getCanonicalPath(Astro.url.pathname);
 ---
 
 <header class="global-navbar">
+  <button
+    type="button"
+    class="mobile-menu-toggle"
+    data-mobile-menu-toggle
+    aria-controls="main-navigation"
+    aria-expanded="false"
+    aria-label={getTranslation(locale, 'common.toggleSidebar')}
+  >
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
   <a class="brand" href={getLocalizedPath(locale, '/')} aria-label="Cosmereando">
     <svg class="brand__mark" viewBox="0 0 64 64" role="img" aria-label={getTranslation(locale, 'common.abstractGalaxy')}>
       <title>{getTranslation(locale, 'common.abstractGalaxy')}</title>

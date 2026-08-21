@@ -1,0 +1,12 @@
+---
+import PlanetDetailPage from '../../components/PlanetDetailPage.astro';
+import { getSections } from '../../data/catalogue';
+
+export function getStaticPaths() {
+  return getSections('planets', 'en').map((planet) => ({ params: { planet: planet.id } }));
+}
+
+const planetId = Astro.params.planet as string;
+---
+
+<PlanetDetailPage locale="en" planetId={planetId} />

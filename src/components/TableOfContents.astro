@@ -2,6 +2,7 @@
 interface TableOfContentsItem {
   id: string;
   label: string;
+  level?: 0 | 1;
 }
 
 interface Props {
@@ -17,7 +18,7 @@ const { title, items } = Astro.props;
   <nav>
     <ol class="table-of-contents__list">
       {items.map((item) => (
-        <li>
+        <li class:list={{ 'table-of-contents__item--nested': item.level === 1 }}>
           <a class="table-of-contents__link" href={`#${item.id}`} data-section-id={item.id}>
             {item.label}
           </a>

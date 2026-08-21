@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialImage from './EditorialImage.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import PageReturn from './PageReturn.astro';
+import PageTrail from './PageTrail.astro';
+import Sidebar from './Sidebar.astro';
+import SupplementaryWorkDetails from './SupplementaryWorkDetails.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+import stormlightConceptArt from '../assets/images/general/stormlight_arc_collage.webp';
+import stormlightLandscape from '../assets/images/general/stormlight_archive_landscape.webp';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) => getTranslation(locale, key, replacements);
+const publicationOrder = [
+  { id: 'the-way-of-kings', year: '2010', typeKey: 'novel', note: 'wayOfKings' },
+  { id: 'words-of-radiance', year: '2014', typeKey: 'novel', note: 'wordsOfRadiance' },
+  { id: 'edgedancer', year: '2016', typeKey: 'novella', note: 'edgedancer', contextKey: 'edgedancer' },
+  { id: 'oathbringer', year: '2017', typeKey: 'novel', note: 'oathbringer' },
+  { id: 'dawnshard', year: '2020', typeKey: 'novella', note: 'dawnshard', contextKey: 'dawnshard' },
+  { id: 'rhythm-of-war', year: '2020', typeKey: 'novel', note: 'rhythmOfWar' },
+  { id: 'wind-and-truth', year: '2024', typeKey: 'novel', note: 'windAndTruth' },
+  { id: 'elsecaller', year: '2025', typeKey: 'short-story', note: 'elsecaller' },
+  { id: 'king-lopen-the-first-of-alethkar', year: '2025', typeKey: 'short-story', note: 'kingLopen' },
+];
+
+const workTitles: Record<string, string> = {
+  'the-way-of-kings': 'works.theWayOfKings',
+  'words-of-radiance': 'works.wordsOfRadiance',
+  edgedancer: 'works.edgedancer',
+  oathbringer: 'works.oathbringer',
+  dawnshard: 'works.dawnshard',
+  'rhythm-of-war': 'works.rhythmOfWar',
+  'wind-and-truth': 'works.windAndTruth',
+  elsecaller: 'works.elsecaller',
+  'king-lopen-the-first-of-alethkar': 'works.kingLopen',
+};
+---
+
+<BaseLayout title={`Cosmereando — ${t('sagas.theStormlightArchive')}`} description={t('stormlightPage.intro.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: t('sagas.theStormlightArchive') }]} />
+      <main class="main-content mistborn-page stormlight-page">
+        <header class="mistborn-page__header" id="introduction" aria-labelledby="stormlight-heading">
+          <div>
+            <p class="eyebrow">{t('stormlightPage.intro.eyebrow')}</p>
+            <h1 id="stormlight-heading">{t('sagas.theStormlightArchive')}</h1>
+            <p>{t('stormlightPage.intro.description')}</p>
+          </div>
+          <div class="mistborn-page__header-meta">
+            <span>{t('stormlightPage.intro.planet')}</span>
+            <strong>Roshar</strong>
+          </div>
+        </header>
+
+        <EditorialImage src={stormlightConceptArt} alt={t('stormlightPage.intro.imageLabel')} variant="feature" />
+
+        <section class="mistborn-page__eras" id="publication-order" aria-labelledby="publication-order-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('stormlightPage.publication.kicker')}</p>
+            <h2 id="publication-order-heading">{t('stormlightPage.publication.heading')}</h2>
+            <p>{t('stormlightPage.publication.description')}</p>
+          </div>
+
+          <ol class="mistborn-book-list stormlight-book-list">
+            {publicationOrder.map((work) => (
+              <li class="mistborn-book-list__item">
+                <span class="mistborn-book-list__year">{work.year}</span>
+                <div>
+                  <h4>{t(workTitles[work.id])}</h4>
+                  <span class="mistborn-book-list__type">{t(`books.types.${work.typeKey}`)}</span>
+                  <p>{t(`stormlightPage.books.${work.note}`)}</p>
+                  {work.contextKey && <SupplementaryWorkDetails
+                    action={t('stormlightPage.supplementary.detailsAction')}
+                    typeLabel={t('stormlightPage.supplementary.typeLabel')}
+                    type={t(`books.types.${work.typeKey}`)}
+                    originLabel={t('stormlightPage.supplementary.originLabel')}
+                    origin={t(`stormlightPage.supplementary.works.${work.contextKey}.origin`)}
+                    whyLabel={t('stormlightPage.supplementary.whyLabel')}
+                    why={t(`stormlightPage.supplementary.works.${work.contextKey}.why`)}
+                    whenLabel={t('stormlightPage.supplementary.whenLabel')}
+                    when={t(`stormlightPage.supplementary.works.${work.contextKey}.when`)}
+                  />}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section class="mistborn-page__magic" id="magic" aria-labelledby="magic-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('stormlightPage.magic.kicker')}</p>
+            <h2 id="magic-heading">{t('stormlightPage.magic.heading')}</h2>
+            <p>{t('stormlightPage.magic.description')}</p>
+          </div>
+          <EditorialImage src={stormlightLandscape} alt={t('stormlightPage.magic.imageLabel')} variant="feature" />
+          <div class="mistborn-magic-grid">
+            {['stormlight', 'surgebinding', 'spren'].map((system, index) => (
+              <article class="mistborn-magic-card">
+                <span class="mistborn-magic-card__number">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{t(`stormlightPage.magic.${system}.title`)}</h3>
+                <p>{t(`stormlightPage.magic.${system}.text`)}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="mistborn-page__curiosities" id="curiosities" aria-labelledby="curiosities-heading">
+          <p class="section-kicker">{t('stormlightPage.curiosities.kicker')}</p>
+          <h2 id="curiosities-heading">{t('stormlightPage.curiosities.heading')}</h2>
+          <ul>
+            <li>{t('stormlightPage.curiosities.first')}</li>
+            <li>{t('stormlightPage.curiosities.second')}</li>
+            <li>{t('stormlightPage.curiosities.third')}</li>
+          </ul>
+        </section>
+
+        <PageReturn locale={locale} href="/sagas" label={t('navigation.sagas.title')} />
+      </main>
+      <TableOfContents title={t('stormlightPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('stormlightPage.toc.introduction') },
+        { id: 'publication-order', label: t('stormlightPage.toc.publicationOrder') },
+        { id: 'magic', label: t('stormlightPage.toc.magic') },
+        { id: 'curiosities', label: t('stormlightPage.toc.curiosities') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

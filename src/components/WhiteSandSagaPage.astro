@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import EditorialImage from './EditorialImage.astro';
+import Sidebar from './Sidebar.astro';
+import SupplementaryWorkDetails from './SupplementaryWorkDetails.astro';
+import TableOfContents from './TableOfContents.astro';
+import PageTrail from './PageTrail.astro';
+import PageReturn from './PageReturn.astro';
+import { getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+import whiteSandCover from '../assets/images/books/white_sand_graphic_novel.webp';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = (key: string, replacements?: Record<string, string>) => getTranslation(locale, key, replacements);
+const publicationOrder = [
+  { id: 'white-sand-volume-1', year: '2016', note: 'whiteSandPage.books.volume1', typeKey: 'graphic-novel' },
+  { id: 'white-sand-volume-2', year: '2018', note: 'whiteSandPage.books.volume2', typeKey: 'graphic-novel' },
+  { id: 'white-sand-volume-3', year: '2019', note: 'whiteSandPage.books.volume3', typeKey: 'graphic-novel' },
+  { id: 'white-sand-omnibus', year: '2022', note: 'whiteSandPage.books.omnibus', typeKey: 'omnibus', contextKey: 'omnibus' },
+  { id: 'white-sand-excerpt', year: '2016', note: 'whiteSandPage.books.excerpt', typeKey: 'excerpt', contextKey: 'excerpt' },
+];
+
+const workTitles: Record<string, string> = {
+  'white-sand-volume-1': 'works.whiteSandVolume1',
+  'white-sand-volume-2': 'works.whiteSandVolume2',
+  'white-sand-volume-3': 'works.whiteSandVolume3',
+  'white-sand-omnibus': 'works.whiteSandOmnibus',
+  'white-sand-excerpt': 'works.whiteSandExcerpt',
+};
+---
+
+<BaseLayout title={`Cosmereando — ${t('sagas.whiteSand')}`} description={t('whiteSandPage.intro.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: t('sagas.whiteSand') }]} />
+      <main class="main-content white-sand-page">
+
+        <header class="mistborn-page__header" id="introduction" aria-labelledby="white-sand-heading">
+          <div>
+            <p class="eyebrow">{t('whiteSandPage.intro.eyebrow')}</p>
+            <h1 id="white-sand-heading">{t('sagas.whiteSand')}</h1>
+            <p>{t('whiteSandPage.intro.description')}</p>
+          </div>
+          <div class="mistborn-page__header-meta">
+            <span>{t('whiteSandPage.intro.planet')}</span>
+            <strong>Taldain</strong>
+          </div>
+        </header>
+
+        <EditorialImage src={whiteSandCover} alt={t('whiteSandPage.intro.imageLabel')} variant="book" />
+
+        <section class="mistborn-page__eras" id="publication-order" aria-labelledby="publication-order-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('whiteSandPage.publication.kicker')}</p>
+            <h2 id="publication-order-heading">{t('whiteSandPage.publication.heading')}</h2>
+            <p>{t('whiteSandPage.publication.description')}</p>
+          </div>
+          <ol class="mistborn-book-list">
+            {publicationOrder.map((book) => (
+              <li class="mistborn-book-list__item">
+                <span class="mistborn-book-list__year">{book.year}</span>
+                <div>
+                  <h4>{t(workTitles[book.id])}</h4>
+                  <span class="mistborn-book-list__type">{t(`books.types.${book.typeKey}`)}</span>
+                  <p>{t(book.note)}</p>
+                  {book.contextKey && <SupplementaryWorkDetails
+                    action={t('whiteSandPage.supplementary.detailsAction')}
+                    typeLabel={t('whiteSandPage.supplementary.typeLabel')}
+                    type={t(`books.types.${book.typeKey}`)}
+                    originLabel={t('whiteSandPage.supplementary.originLabel')}
+                    origin={t(`whiteSandPage.supplementary.works.${book.contextKey}.origin`)}
+                    whyLabel={t('whiteSandPage.supplementary.whyLabel')}
+                    why={t(`whiteSandPage.supplementary.works.${book.contextKey}.why`)}
+                    whenLabel={t('whiteSandPage.supplementary.whenLabel')}
+                    when={t(`whiteSandPage.supplementary.works.${book.contextKey}.when`)}
+                  />}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section class="mistborn-page__magic" id="magic" aria-labelledby="magic-heading">
+          <div class="mistborn-page__section-intro">
+            <p class="section-kicker">{t('whiteSandPage.magic.kicker')}</p>
+            <h2 id="magic-heading">{t('whiteSandPage.magic.heading')}</h2>
+            <p>{t('whiteSandPage.magic.description')}</p>
+          </div>
+          <div class="mistborn-magic-grid">
+            {['sandMastery', 'starmarks', 'taldain'].map((topic, index) => (
+              <article class="mistborn-magic-card">
+                <span class="mistborn-magic-card__number">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{t(`whiteSandPage.magic.${topic}.title`)}</h3>
+                <p>{t(`whiteSandPage.magic.${topic}.text`)}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="mistborn-page__curiosities" id="curiosities" aria-labelledby="curiosities-heading">
+          <p class="section-kicker">{t('whiteSandPage.curiosities.kicker')}</p>
+          <h2 id="curiosities-heading">{t('whiteSandPage.curiosities.heading')}</h2>
+          <ul>
+            <li>{t('whiteSandPage.curiosities.first')}</li>
+            <li>{t('whiteSandPage.curiosities.second')}</li>
+            <li>{t('whiteSandPage.curiosities.third')}</li>
+          </ul>
+        </section>
+        <PageReturn locale={locale} href="/sagas" label={t('navigation.sagas.title')} />
+      </main>
+      <TableOfContents title={t('whiteSandPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('whiteSandPage.toc.introduction') },
+        { id: 'publication-order', label: t('whiteSandPage.toc.publicationOrder') },
+        { id: 'magic', label: t('whiteSandPage.toc.magic') },
+        { id: 'curiosities', label: t('whiteSandPage.toc.curiosities') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

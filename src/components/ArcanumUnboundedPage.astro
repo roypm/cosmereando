@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import PageReturn from './PageReturn.astro';
+import PageTrail from './PageTrail.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getBookCollections } from '../data/catalogue';
+import { getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+import EditorialImage from './EditorialImage.astro';
+import drominadSystem from '../assets/images/general/drominad_system.webp';
+import shardSymbols from '../assets/images/general/cosmere_symbol.webp';
+import cosmicNebula from '../assets/images/general/cosmic_nebula_texture.webp';
+
+interface Props { locale: Locale }
+interface StoryGroup { id: string; labelKey: string; workIds: string[] }
+
+const { locale } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) => getTranslation(locale, key, replacements);
+const collections = getBookCollections(locale);
+const collection = collections.find((item) => item.id === 'arcanum-unbounded');
+
+if (!collection) throw new Error('Missing Arcanum Unbounded collection');
+
+const storyGroups: StoryGroup[] = [
+  { id: 'selish-system', labelKey: 'arcanumPage.sections.selishSystem', workIds: ['the-hope-of-elantris', 'the-emperors-soul'] },
+  { id: 'scadrian-system', labelKey: 'arcanumPage.sections.scadrianSystem', workIds: ['the-eleventh-metal', 'allomancer-jak', 'mistborn-secret-history'] },
+  { id: 'rosharan-system', labelKey: 'arcanumPage.sections.rosharanSystem', workIds: ['edgedancer'] },
+  { id: 'threnodite-system', labelKey: 'arcanumPage.sections.threnoditeSystem', workIds: ['shadows-for-silence'] },
+  { id: 'first-of-the-sun-system', labelKey: 'arcanumPage.sections.firstOfTheSunSystem', workIds: ['sixth-of-the-dusk'] },
+  { id: 'taldain-system', labelKey: 'arcanumPage.sections.taldainSystem', workIds: ['white-sand-excerpt'] },
+];
+
+const worksById = new Map(collection.works.map((work) => [work.id, work]));
+const getStory = (id: string) => {
+  const story = worksById.get(id);
+  if (!story) throw new Error(`Missing Arcanum Unbounded story: ${id}`);
+  return story;
+};
+---
+
+<BaseLayout title={`Cosmereando — ${t('works.arcanumUnbounded')}`} description={t('arcanumPage.intro.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: t('works.arcanumUnbounded') }]} />
+      <main class="main-content arcanum-page">
+        <header class="arcanum-page__header" id="introduction" aria-labelledby="arcanum-heading">
+          <div>
+            <p class="eyebrow">{t('arcanumPage.intro.eyebrow')}</p>
+            <h1 id="arcanum-heading">{t('works.arcanumUnbounded')}</h1>
+            <p>{t('arcanumPage.intro.description')}</p>
+          </div>
+          <div class="arcanum-page__count" aria-label={t('arcanumPage.intro.countLabel')}>
+            <strong>{String(collection.works.length - 1).padStart(2, '0')}</strong>
+            <span>{t('arcanumPage.intro.countText')}</span>
+          </div>
+        </header>
+
+        <section class="arcanum-page__purpose" id="purpose" aria-labelledby="purpose-heading">
+          <div>
+            <p class="section-kicker">{t('arcanumPage.purpose.kicker')}</p>
+            <h2 id="purpose-heading">{t('arcanumPage.purpose.heading')}</h2>
+          </div>
+          <p>{t('arcanumPage.purpose.text')}</p>
+        </section>
+
+        <section class="arcanum-page__stories" id="stories" aria-labelledby="stories-heading">
+          <div class="arcanum-page__section-intro">
+            <p class="section-kicker">{t('arcanumPage.stories.kicker')}</p>
+            <h2 id="stories-heading">{t('arcanumPage.stories.heading')}</h2>
+            <p>{t('arcanumPage.stories.description')}</p>
+          </div>
+
+          {storyGroups.map((group, groupIndex) => (
+            <section class="arcanum-system" id={group.id} aria-labelledby={`${group.id}-heading`}>
+              <div class="arcanum-system__heading">
+                <span class="arcanum-system__number">{String(groupIndex + 1).padStart(2, '0')}</span>
+                <h3 id={`${group.id}-heading`}>{t(group.labelKey)}</h3>
+              </div>
+              <div class="arcanum-story-grid">
+                {group.workIds.map((workId, storyIndex) => {
+                  const work = getStory(workId);
+                  return (
+                    <article class="arcanum-story" id={work.id}>
+                      <img src={work.image.src} alt={t('pages.imageLabel', { title: work.title })} class="arcanum-story__cover" />
+                      <div class="arcanum-story__body">
+                        <span class="arcanum-story__number">{String(storyIndex + 1).padStart(2, '0')}</span>
+                        <h4>{work.title}</h4>
+                        <div class="arcanum-story__meta">
+                          <span>{work.type}</span>
+                          <span>{work.publicationYear}</span>
+                        </div>
+                        <p>{t(`arcanumPage.stories.items.${work.id}.description`)}</p>
+                        <details class="arcanum-story__details">
+                          <summary>{t('arcanumPage.detailsAction')}</summary>
+                          <p><strong>{t('arcanumPage.whenLabel')}:</strong> {t(`arcanumPage.stories.items.${work.id}.when`)}</p>
+                          <p><strong>{t('arcanumPage.contextLabel')}:</strong> {t(`arcanumPage.stories.items.${work.id}.context`)}</p>
+                        </details>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
+        </section>
+
+        <section class="arcanum-page__essays" id="essays" aria-labelledby="essays-heading">
+          <p class="section-kicker">{t('arcanumPage.essays.kicker')}</p>
+          <h2 id="essays-heading">{t('arcanumPage.essays.heading')}</h2>
+          <p>{t('arcanumPage.essays.text')}</p>
+          <div class="arcanum-page__essays-visuals">
+            <EditorialImage src={drominadSystem} alt={t('arcanumPage.essays.drominadImageLabel')} variant="feature" />
+            <EditorialImage src={shardSymbols} alt={t('arcanumPage.essays.shardImageLabel')} variant="square" />
+            <EditorialImage src={cosmicNebula} alt={t('arcanumPage.essays.nebulaImageLabel')} variant="square" />
+          </div>
+        </section>
+
+        <PageReturn locale={locale} href="/sagas" label={t('navigation.sagas.title')} />
+      </main>
+      <TableOfContents title={t('arcanumPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('arcanumPage.toc.introduction') },
+        { id: 'purpose', label: t('arcanumPage.toc.purpose') },
+        { id: 'stories', label: t('arcanumPage.toc.stories') },
+        ...storyGroups.map((group) => ({ id: group.id, label: t(group.labelKey), level: 1 as const })),
+        { id: 'essays', label: t('arcanumPage.toc.essays') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

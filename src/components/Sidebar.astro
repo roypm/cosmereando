@@ -24,46 +24,50 @@ const isCurrentGroup = (href: string) => {
 };
 ---
 
-<aside class="sidebar" aria-label={getTranslation(locale, 'common.mainNavigation')}>
-  <div class="sidebar__header" aria-hidden="true">
-    <svg class="sidebar__header-art" viewBox="0 0 240 120" focusable="false">
-      <path d="m120 5 37 38-37 72-37-72Z" />
-      <path d="m120 5 0 110M83 43l37 15 37-15M99 75l21-17 21 17" />
-      <path class="sidebar__header-core" d="m120 58 21 17-21 40-21-40Z" />
-      <path d="m120 5 21 70M120 5 99 75" />
-      <path d="M61 22h12M67 16v12M179 96h12M185 90v12" />
-    </svg>
-  </div>
-  <nav class="sidebar__navigation">
-    <a class:list={['sidebar__link', { 'sidebar__link--active': isCurrent(homeHref) }]} href={homeHref} aria-current={isCurrent(homeHref) ? 'page' : undefined}>{getTranslation(locale, 'common.home')}</a>
-
-    {navigationGroups.map((group) => (
-      <div class="sidebar__group">
-        <div class="sidebar__group-header">
-          <a class:list={['sidebar__group-link', { 'sidebar__group-link--active': isCurrentGroup(group.href) }]} href={group.href} aria-current={isCurrent(group.href) ? 'page' : undefined}>{group.label}</a>
-          <details class="sidebar__submenu" name="sidebar-submenus">
-            <summary class="sidebar__toggle" aria-label={getTranslation(locale, 'common.toggleSubmenu', { label: group.label })}></summary>
-            <div class="sidebar__submenu-panel">
-              {group.items.map((item) => <a class="sidebar__sublink" href={item.href}>{item.label}</a>)}
-            </div>
-          </details>
-        </div>
+<aside id="main-navigation" class="sidebar" aria-label={getTranslation(locale, 'common.mainNavigation')}>
+      <div class="sidebar__header" aria-hidden="true">
+        <svg class="sidebar__header-art" viewBox="0 0 240 120" focusable="false">
+          <path d="m120 5 37 38-37 72-37-72Z" />
+          <path d="m120 5 0 110M83 43l37 15 37-15M99 75l21-17 21 17" />
+          <path class="sidebar__header-core" d="m120 58 21 17-21 40-21-40Z" />
+          <path d="m120 5 21 70M120 5 99 75" />
+          <path d="M61 22h12M67 16v12M179 96h12M185 90v12" />
+        </svg>
       </div>
-    ))}
-  </nav>
+      <nav class="sidebar__navigation">
+        <a class:list={['sidebar__link', { 'sidebar__link--active': isCurrent(homeHref) }]} href={homeHref} aria-current={isCurrent(homeHref) ? 'page' : undefined}>{getTranslation(locale, 'common.home')}</a>
 
-  <footer class="site-footer">
-    <span>{getTranslation(locale, 'common.lastUpdated')}</span>
-    <span>{getTranslation(locale, 'common.version')}: {siteVersion}</span>
-    <span>{getTranslation(locale, 'common.createdBy')} <a href="https://github.com/roypm" target="_blank" rel="noreferrer">roypm</a></span>
-    <a href="https://www.linkedin.com/in/roy-pi%C3%B1ol-molina/" target="_blank" rel="noreferrer">{getTranslation(locale, 'common.linkedin')}</a>
-    <a href={getLocalizedPath(locale, '/credits')} aria-current={isCurrent(getLocalizedPath(locale, '/credits')) ? 'page' : undefined}>{getTranslation(locale, 'common.credits')}</a>
-  </footer>
+        {navigationGroups.map((group) => (
+          <div class="sidebar__group">
+            <div class="sidebar__group-header">
+              <a class:list={['sidebar__group-link', { 'sidebar__group-link--active': isCurrentGroup(group.href) }]} href={group.href} aria-current={isCurrent(group.href) ? 'page' : undefined}>{group.label}</a>
+              <details class="sidebar__submenu" name="sidebar-submenus">
+                <summary class="sidebar__toggle" aria-label={getTranslation(locale, 'common.toggleSubmenu', { label: group.label })}></summary>
+                <div class="sidebar__submenu-panel">
+                  {group.items.map((item) => <a class="sidebar__sublink" href={item.href}>{item.label}</a>)}
+                </div>
+              </details>
+            </div>
+          </div>
+        ))}
+      </nav>
+
+      <footer class="site-footer">
+        <span>{getTranslation(locale, 'common.lastUpdated')}</span>
+        <span>{getTranslation(locale, 'common.version')}: {siteVersion}</span>
+        <span>{getTranslation(locale, 'common.createdBy')} <a href="https://github.com/roypm" target="_blank" rel="noreferrer">roypm</a></span>
+        <a href="https://www.linkedin.com/in/roy-pi%C3%B1ol-molina/" target="_blank" rel="noreferrer">{getTranslation(locale, 'common.linkedin')}</a>
+        <a href={getLocalizedPath(locale, '/credits')} aria-current={isCurrent(getLocalizedPath(locale, '/credits')) ? 'page' : undefined}>{getTranslation(locale, 'common.credits')}</a>
+      </footer>
 </aside>
+<button class="sidebar__overlay" type="button" data-mobile-menu-overlay aria-label={getTranslation(locale, 'common.closeSidebar')}></button>
 
 <script>
   const navigationGroups = document.querySelectorAll<HTMLElement>('.sidebar__group');
   const sidebar = document.querySelector<HTMLElement>('.sidebar');
+  const mobileMenuToggle = document.querySelector<HTMLButtonElement>('[data-mobile-menu-toggle]');
+  const mobileMenuOverlay = document.querySelector<HTMLButtonElement>('[data-mobile-menu-overlay]');
+  const mobileViewport = window.matchMedia('(max-width: 52rem)');
   const submenus = Array.from(document.querySelectorAll<HTMLDetailsElement>('.sidebar__submenu'));
 
   const closeSubmenus = (restoreFocus = false) => {
@@ -113,6 +117,31 @@ const isCurrentGroup = (href: string) => {
     });
   };
 
+  const setMobileMenuOpen = (open: boolean, restoreFocus = false) => {
+    if (!mobileViewport.matches) open = false;
+
+    sidebar?.classList.toggle('sidebar--mobile-open', open);
+    mobileMenuOverlay?.classList.toggle('sidebar__overlay--visible', open);
+    mobileMenuToggle?.setAttribute('aria-expanded', String(open));
+    sidebar?.setAttribute('aria-hidden', mobileViewport.matches ? String(!open) : 'false');
+    document.documentElement.classList.toggle('mobile-menu-open', open);
+
+    if (open) {
+      sidebar?.querySelector<HTMLElement>('.sidebar__link, .sidebar__group-link')?.focus();
+    } else if (restoreFocus) {
+      mobileMenuToggle?.focus();
+    }
+  };
+
+  mobileMenuToggle?.addEventListener('click', () => {
+    setMobileMenuOpen(!sidebar?.classList.contains('sidebar--mobile-open'));
+  });
+
+  mobileMenuOverlay?.addEventListener('click', () => setMobileMenuOpen(false, true));
+
+  mobileViewport.addEventListener('change', () => setMobileMenuOpen(false));
+  setMobileMenuOpen(false);
+
   window.addEventListener('resize', updateOpenSubmenus);
   sidebar?.addEventListener('scroll', updateOpenSubmenus);
 
@@ -129,6 +158,39 @@ const isCurrentGroup = (href: string) => {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeSubmenus(true);
+    if (event.key === 'Tab' && sidebar?.classList.contains('sidebar--mobile-open')) {
+      const focusableElements = Array.from(
+        sidebar.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => element.getClientRects().length > 0);
+
+      if (focusableElements.length > 0) {
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (!sidebar.contains(document.activeElement)) {
+          event.preventDefault();
+          firstElement.focus();
+        } else if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
+
+      return;
+    }
+
+    if (event.key !== 'Escape') return;
+
+    if (sidebar?.classList.contains('sidebar--mobile-open')) {
+      setMobileMenuOpen(false, true);
+      return;
+    }
+
+    closeSubmenus(true);
   });
 </script>

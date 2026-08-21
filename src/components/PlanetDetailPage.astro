@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+import PageReturn from './PageReturn.astro';
+import PageTrail from './PageTrail.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getSections } from '../data/catalogue';
+import { getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+import EditorialImage from './EditorialImage.astro';
+import type { PlanetProfile } from '../data/types';
+import { planetImages } from '../data/planet-images';
+
+interface Props {
+  locale: Locale;
+  planetId: string;
+}
+
+const { locale, planetId } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) => getTranslation(locale, key, replacements);
+const planet = getSections('planets', locale).find((item) => item.id === planetId);
+
+if (!planet) throw new Error(`Unknown planet: ${planetId}`);
+const planetProfiles: Record<string, PlanetProfile> = {
+  scadrial: { systemKey: 'scadrian', imageLabelKey: 'scadrial', storyKeys: ['works.theFinalEmpire', 'works.theWellOfAscension', 'works.theHeroOfAges', 'works.theAlloyOfLaw', 'works.theLostMetal', 'works.mistbornSecretHistory'] },
+  roshar: { systemKey: 'rosharan', imageLabelKey: 'roshar', storyKeys: ['works.theWayOfKings', 'works.wordsOfRadiance', 'works.oathbringer', 'works.rhythmOfWar', 'works.windAndTruth', 'works.edgedancer', 'works.dawnshard'] },
+  nalthis: { systemKey: 'nalthian', imageLabelKey: 'nalthis', storyKeys: ['works.warbreaker'] },
+  sel: { systemKey: 'selish', imageLabelKey: 'sel', storyKeys: ['works.elantris', 'works.theEmperorsSoul', 'works.theHopeOfElantris'] },
+  taldain: { systemKey: 'taldain', imageLabelKey: 'taldain', storyKeys: ['works.whiteSandOmnibus', 'works.whiteSandExcerpt'] },
+  lumar: { systemKey: 'unknown', imageLabelKey: 'lumar', storyKeys: ['works.tressOfTheEmeraldSea'] },
+  canticle: { systemKey: 'unknown', imageLabelKey: 'canticle', storyKeys: ['works.theSunlitMan'] },
+  komashi: { systemKey: 'utol', imageLabelKey: 'komashi', storyKeys: ['works.yumiAndTheNightmarePainter'] },
+  threnody: { systemKey: 'threnodite', imageLabelKey: 'threnody', storyKeys: ['works.shadowsForSilence'] },
+  'first-of-the-sun': { systemKey: 'drominad', imageLabelKey: 'firstOfTheSun', storyKeys: ['works.sixthOfTheDusk'] },
+  ashyn: { systemKey: 'rosharan', imageLabelKey: 'ashyn', storyKeys: [] },
+};
+
+const profile = planetProfiles[planetId];
+if (!profile) throw new Error(`Missing planet profile: ${planetId}`);
+const planetImage = planetImages[planetId];
+const profileKey = `planetPage.detail.profiles.${planetId}`;
+---
+
+<BaseLayout title={`Cosmereando — ${planet.label}`} description={t('planetPage.detail.description', { title: planet.label })} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.planets.title'), href: '/planets' }, { label: planet.label }]} />
+      <main class="main-content planet-detail-page">
+        <header class="planet-detail-page__header" id="introduction" aria-labelledby="planet-heading">
+          <p class="eyebrow">{t('planetPage.detail.eyebrow')}</p>
+          <h1 id="planet-heading">{planet.label}</h1>
+          <p>{t(`${profileKey}.description`)}</p>
+          <dl class="planet-detail-page__system">
+            <div><dt>{t('planetPage.detail.systemLabel')}</dt><dd>{t(`planetPage.detail.systems.${profile.systemKey}`)}</dd></div>
+            <div><dt>{t('planetPage.detail.worldLabel')}</dt><dd>{t(`planetPage.detail.imageLabels.${profile.imageLabelKey}`)}</dd></div>
+          </dl>
+        </header>
+
+        {planetImage ? <EditorialImage src={planetImage} alt={t(`planetPage.detail.imageLabels.${profile.imageLabelKey}`)} variant="feature" /> : <ImagePlaceholder label={t('planetPage.detail.imageLabel', { title: planet.label })} dimensions={t('planetPage.detail.imageDimensions')} imageText={t('common.imageHere')} variant="feature" />}
+
+        <section class="planet-detail-page__section" id="overview" aria-labelledby="overview-heading">
+          <span class="planet-detail-page__number">01</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.overviewKicker')}</p>
+            <h2 id="overview-heading">{t(`${profileKey}.overviewHeading`)}</h2>
+            <p>{t(`${profileKey}.overview`)}</p>
+          </div>
+        </section>
+
+        <section class="planet-detail-page__section" id="environment" aria-labelledby="environment-heading">
+          <span class="planet-detail-page__number">02</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.environmentKicker')}</p>
+            <h2 id="environment-heading">{t(`${profileKey}.environmentHeading`)}</h2>
+            <p>{t(`${profileKey}.environment`)}</p>
+          </div>
+        </section>
+
+        <section class="planet-detail-page__section" id="life" aria-labelledby="life-heading">
+          <span class="planet-detail-page__number">03</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.lifeKicker')}</p>
+            <h2 id="life-heading">{t(`${profileKey}.lifeHeading`)}</h2>
+            <p>{t(`${profileKey}.life`)}</p>
+          </div>
+        </section>
+
+        <section class="planet-detail-page__section" id="society" aria-labelledby="society-heading">
+          <span class="planet-detail-page__number">04</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.societyKicker')}</p>
+            <h2 id="society-heading">{t(`${profileKey}.societyHeading`)}</h2>
+            <p>{t(`${profileKey}.society`)}</p>
+          </div>
+        </section>
+
+        <section class="planet-detail-page__section planet-detail-page__section--stories" id="stories" aria-labelledby="stories-heading">
+          <span class="planet-detail-page__number">05</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.storiesKicker')}</p>
+            <h2 id="stories-heading">{t('planetPage.detail.storiesHeading')}</h2>
+            {profile.storyKeys.length > 0 ? <ul>{profile.storyKeys.map((storyKey) => <li>{t(storyKey)}</li>)}</ul> : <p>{t('planetPage.detail.noDedicatedStory')}</p>}
+          </div>
+        </section>
+
+        <section class="planet-detail-page__section" id="curiosities" aria-labelledby="curiosities-heading">
+          <span class="planet-detail-page__number">06</span>
+          <div>
+            <p class="section-kicker">{t('planetPage.detail.magicKicker')}</p>
+            <h2 id="curiosities-heading">{t(`${profileKey}.curiositiesHeading`)}</h2>
+            <p>{t(`${profileKey}.curiosities`)}</p>
+          </div>
+        </section>
+
+        <PageReturn locale={locale} href="/planets" label={t('navigation.planets.title')} />
+      </main>
+      <TableOfContents title={t('planetPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('planetPage.toc.introduction') },
+        { id: 'overview', label: t('planetPage.toc.overview') },
+        { id: 'environment', label: t('planetPage.toc.environment') },
+        { id: 'life', label: t('planetPage.toc.life') },
+        { id: 'society', label: t('planetPage.toc.society') },
+        { id: 'stories', label: t('planetPage.toc.stories') },
+        { id: 'curiosities', label: t('planetPage.toc.magic') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

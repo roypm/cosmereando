@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlobalNavbar from './GlobalNavbar.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import EditorialImage from './EditorialImage.astro';
 import Sidebar from './Sidebar.astro';
 import TableOfContents from './TableOfContents.astro';
 import { getLocalizedPath, getTranslation } from '../data/i18n';
 import type { Locale } from '../data/locales';
+import cosmereRealmsArtwork from '../assets/images/general/cosmere_header_background.webp';
+import brandonSandersonPortrait from '../assets/images/general/brandon_sanderson_portrait.webp';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -27,7 +29,7 @@ const path = (value: string) => getLocalizedPath(locale, value);
               <p class="hero__intro">{t('home.hero.intro')}</p>
               <a class="primary-link" href="#cosmere">{t('home.hero.discover')} <span aria-hidden="true">→</span></a>
             </div>
-            <ImagePlaceholder label={t('home.hero.imageLabel')} dimensions={t('home.hero.imageDimensions')} imageText={t('common.imageHere')} variant="hero" />
+            <EditorialImage src={cosmereRealmsArtwork} alt={t('home.hero.imageLabel')} variant="hero" />
           </div>
         </section>
 
@@ -44,7 +46,7 @@ const path = (value: string) => getLocalizedPath(locale, value);
 
         <section class="content-section content-section--quiet" id="author" aria-labelledby="author-heading">
           <div class="author-layout">
-            <ImagePlaceholder label={t('home.author.imageLabel')} dimensions={t('home.author.imageDimensions')} imageText={t('common.imageHere')} variant="portrait" />
+            <EditorialImage src={brandonSandersonPortrait} alt={t('home.author.imageLabel')} variant="portrait" />
             <div class="author-layout__copy">
               <p class="section-kicker">{t('home.author.kicker')}</p>
               <h2 id="author-heading">{t('home.author.heading')}</h2>

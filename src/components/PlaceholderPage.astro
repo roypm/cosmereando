@@ -2,18 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlobalNavbar from './GlobalNavbar.astro';
 import ImagePlaceholder from './ImagePlaceholder.astro';
+import EditorialImage from './EditorialImage.astro';
+import type { ImageMetadata } from 'astro';
 import Sidebar from './Sidebar.astro';
 import { getLocalizedPath, getTranslation } from '../data/i18n';
 import type { Locale } from '../data/locales';
+import PageTrail from './PageTrail.astro';
+import PageReturn from './PageReturn.astro';
 
 interface Props {
   title: string;
   description: string;
   sections?: { id: string; label: string }[];
   locale: Locale;
+  image?: ImageMetadata;
+  parent?: { label: string; href: string };
 }
 
-const { title, description, sections = [], locale } = Astro.props;
+const { title, description, sections = [], locale, image, parent } = Astro.props;
 const t = (key: string, replacements?: Record<string, string>) => getTranslation(locale, key, replacements);
 ---
 
@@ -22,11 +28,12 @@ const t = (key: string, replacements?: Record<string, string>) => getTranslation
     <Sidebar locale={locale} />
     <div class="page-layout">
       <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, ...(parent ? [{ label: parent.label, href: parent.href }] : []), { label: title }]} />
       <main class="placeholder-page">
         <p class="eyebrow">Cosmereando</p>
         <h1>{title}</h1>
         <p>{description}</p>
-        <ImagePlaceholder label={t('pages.imageLabel', { title })} dimensions={t('pages.imageDimensions')} imageText={t('common.imageHere')} />
+        {image ? <EditorialImage src={image} alt={t('pages.imageLabel', { title })} variant="feature" /> : <ImagePlaceholder label={t('pages.imageLabel', { title })} dimensions={t('pages.imageDimensions')} imageText={t('common.imageHere')} />}
         <a class="primary-link" href={getLocalizedPath(locale, '/')}>{t('common.returnHome')}</a>
         {sections.map((section) => (
           <section class="placeholder-page__section" id={section.id} aria-labelledby={`${section.id}-heading`}>
@@ -34,6 +41,7 @@ const t = (key: string, replacements?: Record<string, string>) => getTranslation
             <p>{t('common.placeholderSection')}</p>
           </section>
         ))}
+        <PageReturn locale={locale} href={parent?.href ?? '/'} label={parent?.label ?? t('common.home')} />
       </main>
     </div>
   </div>

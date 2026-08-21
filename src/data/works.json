@@ -21,6 +21,7 @@
   { "id": "elantris", "slug": "elantris", "labelKey": "works.elantris", "typeKey": "novel", "publicationOrder": 1, "publicationYear": 2005 },
   { "id": "the-hope-of-elantris", "slug": "the-hope-of-elantris", "labelKey": "works.theHopeOfElantris", "typeKey": "short-story", "publicationOrder": 2, "publicationYear": 2006, "collectionIds": ["arcanum-unbounded"], "arcanumStatus": "previously-published" },
   { "id": "warbreaker", "slug": "warbreaker", "labelKey": "works.warbreaker", "typeKey": "novel", "publicationOrder": 1, "publicationYear": 2009 },
+  { "id": "white-sand-omnibus", "slug": "white-sand-omnibus", "labelKey": "works.whiteSandOmnibus", "sagaId": "white-sand", "typeKey": "omnibus", "publicationOrder": 0, "publicationYear": 2022 },
   { "id": "white-sand-volume-1", "slug": "white-sand-volume-1", "labelKey": "works.whiteSandVolume1", "sagaId": "white-sand", "typeKey": "graphic-novel", "publicationOrder": 1, "publicationYear": 2016 },
   { "id": "white-sand-volume-2", "slug": "white-sand-volume-2", "labelKey": "works.whiteSandVolume2", "sagaId": "white-sand", "typeKey": "graphic-novel", "publicationOrder": 2, "publicationYear": 2018 },
   { "id": "white-sand-volume-3", "slug": "white-sand-volume-3", "labelKey": "works.whiteSandVolume3", "sagaId": "white-sand", "typeKey": "graphic-novel", "publicationOrder": 3, "publicationYear": 2019 },
