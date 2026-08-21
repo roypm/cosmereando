@@ -3,6 +3,7 @@ import PlaceholderPage from '../../components/PlaceholderPage.astro';
 import BooksPage from '../../components/BooksPage.astro';
 import RoutesPage from '../../components/RoutesPage.astro';
 import SagasPage from '../../components/SagasPage.astro';
+import PlanetsPage from '../../components/PlanetsPage.astro';
 import { getSections } from '../../data/catalogue';
 import { getTranslation, locales } from '../../data/i18n';
 import {
@@ -32,6 +33,8 @@ const sections = section === 'credits' ? [] : getSections(source as 'routes' | '
   <RoutesPage locale={locale} />
 ) : section === 'sagas' ? (
   <SagasPage locale={locale} />
+) : section === 'planets' ? (
+  <PlanetsPage locale={locale} />
 ) : (
-  <PlaceholderPage locale={locale} title={title} description={description} sections={sections} />
+  <PlaceholderPage locale={locale} title={title} description={description} sections={sections} parent={{ label: getTranslation(locale, 'common.home'), href: '/' }} />
 )}

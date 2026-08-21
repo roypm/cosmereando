@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlobalNavbar from './GlobalNavbar.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import EditorialImage from './EditorialImage.astro';
 import Sidebar from './Sidebar.astro';
 import TableOfContents from './TableOfContents.astro';
+import PageTrail from './PageTrail.astro';
+import PageReturn from './PageReturn.astro';
 import { getSections } from '../data/catalogue';
 import { getLocalizedPath, getTranslation } from '../data/i18n';
 import type { Locale } from '../data/locales';
+import routeConstellation from '../assets/images/general/cosmere_worlds_map.webp';
 
 interface Props {
   locale: Locale;
@@ -29,6 +32,7 @@ const routeContent: Record<string, string> = {
     <Sidebar locale={locale} />
     <div class="page-layout">
       <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.routes.title') }]} />
       <main class="main-content">
         <section class="hero routes-page__hero" id="introduction" aria-labelledby="routes-heading">
           <div class="hero__layout">
@@ -37,7 +41,7 @@ const routeContent: Record<string, string> = {
               <h1 id="routes-heading">{t('routePage.intro.heading')}</h1>
               <p class="hero__intro">{t('routePage.intro.description')}</p>
             </div>
-            <ImagePlaceholder label={t('routePage.intro.imageLabel')} dimensions={t('routePage.intro.imageDimensions')} imageText={t('common.imageHere')} variant="hero" />
+            <EditorialImage src={routeConstellation} alt={t('routePage.intro.imageLabel')} variant="hero" />
           </div>
         </section>
 
@@ -79,6 +83,7 @@ const routeContent: Record<string, string> = {
           </div>
         </section>
 
+        <PageReturn locale={locale} href="/" label={t('common.home')} />
       </main>
       <TableOfContents title={t('routePage.tableOfContents')} items={[
         { id: 'introduction', label: t('routePage.toc.introduction') },
