@@ -91,7 +91,7 @@ export const getBookCollections = (locale: Locale): BookCollection[] => {
   const sagaGroups: BookCollection[] = sagasData.map((saga) => ({
     id: saga.id,
     label: getTranslation(locale, saga.labelKey),
-    sagaHref: `${getLocalizedPath(locale, '/sagas')}#${saga.slug}`,
+    sagaHref: getLocalizedPath(locale, `/sagas/${saga.slug}`),
     works: sortWorks(works.filter((work) => work.sagaId === saga.id && !work.collectionIds?.includes('arcanum-unbounded'))).map(mapWork),
   })).filter((saga) => saga.works.length > 0);
 
