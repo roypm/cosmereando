@@ -7,11 +7,15 @@
     "abstractGalaxy": "Galaxia abstracta",
     "sitePreferences": "Preferencias del sitio",
     "mainNavigation": "Navegación principal",
+    "toggleSidebar": "Mostrar u ocultar la navegación principal",
+    "closeSidebar": "Cerrar la navegación principal",
     "projectLinks": "Enlaces del proyecto",
     "lastUpdated": "Última actualización: 20 de agosto de 2026",
     "version": "Versión",
     "createdBy": "Creado por",
     "credits": "Créditos",
+    "breadcrumbs": "Migas de pan",
+    "returnTo": "← Volver a {label}",
     "linkedin": "LinkedIn",
     "returnHome": "← Volver al inicio",
     "imageHere": "Imagen aquí",
@@ -36,9 +40,18 @@
       "kicker": "Por qué existen las rutas",
       "heading": "No hay una única forma correcta de leerlo.",
       "description": "Cada lector busca algo distinto: una introducción acogedora, una visión más amplia del universo o el registro de un recorrido personal. Una ruta es una herramienta, no una norma.",
-      "entry": { "title": "Encuentra el primer paso", "text": "Una ruta puede eliminar la duda de elegir el primer libro y ayudarte a empezar con confianza." },
-      "context": { "title": "Construye el contexto", "text": "El orden de las historias puede cambiar la forma en que aparecen las conexiones, las ideas recurrentes y los distintos mundos." },
-      "pace": { "title": "Lee a tu ritmo", "text": "Puedes seguir un camino recomendado, detenerte cuando quieras y hacer tuyo el recorrido." }
+      "entry": {
+        "title": "Encuentra el primer paso",
+        "text": "Una ruta puede eliminar la duda de elegir el primer libro y ayudarte a empezar con confianza."
+      },
+      "context": {
+        "title": "Construye el contexto",
+        "text": "El orden de las historias puede cambiar la forma en que aparecen las conexiones, las ideas recurrentes y los distintos mundos."
+      },
+      "pace": {
+        "title": "Lee a tu ritmo",
+        "text": "Puedes seguir un camino recomendado, detenerte cuando quieras y hacer tuyo el recorrido."
+      }
     },
     "routes": {
       "kicker": "Tres formas de entrar",
@@ -54,65 +67,686 @@
       "community": {
         "eyebrow": "Una ruta acogedora",
         "intro": "{route} está pensada como una primera conversación equilibrada con el Cosmere: suficiente variedad para intuir su escala sin convertir el comienzo en una lista de tareas.",
-        "imageLabel": "Una puerta de entrada a {route}", "imageDimensions": "16:9 · marcador de imagen de ruta",
-        "overview": { "kicker": "La idea", "heading": "Empieza con equilibrio y sigue tu curiosidad.", "text": "Esta ruta pone la experiencia del lector en primer plano. Deja espacio para gustos distintos y mantiene las conexiones más amplias en segundo plano hasta que quieras buscarlas." },
-        "cards": {
-          "focus": { "title": "Un primer paso claro", "text": "El inicio busca resultar accesible y representativo de todo lo que puede ofrecer el Cosmere." },
-          "flexibility": { "title": "Espacio para cambiar", "text": "La ruta propone una dirección, no un ritmo obligatorio ni un plan de lectura perfecto." },
-          "balance": { "title": "Una muestra amplia", "text": "Los distintos tonos y mundos construyen poco a poco una visión del universo sin revelar sus sorpresas más profundas." }
+        "imageLabel": "Una puerta de entrada a {route}",
+        "imageDimensions": "16:9 · marcador de imagen de ruta",
+        "overview": {
+          "kicker": "La idea",
+          "heading": "Empieza con equilibrio y sigue tu curiosidad.",
+          "text": "Esta ruta pone la experiencia del lector en primer plano. Deja espacio para gustos distintos y mantiene las conexiones más amplias en segundo plano hasta que quieras buscarlas."
         },
-        "next": { "kicker": "Lo que añadirá esta página", "heading": "Una guía práctica para elegir el siguiente paso.", "text": "La ruta completa incluirá el orden de lectura, motivos breves para cada elección y notas con cuidado frente a los spoilers." },
-        "toc": { "overview": "Cómo funciona esta ruta", "next": "Lo que añadirá esta página" }
+        "cards": {
+          "focus": {
+            "title": "Un primer paso claro",
+            "text": "El inicio busca resultar accesible y representativo de todo lo que puede ofrecer el Cosmere."
+          },
+          "flexibility": {
+            "title": "Espacio para cambiar",
+            "text": "La ruta propone una dirección, no un ritmo obligatorio ni un plan de lectura perfecto."
+          },
+          "balance": {
+            "title": "Una muestra amplia",
+            "text": "Los distintos tonos y mundos construyen poco a poco una visión del universo sin revelar sus sorpresas más profundas."
+          }
+        },
+        "next": {
+          "kicker": "Lo que añadirá esta página",
+          "heading": "Una guía práctica para elegir el siguiente paso.",
+          "text": "La ruta completa incluirá el orden de lectura, motivos breves para cada elección y notas con cuidado frente a los spoilers."
+        },
+        "toc": {
+          "overview": "Cómo funciona esta ruta",
+          "next": "Lo que añadirá esta página"
+        }
       },
       "publication": {
         "eyebrow": "Una ruta histórica",
         "intro": "{route} sigue el Cosmere como una obra publicada en evolución, dejando que cada etapa muestre cómo creció el universo compartido con el tiempo.",
-        "imageLabel": "Una línea temporal para {route}", "imageDimensions": "16:9 · marcador de línea temporal",
-        "overview": { "kicker": "Lee la historia", "heading": "Observa cómo crece el universo lanzamiento a lanzamiento.", "text": "El orden de publicación ofrece un contexto diferente. En lugar de empezar por la visión más amplia, descubres las ideas tal como las encontraron originalmente sus lectores." },
-        "sequence": {
-          "first": { "title": "Los primeros cimientos", "text": "Comienza por la primera puerta publicada y observa cómo el universo establece su propio lenguaje." },
-          "second": { "title": "Un horizonte más amplio", "text": "Avanza por las publicaciones posteriores mientras nuevos mundos, tonos y posibilidades se suman a la conversación." },
-          "third": { "title": "Conexiones en movimiento", "text": "Deja que los hilos recurrentes aparezcan a su ritmo y contempla cómo evoluciona el proyecto." }
+        "imageLabel": "Una línea temporal para {route}",
+        "imageDimensions": "16:9 · marcador de línea temporal",
+        "overview": {
+          "kicker": "Lee la historia",
+          "heading": "Observa cómo crece el universo lanzamiento a lanzamiento.",
+          "text": "El orden de publicación ofrece un contexto diferente. En lugar de empezar por la visión más amplia, descubres las ideas tal como las encontraron originalmente sus lectores."
         },
-        "next": { "kicker": "Lo que añadirá esta página", "heading": "Una línea temporal para lectores curiosos.", "text": "La ruta completa situará cada paso en su contexto y explicará qué experiencia ofrece cada etapa sin convertir la guía en un catálogo de spoilers." },
-        "toc": { "overview": "La forma de la línea temporal", "next": "Lo que añadirá esta página" }
+        "sequence": {
+          "first": {
+            "title": "Los primeros cimientos",
+            "text": "Comienza por la primera puerta publicada y observa cómo el universo establece su propio lenguaje."
+          },
+          "second": {
+            "title": "Un horizonte más amplio",
+            "text": "Avanza por las publicaciones posteriores mientras nuevos mundos, tonos y posibilidades se suman a la conversación."
+          },
+          "third": {
+            "title": "Conexiones en movimiento",
+            "text": "Deja que los hilos recurrentes aparezcan a su ritmo y contempla cómo evoluciona el proyecto."
+          }
+        },
+        "next": {
+          "kicker": "Lo que añadirá esta página",
+          "heading": "Una línea temporal para lectores curiosos.",
+          "text": "La ruta completa situará cada paso en su contexto y explicará qué experiencia ofrece cada etapa sin convertir la guía en un catálogo de spoilers."
+        },
+        "toc": {
+          "overview": "La forma de la línea temporal",
+          "next": "Lo que añadirá esta página"
+        }
       },
       "myJourney": {
         "eyebrow": "Una ruta personal",
         "intro": "{route} es la ruta que está detrás de Cosmereando: un registro de decisiones, descubrimientos y cambios surgidos al convertir una experiencia personal de lectura en una guía útil.",
-        "imageLabel": "Un cuaderno para {route}", "imageDimensions": "16:9 · marcador de nota de viaje",
-        "overview": { "kicker": "El punto de partida", "heading": "Una ruta también puede ser un registro.", "text": "Esta página será más reflexiva que normativa. Explicará por qué tomó forma la ruta y qué preguntas ayudaron a decidir qué debía incluir." },
-        "note": { "label": "Una nota del recorrido", "text": "El objetivo no es encontrar un orden verdadero. Es recordar qué hizo atractivo cada paso, qué contexto necesitaba y cómo podría sentirse alguien que llega allí por primera vez." },
-        "next": { "kicker": "Construida con el tiempo", "heading": "La guía crecerá junto a la lectura.", "text": "La ruta terminada conservará su mirada personal, pero hará que cada recomendación sea fácil de entender y de revisar." },
-        "cards": {
-          "origin": { "title": "Dónde empezó", "text": "Las primeras decisiones nacieron de buscar una forma amable de entrar en un universo que desde fuera puede parecer enorme." },
-          "changes": { "title": "Qué ha cambiado", "text": "Los nuevos libros y descubrimientos pueden transformar la ruta, por lo que seguirá abierta a revisiones." },
-          "criteria": { "title": "Qué importa", "text": "La claridad, el disfrute y un contexto honesto guían las decisiones más que completar una lista perfecta." }
+        "imageLabel": "Un cuaderno para {route}",
+        "imageDimensions": "16:9 · marcador de nota de viaje",
+        "overview": {
+          "kicker": "El punto de partida",
+          "heading": "Una ruta también puede ser un registro.",
+          "text": "Esta página será más reflexiva que normativa. Explicará por qué tomó forma la ruta y qué preguntas ayudaron a decidir qué debía incluir."
         },
-        "toc": { "overview": "El punto de partida", "next": "Construida con el tiempo" }
+        "note": {
+          "label": "Una nota del recorrido",
+          "text": "El objetivo no es encontrar un orden verdadero. Es recordar qué hizo atractivo cada paso, qué contexto necesitaba y cómo podría sentirse alguien que llega allí por primera vez."
+        },
+        "next": {
+          "kicker": "Construida con el tiempo",
+          "heading": "La guía crecerá junto a la lectura.",
+          "text": "La ruta terminada conservará su mirada personal, pero hará que cada recomendación sea fácil de entender y de revisar."
+        },
+        "cards": {
+          "origin": {
+            "title": "Dónde empezó",
+            "text": "Las primeras decisiones nacieron de buscar una forma amable de entrar en un universo que desde fuera puede parecer enorme."
+          },
+          "changes": {
+            "title": "Qué ha cambiado",
+            "text": "Los nuevos libros y descubrimientos pueden transformar la ruta, por lo que seguirá abierta a revisiones."
+          },
+          "criteria": {
+            "title": "Qué importa",
+            "text": "La claridad, el disfrute y un contexto honesto guían las decisiones más que completar una lista perfecta."
+          }
+        },
+        "toc": {
+          "overview": "El punto de partida",
+          "next": "Construida con el tiempo"
+        }
       }
     },
     "tableOfContents": "En esta página",
-    "toc": { "introduction": "Introducción", "why": "Por qué existen las rutas", "routes": "Las tres rutas", "overview": "Resumen de la ruta", "content": "Lo que vendrá" }
+    "toc": {
+      "introduction": "Introducción",
+      "why": "Por qué existen las rutas",
+      "routes": "Las tres rutas",
+      "overview": "Resumen de la ruta",
+      "content": "Lo que vendrá"
+    }
   },
-  "sagaPage": { "intro": { "eyebrow": "La constelación", "heading": "Mundos con su propia gravedad.", "description": "Las sagas reúnen historias que comparten mundo, historia o un conjunto de preguntas que se prolonga en el tiempo. Este índice te ayudará a entender qué pertenece a cada grupo antes de abrir una ficha.", "indexLabel": "Sagas del catálogo", "indexText": "mundos y colecciones" }, "orientation": { "kicker": "Lee primero la forma", "heading": "Cada saga es una puerta distinta.", "description": "Algunas sagas se extienden a lo largo de varias novelas. Otras empiezan con un solo libro o reúnen historias que amplían el Cosmere alrededor de una idea central. Estas páginas se convertirán en un mapa con cuidado frente a los spoilers.", "imageLabel": "Una constelación de conexiones entre sagas", "imageDimensions": "3:2 · marcador de mapa de sagas" }, "directory": { "kicker": "El índice", "heading": "Elige una familia de historias.", "description": "Abre una ficha de saga para ver su estructura provisional y vuelve más adelante, cuando incorporemos sus obras, mundos y conexiones.", "cards": { "mistborn": "Un ciclo de revoluciones, metales y eras cambiantes en Scadrial.", "the-stormlight-archive": "Una historia épica de Roshar, los Radiantes y el regreso de las tormentas.", "white-sand": "Una saga gráfica marcada por la luz implacable y las culturas de Taldain.", "arcanum-unbounded": "Una colección que reúne historias del Cosmere y les da un marco más amplio." } }, "tableOfContents": "En esta página", "toc": { "introduction": "La constelación", "orientation": "Cómo leer el índice", "directory": "El índice de sagas" }, "detail": { "back": "Volver a Sagas", "eyebrow": "Ficha de saga", "description": "Esta es la página provisional de {title}. Aquí desarrollaremos su contexto de lectura, sus obras, su mundo y sus conexiones.", "imageLabel": "Marcador visual de {title}", "imageDimensions": "16:9 · marcador de imagen de saga", "sections": { "overview": { "kicker": "El marco", "heading": "Resumen" }, "works": { "kicker": "El catálogo", "heading": "Obras" }, "connections": { "kicker": "El Cosmere más amplio", "heading": "Mundo y conexiones" } }, "tableOfContents": "Ficha de saga", "toc": { "introduction": "Introducción", "overview": "Resumen", "works": "Obras", "connections": "Mundo y conexiones" } } },
-  "mistbornPage": { "back": "Volver a Sagas", "intro": { "eyebrow": "Ficha de saga", "description": "Nacidos de la bruma cuenta la historia de Scadrial a través de dos eras publicadas: una trilogía de fantasía épica y una serie posterior marcada por una sociedad cambiante, la nueva tecnología y el legado de lo ocurrido antes.", "planet": "Mundo", "imageLabel": "Scadrial y sus artes metálicas", "imageDimensions": "16:9 · marcador de imagen de Nacidos de la bruma" }, "warning": { "kicker": "Aviso opcional", "heading": "¿Quieres saber qué relación tiene la Era 2 con la Era 1?", "text": "La Era 2 transcurre siglos después. Leer la sección de Era 2 puede darte una pista sobre el destino de los personajes de la Era 1. No es un spoiler contundente ni especialmente relevante, pero la pista existe.", "action": "Si te interesa, léela. Si prefieres no saberlo, sáltate únicamente la Era 2 y continúa con Artes metálicas." }, "eras": { "kicker": "Mapa de publicación", "heading": "Dos eras, un mundo en transformación.", "description": "La lista reúne las novelas y relatos de cada era en orden de publicación. Las notas señalan cuándo conviene leer un relato complementario en otro momento." }, "era1": { "kicker": "Era 1", "heading": "La trilogía original", "description": "Una fantasía épica sobre rebelión, poder y el precio de rehacer un mundo. Estas tres novelas forman la historia principal completa." }, "era2": { "kicker": "Era 2", "heading": "La serie de Wax y Wayne", "description": "Una nueva etapa de Scadrial, con ferrocarriles, armas de fuego, investigaciones y una relación distinta con las artes metálicas." }, "books": { "finalEmpire": "La novela de entrada: un golpe contra un imperio aparentemente eterno y la primera gran puerta a la alomancia.", "wellOfAscension": "La segunda novela: los antiguos rebeldes deben gobernar, defender su nueva ciudad y enfrentarse a las consecuencias de la victoria.", "heroOfAges": "La tercera novela: la historia profundiza en sus preguntas sobre el poder, la responsabilidad y las personas atrapadas entre ambos.", "eleventhMetal": "Un relato corto sobre Kelsier, publicado en 2011. Léelo después de la trilogía si quieres mantener intacta la experiencia original.", "secretHistory": "Una novela corta complementaria con grandes spoilers de la Era 1 y un spoiler menor de Brazales de duelo. Es mejor reservarla para después de esa novela de la Era 2.", "alloyOfLaw": "La primera novela de la Era 2, que presenta a Wax, Wayne y una sociedad donde las artes metálicas se encuentran con una época industrial inspirada en el Oeste.", "allomancerJak": "Un relato humorístico publicado como material complementario de Aleación de ley e incluido después en Arcanum Ilimitado. Léelo después de Aleación de ley.", "shadowsOfSelf": "La segunda novela de la Era 2, que amplía las consecuencias políticas y personales del mundo en el que viven Wax y Wayne.", "bandsOfMourning": "La tercera novela de la Era 2, que profundiza en los vínculos entre el pasado, el presente de Scadrial y el contexto más amplio del Cosmere.", "lostMetal": "La cuarta novela de la Era 2 y la conclusión de la secuencia de Wax y Wayne." }, "magic": { "kicker": "Sistemas de Scadrial", "heading": "Tres artes metálicas.", "description": "La alomancia, la feruquimia y la hemalurgia utilizan el metal como foco, pero funcionan de formas distintas y expresan relaciones diferentes con el poder, la identidad y el sacrificio.", "allomancy": { "title": "Alomancia", "text": "Un alomántico quema metales para activar habilidades concretas. El metal funciona como llave o catalizador, mientras que el poder procede de una fuente externa. Un Nacido de la bruma puede usar muchos metales; un Brumoso está limitado a uno." }, "feruchemy": { "title": "Feruquimia", "text": "Un feruquimista almacena un atributo —como fuerza, memoria o velocidad— en un metal y lo recupera después. El poder es personal y equilibrado: primero hay que renunciar a aquello que se guarda." }, "hemalurgy": { "title": "Hemalurgia", "text": "La hemalurgia transfiere atributos entre personas mediante clavos metálicos. Puede conceder o alterar habilidades, pero la transferencia implica una pérdida y está ligada a los secretos más peligrosos de Scadrial." } }, "curiosities": { "kicker": "Algunas curiosidades", "heading": "Detalles para tener en cuenta", "first": "Brandon concibió Nacidos de la bruma como una trilogía de trilogías, así que las eras forman parte de un diseño mucho más amplio para Scadrial.", "second": "El concepto original nació alrededor de una banda de ladrones y de la pregunta de qué poderes ayudarían a cada especialista en su trabajo.", "third": "Aleación de ley comenzó como una historia corta situada entre proyectos mayores de Nacidos de la bruma antes de crecer hasta convertirse en la serie de Wax y Wayne." }, "tableOfContents": "Ficha de Nacidos de la bruma", "toc": { "introduction": "Introducción", "readingNote": "Nota de lectura", "publicationOrder": "Orden de publicación", "magic": "Artes metálicas", "curiosities": "Curiosidades" } },
-  "navigation": { "routes": { "title": "Rutas" }, "books": { "title": "Libros" }, "sagas": { "title": "Sagas" }, "planets": { "title": "Planetas" } },
-  "routes": { "community": "Rutas comunitarias", "publication": "Orden de publicación", "myJourney": "Mi recorrido" },
-  "works": { "theFinalEmpire": "El imperio final", "theWellOfAscension": "El pozo de la ascensión", "theHeroOfAges": "El héroe de las eras", "theAlloyOfLaw": "Aleación de ley", "shadowsOfSelf": "Sombras de identidad", "theBandsOfMourning": "Brazales de duelo", "theLostMetal": "El metal perdido", "theEleventhMetal": "El undécimo metal", "mistbornSecretHistory": "Nacidos de la bruma: Historia secreta", "allomancerJak": "Allomante Jak y los pozos de Eltania", "theWayOfKings": "El camino de los reyes", "wordsOfRadiance": "Palabras radiantes", "oathbringer": "Juramentada", "rhythmOfWar": "El ritmo de la guerra", "windAndTruth": "Viento y verdad", "edgedancer": "Danzante del filo", "dawnshard": "Esquirla del amanecer", "elsecaller": "Nominadora de lo Otro", "kingLopen": "El rey Lopen el Primero de Alethkar", "elantris": "Elantris", "theHopeOfElantris": "La esperanza de Elantris", "warbreaker": "El aliento de los dioses", "whiteSandVolume1": "Arena blanca, volumen 1", "whiteSandVolume2": "Arena blanca, volumen 2", "whiteSandVolume3": "Arena blanca, volumen 3", "theEmperorsSoul": "El alma del emperador", "shadowsForSilence": "Sombras por silencio en los bosques del infierno", "sixthOfTheDusk": "Sexto del ocaso", "whiteSandExcerpt": "Fragmento de Arena blanca", "tressOfTheEmeraldSea": "Trenza del mar Esmeralda", "yumiAndTheNightmarePainter": "Yumi y el pintor de pesadillas", "theSunlitMan": "El hombre iluminado", "islesOfTheEmberdark": "Islas del Mar de Brasas", "arcanumUnbounded": "Arcanum Ilimitado" },
-  "sagas": { "mistborn": "Nacidos de la bruma", "theStormlightArchive": "El archivo de las tormentas", "whiteSand": "Arena blanca", "arcanumUnbounded": "Arcanum Ilimitado" },
-  "planets": { "scadrial": "Scadrial", "roshar": "Roshar", "nalthis": "Nalthis", "sel": "Sel", "taldain": "Taldain", "lumar": "Lumar", "canticle": "Cántico", "komashi": "Komashi" },
-  "books": { "eyebrow": "Catálogo del Cosmere", "heading": "Encuentra tu próximo mundo.", "description": "Una estantería visual de las obras publicadas del Cosmere, ordenadas por la saga o el mundo al que pertenecen. Empieza por un título y sigue sus conexiones cuando quieras.", "indexLabel": "Resumen del catálogo", "catalogueCount": "obras en este primer catálogo", "catalogueKicker": "La colección", "catalogueHeading": "Historias agrupadas por su destino", "catalogueDescription": "Los grupos dan a cada libro un poco de contexto sin imponerte un orden de lectura.", "standalone": "Independientes", "arcanumUnbounded": "Arcanum Ilimitado", "viewSaga": "Explorar saga", "coverDimensions": "2:3 · marcador de portada", "tableOfContents": "En esta página", "toc": { "introduction": "Introducción", "catalogue": "El catálogo" }, "subsections": { "era1": "Era 1 · La trilogía original", "era2": "Era 2 · Wax y Wayne" }, "types": { "novel": "Novela", "novella": "Novela corta", "short-story": "Relato", "graphic-novel": "Novela gráfica", "anthology": "Colección", "excerpt": "Fragmento" }, "arcanumStatus": { "arcanum-original": "Publicado por primera vez en Arcanum Ilimitado", "previously-published": "Publicado anteriormente · incluido en Arcanum Ilimitado" } },
+  "sagaPage": {
+    "intro": {
+      "eyebrow": "La constelación",
+      "heading": "Mundos con su propia gravedad.",
+      "description": "Las sagas reúnen historias que comparten mundo, historia o un conjunto de preguntas que se prolonga en el tiempo. Este índice te ayudará a entender qué pertenece a cada grupo antes de abrir una ficha.",
+      "indexLabel": "Sagas del catálogo",
+      "indexText": "mundos y colecciones"
+    },
+    "orientation": {
+      "kicker": "Lee primero la forma",
+      "heading": "Cada saga es una puerta distinta.",
+      "description": "Algunas sagas se extienden a lo largo de varias novelas. Otras empiezan con un solo libro o reúnen historias que amplían el Cosmere alrededor de una idea central. Estas páginas se convertirán en un mapa con cuidado frente a los spoilers.",
+      "imageLabel": "Una vista amplia del Cosmere y sus mundos cambiantes",
+      "imageDimensions": "3:2 · marcador de mapa de sagas"
+    },
+    "directory": {
+      "kicker": "El índice",
+      "heading": "Elige una familia de historias.",
+      "description": "Abre una ficha de saga para ver su estructura provisional y vuelve más adelante, cuando incorporemos sus obras, mundos y conexiones.",
+      "cards": {
+        "mistborn": "Un ciclo de revoluciones, metales y eras cambiantes en Scadrial.",
+        "the-stormlight-archive": "Una historia épica de Roshar, los Radiantes y el regreso de las tormentas.",
+        "white-sand": "Una saga gráfica marcada por la luz implacable y las culturas de Taldain.",
+        "arcanum-unbounded": "Una colección que reúne historias del Cosmere y les da un marco más amplio."
+      }
+    },
+    "tableOfContents": "En esta página",
+    "toc": {
+      "introduction": "La constelación",
+      "orientation": "Cómo leer el índice",
+      "directory": "El índice de sagas"
+    },
+    "detail": {
+      "back": "Volver a Sagas",
+      "eyebrow": "Ficha de saga",
+      "description": "Esta es la página provisional de {title}. Aquí desarrollaremos su contexto de lectura, sus obras, su mundo y sus conexiones.",
+      "imageLabel": "Marcador visual de {title}",
+      "imageDimensions": "16:9 · marcador de imagen de saga",
+      "sections": {
+        "overview": { "kicker": "El marco", "heading": "Resumen" },
+        "works": { "kicker": "El catálogo", "heading": "Obras" },
+        "connections": {
+          "kicker": "El Cosmere más amplio",
+          "heading": "Mundo y conexiones"
+        }
+      },
+      "tableOfContents": "Ficha de saga",
+      "toc": {
+        "introduction": "Introducción",
+        "overview": "Resumen",
+        "works": "Obras",
+        "connections": "Mundo y conexiones"
+      }
+    }
+  },
+  "mistbornPage": {
+    "back": "Volver a Sagas",
+    "intro": {
+      "eyebrow": "Ficha de saga",
+      "description": "Nacidos de la bruma cuenta la historia de Scadrial a través de dos eras publicadas: una trilogía de fantasía épica y una serie posterior marcada por una sociedad cambiante, la nueva tecnología y el legado de lo ocurrido antes.",
+      "planet": "Mundo",
+      "imageLabel": "Scadrial y sus artes metálicas",
+      "imageDimensions": "16:9 · marcador de imagen de Nacidos de la bruma"
+    },
+    "warning": {
+      "kicker": "Aviso opcional",
+      "heading": "¿Quieres saber qué relación tiene la Era 2 con la Era 1?",
+      "text": "La Era 2 transcurre siglos después. Leer la sección de Era 2 puede darte una pista sobre el destino de los personajes de la Era 1. No es un spoiler contundente ni especialmente relevante, pero la pista existe.",
+      "action": "Si te interesa, léela. Si prefieres no saberlo, sáltate únicamente la Era 2 y continúa con Artes metálicas."
+    },
+    "eras": {
+      "kicker": "Mapa de publicación",
+      "heading": "Dos eras, un mundo en transformación.",
+      "description": "La lista reúne las novelas y relatos de cada era en orden de publicación. Las notas señalan cuándo conviene leer un relato complementario en otro momento."
+    },
+    "era1": {
+      "kicker": "Era 1",
+      "heading": "La trilogía original",
+      "description": "Una fantasía épica sobre rebelión, poder y el precio de rehacer un mundo. Estas tres novelas forman la historia principal completa."
+    },
+    "era2": {
+      "kicker": "Era 2",
+      "heading": "La serie de Wax y Wayne",
+      "description": "Una nueva etapa de Scadrial, con ferrocarriles, armas de fuego, investigaciones y una relación distinta con las artes metálicas."
+    },
+    "books": {
+      "finalEmpire": "La novela de entrada: un golpe contra un imperio aparentemente eterno y la primera gran puerta a la alomancia.",
+      "wellOfAscension": "La segunda novela: los antiguos rebeldes deben gobernar, defender su nueva ciudad y enfrentarse a las consecuencias de la victoria.",
+      "heroOfAges": "La tercera novela: la historia profundiza en sus preguntas sobre el poder, la responsabilidad y las personas atrapadas entre ambos.",
+      "eleventhMetal": "Un relato corto sobre Kelsier, publicado en 2011. Léelo después de la trilogía si quieres mantener intacta la experiencia original.",
+      "secretHistory": "Una novela corta complementaria con grandes spoilers de la Era 1 y un spoiler menor de Brazales de duelo. Es mejor reservarla para después de esa novela de la Era 2.",
+      "alloyOfLaw": "La primera novela de la Era 2, que presenta a Wax, Wayne y una sociedad donde las artes metálicas se encuentran con una época industrial inspirada en el Oeste.",
+      "allomancerJak": "Un relato humorístico publicado como material complementario de Aleación de ley e incluido después en Arcanum Ilimitado. Léelo después de Aleación de ley.",
+      "shadowsOfSelf": "La segunda novela de la Era 2, que amplía las consecuencias políticas y personales del mundo en el que viven Wax y Wayne.",
+      "bandsOfMourning": "La tercera novela de la Era 2, que profundiza en los vínculos entre el pasado, el presente de Scadrial y el contexto más amplio del Cosmere.",
+      "lostMetal": "La cuarta novela de la Era 2 y la conclusión de la secuencia de Wax y Wayne."
+    },
+    "supplementary": {
+      "detailsAction": "¿Por qué está aquí?",
+      "typeLabel": "Tipo",
+      "originLabel": "De dónde viene",
+      "whyLabel": "Por qué leerlo",
+      "whenLabel": "Cuándo leerlo",
+      "works": {
+        "eleventhMetal": {
+          "origin": "Es un relato precuela escrito para el juego de rol de Nacidos de la bruma. Después se incluyó en Arcanum Ilimitado, que hoy es la forma más sencilla de encontrarlo.",
+          "why": "Su valor está en el contexto adicional: una historia lateral que profundiza en la relación temprana de Kelsier con la alomancia y añade una pieza curiosa del lore de Scadrial.",
+          "when": "Después de la trilogía original. Es opcional, pero resulta un añadido muy entretenido cuando ya conoces a Kelsier y Scadrial."
+        },
+        "secretHistory": {
+          "origin": "Primero apareció como libro electrónico independiente y después se incluyó en Arcanum Ilimitado. Es una novela corta complementaria, no un cuarto volumen de la trilogía.",
+          "why": "Abre una ventana distinta a los grandes acontecimientos de la trilogía, amplía la visión del Cosmere alrededor de Scadrial y conecta la historia local con poderes y visitantes más amplios.",
+          "when": "La opción más segura es leerlo después de Brazales de duelo: contiene grandes spoilers de la Era 1 y uno menor de esa novela de la Era 2."
+        },
+        "allomancerJak": {
+          "origin": "Pertenece al lado más juguetón y lleno de notas de la Era 2: acompaña a la secuencia principal de Wax y Wayne, pero no la hace avanzar.",
+          "why": "Su voz de falsa aventura y sus notas poco fiables hacen que Scadrial parezca más grande que la trama central y premian la curiosidad por el worldbuilding periférico.",
+          "when": "Después de Aleación de ley. Funciona como desvío opcional y ligero, no como paso obligatorio de la secuencia principal."
+        }
+      }
+    },
+    "magic": {
+      "kicker": "Sistemas de Scadrial",
+      "heading": "Tres artes metálicas.",
+      "description": "La alomancia, la feruquimia y la hemalurgia utilizan el metal como foco, pero funcionan de formas distintas y expresan relaciones diferentes con el poder, la identidad y el sacrificio.",
+      "allomancy": {
+        "title": "Alomancia",
+        "text": "Un alomántico quema metales para activar habilidades concretas. El metal funciona como llave o catalizador, mientras que el poder procede de una fuente externa. Un Nacido de la bruma puede usar muchos metales; un Brumoso está limitado a uno."
+      },
+      "feruchemy": {
+        "title": "Feruquimia",
+        "text": "Un feruquimista almacena un atributo —como fuerza, memoria o velocidad— en un metal y lo recupera después. El poder es personal y equilibrado: primero hay que renunciar a aquello que se guarda."
+      },
+      "hemalurgy": {
+        "title": "Hemalurgia",
+        "text": "La hemalurgia transfiere atributos entre personas mediante clavos metálicos. Puede conceder o alterar habilidades, pero la transferencia implica una pérdida y está ligada a los secretos más peligrosos de Scadrial."
+      }
+    },
+    "curiosities": {
+      "kicker": "Algunas curiosidades",
+      "heading": "Detalles para tener en cuenta",
+      "first": "Brandon concibió Nacidos de la bruma como una trilogía de trilogías, así que las eras forman parte de un diseño mucho más amplio para Scadrial.",
+      "second": "El concepto original nació alrededor de una banda de ladrones y de la pregunta de qué poderes ayudarían a cada especialista en su trabajo.",
+      "third": "Aleación de ley comenzó como una historia corta situada entre proyectos mayores de Nacidos de la bruma antes de crecer hasta convertirse en la serie de Wax y Wayne.",
+      "imageLabel": "Sazed en una etapa posterior de la historia de Scadrial"
+    },
+    "tableOfContents": "Ficha de Nacidos de la bruma",
+    "toc": {
+      "introduction": "Introducción",
+      "readingNote": "Nota de lectura",
+      "publicationOrder": "Orden de publicación",
+      "magic": "Artes metálicas",
+      "curiosities": "Curiosidades"
+    }
+  },
+  "navigation": {
+    "routes": { "title": "Rutas" },
+    "books": { "title": "Libros" },
+    "sagas": { "title": "Sagas" },
+    "planets": { "title": "Planetas" }
+  },
+  "routes": {
+    "community": "Rutas comunitarias",
+    "publication": "Orden de publicación",
+    "myJourney": "Mi recorrido"
+  },
+  "works": {
+    "theFinalEmpire": "El imperio final",
+    "theWellOfAscension": "El pozo de la ascensión",
+    "theHeroOfAges": "El héroe de las eras",
+    "theAlloyOfLaw": "Aleación de ley",
+    "shadowsOfSelf": "Sombras de identidad",
+    "theBandsOfMourning": "Brazales de duelo",
+    "theLostMetal": "El metal perdido",
+    "theEleventhMetal": "El undécimo metal",
+    "mistbornSecretHistory": "Nacidos de la bruma: Historia secreta",
+    "allomancerJak": "Allomante Jak y los pozos de Eltania",
+    "theWayOfKings": "El camino de los reyes",
+    "wordsOfRadiance": "Palabras radiantes",
+    "oathbringer": "Juramentada",
+    "rhythmOfWar": "El ritmo de la guerra",
+    "windAndTruth": "Viento y verdad",
+    "edgedancer": "Danzante del filo",
+    "dawnshard": "Esquirla del amanecer",
+    "elsecaller": "Nominadora de lo Otro",
+    "kingLopen": "El rey Lopen el Primero de Alethkar",
+    "elantris": "Elantris",
+    "theHopeOfElantris": "La esperanza de Elantris",
+    "warbreaker": "El aliento de los dioses",
+    "whiteSandOmnibus": "Arena blanca Omnibus",
+    "whiteSandVolume1": "Arena blanca, volumen 1",
+    "whiteSandVolume2": "Arena blanca, volumen 2",
+    "whiteSandVolume3": "Arena blanca, volumen 3",
+    "theEmperorsSoul": "El alma del emperador",
+    "shadowsForSilence": "Sombras por silencio en los bosques del infierno",
+    "sixthOfTheDusk": "Sexto del ocaso",
+    "whiteSandExcerpt": "Fragmento de Arena blanca",
+    "tressOfTheEmeraldSea": "Trenza del mar Esmeralda",
+    "yumiAndTheNightmarePainter": "Yumi y el pintor de pesadillas",
+    "theSunlitMan": "El hombre iluminado",
+    "islesOfTheEmberdark": "Islas del Mar de Brasas",
+    "arcanumUnbounded": "Arcanum Ilimitado"
+  },
+  "sagas": {
+    "mistborn": "Nacidos de la bruma",
+    "theStormlightArchive": "El archivo de las tormentas",
+    "whiteSand": "Arena blanca",
+    "arcanumUnbounded": "Arcanum Ilimitado"
+  },
+  "planets": {
+    "scadrial": "Scadrial",
+    "roshar": "Roshar",
+    "nalthis": "Nalthis",
+    "sel": "Sel",
+    "taldain": "Taldain",
+    "lumar": "Lumar",
+    "canticle": "Cántico",
+    "komashi": "Komashi",
+    "threnody": "Threnody",
+    "firstOfTheSun": "Primero del Sol",
+    "ashyn": "Ashyn"
+  },
+  "planetPage": {
+    "intro": {
+      "eyebrow": "Directorio de mundos",
+      "heading": "Lugares que dan forma al Cosmere.",
+      "description": "Cada planeta tiene su propia historia, atmósfera y reglas. Estas páginas reúnen su naturaleza, sus pueblos, sus curiosidades y las historias relacionadas.",
+      "imageLabel": "Mapa de los mundos del Cosmere"
+    },
+    "directory": {
+      "kicker": "El directorio",
+      "heading": "Elige un mundo para explorar.",
+      "description": "Empieza por un planeta y sigue las historias relacionadas con él. Cada ficha ofrece una lectura breve del mundo y deja espacio para ampliarla con mapas y conexiones.",
+      "cardDescription": "Una ficha de {title}, con su entorno, sus formas de vida y las historias relacionadas."
+    },
+    "detail": {
+      "eyebrow": "Ficha del mundo",
+      "description": "La página de {title} reúne su entorno, sus formas de vida, sus sociedades y las historias relacionadas en una guía con spoilers controlados.",
+      "imageLabel": "Guía visual de {title}",
+      "imageDimensions": "16:9 · imagen editorial del planeta",
+      "systemLabel": "Sistema",
+      "worldLabel": "Referencia visual",
+      "systems": { "scadrian": "Sistema scadriano", "rosharan": "Sistema rosharano", "nalthian": "Sistema nalthisiano", "selish": "Sistema selish", "taldain": "Sistema de Taldain", "unknown": "Sistema aún no identificado públicamente", "utol": "Sistema de UTol", "threnodite": "Sistema threnodita", "drominad": "Sistema de Drominad" },
+      "imageLabels": { "scadrial": "Campos de ceniza y horizonte volcánico de Scadrial", "roshar": "Un paisaje rosharano bajo cielos de tormenta", "nalthis": "Una región exuberante de Nalthis", "sel": "Elantris y los paisajes divididos de Sel", "taldain": "Una ciudad en el lado luminoso de Taldain", "lumar": "El Mar Esmeralda de Lumar", "canticle": "Un paisaje bajo el sol abrasador de Cántico", "komashi": "Una calle iluminada por neones en Komashi", "threnody": "Un bosque encantado de Threnody", "firstOfTheSun": "Una costa peligrosa del Primero del Sol", "ashyn": "Ashyn, el planeta en llamas" },
+      "environmentKicker": "Entorno",
+      "lifeKicker": "Vida",
+      "societyKicker": "Formas de vivir",
+      "noDedicatedStory": "No hay ninguna historia principal publicada ambientada actualmente en Ashyn. Su historia y sus asentamientos supervivientes están ligados al sistema rosharano y a la migración antigua hacia Roshar.",
+      "toc": { "introduction": "Introducción", "directory": "Directorio de mundos", "overview": "La ambientación", "environment": "Entorno", "life": "Flora y fauna", "society": "Formas de vivir", "stories": "Historias relacionadas", "magic": "Sistemas y curiosidades" },
+      "overviewKicker": "La ambientación",
+      "overviewHeading": "Un mundo esperando ser cartografiado.",
+      "storiesKicker": "Historias relacionadas",
+      "storiesHeading": "Adónde conduce la lectura.",
+      "magicKicker": "Sistemas y fuerzas",
+      "magicHeading": "Las reglas que dan forma a este mundo.",
+      "profiles": {
+        "scadrial": { "description": "Scadrial es un planeta cuyo clima, geografía y sociedades han sido transformados por Preservación, Ruina y quienes sostuvieron su poder.", "overviewHeading": "Un mundo construido sobre el cambio.", "overview": "Scadrial no es el mismo mundo en todas las eras: pasó de ceniza, brumas y montañas volcánicas a una época más verde, industrial y tecnológica tras la Catacendra.", "environmentHeading": "Ceniza, brumas y horizontes restaurados.", "environment": "El Lord Legislador acercó el planeta a su sol y usó los Ashmounts para controlar el clima, provocando lluvias de ceniza y nieblas nocturnas. Más tarde, la geografía y el clima fueron reparados.", "lifeHeading": "Criaturas transformadas por la Investidura.", "life": "Los nieblinos y los kandra son ejemplos propios de Scadrial de vida alterada por la Hemalurgia. El mundo restaurado también sostiene cultivos, caballos, perros y una biodiversidad más amplia.", "societyHeading": "De la rebelión skaa al ferrocarril.", "society": "La vida pasó de la jerarquía entre nobles y skaa a gobiernos urbanos, trenes, armas de fuego y comercio industrial. Terris, los koloss y los kandra siguen formando parte de su identidad.", "curiositiesHeading": "Las Artes Metálicas forman parte de la ecología.", "curiosities": "Alomancia, Feruquimia y Hemalurgia influyen en la medicina, el transporte, la política y los propios cuerpos de varios pueblos. Scadrial es planeta y experimento de creación deliberada." },
+        "roshar": { "description": "Roshar es un planeta de mucho oxígeno y poca gravedad, donde las tormentas, los spren y los juramentos condicionan casi toda la vida.", "overviewHeading": "Un planeta diseñado por el clima.", "overview": "Un supercontinente y un sistema de tormentas que lo cruza de este a oeste definen Roshar. Sus culturas, edificios y calendarios solo se entienden al tratar las altas tormentas como una fuerza permanente.", "environmentHeading": "Altas tormentas, crem y valles protegidos.", "environment": "Las altas tormentas traen viento violento, lluvia y crem rico en minerales. El este recibe el golpe primero; los valles occidentales y Shinovar están más protegidos.", "lifeHeading": "Caparazones, corazones de gema y spren.", "life": "Muchos animales nativos tienen caparazón y las especies grandes poseen corazones de gema. Rockbuds, hierba, chulls y greatshells han evolucionado para sobrevivir a las tormentas.", "societyHeading": "Culturas organizadas alrededor de sobrevivir.", "society": "Alezi, herdazianos, shin, horneater y cantores mantienen relaciones distintas con las tormentas, los juramentos y la tierra. El comercio y la guerra los conectan.", "curiositiesHeading": "El planeta tiene más de un tipo de tormenta.", "curiosities": "Las altas tormentas son naturales e Investidas; la Everstorm sigue otro patrón. En Shadesmar, la geografía de Roshar se convierte en un océano de cuentas." },
+        "nalthis": { "description": "Nalthis es un planeta de reinos, color vivo y Despertar, aunque gran parte de su geografía sigue sin describirse.", "overviewHeading": "Un mundo donde el color tiene poder.", "overview": "Hallandren e Idris muestran solo una parte de Nalthis, marcado por la Manywar, los Cinco Sabios y el regreso de los Devueltos.", "environmentHeading": "Junglas, montañas y el Mar Luminoso.", "environment": "Hallandren alberga la única jungla conocida y las Lágrimas de Edgli. Hay montañas, un mar interior y terremotos frecuentes.", "lifeHeading": "Una biosfera variada y poco cartografiada.", "life": "La jungla alberga panteras, loros, monos y cocodrilos. El Mar Luminoso contiene peces, mejillones y vida tentaculada; elefantes y cebras llegan del sur.", "societyHeading": "Reinos, colores y objetos vivientes.", "society": "La riqueza y vida urbana de Hallandren contrastan con las tradiciones austeras de Idris. El Aliento forma parte de la economía y el Despertar vuelve activos los objetos.", "curiositiesHeading": "El planeta se conoce por lo que entrega.", "curiosities": "Nalthis tiene una luna, Rrendos, y su Investidura está ligada a Endowment. BioCroma, color e identidad son partes visibles de su cultura." },
+        "sel": { "description": "Sel es un gran planeta de imperios separados, historia densa y formas de Investidura ligadas a cada región.", "overviewHeading": "Muchas civilizaciones sobre un mismo mapa.", "overview": "Elantris, Arelon y MaiPon muestran solo una fracción de un planeta cuyas identidades políticas y mágicas dependen de la geografía.", "environmentHeading": "Un mundo continental muy diverso.", "environment": "Sel contiene climas y paisajes variados. Su tamaño y gravedad favorecen identidades locales, mientras que el Reino Cognitivo es peligroso por culpa del Dor.", "lifeHeading": "Sociedades humanas y vida construida.", "life": "Los humanos comparten Sel con seons y skaze, seres conectados a su Investidura. La ecología más amplia sigue siendo una de las incógnitas del Cosmere.", "societyHeading": "El lenguaje también es geografía mágica.", "society": "AonDor, Forgery, ChayShan, Dakhor y Bloodsealing dependen de símbolos, formas o tradiciones locales. Fronteras, idiomas y religión afectan al poder.", "curiositiesHeading": "Sel es planeta y paisaje cognitivo peligroso.", "curiosities": "Devoción y Dominio fueron quebrados aquí, y el Dor llena el Reino Cognitivo de poder descontrolado. Por eso la magia selish es tan regional." },
+        "taldain": { "description": "Taldain es un planeta dividido entre un lado luminoso y un lado oscuro, donde la arena y el aislamiento político definen la vida cotidiana.", "overviewHeading": "Dos rostros para un mismo mundo.", "overview": "Dayside y Darkside viven condiciones radicalmente distintas. White Sand sigue a los Maestros de la Arena y las tensiones alrededor del Diem.", "environmentHeading": "Luz, oscuridad y arena en movimiento.", "environment": "El lado luminoso está dominado por el sol intenso y desiertos enormes. La arena responde a los maestros y se convierte en recurso, lenguaje y defensa.", "lifeHeading": "Vida adaptada a los extremos.", "life": "La ecología conocida es sobre todo desértica, mientras que Darkside permanece poco documentado. El vínculo más singular es el de los maestros con la arena.", "societyHeading": "El Diem y los Maestros de la Arena.", "society": "La sociedad del lado luminoso gira alrededor del Diem y las instituciones que regulan el conocimiento de los maestros. La historia de Kenton revela la fragilidad de ese aislamiento.", "curiositiesHeading": "Darkside no es solo el reverso de Dayside.", "curiosities": "Taldain muestra cómo la Investidura puede expresarse mediante un contraste ambiental extremo. Arcanum Unbounded solo abre una ventana a este mundo." },
+        "lumar": { "description": "Lumar es un planeta cubierto por doce océanos de esporas, cada uno ligado a una luna y a una variedad de aéter.", "overviewHeading": "Un mundo hecho de mares y lunas.", "overview": "La superficie está dividida en mares pentagonales de esporas. Las comunidades humanas viven en islas y costas y navegan usando el extraño comportamiento de las esporas.", "environmentHeading": "Lunagrees, calmas y seethe.", "environment": "Las doce lunas dejan caer esporas durante las lunagrees. La descomposición y los respiraderos térmicos hacen que los mares se comporten como líquido durante el seethe y se solidifiquen en las stillings.", "lifeHeading": "Vida corriente sobre mares alienígenas.", "life": "Las islas sostienen cultivos, árboles, flores, ratas, gatos, palomas, mariposas y gaviotas. La vida profunda de los mares sigue siendo desconocida.", "societyHeading": "Culturas insulares y navegación.", "society": "Las comunidades construyen su identidad alrededor de islas, lunas y mares. El Mar Esmeralda conecta rutas que cada vez importan más al Cosmere.", "curiositiesHeading": "Las lunas forman parte del clima.", "curiosities": "La sombra de una luna enfría la tierra cada día al pasar entre el sol y el planeta. Astronomía, navegación y lenguaje son inseparables en Lumar." },
+        "canticle": { "description": "Cántico es un planeta pequeño y de rotación lenta donde un sol Investido obliga a sus habitantes a mantenerse delante de la luz del amanecer.", "overviewHeading": "Un mundo que huye de su sol.", "overview": "La luz de Cántico quema o vaporiza a quien queda expuesto. Las comunidades viven en ciudades voladoras y avanzan por estrechos corredores habitables.", "environmentHeading": "Luz abrasadora y sombras de anillos.", "environment": "Los anillos reflejan algo de luz Investida hacia la cara oscura, creando breves oportunidades para cultivar y viajar. El territorio cambia con el calor y las rutas de supervivencia.", "lifeHeading": "Crecimiento rápido y ciclos peligrosos.", "life": "El sol acelera el crecimiento vegetal: las cosechas maduran durante la corta ventana del amanecer. La flora, la fauna y los sunhearts dependen de este ciclo.", "societyHeading": "Ciudades voladoras hechas de naves.", "society": "La gente ensambla ciudades con naves conectadas y alimentadas por sunhearts. Unión coordina a las comunidades y agricultores, pilotos y buscadores las mantienen vivas.", "curiositiesHeading": "Una diáspora threnodita en el cielo.", "curiosities": "Muchos habitantes descienden de threnoditas que huyeron de su mundo. Cántico muestra cómo una cultura conserva su historia mientras se adapta a otra amenaza." },
+        "komashi": { "description": "Komashi es un mundo doble marcado por la tecnología hion, la mortaja y sociedades que sobrevivieron alrededor de pozos de vapor.", "overviewHeading": "Un planeta que se reconstruye tras una catástrofe oculta.", "overview": "Komashi y UTol orbitan un sol rojo anaranjado. La máquina padre consumió almas, alteró la ecología y dejó una mortaja alrededor de buena parte del mundo habitado.", "environmentHeading": "Piedra parda, pozos de vapor y mortaja.", "environment": "La tierra de Komashi es sobre todo piedra parda. Antes de la mortaja, los espíritus calentaban el suelo y llevaban agua subterránea a la superficie mediante pozos de vapor.", "lifeHeading": "Espíritus, pesadillas y plantas que regresan.", "life": "Los espíritus hijo alimentan la tecnología hion y los yoki-hijo son una forma de vida singular. Las pesadillas nacen de la mortaja y las semillas guardadas permiten recuperar la ecología.", "societyHeading": "Pintores, ciudades y servicio.", "society": "Las naciones crecieron alrededor de pozos de vapor y líneas hion. Los pintores de pesadillas patrullan las ciudades y convierten el arte en defensa práctica.", "curiositiesHeading": "El arte es una tecnología de supervivencia.", "curiosities": "En Komashi, pintar puede neutralizar una pesadilla y apilar piedras puede afectar a la mortaja. La atención, el oficio y la conexión tienen efectos materiales." },
+        "threnody": { "description": "Threnody es un planeta templado de bosques, montañas y océanos donde los muertos pueden regresar como shades y sobrevivir depende de reglas sencillas.", "overviewHeading": "Un mundo que recuerda a sus muertos.", "overview": "Threnody tiene dos continentes principales. Tras la devastación causada por el Mal, los supervivientes huyeron al continente menor y se asentaron junto a los Bosques del Infierno.", "environmentHeading": "Bosques silenciosos y noches peligrosas.", "environment": "Los Bosques del Infierno contienen ríos, cuevas, montañas y bosques caducifolios. Su silencio resulta antinatural, sobre todo de noche, cuando el paisaje pertenece tanto a los shades como al clima.", "lifeHeading": "Animales bajo una ley de sangre.", "life": "Ciervos, roedores, conejos, aves y pavos comparten el bosque con cerdos y ganado doméstico. Los depredadores desaparecieron porque la sangre derramada atrae a los shades.", "societyHeading": "Fortalezas, granjas y refugios.", "society": "Las ciudades fortaleza protegen a sus habitantes y controlan la economía de la plata. Los colonos cultivan claros y las waystops ofrecen suelo neutral a viajeros y fugitivos.", "curiositiesHeading": "La plata es moneda, medicina y frontera.", "curiosities": "Los shades son sombras cognitivas que atacan a quien rompe las Reglas Sencillas. La plata puede herirlos, curar su contacto y proteger una casa." },
+        "first-of-the-sun": { "description": "El Primero del Sol es el primer planeta del sistema Drominad, un mundo oceánico conocido por sus Aviar y el peligroso archipiélago Pantheon.", "overviewHeading": "Un mundo de islas observado desde el cielo.", "overview": "Tiene un continente, muchas islas y al menos una luna. Las islas natales de los Eelakin sostienen sociedades asentadas, mientras Pantheon es territorio sagrado y extremadamente peligroso.", "environmentHeading": "El continente y Pantheon.", "environment": "Pantheon reúne unas cuarenta islas de playas, acantilados e interiores letales. Su flora y fauna son mucho más peligrosas que las de las islas natales.", "lifeHeading": "Aviar y vida depredadora.", "life": "Los Aviar son aves nativas capaces de otorgar habilidades a sus compañeros humanos. Las demás formas de vida de Pantheon suelen ser mortales.", "societyHeading": "Vida eelakin entre tradición e industria.", "society": "Los Eelakin viven en las islas natales y han desarrollado su tecnología con el tiempo. Su relación con Pantheon mezcla reverencia, exploración y presión industrial.", "curiositiesHeading": "Primero del Sol y Drominad no son lo mismo.", "curiosities": "Drominad es un nombre usado por la sociedad cosmereana para el sistema, que contiene siete planetas y un cinturón de asteroides. Arcanum muestra un mapa del sistema, no solo del planeta." },
+        "ashyn": { "description": "Ashyn es el primer planeta del sistema rosharano, recordado como el planeta en llamas después de que una catástrofe ecológica destruyera gran parte de su biosfera.", "overviewHeading": "El mundo perdido detrás del mito rosharano.", "overview": "La mayoría de los ashynitas huyó a Roshar tras el Desgarramiento. Quedaron regiones fértiles aisladas y ciudades flotantes, mientras su historia sobrevivió en los relatos de los Salones Tranquilos.", "environmentHeading": "Tierra yerma y ciudades flotantes.", "environment": "Ashyn fue más fértil y quizá se parecía a Shinovar, pero hoy es casi estéril. Quedan zonas habitables, corrientes extrañas y ciudades sostenidas por una Investidura basada en enfermedades.", "lifeHeading": "Una biosfera dañada.", "life": "Antes había aves, caballos, uvas y animales domésticos. Hoy se conoce poca vida, incluidos reptiles y organismos relacionados con su magia infecciosa.", "societyHeading": "Sobrevivir por encima de un mundo roto.", "society": "La población superviviente vive en ciudades flotantes o zonas fértiles aisladas. Algunas enfermedades producen efectos útiles, pero vuelven dependiente a la sociedad de los infectados.", "curiositiesHeading": "Una magia que cambia el sentido de sistema.", "curiosities": "La magia posterior al Desgarramiento funciona mediante infecciones simbióticas. Ashyn demuestra que un planeta puede ser central para la historia de una saga aunque aún no tenga una novela principal." }
+      }
+    },
+    "tableOfContents": "Ficha del mundo",
+    "toc": { "introduction": "Introducción", "directory": "Directorio de mundos", "overview": "La ambientación", "environment": "Entorno", "life": "Flora y fauna", "society": "Formas de vivir", "stories": "Historias relacionadas", "magic": "Sistemas y fuerzas" }
+  },
+  "books": {
+    "eyebrow": "Catálogo del Cosmere",
+    "heading": "Encuentra tu próximo mundo.",
+    "imageLabel": "Una estantería visual de historias del Cosmere",
+    "description": "Una estantería visual de las obras publicadas del Cosmere, ordenadas por la saga o el mundo al que pertenecen. Empieza por un título y sigue sus conexiones cuando quieras.",
+    "indexLabel": "Resumen del catálogo",
+    "catalogueCount": "obras en este primer catálogo",
+    "catalogueKicker": "La colección",
+    "catalogueHeading": "Historias agrupadas por su destino",
+    "catalogueDescription": "Los grupos dan a cada libro un poco de contexto sin imponerte un orden de lectura.",
+    "standalone": "Independientes",
+    "arcanumUnbounded": "Arcanum Ilimitado",
+    "viewSaga": "Explorar saga",
+    "coverDimensions": "2:3 · marcador de portada",
+    "tableOfContents": "En esta página",
+    "toc": { "introduction": "Introducción", "catalogue": "El catálogo" },
+    "subsections": {
+      "era1": "Era 1 · La trilogía original",
+      "era2": "Era 2 · Wax y Wayne"
+    },
+    "types": {
+      "novel": "Novela",
+      "novella": "Novela corta",
+      "short-story": "Relato",
+      "graphic-novel": "Novela gráfica",
+      "omnibus": "Omnibus",
+      "anthology": "Colección",
+      "excerpt": "Fragmento"
+    },
+    "arcanumStatus": {
+      "arcanum-original": "Publicado por primera vez en Arcanum Ilimitado",
+      "previously-published": "Publicado anteriormente · incluido en Arcanum Ilimitado"
+    }
+  },
   "home": {
     "title": "Cosmereando — Guía del lector del Cosmere",
     "description": "Un punto de partida claro para explorar el universo interconectado de mundos, magia e historias de Brandon Sanderson.",
-    "hero": { "eyebrow": "Guía del lector del Cosmere", "heading": "Un universo.\nMuchos mundos.\nInfinitas historias.", "intro": "El Cosmere es el universo de fantasía interconectado de Brandon Sanderson: historias independientes con identidad propia, unidas por conexiones más profundas para quienes sienten curiosidad.", "discover": "Descubre sus conexiones", "imageLabel": "Imagen de bienvenida", "imageDimensions": "16:9 · imagen editorial panorámica" },
-    "cosmere": { "kicker": "La visión general", "heading": "¿Qué es el Cosmere?", "description": "El Cosmere es el nombre del universo interconectado que reúne muchas de las historias de fantasía épica de Brandon Sanderson. Sus mundos tienen historias, culturas y sistemas de magia distintos, pero comparten un escenario mayor y una historia que avanza bajo la superficie.", "worlds": { "title": "Muchos mundos", "text": "Scadrial, Roshar y otros planetas aportan su propia historia, atmósfera y reglas para el funcionamiento de la magia." }, "doors": { "title": "Distintas puertas de entrada", "text": "Puedes entrar mediante un golpe, un misterio político, una guerra épica o una aventura autoconclusiva. No hay un único comienzo correcto." }, "universe": { "title": "Conexiones por descubrir", "text": "Nombres, personajes e ideas recurrentes recompensan la atención, aunque la mayoría de historias también funcionan por sí solas." } },
-    "author": { "kicker": "El autor", "heading": "Un constructor de mundos conectados", "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por su construcción de mundos, sus sistemas de magia innovadores y sus ambiciosas historias largas. Elantris, publicada en 2005, fue su primera novela publicada y la primera historia que lanzó dentro del Cosmere. Detrás de libros y sagas independientes, lleva años construyendo un universo mucho mayor.", "imageLabel": "Retrato del autor", "imageDimensions": "2:3 · retrato vertical" },
-    "whyRead": { "kicker": "Una razón para empezar", "heading": "¿Por qué leer el Cosmere?", "start": { "title": "Empieza donde quieras", "text": "Muchos libros pueden leerse de forma independiente. Elige la primera historia por el tipo de experiencia que buscas, no por miedo a equivocarte de orden." }, "curiosity": { "title": "Sigue las pistas", "text": "Fíjate en los detalles recurrentes, especialmente en un viajero llamado Hoid, y deja que las conexiones aparezcan a su ritmo." }, "discovering": { "title": "Sigue descubriendo", "text": "El Cosmere funciona en dos niveles: una historia inmediata que puedes disfrutar hoy y un universo mayor que se vuelve más claro con el tiempo." } },
-    "routes": { "kicker": "Empieza aquí", "heading": "Elige tu ruta", "description": "No existe un orden universalmente correcto. Aquí encontrarás varias formas de entrar en el Cosmere según cuánto contexto y conexión quieras desde el principio.", "communityText": "Una ruta acogedora para conocer de forma equilibrada los mundos y las ideas principales.", "publicationText": "Sigue las historias según su orden de publicación y observa cómo crece el universo compartido.", "journeyText": "Conoce el recorrido personal que inspiró Cosmereando." },
-    "library": { "kicker": "La biblioteca", "heading": "Libros, sagas y planetas", "description": "Explora novelas, novelas cortas, relatos y novelas gráficas por la saga a la que pertenecen o el planeta en el que transcurren.", "books": "Ver libros", "sagas": "Ver sagas", "planets": "Ver planetas" },
-    "tableOfContents": "En esta página", "toc": { "introduction": "Introducción", "cosmere": "¿Qué es el Cosmere?", "author": "El autor", "whyRead": "¿Por qué leerlo?", "routes": "Rutas de lectura", "library": "La biblioteca" }
+    "hero": {
+      "eyebrow": "Guía del lector del Cosmere",
+      "heading": "Un universo.\nMuchos mundos.\nInfinitas historias.",
+      "intro": "El Cosmere es el universo de fantasía interconectado de Brandon Sanderson: historias independientes con identidad propia, unidas por conexiones más profundas para quienes sienten curiosidad.",
+      "discover": "Descubre sus conexiones",
+      "imageLabel": "Los reinos conectados del Cosmere",
+      "imageDimensions": "16:9 · imagen editorial panorámica"
+    },
+    "cosmere": {
+      "kicker": "La visión general",
+      "heading": "¿Qué es el Cosmere?",
+      "description": "El Cosmere es el nombre del universo interconectado que reúne muchas de las historias de fantasía épica de Brandon Sanderson. Sus mundos tienen historias, culturas y sistemas de magia distintos, pero comparten un escenario mayor y una historia que avanza bajo la superficie.",
+      "worlds": {
+        "title": "Muchos mundos",
+        "text": "Scadrial, Roshar y otros planetas aportan su propia historia, atmósfera y reglas para el funcionamiento de la magia."
+      },
+      "doors": {
+        "title": "Distintas puertas de entrada",
+        "text": "Puedes entrar mediante un golpe, un misterio político, una guerra épica o una aventura autoconclusiva. No hay un único comienzo correcto."
+      },
+      "universe": {
+        "title": "Conexiones por descubrir",
+        "text": "Nombres, personajes e ideas recurrentes recompensan la atención, aunque la mayoría de historias también funcionan por sí solas."
+      }
+    },
+    "author": {
+      "kicker": "El autor",
+      "heading": "Un constructor de mundos conectados",
+      "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por su construcción de mundos, sus sistemas de magia innovadores y sus ambiciosas historias largas. Elantris, publicada en 2005, fue su primera novela publicada y la primera historia que lanzó dentro del Cosmere. Detrás de libros y sagas independientes, lleva años construyendo un universo mucho mayor.",
+      "imageLabel": "Retrato del autor",
+      "imageDimensions": "2:3 · retrato vertical"
+    },
+    "whyRead": {
+      "kicker": "Una razón para empezar",
+      "heading": "¿Por qué leer el Cosmere?",
+      "start": {
+        "title": "Empieza donde quieras",
+        "text": "Muchos libros pueden leerse de forma independiente. Elige la primera historia por el tipo de experiencia que buscas, no por miedo a equivocarte de orden."
+      },
+      "curiosity": {
+        "title": "Sigue las pistas",
+        "text": "Fíjate en los detalles recurrentes, especialmente en un viajero llamado Hoid, y deja que las conexiones aparezcan a su ritmo."
+      },
+      "discovering": {
+        "title": "Sigue descubriendo",
+        "text": "El Cosmere funciona en dos niveles: una historia inmediata que puedes disfrutar hoy y un universo mayor que se vuelve más claro con el tiempo."
+      }
+    },
+    "routes": {
+      "kicker": "Empieza aquí",
+      "heading": "Elige tu ruta",
+      "description": "No existe un orden universalmente correcto. Aquí encontrarás varias formas de entrar en el Cosmere según cuánto contexto y conexión quieras desde el principio.",
+      "communityText": "Una ruta acogedora para conocer de forma equilibrada los mundos y las ideas principales.",
+      "publicationText": "Sigue las historias según su orden de publicación y observa cómo crece el universo compartido.",
+      "journeyText": "Conoce el recorrido personal que inspiró Cosmereando."
+    },
+    "library": {
+      "kicker": "La biblioteca",
+      "heading": "Libros, sagas y planetas",
+      "description": "Explora novelas, novelas cortas, relatos y novelas gráficas por la saga a la que pertenecen o el planeta en el que transcurren.",
+      "books": "Ver libros",
+      "sagas": "Ver sagas",
+      "planets": "Ver planetas"
+    },
+    "tableOfContents": "En esta página",
+    "toc": {
+      "introduction": "Introducción",
+      "cosmere": "¿Qué es el Cosmere?",
+      "author": "El autor",
+      "whyRead": "¿Por qué leerlo?",
+      "routes": "Rutas de lectura",
+      "library": "La biblioteca"
+    }
   },
-  "pages": { "books": { "title": "Libros", "description": "Explora las obras publicadas del Cosmere agrupadas por saga y por historia independiente." }, "routes": { "title": "Rutas de lectura", "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere." }, "sagas": { "title": "Sagas", "description": "Cada saga del Cosmere tendrá aquí su propia página guiada con sus obras y su planeta relacionado." }, "planets": { "title": "Planetas", "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados." }, "credits": { "title": "Créditos", "description": "Aquí aparecerán los autores de las imágenes, las fuentes y los reconocimientos del proyecto." }, "imageLabel": "Imagen de portada de {title}", "imageDimensions": "3:2 · imagen de cabecera de sección" }
+  "pages": {
+    "books": {
+      "title": "Libros",
+      "description": "Explora las obras publicadas del Cosmere agrupadas por saga y por historia independiente."
+    },
+    "routes": {
+      "title": "Rutas de lectura",
+      "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere."
+    },
+    "sagas": {
+      "title": "Sagas",
+      "description": "Cada saga del Cosmere tendrá aquí su propia página guiada con sus obras y su planeta relacionado."
+    },
+    "planets": {
+      "title": "Planetas",
+      "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados."
+    },
+    "credits": {
+      "title": "Créditos",
+      "description": "Aquí aparecerán los autores de las imágenes, las fuentes y los reconocimientos del proyecto."
+    },
+    "imageLabel": "Imagen de portada de {title}",
+    "imageDimensions": "3:2 · imagen de cabecera de sección"
+  },
+  "stormlightPage": {
+    "intro": {
+      "eyebrow": "Ficha de saga",
+      "description": "El archivo de las tormentas sigue a los habitantes de Roshar, un mundo marcado por tormentas recurrentes, juramentos antiguos y poderes que empiezan a despertar de nuevo. Su primer arco combina una escala épica con historias íntimas sobre deber, sanación y cambio.",
+      "planet": "Mundo",
+      "imageLabel": "Los mundos del Cosmere, incluido Roshar"
+    },
+    "publication": {
+      "kicker": "Mapa de publicación",
+      "heading": "Un arco largo con historias entre sus pasos.",
+      "description": "Lee las novelas principales en orden de publicación. Danzante del filo y Esquirla del amanecer aparecen entre las novelas donde aportan más contexto, mientras que los relatos cortos son desvíos opcionales."
+    },
+    "books": {
+      "wayOfKings": "El volumen inicial presenta Roshar, sus grandes tormentas y las primeras señales de que los poderes antiguos están regresando.",
+      "wordsOfRadiance": "La segunda novela amplía el mundo y profundiza en las preguntas sobre los Caballeros Radiantes y los juramentos que pronuncian.",
+      "edgedancer": "Una novela corta centrada en Lift, recomendable después de Palabras radiantes y antes de Juramentada.",
+      "oathbringer": "La tercera novela gira hacia la historia, la responsabilidad y el difícil trabajo de reconstruir un orden roto.",
+      "dawnshard": "Una novela corta situada antes de El ritmo de la guerra, con una expedición menor que aporta contexto al conflicto más amplio.",
+      "rhythmOfWar": "La cuarta novela enfrenta directamente estudio, tecnología y guerra mientras los personajes buscan nuevas formas de sobrevivir.",
+      "windAndTruth": "La quinta novela cierra el primer gran arco de la serie y mantiene sus preguntas centrales sobre las promesas y la identidad.",
+      "elsecaller": "Un relato corto complementario relacionado con el material más amplio de la saga. Es contexto opcional del catálogo.",
+      "kingLopen": "Un relato breve y más ligero sobre Lopen y su particular relación con el liderazgo."
+    },
+    "supplementary": {
+      "detailsAction": "¿Por qué está aquí?",
+      "typeLabel": "Formato",
+      "originLabel": "Cómo se publicó",
+      "whyLabel": "Por qué leerlo",
+      "whenLabel": "Cuándo leerlo",
+      "works": {
+        "edgedancer": { "origin": "Es una novela corta situada entre Palabras radiantes y Juramentada en la secuencia de lectura amplia.", "why": "Da más espacio para que Lift crezca y ofrece una mirada distinta y más juguetona al mundo antes de la siguiente novela principal.", "when": "Después de Palabras radiantes y antes de Juramentada." },
+        "dawnshard": { "origin": "Es una novela corta situada entre Juramentada y El ritmo de la guerra y publicada como complemento de la secuencia principal.", "why": "Desarrolla una expedición menor y aporta contexto que ayuda a situar partes de El ritmo de la guerra.", "when": "Después de Juramentada y antes de El ritmo de la guerra." }
+      }
+    },
+    "magic": {
+      "kicker": "Sistemas de Roshar",
+      "heading": "Luz tormentosa, juramentos y vínculos vivos.",
+      "description": "Los sistemas centrales de El archivo de las tormentas conectan energía, intención y relación. Esta introducción mantiene deliberadamente un nivel ligero de revelaciones.",
+      "imageLabel": "Ilustración conceptual de El archivo de las tormentas en Roshar",
+      "stormlight": { "title": "Luz tormentosa", "text": "La Luz tormentosa es una forma luminosa de Investidura que portan las gemas cargadas y los seres vivos. Alimenta muchas habilidades extraordinarias de Roshar y está unida a sus tormentas." },
+      "surgebinding": { "title": "Vinculación de ondas", "text": "La vinculación de ondas combina dos fuerzas fundamentales, u Ondas, de distintas maneras. Los Caballeros Radiantes acceden a ellas mediante juramentos y vínculos, no solo mediante el estudio." },
+      "spren": { "title": "Spren y vínculos", "text": "Los spren son manifestaciones de ideas, fuerzas y emociones. Algunos pueden formar un vínculo nahel con una persona, una relación que transforma a ambos y sostiene el centro moral de la saga." }
+    },
+    "curiosities": {
+      "kicker": "Algunos detalles de Roshar",
+      "heading": "Lo que hace distinta a esta saga.",
+      "first": "La serie se construye sobre un mundo donde el clima, la arquitectura, la fauna y la vida cotidiana responden a las altas tormentas.",
+      "second": "Su magia central se organiza alrededor de ideales pronunciados, de modo que el crecimiento personal y la capacidad sobrenatural están conectados.",
+      "third": "La secuencia principal incluye interludios y novelas cortas complementarias que amplían la mirada más allá del reparto central sin sustituir el orden principal."
+    },
+    "tableOfContents": "Ficha de Stormlight",
+    "toc": { "introduction": "Introducción", "publicationOrder": "Orden de publicación", "magic": "Sistemas de Roshar", "curiosities": "Curiosidades" }
+  },
+  "arcanumPage": {
+    "intro": { "eyebrow": "Colección especial", "description": "Arcanum Ilimitado es una antología del Cosmere: un estante guiado de relatos, novelas cortas y fragmentos que abre ventanas a distintos mundos, épocas y rincones del universo más amplio.", "countLabel": "Historias de esta colección", "countText": "historias del Cosmere" },
+    "purpose": { "kicker": "Por qué existe", "heading": "Un mapa del Cosmere en miniatura.", "text": "No es una saga ni un orden de lectura continuo. La colección reúne historias que de otro modo quedarían repartidas en distintas ediciones y añade ensayos breves, notas planetarias y material visual para mostrar cómo se conecta el Cosmere sin exigir que conozcas todas sus conexiones de antemano." },
+    "stories": {
+      "kicker": "El contenido", "heading": "Nueve historias, seis sistemas y muchos puntos de entrada.", "description": "Abre cada ficha para ver qué tipo de historia es, dónde encaja y cuándo funciona mejor dentro de un recorrido de lectura más amplio.",
+      "items": {
+        "the-hope-of-elantris": { "description": "Un breve epílogo de Elantris, contado desde otro punto de vista y lleno de la calidez y el humor de la vida después de la crisis central de la novela.", "when": "Después de Elantris.", "context": "Un pequeño regreso a Sel y a sus habitantes; funciona mejor como coda que como introducción." },
+        "the-emperors-soul": { "description": "Una novela corta, precisa y autoconclusiva sobre una artista obligada a crear un alma nueva para un emperador mientras negocia con la identidad, el oficio y el poder.", "when": "En cualquier momento; después de Elantris si quieres mantener unido el contexto de Sel.", "context": "Transcurre en Sel, pero muestra otra región y otra forma de magia distinta a Elantris." },
+        "the-eleventh-metal": { "description": "Una breve precuela de Nacidos de la bruma que sigue a Kelsier antes de la trilogía principal y muestra una de sus primeras lecciones de Alomancia.", "when": "Después de El imperio final, o después de la trilogía original como retrospectiva.", "context": "Aporta sobre todo personaje y atmósfera; no es necesaria para empezar Nacidos de la bruma." },
+        "allomancer-jak": { "description": "Una aventura pulp dentro del mundo sobre un ladrón que aspira a héroe, enmarcada por las notas de su sufrido sirviente terrisano.", "when": "Después de Aleación de ley, cuando ya conozcas el tono y la época de Wax y Wayne.", "context": "Amplía la mitología cotidiana de la segunda era de Scadrial más que su trama central." },
+        "mistborn-secret-history": { "description": "Una novela corta que revisita acontecimientos importantes de la primera era de Nacidos de la bruma desde detrás del mundo visible, ofreciendo otra perspectiva sobre su historia oculta.", "when": "Después de Brazales de duelo para minimizar spoilers; antes también es posible con riesgo.", "context": "Es uno de los relatos más conectados con el Cosmere, así que el contexto de lectura importa." },
+        "edgedancer": { "description": "Lift protagoniza una historia rápida, divertida y tierna sobre el hambre, la responsabilidad y un peligro que se mueve por Roshar.", "when": "Después de Palabras radiantes y antes de Juramentada.", "context": "Une las primeras novelas de El archivo de las tormentas y da espacio a un personaje que volverá más adelante." },
+        "shadows-for-silence": { "description": "Un relato de frontera tenso, ambientado en un bosque donde la violencia atrae depredadores mortales y sobrevivir depende de unas reglas que nadie puede olvidar.", "when": "En cualquier momento; se puede leer de forma independiente.", "context": "Presenta Threnody y muestra hasta qué punto puede variar un relato del Cosmere fuera de la fantasía épica." },
+        "sixth-of-the-dusk": { "description": "En una isla remota, un guía que caza con aves entrenadas se enfrenta a un futuro que podría volver obsoleto el modo de vida de su pueblo.", "when": "En cualquier momento; puedes reservarlo para más adelante si prefieres descubrir sus implicaciones poco a poco.", "context": "Introduce Primero del Sol y ofrece una de las miradas más lejanas hacia el horizonte del Cosmere." },
+        "white-sand-excerpt": { "description": "Un vistazo breve a Arena Blanca que presenta Taldain, su mundo dividido y el dominio de la arena que sostiene su conflicto.", "when": "Antes de Arena Blanca como anticipo, o puedes saltarlo si ya has leído la novela gráfica.", "context": "Es un fragmento, no un final independiente ni un sustituto de la novela gráfica completa." }
+      }
+    },
+    "sections": { "selishSystem": "Sistema selish · Sel", "scadrianSystem": "Sistema scadriano · Scadrial", "rosharanSystem": "Sistema roshariano · Roshar", "threnoditeSystem": "Sistema threnodita · Threnody", "firstOfTheSunSystem": "Sistema de Primero del Sol", "taldainSystem": "Sistema taldainiano · Taldain" },
+    "detailsAction": "Leer el contexto", "whenLabel": "Cuándo leerla", "contextLabel": "Qué aporta",
+    "essays": { "kicker": "Más allá de las historias", "heading": "La colección también enseña a mirar hacia fuera.", "text": "El volumen incluye ensayos breves sobre varios sistemas planetarios, un mapa del Cosmere y material visual de apoyo. Son opcionales, pero convierten la antología en algo más que una pila de relatos extra: ayudan a orientarse y a detectar conexiones entre mundos.", "drominadImageLabel": "El mapa del sistema Drominad", "shardImageLabel": "Símbolos relacionados con los poderes del Cosmere", "nebulaImageLabel": "Una visión abstracta y colorida del Cosmere" },
+    "tableOfContents": "Ficha de Arcanum Ilimitado", "toc": { "introduction": "Introducción", "purpose": "Por qué existe", "stories": "Historias", "essays": "Ensayos y mapa" }
+  },
+  "whiteSandPage": {
+    "back": "Volver a Sagas",
+    "intro": {
+      "eyebrow": "Ficha de saga",
+      "description": "Arena blanca es una trilogía de novela gráfica ambientada en Taldain, un mundo dividido entre un Día iluminado y una Noche misteriosa.",
+      "planet": "Mundo",
+      "imageLabel": "Taldain y sus dos lados",
+      "imageDimensions": "16:9 · marcador de imagen de Arena blanca"
+    },
+    "publication": {
+      "kicker": "Mapa de publicación",
+      "heading": "Una novela gráfica en tres movimientos.",
+      "description": "La lista sigue el orden de publicación y distingue los volúmenes, la edición recopilatoria y el fragmento."
+    },
+    "books": {
+      "volume1": "Presenta a Kenton y a los maestros de la arena.",
+      "volume2": "Amplía el conflicto entre el Día y la Noche.",
+      "volume3": "Lleva la conspiración central a una nueva etapa.",
+      "omnibus": "Recopila los volúmenes 1–3 con material nuevo y revisado.",
+      "excerpt": "Fragmento del inicio incluido en Arcanum Ilimitado."
+    },
+    "supplementary": {
+      "detailsAction": "¿Por qué está aquí?",
+      "typeLabel": "Formato",
+      "originLabel": "Cómo se publicó",
+      "whyLabel": "Por qué leerlo",
+      "whenLabel": "Cuándo leerlo",
+      "works": {
+        "volume1": {
+          "origin": "La primera parte de la historia se adaptó como novela gráfica y se publicó como el volumen inicial de la trilogía.",
+          "why": "Presenta Taldain, a Kenton, a los maestros de la arena y el conflicto que da a Arena Blanca su identidad visual.",
+          "when": "Empieza aquí si vas a leer los volúmenes por separado."
+        },
+        "volume2": {
+          "origin": "Es la segunda parte de la adaptación en novela gráfica, publicada como volumen independiente antes de que llegara la conclusión.",
+          "why": "Amplía el conflicto político y desarrolla la relación entre el Día y la Noche.",
+          "when": "Después del volumen 1, o dentro del Ómnibus."
+        },
+        "volume3": {
+          "origin": "Es el volumen final de la secuencia de publicación original de la novela gráfica.",
+          "why": "Lleva la conspiración central y la lucha de Kenton a una nueva etapa y completa la secuencia principal.",
+          "when": "Después de los volúmenes 1 y 2, salvo que leas el Ómnibus."
+        },
+        "omnibus": {
+          "origin": "Es la edición de lectura unificada para quien prefiere un solo libro físico, con revisiones editoriales y material adicional junto a la historia principal.",
+          "why": "Su ventaja principal es la comodidad: permite leer la novela gráfica como una obra continua, sin repartirla entre varios volúmenes.",
+          "when": "Se lee en lugar de los tres volúmenes; no es una cuarta entrega."
+        },
+        "excerpt": {
+          "origin": "A diferencia de los volúmenes y del Ómnibus, esta entrada es una muestra y no una edición completa, conservada entre los materiales del Cosmere de Arcanum Ilimitado.",
+          "why": "Permite comparar el borrador inicial en prosa con la adaptación en novela gráfica y descubrir cómo cambió la historia.",
+          "when": "Es opcional. Puedes leerlo después o junto a las novelas gráficas si te interesa el proceso de adaptación."
+        }
+      }
+    },
+    "magic": {
+      "kicker": "El sistema de Taldain",
+      "heading": "Poder bajo dos cielos.",
+      "description": "Taldain está marcado por dos lados y por formas distintas de entender el poder.",
+      "sandMastery": {
+        "title": "Maestría de la arena",
+        "text": "Los maestros manipulan telequinéticamente la arena blanca. La arena se vuelve negra temporalmente y la práctica consume el agua del usuario."
+      },
+      "starmarks": {
+        "title": "Marcas estelares",
+        "text": "Son signos asociados con la Noche y sus Starcarved. Su relación con la maestría de la arena forma parte del misterio."
+      },
+      "taldain": {
+        "title": "Día y Noche",
+        "text": "Los dos lados de Taldain tienen luz, culturas y formas de entender el poder diferentes."
+      }
+    },
+    "curiosities": {
+      "kicker": "Un poco de contexto",
+      "heading": "Detalles para tener en cuenta",
+      "first": "Arena blanca se basa en una historia en prosa reelaborada como trilogía canónica de novelas gráficas.",
+      "second": "Khriss conecta Arena blanca con el Cosmere más amplio como personaje y estudiosa de mundos e Investidura.",
+      "third": "El fragmento de Arcanum Ilimitado permite probar la historia en prosa."
+    },
+    "tableOfContents": "Ficha de Arena blanca",
+    "toc": {
+      "introduction": "Introducción",
+      "publicationOrder": "Orden de publicación",
+      "magic": "Sistema de Taldain",
+      "curiosities": "Curiosidades"
+    }
+  }
 }

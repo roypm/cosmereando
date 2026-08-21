@@ -7,11 +7,15 @@
     "abstractGalaxy": "Galàxia abstracta",
     "sitePreferences": "Preferències del lloc",
     "mainNavigation": "Navegació principal",
+    "toggleSidebar": "Mostrar o ocultar la navegació principal",
+    "closeSidebar": "Tancar la navegació principal",
     "projectLinks": "Enllaços del projecte",
     "lastUpdated": "Última actualització: 20 d’agost de 2026",
     "version": "Versió",
     "createdBy": "Creat per",
     "credits": "Crèdits",
+    "breadcrumbs": "Fil d’Ariadna",
+    "returnTo": "← Tornar a {label}",
     "linkedin": "LinkedIn",
     "returnHome": "← Tornar a l’inici",
     "imageHere": "Imatge aquí",
@@ -36,9 +40,18 @@
       "kicker": "Per què existeixen les rutes",
       "heading": "No hi ha una única manera correcta de llegir-lo.",
       "description": "Cada lector busca una cosa diferent: una introducció acollidora, una visió més àmplia de l’univers o el registre d’un recorregut personal. Una ruta és una eina, no una norma.",
-      "entry": { "title": "Troba el primer pas", "text": "Una ruta pot eliminar el dubte de triar el primer llibre i ajudar-te a començar amb confiança." },
-      "context": { "title": "Construeix el context", "text": "L’ordre de les històries pot canviar la manera com apareixen les connexions, les idees recurrents i els diferents mons." },
-      "pace": { "title": "Llegeix al teu ritme", "text": "Pots seguir un camí recomanat, aturar-te quan vulguis i fer teu el recorregut." }
+      "entry": {
+        "title": "Troba el primer pas",
+        "text": "Una ruta pot eliminar el dubte de triar el primer llibre i ajudar-te a començar amb confiança."
+      },
+      "context": {
+        "title": "Construeix el context",
+        "text": "L’ordre de les històries pot canviar la manera com apareixen les connexions, les idees recurrents i els diferents mons."
+      },
+      "pace": {
+        "title": "Llegeix al teu ritme",
+        "text": "Pots seguir un camí recomanat, aturar-te quan vulguis i fer teu el recorregut."
+      }
     },
     "routes": {
       "kicker": "Tres maneres d’entrar-hi",
@@ -54,65 +67,686 @@
       "community": {
         "eyebrow": "Una ruta acollidora",
         "intro": "{route} està pensada com una primera conversa equilibrada amb el Cosmere: prou varietat per intuir-ne l’escala sense convertir el començament en una llista de tasques.",
-        "imageLabel": "Una porta d’entrada a {route}", "imageDimensions": "16:9 · marcador d’imatge de ruta",
-        "overview": { "kicker": "La idea", "heading": "Comença amb equilibri i segueix la teva curiositat.", "text": "Aquesta ruta posa l’experiència del lector en primer pla. Deixa espai per a gustos diferents i manté les connexions més àmplies en segon pla fins que les vulguis buscar." },
-        "cards": {
-          "focus": { "title": "Un primer pas clar", "text": "L’inici vol ser accessible i representatiu de tot el que pot oferir el Cosmere." },
-          "flexibility": { "title": "Espai per canviar", "text": "La ruta proposa una direcció, no un ritme obligatori ni un pla de lectura perfecte." },
-          "balance": { "title": "Una mostra àmplia", "text": "Els diferents tons i mons construeixen a poc a poc una visió de l’univers sense revelar-ne les sorpreses més profundes." }
+        "imageLabel": "Una porta d’entrada a {route}",
+        "imageDimensions": "16:9 · marcador d’imatge de ruta",
+        "overview": {
+          "kicker": "La idea",
+          "heading": "Comença amb equilibri i segueix la teva curiositat.",
+          "text": "Aquesta ruta posa l’experiència del lector en primer pla. Deixa espai per a gustos diferents i manté les connexions més àmplies en segon pla fins que les vulguis buscar."
         },
-        "next": { "kicker": "El que afegirà aquesta pàgina", "heading": "Una guia pràctica per triar el pas següent.", "text": "La ruta completa inclourà l’ordre de lectura, motius breus per a cada elecció i notes curoses amb els espòilers." },
-        "toc": { "overview": "Com funciona aquesta ruta", "next": "El que afegirà aquesta pàgina" }
+        "cards": {
+          "focus": {
+            "title": "Un primer pas clar",
+            "text": "L’inici vol ser accessible i representatiu de tot el que pot oferir el Cosmere."
+          },
+          "flexibility": {
+            "title": "Espai per canviar",
+            "text": "La ruta proposa una direcció, no un ritme obligatori ni un pla de lectura perfecte."
+          },
+          "balance": {
+            "title": "Una mostra àmplia",
+            "text": "Els diferents tons i mons construeixen a poc a poc una visió de l’univers sense revelar-ne les sorpreses més profundes."
+          }
+        },
+        "next": {
+          "kicker": "El que afegirà aquesta pàgina",
+          "heading": "Una guia pràctica per triar el pas següent.",
+          "text": "La ruta completa inclourà l’ordre de lectura, motius breus per a cada elecció i notes curoses amb els espòilers."
+        },
+        "toc": {
+          "overview": "Com funciona aquesta ruta",
+          "next": "El que afegirà aquesta pàgina"
+        }
       },
       "publication": {
         "eyebrow": "Una ruta històrica",
         "intro": "{route} segueix el Cosmere com una obra publicada en evolució, deixant que cada etapa mostri com va créixer l’univers compartit amb el temps.",
-        "imageLabel": "Una línia temporal per a {route}", "imageDimensions": "16:9 · marcador de línia temporal",
-        "overview": { "kicker": "Llegeix la història", "heading": "Observa com creix l’univers publicació rere publicació.", "text": "L’ordre de publicació ofereix un context diferent. En lloc de començar per la visió més àmplia, descobreixes les idees tal com les van trobar originalment els lectors." },
-        "sequence": {
-          "first": { "title": "Els primers fonaments", "text": "Comença per la primera porta publicada i observa com l’univers estableix el seu propi llenguatge." },
-          "second": { "title": "Un horitzó més ampli", "text": "Avança per les publicacions posteriors mentre nous mons, tons i possibilitats se sumen a la conversa." },
-          "third": { "title": "Connexions en moviment", "text": "Deixa que els fils recurrents apareguin al seu ritme i contempla com evoluciona el projecte." }
+        "imageLabel": "Una línia temporal per a {route}",
+        "imageDimensions": "16:9 · marcador de línia temporal",
+        "overview": {
+          "kicker": "Llegeix la història",
+          "heading": "Observa com creix l’univers publicació rere publicació.",
+          "text": "L’ordre de publicació ofereix un context diferent. En lloc de començar per la visió més àmplia, descobreixes les idees tal com les van trobar originalment els lectors."
         },
-        "next": { "kicker": "El que afegirà aquesta pàgina", "heading": "Una línia temporal per a lectors curiosos.", "text": "La ruta completa situarà cada pas en el seu context i explicarà quina experiència ofereix cada etapa sense convertir la guia en un catàleg d’espòilers." },
-        "toc": { "overview": "La forma de la línia temporal", "next": "El que afegirà aquesta pàgina" }
+        "sequence": {
+          "first": {
+            "title": "Els primers fonaments",
+            "text": "Comença per la primera porta publicada i observa com l’univers estableix el seu propi llenguatge."
+          },
+          "second": {
+            "title": "Un horitzó més ampli",
+            "text": "Avança per les publicacions posteriors mentre nous mons, tons i possibilitats se sumen a la conversa."
+          },
+          "third": {
+            "title": "Connexions en moviment",
+            "text": "Deixa que els fils recurrents apareguin al seu ritme i contempla com evoluciona el projecte."
+          }
+        },
+        "next": {
+          "kicker": "El que afegirà aquesta pàgina",
+          "heading": "Una línia temporal per a lectors curiosos.",
+          "text": "La ruta completa situarà cada pas en el seu context i explicarà quina experiència ofereix cada etapa sense convertir la guia en un catàleg d’espòilers."
+        },
+        "toc": {
+          "overview": "La forma de la línia temporal",
+          "next": "El que afegirà aquesta pàgina"
+        }
       },
       "myJourney": {
         "eyebrow": "Una ruta personal",
         "intro": "{route} és la ruta que hi ha darrere de Cosmereando: un registre de decisions, descobriments i canvis sorgits en convertir una experiència personal de lectura en una guia útil.",
-        "imageLabel": "Un quadern per a {route}", "imageDimensions": "16:9 · marcador de nota de viatge",
-        "overview": { "kicker": "El punt de partida", "heading": "Una ruta també pot ser un registre.", "text": "Aquesta pàgina serà més reflexiva que normativa. Explicarà per què va prendre forma la ruta i quines preguntes van ajudar a decidir què hi havia d’incloure." },
-        "note": { "label": "Una nota del recorregut", "text": "L’objectiu no és trobar un ordre veritable. És recordar què va fer atractiu cada pas, quin context necessitava i com podria sentir-se algú que hi arriba per primera vegada." },
-        "next": { "kicker": "Construïda amb el temps", "heading": "La guia creixerà al costat de la lectura.", "text": "La ruta acabada conservarà la seva mirada personal, però farà que cada recomanació sigui fàcil d’entendre i de revisar." },
-        "cards": {
-          "origin": { "title": "On va començar", "text": "Les primeres decisions van néixer de buscar una manera amable d’entrar en un univers que des de fora pot semblar enorme." },
-          "changes": { "title": "Què ha canviat", "text": "Els llibres i descobriments nous poden transformar la ruta, que continuarà oberta a revisions." },
-          "criteria": { "title": "Què importa", "text": "La claredat, el gaudi i un context honest guien les decisions més que completar una llista perfecta." }
+        "imageLabel": "Un quadern per a {route}",
+        "imageDimensions": "16:9 · marcador de nota de viatge",
+        "overview": {
+          "kicker": "El punt de partida",
+          "heading": "Una ruta també pot ser un registre.",
+          "text": "Aquesta pàgina serà més reflexiva que normativa. Explicarà per què va prendre forma la ruta i quines preguntes van ajudar a decidir què hi havia d’incloure."
         },
-        "toc": { "overview": "El punt de partida", "next": "Construïda amb el temps" }
+        "note": {
+          "label": "Una nota del recorregut",
+          "text": "L’objectiu no és trobar un ordre veritable. És recordar què va fer atractiu cada pas, quin context necessitava i com podria sentir-se algú que hi arriba per primera vegada."
+        },
+        "next": {
+          "kicker": "Construïda amb el temps",
+          "heading": "La guia creixerà al costat de la lectura.",
+          "text": "La ruta acabada conservarà la seva mirada personal, però farà que cada recomanació sigui fàcil d’entendre i de revisar."
+        },
+        "cards": {
+          "origin": {
+            "title": "On va començar",
+            "text": "Les primeres decisions van néixer de buscar una manera amable d’entrar en un univers que des de fora pot semblar enorme."
+          },
+          "changes": {
+            "title": "Què ha canviat",
+            "text": "Els llibres i descobriments nous poden transformar la ruta, que continuarà oberta a revisions."
+          },
+          "criteria": {
+            "title": "Què importa",
+            "text": "La claredat, el gaudi i un context honest guien les decisions més que completar una llista perfecta."
+          }
+        },
+        "toc": {
+          "overview": "El punt de partida",
+          "next": "Construïda amb el temps"
+        }
       }
     },
     "tableOfContents": "En aquesta pàgina",
-    "toc": { "introduction": "Introducció", "why": "Per què existeixen les rutes", "routes": "Les tres rutes", "overview": "Resum de la ruta", "content": "El que vindrà" }
+    "toc": {
+      "introduction": "Introducció",
+      "why": "Per què existeixen les rutes",
+      "routes": "Les tres rutes",
+      "overview": "Resum de la ruta",
+      "content": "El que vindrà"
+    }
   },
-  "sagaPage": { "intro": { "eyebrow": "La constel·lació", "heading": "Mons amb la seva pròpia gravetat.", "description": "Les sagues reuneixen històries que comparteixen món, història o un conjunt de preguntes que es prolonga en el temps. Aquest índex t’ajudarà a entendre què pertany a cada grup abans d’obrir una fitxa.", "indexLabel": "Sagues del catàleg", "indexText": "mons i col·leccions" }, "orientation": { "kicker": "Llegeix primer la forma", "heading": "Cada saga és una porta diferent.", "description": "Algunes sagues s’estenen al llarg de diverses novel·les. D’altres comencen amb un sol llibre o reuneixen històries que amplien el Cosmere al voltant d’una idea central. Aquestes pàgines es convertiran en un mapa amb cura davant dels espòilers.", "imageLabel": "Una constel·lació de connexions entre sagues", "imageDimensions": "3:2 · marcador de mapa de sagues" }, "directory": { "kicker": "L’índex", "heading": "Tria una família d’històries.", "description": "Obre una fitxa de saga per veure’n l’estructura provisional i torna més endavant, quan hi incorporem les obres, els mons i les connexions.", "cards": { "mistborn": "Un cicle de revolucions, metalls i eres canviants a Scadrial.", "the-stormlight-archive": "Una història èpica de Roshar, els Radiants i el retorn de les tempestes.", "white-sand": "Una saga gràfica marcada per la llum implacable i les cultures de Taldain.", "arcanum-unbounded": "Una col·lecció que reuneix històries del Cosmere i els dona un marc més ampli." } }, "tableOfContents": "En aquesta pàgina", "toc": { "introduction": "La constel·lació", "orientation": "Com llegir l’índex", "directory": "L’índex de sagues" }, "detail": { "back": "Tornar a Sagues", "eyebrow": "Fitxa de saga", "description": "Aquesta és la pàgina provisional de {title}. Aquí desenvoluparem el seu context de lectura, les seves obres, el seu món i les seves connexions.", "imageLabel": "Marcador visual de {title}", "imageDimensions": "16:9 · marcador d’imatge de saga", "sections": { "overview": { "kicker": "El marc", "heading": "Resum" }, "works": { "kicker": "El catàleg", "heading": "Obres" }, "connections": { "kicker": "El Cosmere més ampli", "heading": "Món i connexions" } }, "tableOfContents": "Fitxa de saga", "toc": { "introduction": "Introducció", "overview": "Resum", "works": "Obres", "connections": "Món i connexions" } } },
-  "mistbornPage": { "back": "Tornar a Sagues", "intro": { "eyebrow": "Fitxa de saga", "description": "Nascuts de la boira explica la història de Scadrial a través de dues eres publicades: una trilogia de fantasia èpica i una sèrie posterior marcada per una societat canviant, la nova tecnologia i el llegat del que va passar abans.", "planet": "Món", "imageLabel": "Scadrial i les seves arts metàl·liques", "imageDimensions": "16:9 · marcador d’imatge de Nascuts de la boira" }, "warning": { "kicker": "Avís opcional", "heading": "Vols saber quina relació té l’Era 2 amb l’Era 1?", "text": "L’Era 2 transcorre segles després. Llegir-ne la secció de l’Era 2 et pot donar una pista sobre el destí dels personatges de l’Era 1. No és un espòiler contundent ni especialment rellevant, però la pista hi és.", "action": "Si t’interessa, llegeix-la. Si prefereixes no saber-ho, salta’t únicament l’Era 2 i continua amb les Arts metàl·liques." }, "eras": { "kicker": "Mapa de publicació", "heading": "Dues eres, un món en transformació.", "description": "La llista reuneix les novel·les i els relats de cada era en ordre de publicació. Les notes assenyalen quan convé llegir un relat complementari en un altre moment." }, "era1": { "kicker": "Era 1", "heading": "La trilogia original", "description": "Una fantasia èpica sobre rebel·lió, poder i el preu de refer un món. Aquestes tres novel·les formen la història principal completa." }, "era2": { "kicker": "Era 2", "heading": "La sèrie de Wax i Wayne", "description": "Una nova etapa de Scadrial, amb ferrocarrils, armes de foc, investigacions i una relació diferent amb les arts metàl·liques." }, "books": { "finalEmpire": "La novel·la d’entrada: un cop contra un imperi aparentment etern i la primera gran porta a l’alomància.", "wellOfAscension": "La segona novel·la: els antics rebels han de governar, defensar la seva nova ciutat i afrontar les conseqüències de la victòria.", "heroOfAges": "La tercera novel·la: la història aprofundeix en les seves preguntes sobre el poder, la responsabilitat i les persones atrapades entre tots dos.", "eleventhMetal": "Un relat curt sobre Kelsier, publicat el 2011. Llegeix-lo després de la trilogia si vols mantenir intacta l’experiència original.", "secretHistory": "Una novel·la curta complementària amb grans espòilers de l’Era 1 i un espòiler menor de Les bandes del dol. És millor reservar-la per després d’aquella novel·la de l’Era 2.", "alloyOfLaw": "La primera novel·la de l’Era 2, que presenta Wax, Wayne i una societat on les arts metàl·liques es troben amb una època industrial inspirada en l’Oest.", "allomancerJak": "Un relat humorístic publicat com a material complementari d’Aleació de llei i inclòs després a Arcanum Il·limitat. Llegeix-lo després d’Aleació de llei.", "shadowsOfSelf": "La segona novel·la de l’Era 2, que amplia les conseqüències polítiques i personals del món on viuen Wax i Wayne.", "bandsOfMourning": "La tercera novel·la de l’Era 2, que aprofundeix en els vincles entre el passat, el present de Scadrial i el context més ampli del Cosmere.", "lostMetal": "La quarta novel·la de l’Era 2 i la conclusió de la seqüència de Wax i Wayne." }, "magic": { "kicker": "Sistemes de Scadrial", "heading": "Tres arts metàl·liques.", "description": "L’alomància, la feruquímia i l’hemalúrgia utilitzen el metall com a focus, però funcionen de maneres diferents i expressen relacions diferents amb el poder, la identitat i el sacrifici.", "allomancy": { "title": "Alomància", "text": "Un alomàntic crema metalls per activar habilitats concretes. El metall funciona com una clau o catalitzador, mentre que el poder prové d’una font externa. Un Nascut de la boira pot utilitzar molts metalls; un Brumós està limitat a un." }, "feruchemy": { "title": "Feruquímia", "text": "Un feruquista emmagatzema un atribut —com força, memòria o velocitat— en un metall i el recupera després. El poder és personal i equilibrat: primer cal renunciar a allò que es guarda." }, "hemalurgy": { "title": "Hemalúrgia", "text": "L’hemalúrgia transfereix atributs entre persones mitjançant claus metàl·lics. Pot concedir o alterar habilitats, però la transferència implica una pèrdua i està lligada als secrets més perillosos de Scadrial." } }, "curiosities": { "kicker": "Algunes curiositats", "heading": "Detalls a tenir en compte", "first": "Brandon va concebre Nascuts de la boira com una trilogia de trilogies, així que les eres formen part d’un disseny molt més ampli per a Scadrial.", "second": "El concepte original va néixer al voltant d’una banda de lladres i de la pregunta de quins poders ajudarien cada especialista en la seva feina.", "third": "Aleació de llei va començar com una història curta situada entre projectes més grans de Nascuts de la boira abans de créixer fins a convertir-se en la sèrie de Wax i Wayne." }, "tableOfContents": "Fitxa de Nascuts de la boira", "toc": { "introduction": "Introducció", "readingNote": "Nota de lectura", "publicationOrder": "Ordre de publicació", "magic": "Arts metàl·liques", "curiosities": "Curiositats" } },
-  "navigation": { "routes": { "title": "Rutes" }, "books": { "title": "Llibres" }, "sagas": { "title": "Sagues" }, "planets": { "title": "Planetes" } },
-  "routes": { "community": "Rutes comunitàries", "publication": "Ordre de publicació", "myJourney": "El meu recorregut" },
-  "works": { "theFinalEmpire": "L’imperi final", "theWellOfAscension": "El pou de l’ascensió", "theHeroOfAges": "L’heroi de les eres", "theAlloyOfLaw": "La llei de l’aliatge", "shadowsOfSelf": "Ombres d’un mateix", "theBandsOfMourning": "Les bandes del dol", "theLostMetal": "El metall perdut", "theEleventhMetal": "L’onzè metall", "mistbornSecretHistory": "Nascuts de la boira: Història secreta", "allomancerJak": "Allomante Jak i els pous d’Eltania", "theWayOfKings": "El camí dels reis", "wordsOfRadiance": "Paraules radiants", "oathbringer": "Juramentada", "rhythmOfWar": "El ritme de la guerra", "windAndTruth": "Vent i veritat", "edgedancer": "Ballarí de tall", "dawnshard": "Esquirla de l’alba", "elsecaller": "Nominadora de l’altre", "kingLopen": "El rei Lopen el Primer d’Alethkar", "elantris": "Elantris", "theHopeOfElantris": "L’esperança d’Elantris", "warbreaker": "L’alè dels déus", "whiteSandVolume1": "Sorra blanca, volum 1", "whiteSandVolume2": "Sorra blanca, volum 2", "whiteSandVolume3": "Sorra blanca, volum 3", "theEmperorsSoul": "L’ànima de l’emperador", "shadowsForSilence": "Ombres pel silenci als boscos de l’infern", "sixthOfTheDusk": "Sisè del crepuscle", "whiteSandExcerpt": "Fragment de Sorra blanca", "tressOfTheEmeraldSea": "Trena del mar Esmeralda", "yumiAndTheNightmarePainter": "Yumi i el pintor de malsons", "theSunlitMan": "L’home il·luminat", "islesOfTheEmberdark": "Illes del mar de brases", "arcanumUnbounded": "Arcanum Il·limitat" },
-  "sagas": { "mistborn": "Nascuts de la boira", "theStormlightArchive": "L’arxiu de les tempestes", "whiteSand": "Sorra blanca", "arcanumUnbounded": "Arcanum Il·limitat" },
-  "planets": { "scadrial": "Scadrial", "roshar": "Roshar", "nalthis": "Nalthis", "sel": "Sel", "taldain": "Taldain", "lumar": "Lumar", "canticle": "Càntic", "komashi": "Komashi" },
-  "books": { "eyebrow": "Catàleg del Cosmere", "heading": "Troba el teu pròxim món.", "description": "Una prestatgeria visual de les obres publicades del Cosmere, ordenades per la saga o el món al qual pertanyen. Comença per un títol i segueix-ne les connexions quan vulguis.", "indexLabel": "Resum del catàleg", "catalogueCount": "obres en aquest primer catàleg", "catalogueKicker": "La col·lecció", "catalogueHeading": "Històries agrupades pel seu destí", "catalogueDescription": "Els grups donen a cada llibre una mica de context sense imposar-te un ordre de lectura.", "standalone": "Independents", "arcanumUnbounded": "Arcanum Il·limitat", "viewSaga": "Explora la saga", "coverDimensions": "2:3 · marcador de portada", "tableOfContents": "En aquesta pàgina", "toc": { "introduction": "Introducció", "catalogue": "El catàleg" }, "subsections": { "era1": "Era 1 · La trilogia original", "era2": "Era 2 · Wax i Wayne" }, "types": { "novel": "Novel·la", "novella": "Novel·la curta", "short-story": "Relat", "graphic-novel": "Novel·la gràfica", "anthology": "Col·lecció", "excerpt": "Fragment" }, "arcanumStatus": { "arcanum-original": "Publicat per primera vegada a Arcanum Il·limitat", "previously-published": "Publicat anteriorment · inclòs a Arcanum Il·limitat" } },
+  "sagaPage": {
+    "intro": {
+      "eyebrow": "La constel·lació",
+      "heading": "Mons amb la seva pròpia gravetat.",
+      "description": "Les sagues reuneixen històries que comparteixen món, història o un conjunt de preguntes que es prolonga en el temps. Aquest índex t’ajudarà a entendre què pertany a cada grup abans d’obrir una fitxa.",
+      "indexLabel": "Sagues del catàleg",
+      "indexText": "mons i col·leccions"
+    },
+    "orientation": {
+      "kicker": "Llegeix primer la forma",
+      "heading": "Cada saga és una porta diferent.",
+      "description": "Algunes sagues s’estenen al llarg de diverses novel·les. D’altres comencen amb un sol llibre o reuneixen històries que amplien el Cosmere al voltant d’una idea central. Aquestes pàgines es convertiran en un mapa amb cura davant dels espòilers.",
+      "imageLabel": "Una visió àmplia del Cosmere i els seus mons canviants",
+      "imageDimensions": "3:2 · marcador de mapa de sagues"
+    },
+    "directory": {
+      "kicker": "L’índex",
+      "heading": "Tria una família d’històries.",
+      "description": "Obre una fitxa de saga per veure’n l’estructura provisional i torna més endavant, quan hi incorporem les obres, els mons i les connexions.",
+      "cards": {
+        "mistborn": "Un cicle de revolucions, metalls i eres canviants a Scadrial.",
+        "the-stormlight-archive": "Una història èpica de Roshar, els Radiants i el retorn de les tempestes.",
+        "white-sand": "Una saga gràfica marcada per la llum implacable i les cultures de Taldain.",
+        "arcanum-unbounded": "Una col·lecció que reuneix històries del Cosmere i els dona un marc més ampli."
+      }
+    },
+    "tableOfContents": "En aquesta pàgina",
+    "toc": {
+      "introduction": "La constel·lació",
+      "orientation": "Com llegir l’índex",
+      "directory": "L’índex de sagues"
+    },
+    "detail": {
+      "back": "Tornar a Sagues",
+      "eyebrow": "Fitxa de saga",
+      "description": "Aquesta és la pàgina provisional de {title}. Aquí desenvoluparem el seu context de lectura, les seves obres, el seu món i les seves connexions.",
+      "imageLabel": "Marcador visual de {title}",
+      "imageDimensions": "16:9 · marcador d’imatge de saga",
+      "sections": {
+        "overview": { "kicker": "El marc", "heading": "Resum" },
+        "works": { "kicker": "El catàleg", "heading": "Obres" },
+        "connections": {
+          "kicker": "El Cosmere més ampli",
+          "heading": "Món i connexions"
+        }
+      },
+      "tableOfContents": "Fitxa de saga",
+      "toc": {
+        "introduction": "Introducció",
+        "overview": "Resum",
+        "works": "Obres",
+        "connections": "Món i connexions"
+      }
+    }
+  },
+  "mistbornPage": {
+    "back": "Tornar a Sagues",
+    "intro": {
+      "eyebrow": "Fitxa de saga",
+      "description": "Nascuts de la boira explica la història de Scadrial a través de dues eres publicades: una trilogia de fantasia èpica i una sèrie posterior marcada per una societat canviant, la nova tecnologia i el llegat del que va passar abans.",
+      "planet": "Món",
+      "imageLabel": "Scadrial i les seves arts metàl·liques",
+      "imageDimensions": "16:9 · marcador d’imatge de Nascuts de la boira"
+    },
+    "warning": {
+      "kicker": "Avís opcional",
+      "heading": "Vols saber quina relació té l’Era 2 amb l’Era 1?",
+      "text": "L’Era 2 transcorre segles després. Llegir-ne la secció de l’Era 2 et pot donar una pista sobre el destí dels personatges de l’Era 1. No és un espòiler contundent ni especialment rellevant, però la pista hi és.",
+      "action": "Si t’interessa, llegeix-la. Si prefereixes no saber-ho, salta’t únicament l’Era 2 i continua amb les Arts metàl·liques."
+    },
+    "eras": {
+      "kicker": "Mapa de publicació",
+      "heading": "Dues eres, un món en transformació.",
+      "description": "La llista reuneix les novel·les i els relats de cada era en ordre de publicació. Les notes assenyalen quan convé llegir un relat complementari en un altre moment."
+    },
+    "era1": {
+      "kicker": "Era 1",
+      "heading": "La trilogia original",
+      "description": "Una fantasia èpica sobre rebel·lió, poder i el preu de refer un món. Aquestes tres novel·les formen la història principal completa."
+    },
+    "era2": {
+      "kicker": "Era 2",
+      "heading": "La sèrie de Wax i Wayne",
+      "description": "Una nova etapa de Scadrial, amb ferrocarrils, armes de foc, investigacions i una relació diferent amb les arts metàl·liques."
+    },
+    "books": {
+      "finalEmpire": "La novel·la d’entrada: un cop contra un imperi aparentment etern i la primera gran porta a l’alomància.",
+      "wellOfAscension": "La segona novel·la: els antics rebels han de governar, defensar la seva nova ciutat i afrontar les conseqüències de la victòria.",
+      "heroOfAges": "La tercera novel·la: la història aprofundeix en les seves preguntes sobre el poder, la responsabilitat i les persones atrapades entre tots dos.",
+      "eleventhMetal": "Un relat curt sobre Kelsier, publicat el 2011. Llegeix-lo després de la trilogia si vols mantenir intacta l’experiència original.",
+      "secretHistory": "Una novel·la curta complementària amb grans espòilers de l’Era 1 i un espòiler menor de Les bandes del dol. És millor reservar-la per després d’aquella novel·la de l’Era 2.",
+      "alloyOfLaw": "La primera novel·la de l’Era 2, que presenta Wax, Wayne i una societat on les arts metàl·liques es troben amb una època industrial inspirada en l’Oest.",
+      "allomancerJak": "Un relat humorístic publicat com a material complementari d’Aleació de llei i inclòs després a Arcanum Il·limitat. Llegeix-lo després d’Aleació de llei.",
+      "shadowsOfSelf": "La segona novel·la de l’Era 2, que amplia les conseqüències polítiques i personals del món on viuen Wax i Wayne.",
+      "bandsOfMourning": "La tercera novel·la de l’Era 2, que aprofundeix en els vincles entre el passat, el present de Scadrial i el context més ampli del Cosmere.",
+      "lostMetal": "La quarta novel·la de l’Era 2 i la conclusió de la seqüència de Wax i Wayne."
+    },
+    "supplementary": {
+      "detailsAction": "Per què és aquí?",
+      "typeLabel": "Tipus",
+      "originLabel": "D’on ve",
+      "whyLabel": "Per què llegir-lo",
+      "whenLabel": "Quan llegir-lo",
+      "works": {
+        "eleventhMetal": {
+          "origin": "És un relat preqüela escrit per al joc de rol de Nascuts de la boira. Després es va incloure a Arcanum Il·limitat, que avui és la manera més senzilla de trobar-lo.",
+          "why": "El seu valor és el context addicional: una història lateral que aprofundeix en la relació primerenca de Kelsier amb l’alomància i afegeix una peça curiosa del lore d’Scadrial.",
+          "when": "Després de la trilogia original. És opcional, però resulta un afegit molt entretingut quan ja coneixes Kelsier i Scadrial."
+        },
+        "secretHistory": {
+          "origin": "Primer va aparèixer com a llibre electrònic independent i després es va incloure a Arcanum Il·limitat. És una novel·la curta complementària, no un quart volum de la trilogia.",
+          "why": "Obre una finestra diferent als grans esdeveniments de la trilogia, amplia la visió del Cosmere al voltant de Scadrial i connecta la història local amb poders i visitants més amplis.",
+          "when": "L’opció més segura és llegir-lo després de Les bandes del dol: conté grans espòilers de l’Era 1 i un de menor d’aquella novel·la de l’Era 2."
+        },
+        "allomancerJak": {
+          "origin": "Pertany al costat més juganer i ple de notes de l’Era 2: acompanya la seqüència principal de Wax i Wayne, però no la fa avançar.",
+          "why": "La seva veu de falsa aventura i les seves notes poc fiables fan que Scadrial sembli més gran que la trama central i premien la curiositat pel worldbuilding perifèric.",
+          "when": "Després de La llei de l’aliatge. Funciona com un desviament opcional i lleuger, no com un pas obligatori de la seqüència principal."
+        }
+      }
+    },
+    "magic": {
+      "kicker": "Sistemes de Scadrial",
+      "heading": "Tres arts metàl·liques.",
+      "description": "L’alomància, la feruquímia i l’hemalúrgia utilitzen el metall com a focus, però funcionen de maneres diferents i expressen relacions diferents amb el poder, la identitat i el sacrifici.",
+      "allomancy": {
+        "title": "Alomància",
+        "text": "Un alomàntic crema metalls per activar habilitats concretes. El metall funciona com una clau o catalitzador, mentre que el poder prové d’una font externa. Un Nascut de la boira pot utilitzar molts metalls; un Brumós està limitat a un."
+      },
+      "feruchemy": {
+        "title": "Feruquímia",
+        "text": "Un feruquista emmagatzema un atribut —com força, memòria o velocitat— en un metall i el recupera després. El poder és personal i equilibrat: primer cal renunciar a allò que es guarda."
+      },
+      "hemalurgy": {
+        "title": "Hemalúrgia",
+        "text": "L’hemalúrgia transfereix atributs entre persones mitjançant claus metàl·lics. Pot concedir o alterar habilitats, però la transferència implica una pèrdua i està lligada als secrets més perillosos de Scadrial."
+      }
+    },
+    "curiosities": {
+      "kicker": "Algunes curiositats",
+      "heading": "Detalls a tenir en compte",
+      "first": "Brandon va concebre Nascuts de la boira com una trilogia de trilogies, així que les eres formen part d’un disseny molt més ampli per a Scadrial.",
+      "second": "El concepte original va néixer al voltant d’una banda de lladres i de la pregunta de quins poders ajudarien cada especialista en la seva feina.",
+      "third": "Aleació de llei va començar com una història curta situada entre projectes més grans de Nascuts de la boira abans de créixer fins a convertir-se en la sèrie de Wax i Wayne.",
+      "imageLabel": "Sazed en una etapa posterior de la història d'Escàdriel"
+    },
+    "tableOfContents": "Fitxa de Nascuts de la boira",
+    "toc": {
+      "introduction": "Introducció",
+      "readingNote": "Nota de lectura",
+      "publicationOrder": "Ordre de publicació",
+      "magic": "Arts metàl·liques",
+      "curiosities": "Curiositats"
+    }
+  },
+  "navigation": {
+    "routes": { "title": "Rutes" },
+    "books": { "title": "Llibres" },
+    "sagas": { "title": "Sagues" },
+    "planets": { "title": "Planetes" }
+  },
+  "routes": {
+    "community": "Rutes comunitàries",
+    "publication": "Ordre de publicació",
+    "myJourney": "El meu recorregut"
+  },
+  "works": {
+    "theFinalEmpire": "L’imperi final",
+    "theWellOfAscension": "El pou de l’ascensió",
+    "theHeroOfAges": "L’heroi de les eres",
+    "theAlloyOfLaw": "La llei de l’aliatge",
+    "shadowsOfSelf": "Ombres d’un mateix",
+    "theBandsOfMourning": "Les bandes del dol",
+    "theLostMetal": "El metall perdut",
+    "theEleventhMetal": "L’onzè metall",
+    "mistbornSecretHistory": "Nascuts de la boira: Història secreta",
+    "allomancerJak": "Allomante Jak i els pous d’Eltania",
+    "theWayOfKings": "El camí dels reis",
+    "wordsOfRadiance": "Paraules radiants",
+    "oathbringer": "Juramentada",
+    "rhythmOfWar": "El ritme de la guerra",
+    "windAndTruth": "Vent i veritat",
+    "edgedancer": "Ballarí de tall",
+    "dawnshard": "Esquirla de l’alba",
+    "elsecaller": "Nominadora de l’altre",
+    "kingLopen": "El rei Lopen el Primer d’Alethkar",
+    "elantris": "Elantris",
+    "theHopeOfElantris": "L’esperança d’Elantris",
+    "warbreaker": "L’alè dels déus",
+    "whiteSandOmnibus": "Sorra blanca Omnibus",
+    "whiteSandVolume1": "Sorra blanca, volum 1",
+    "whiteSandVolume2": "Sorra blanca, volum 2",
+    "whiteSandVolume3": "Sorra blanca, volum 3",
+    "theEmperorsSoul": "L’ànima de l’emperador",
+    "shadowsForSilence": "Ombres pel silenci als boscos de l’infern",
+    "sixthOfTheDusk": "Sisè del crepuscle",
+    "whiteSandExcerpt": "Fragment de Sorra blanca",
+    "tressOfTheEmeraldSea": "Trena del mar Esmeralda",
+    "yumiAndTheNightmarePainter": "Yumi i el pintor de malsons",
+    "theSunlitMan": "L’home il·luminat",
+    "islesOfTheEmberdark": "Illes del mar de brases",
+    "arcanumUnbounded": "Arcanum Il·limitat"
+  },
+  "sagas": {
+    "mistborn": "Nascuts de la boira",
+    "theStormlightArchive": "L’arxiu de les tempestes",
+    "whiteSand": "Sorra blanca",
+    "arcanumUnbounded": "Arcanum Il·limitat"
+  },
+  "planets": {
+    "scadrial": "Scadrial",
+    "roshar": "Roshar",
+    "nalthis": "Nalthis",
+    "sel": "Sel",
+    "taldain": "Taldain",
+    "lumar": "Lumar",
+    "canticle": "Càntic",
+    "komashi": "Komashi",
+    "threnody": "Threnody",
+    "firstOfTheSun": "Primer del Sol",
+    "ashyn": "Ashyn"
+  },
+  "planetPage": {
+    "intro": {
+      "eyebrow": "Directori de mons",
+      "heading": "Llocs que donen forma al Cosmere.",
+      "description": "Cada planeta té la seva pròpia història, atmosfera i regles. Aquestes pàgines reuneixen la seva natura, els seus pobles, les curiositats i les històries relacionades.",
+      "imageLabel": "Mapa dels mons del Cosmere"
+    },
+    "directory": {
+      "kicker": "El directori",
+      "heading": "Tria un món per explorar.",
+      "description": "Comença per un planeta i segueix les històries que hi estan relacionades. Cada fitxa ofereix una lectura breu del món i espai per ampliar-la.",
+      "cardDescription": "Una fitxa de {title}, amb l’entorn, les formes de vida i les històries relacionades."
+    },
+    "detail": {
+      "eyebrow": "Fitxa del món",
+      "description": "La pàgina de {title} reuneix l’entorn, les formes de vida, les societats i les històries relacionades en una guia amb spoilers controlats.",
+      "imageLabel": "Guia visual de {title}",
+      "imageDimensions": "16:9 · imatge editorial del planeta",
+      "systemLabel": "Sistema",
+      "worldLabel": "Referència visual",
+      "systems": { "scadrian": "Sistema scadrià", "rosharan": "Sistema rosharà", "nalthian": "Sistema nalthisià", "selish": "Sistema selish", "taldain": "Sistema de Taldain", "unknown": "Sistema encara no identificat públicament", "utol": "Sistema d’UTol", "threnodite": "Sistema threnodita", "drominad": "Sistema de Drominad" },
+      "imageLabels": { "scadrial": "Camps de cendra i horitzó volcànic de Scadrial", "roshar": "Un paisatge rosharà sota cels de tempesta", "nalthis": "Una regió exuberant de Nalthis", "sel": "Elantris i els paisatges dividits de Sel", "taldain": "Una ciutat al costat lluminós de Taldain", "lumar": "El Mar Esmeralda de Lumar", "canticle": "Un paisatge sota el sol abrasador de Càntic", "komashi": "Un carrer il·luminat per neons a Komashi", "threnody": "Un bosc encantat de Threnody", "firstOfTheSun": "Una costa perillosa del Primer del Sol", "ashyn": "Ashyn, el planeta en flames" },
+      "environmentKicker": "Entorn",
+      "lifeKicker": "Vida",
+      "societyKicker": "Maneres de viure",
+      "noDedicatedStory": "Actualment no hi ha cap història principal publicada ambientada a Ashyn. La seva història i els assentaments supervivents estan lligats al sistema rosharà i a l’antiga migració cap a Roshar.",
+      "toc": { "introduction": "Introducció", "directory": "Directori de mons", "overview": "L’escenari", "environment": "Entorn", "life": "Flora i fauna", "society": "Maneres de viure", "stories": "Històries relacionades", "magic": "Sistemes i curiositats" },
+      "overviewKicker": "L’escenari",
+      "overviewHeading": "Un món que espera ser cartografiat.",
+      "storiesKicker": "Històries relacionades",
+      "storiesHeading": "On porta la lectura.",
+      "magicKicker": "Sistemes i forces",
+      "magicHeading": "Les regles que donen forma a aquest món.",
+      "profiles": {
+        "scadrial": { "description": "Scadrial és un planeta transformat en cada era per la Preservació, la Ruïna i els seus portadors.", "overviewHeading": "Un món construït sobre el canvi.", "overview": "Va passar de la cendra, la boira i les muntanyes volcàniques a una època més verda, industrial i tecnològica després de la Catacendra.", "environmentHeading": "Cendra, boires i horitzons restaurats.", "environment": "El Lord Legislador va apropar el planeta al sol i va controlar el clima amb els Ashmounts. Després, la geografia i el clima van ser restaurats.", "lifeHeading": "Criatures transformades per la Investidura.", "life": "Els mistwraiths i els kandra són formes de vida pròpies de Scadrial alterades per la Hemalúrgia. El món restaurat també sosté cultius i animals diversos.", "societyHeading": "De la rebel·lió skaa al ferrocarril.", "society": "La societat va passar de nobles i skaa a governs urbans, trens, armes de foc i comerç industrial. Terris, koloss i kandra encara en defineixen la identitat.", "curiositiesHeading": "Les Arts Metàl·liques formen part de l’ecologia.", "curiosities": "L’Alomància, la Feruquímia i la Hemalúrgia afecten la medicina, el transport, la política i els cossos de diversos pobles." },
+        "roshar": { "description": "Roshar és un planeta amb molt oxigen i poca gravetat, on les tempestes, els spren i els juraments condicionen la vida.", "overviewHeading": "Un planeta dissenyat pel clima.", "overview": "Un supercontinent i les altes tempestes que el travessen d’est a oest defineixen Roshar i les seves cultures.", "environmentHeading": "Altes tempestes, crem i valls protegides.", "environment": "Les tempestes porten vent violent, pluja i crem ric en minerals. L’est rep el cop primer; les valls occidentals i Shinovar estan més protegides.", "lifeHeading": "Closques, cors de gema i spren.", "life": "Molts animals tenen closca i les espècies grans posseeixen cors de gema. Rockbuds, herba, chulls i greatshells s’han adaptat a les tempestes.", "societyHeading": "Cultures organitzades per sobreviure.", "society": "Alezi, herdazians, shin, horneaters i cantants mantenen relacions diferents amb la tempesta, els juraments i la terra.", "curiositiesHeading": "El planeta té més d’un tipus de tempesta.", "curiosities": "Les altes tempestes són naturals i Investides; l’Everstorm segueix un altre patró. A Shadesmar, Roshar es converteix en un oceà de comptes." },
+        "nalthis": { "description": "Nalthis és un planeta de regnes, color viu i Despertar, amb una geografia encara poc coneguda.", "overviewHeading": "Un món on el color té poder.", "overview": "Hallandren i Idris mostren només una part de Nalthis, marcat per la Manywar, els Cinc Savis i els Retornats.", "environmentHeading": "Jungles, muntanyes i el Mar Lluent.", "environment": "Hallandren conté l’única jungla coneguda i les Llàgrimes d’Edgli. També hi ha muntanyes, un mar interior i terratrèmols freqüents.", "lifeHeading": "Una biosfera variada i poc cartografiada.", "life": "La jungla té panteres, lloros, micos i cocodrils. El Mar Lluent conté peixos, musclos i vida tentaculada.", "societyHeading": "Regnes, colors i objectes vius.", "society": "La riquesa d’Hallandren contrasta amb les tradicions austeres d’Idris. L’Alè forma part de l’economia i el Despertar activa els objectes.", "curiositiesHeading": "El planeta es coneix pel que ofereix.", "curiosities": "Nalthis té una lluna, Rrendos, i la seva Investidura està lligada a Endowment. El color i la identitat són visibles en la cultura." },
+        "sel": { "description": "Sel és un planeta gran d’imperis separats, història densa i formes d’Investidura regionals.", "overviewHeading": "Moltes civilitzacions sobre un mateix mapa.", "overview": "Elantris, Arelon i MaiPon només mostren una part d’un planeta on la geografia defineix la política i la màgia.", "environmentHeading": "Un món continental divers.", "environment": "Sel conté climes i paisatges variats. El Regne Cognitiu és especialment perillós a causa del Dor.", "lifeHeading": "Societats humanes i vida construïda.", "life": "Els humans comparteixen Sel amb seons i skaze, éssers connectats a la seva Investidura. La resta de l’ecologia és poc coneguda.", "societyHeading": "El llenguatge també és geografia màgica.", "society": "AonDor, Forgery, ChayShan, Dakhor i Bloodsealing depenen de símbols i tradicions locals. Les fronteres i les llengües importen.", "curiositiesHeading": "Sel és planeta i paisatge cognitiu perillós.", "curiosities": "Devoció i Domini van ser trencats aquí, i el Dor omple el Regne Cognitiu de poder descontrolat." },
+        "taldain": { "description": "Taldain és un planeta dividit entre un costat lluminós i un costat fosc, on la sorra i l’aïllament polític marquen la vida.", "overviewHeading": "Dues cares d’un mateix món.", "overview": "Dayside i Darkside viuen condicions oposades. White Sand segueix els Mestres de la Sorra i les tensions al voltant del Diem.", "environmentHeading": "Llum, foscor i sorra en moviment.", "environment": "El costat lluminós està dominat pel sol intens i els deserts. La sorra respon als mestres i es converteix en recurs i defensa.", "lifeHeading": "Vida adaptada als extrems.", "life": "La fauna coneguda és sobretot desèrtica i Darkside continua poc documentat. El vincle més singular és el dels mestres amb la sorra.", "societyHeading": "El Diem i els Mestres de la Sorra.", "society": "La societat lluminosa gira al voltant del Diem i les institucions que regulen els mestres. La història de Kenton mostra la fragilitat del seu aïllament.", "curiositiesHeading": "Darkside no és només el revers de Dayside.", "curiosities": "Taldain mostra com la Investidura pot expressar-se mitjançant un contrast ambiental extrem." },
+        "lumar": { "description": "Lumar és un planeta cobert per dotze oceans d’espores, cadascun lligat a una lluna i a un aether diferent.", "overviewHeading": "Un món fet de mars i llunes.", "overview": "La superfície està dividida en mars pentagonals d’espores. Les comunitats viuen a illes i costes i naveguen aprofitant-ne el comportament.", "environmentHeading": "Lunagrees, calmes i seethe.", "environment": "Les dotze llunes deixen caure espores durant les lunagrees. Durant el seethe els mars flueixen; durant les stillings la superfície es pot solidificar.", "lifeHeading": "Vida corrent sobre mars alienígenes.", "life": "Les illes sostenen conreus, arbres, flors, rates, gats, coloms, papallones i gavines. La vida profunda dels mars és desconeguda.", "societyHeading": "Cultures insulars i navegació.", "society": "Les comunitats construeixen la seva identitat al voltant d’illes, llunes i mars. El Mar Esmeralda connecta les rutes més conegudes.", "curiositiesHeading": "Les llunes formen part del clima.", "curiosities": "L’ombra d’una lluna refreda la terra cada dia en passar entre el sol i el planeta. Astronomia i navegació són inseparables." },
+        "canticle": { "description": "Càntic és un planeta petit i de rotació lenta on un sol Investit obliga els habitants a mantenir-se davant de l’alba.", "overviewHeading": "Un món que fuig del seu sol.", "overview": "La llum de Càntic crema o vaporitza qui hi queda exposat. Les comunitats viuen en ciutats voladores i avancen per corredors habitables.", "environmentHeading": "Llum abrasadora i ombres d’anells.", "environment": "Els anells reflecteixen una mica de llum cap a la cara fosca, i creen oportunitats breus per cultivar i viatjar.", "lifeHeading": "Creixement ràpid i cicles perillosos.", "life": "El sol accelera el creixement vegetal i les collites maduren durant la finestra de l’alba. La flora, la fauna i els sunhearts depenen del cicle.", "societyHeading": "Ciutats voladores fetes de naus.", "society": "La gent uneix naus per formar ciutats alimentades per sunhearts. Unió coordina les comunitats i en manté viva la ruta.", "curiositiesHeading": "Una diàspora threnodita al cel.", "curiosities": "Molts habitants descendeixen de threnodites que van fugir del seu món i van adaptar la seva cultura a una nova amenaça." },
+        "komashi": { "description": "Komashi és un món doble marcat per la tecnologia hion, la mortalla i societats nascudes al voltant de pous de vapor.", "overviewHeading": "Un planeta que es reconstrueix després d’una catàstrofe.", "overview": "Komashi i UTol orbiten un sol vermell ataronjat. La màquina pare va consumir ànimes, va alterar l’ecologia i va deixar una mortalla.", "environmentHeading": "Pedra bruna, pous de vapor i mortalla.", "environment": "La terra és sobretot pedra bruna. Abans de la mortalla, els esperits escalfaven el terra i portaven aigua a la superfície.", "lifeHeading": "Esperits, malsons i plantes que tornen.", "life": "Els esperits hijo alimenten la tecnologia hion i els yoki-hijo són una forma de vida singular. Els malsons neixen de la mortalla.", "societyHeading": "Pintors, ciutats i servei.", "society": "Les nacions van créixer al voltant dels pous de vapor i les línies hion. Els pintors de malsons patrullen les ciutats i converteixen l’art en defensa.", "curiositiesHeading": "L’art és una tecnologia de supervivència.", "curiosities": "A Komashi, pintar pot neutralitzar un malson i apilar pedres pot afectar la mortalla. L’atenció i l’ofici tenen efectes materials." },
+        "threnody": { "description": "Threnody és un planeta temperat de boscos, muntanyes i oceans on els morts poden tornar com a shades i sobreviure depèn de regles senzilles.", "overviewHeading": "Un món que recorda els seus morts.", "overview": "Després de la devastació causada pel Mal, els supervivents van fugir al continent menor i es van establir prop dels Boscos de l’Infern.", "environmentHeading": "Boscos silenciosos i nits perilloses.", "environment": "Els boscos tenen rius, coves, muntanyes i arbres caducifolis. El silenci és antinatural, sobretot de nit.", "lifeHeading": "Animals sota una llei de sang.", "life": "Cérvols, rosegadors, conills, ocells i galls dindi conviuen amb bestiar domèstic. Els depredadors van desaparèixer perquè la sang atrau els shades.", "societyHeading": "Fortaleses, granges i refugis.", "society": "Les ciutats fortalesa protegeixen els habitants i controlen l’economia de la plata. Els colons treballen les clarianes i les waystops ofereixen terra neutral.", "curiositiesHeading": "La plata és moneda, medicina i frontera.", "curiosities": "Els shades són ombres cognitives que ataquen qui trenca les Regles Senzilles. La plata els pot ferir i protegir una llar." },
+        "first-of-the-sun": { "description": "El Primer del Sol és el primer planeta del sistema Drominad, un món oceànic conegut pels seus Aviar i l’arxipèlag Pantheon.", "overviewHeading": "Un món d’illes observat des del cel.", "overview": "Té un continent, moltes illes i almenys una lluna. Les illes dels Eelakin sostenen societats establertes; Pantheon és sagrat i perillós.", "environmentHeading": "El continent i Pantheon.", "environment": "Pantheon reuneix unes quaranta illes de platges, penya-segats i interiors letals. La seva flora i fauna són molt més perilloses.", "lifeHeading": "Aviar i vida depredadora.", "life": "Els Aviar són aus natives capaces d’atorgar habilitats als seus companys humans. Les altres formes de vida de Pantheon solen ser mortals.", "societyHeading": "Vida eelakin entre tradició i indústria.", "society": "Els Eelakin viuen a les illes natals i han desenvolupat la tecnologia amb el temps. La relació amb Pantheon barreja reverència, exploració i pressió industrial.", "curiositiesHeading": "Primer del Sol i Drominad no són el mateix.", "curiosities": "Drominad és el nom del sistema, que conté set planetes i un cinturó d’asteroides. Arcanum mostra un mapa del sistema, no només del planeta." },
+        "ashyn": { "description": "Ashyn és el primer planeta del sistema rosharà, recordat com el planeta en flames després que una catàstrofe destruís gran part de la seva biosfera.", "overviewHeading": "El món perdut darrere del mite rosharà.", "overview": "La majoria dels ashynites va fugir a Roshar després de l’Escorxament. Van quedar regions fèrtils aïllades i ciutats flotants.", "environmentHeading": "Terra erma i ciutats flotants.", "environment": "Ashyn era més fèrtil, però avui és gairebé estèril. Queden zones habitables i ciutats sostingudes per una Investidura basada en malalties.", "lifeHeading": "Una biosfera malmesa.", "life": "Abans hi havia ocells, cavalls, raïm i animals domèstics. Avui se’n coneix poca vida, inclosos rèptils i organismes vinculats a la seva màgia infecciosa.", "societyHeading": "Sobreviure per damunt d’un món trencat.", "society": "La població viu en ciutats flotants o zones fèrtils aïllades. Algunes malalties donen efectes útils però fan la societat dependent dels infectats.", "curiositiesHeading": "Una màgia que canvia el sentit del sistema.", "curiosities": "La màgia posterior a l’Escorxament funciona mitjançant infeccions simbiòtiques. Ashyn pot ser central per a una saga encara sense novel·la principal." }
+      }
+    },
+    "tableOfContents": "Fitxa del món",
+    "toc": { "introduction": "Introducció", "directory": "Directori de mons", "overview": "L’escenari", "environment": "Entorn", "life": "Flora i fauna", "society": "Maneres de viure", "stories": "Històries relacionades", "magic": "Sistemes i forces" }
+  },
+  "books": {
+    "eyebrow": "Catàleg del Cosmere",
+    "heading": "Troba el teu pròxim món.",
+    "imageLabel": "Una prestatgeria visual d’històries del Cosmere",
+    "description": "Una prestatgeria visual de les obres publicades del Cosmere, ordenades per la saga o el món al qual pertanyen. Comença per un títol i segueix-ne les connexions quan vulguis.",
+    "indexLabel": "Resum del catàleg",
+    "catalogueCount": "obres en aquest primer catàleg",
+    "catalogueKicker": "La col·lecció",
+    "catalogueHeading": "Històries agrupades pel seu destí",
+    "catalogueDescription": "Els grups donen a cada llibre una mica de context sense imposar-te un ordre de lectura.",
+    "standalone": "Independents",
+    "arcanumUnbounded": "Arcanum Il·limitat",
+    "viewSaga": "Explora la saga",
+    "coverDimensions": "2:3 · marcador de portada",
+    "tableOfContents": "En aquesta pàgina",
+    "toc": { "introduction": "Introducció", "catalogue": "El catàleg" },
+    "subsections": {
+      "era1": "Era 1 · La trilogia original",
+      "era2": "Era 2 · Wax i Wayne"
+    },
+    "types": {
+      "novel": "Novel·la",
+      "novella": "Novel·la curta",
+      "short-story": "Relat",
+      "graphic-novel": "Novel·la gràfica",
+      "omnibus": "Omnibus",
+      "anthology": "Col·lecció",
+      "excerpt": "Fragment"
+    },
+    "arcanumStatus": {
+      "arcanum-original": "Publicat per primera vegada a Arcanum Il·limitat",
+      "previously-published": "Publicat anteriorment · inclòs a Arcanum Il·limitat"
+    }
+  },
   "home": {
     "title": "Cosmereando — Guia del lector del Cosmere",
     "description": "Un punt de partida clar per explorar l’univers interconnectat de mons, màgia i històries de Brandon Sanderson.",
-    "hero": { "eyebrow": "Guia del lector del Cosmere", "heading": "Un univers.\nMolts mons.\nInfinites històries.", "intro": "El Cosmere és l’univers de fantasia interconnectat de Brandon Sanderson: històries independents amb identitat pròpia, unides per connexions més profundes per a qui té curiositat.", "discover": "Descobreix-ne les connexions", "imageLabel": "Imatge de benvinguda", "imageDimensions": "16:9 · imatge editorial panoràmica" },
-    "cosmere": { "kicker": "La visió general", "heading": "Què és el Cosmere?", "description": "El Cosmere és el nom de l’univers interconnectat que reuneix moltes de les històries de fantasia èpica de Brandon Sanderson. Els seus mons tenen històries, cultures i sistemes de màgia diferents, però comparteixen un escenari més gran i una història que avança sota la superfície.", "worlds": { "title": "Molts mons", "text": "Scadrial, Roshar i altres planetes aporten la seva pròpia història, atmosfera i regles sobre el funcionament de la màgia." }, "doors": { "title": "Diferents portes d’entrada", "text": "Pots entrar-hi mitjançant un cop, un misteri polític, una guerra èpica o una aventura autoconclusiva. No hi ha un únic començament correcte." }, "universe": { "title": "Connexions per descobrir", "text": "Noms, personatges i idees recurrents recompensen l’atenció, encara que la majoria d’històries també funcionen per si soles." } },
-    "author": { "kicker": "L’autor", "heading": "Un constructor de mons connectats", "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut per la seva construcció de mons, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. Elantris, publicada el 2005, va ser la seva primera novel·la publicada i la primera història que va llançar dins del Cosmere. Darrere de llibres i sagues independents, fa anys que construeix un univers molt més gran.", "imageLabel": "Retrat de l’autor", "imageDimensions": "2:3 · retrat vertical" },
-    "whyRead": { "kicker": "Una raó per començar", "heading": "Per què llegir el Cosmere?", "start": { "title": "Comença on vulguis", "text": "Molts llibres es poden llegir de manera independent. Tria la primera història pel tipus d’experiència que busques, no per por d’equivocar-te d’ordre." }, "curiosity": { "title": "Segueix les pistes", "text": "Fixa’t en els detalls recurrents, especialment en un viatger anomenat Hoid, i deixa que les connexions apareguin al seu ritme." }, "discovering": { "title": "Continua descobrint", "text": "El Cosmere funciona en dos nivells: una història immediata que pots gaudir avui i un univers més gran que es torna més clar amb el temps." } },
-    "routes": { "kicker": "Comença aquí", "heading": "Tria la teva ruta", "description": "No existeix un ordre universalment correcte. Aquí trobaràs diverses maneres d’entrar al Cosmere segons quant context i connexió vulguis des del principi.", "communityText": "Una ruta acollidora per conèixer de manera equilibrada els mons i les idees principals.", "publicationText": "Segueix les històries segons l’ordre de publicació i observa com creix l’univers compartit.", "journeyText": "Descobreix el recorregut personal que va inspirar Cosmereando." },
-    "library": { "kicker": "La biblioteca", "heading": "Llibres, sagues i planetes", "description": "Explora novel·les, novel·les curtes, relats i novel·les gràfiques per la saga a la qual pertanyen o el planeta on transcorren.", "books": "Veure llibres", "sagas": "Veure sagues", "planets": "Veure planetes" },
-    "tableOfContents": "En aquesta pàgina", "toc": { "introduction": "Introducció", "cosmere": "Què és el Cosmere?", "author": "L’autor", "whyRead": "Per què llegir-lo?", "routes": "Rutes de lectura", "library": "La biblioteca" }
+    "hero": {
+      "eyebrow": "Guia del lector del Cosmere",
+      "heading": "Un univers.\nMolts mons.\nInfinites històries.",
+      "intro": "El Cosmere és l’univers de fantasia interconnectat de Brandon Sanderson: històries independents amb identitat pròpia, unides per connexions més profundes per a qui té curiositat.",
+      "discover": "Descobreix-ne les connexions",
+      "imageLabel": "Els regnes connectats del Cosmere",
+      "imageDimensions": "16:9 · imatge editorial panoràmica"
+    },
+    "cosmere": {
+      "kicker": "La visió general",
+      "heading": "Què és el Cosmere?",
+      "description": "El Cosmere és el nom de l’univers interconnectat que reuneix moltes de les històries de fantasia èpica de Brandon Sanderson. Els seus mons tenen històries, cultures i sistemes de màgia diferents, però comparteixen un escenari més gran i una història que avança sota la superfície.",
+      "worlds": {
+        "title": "Molts mons",
+        "text": "Scadrial, Roshar i altres planetes aporten la seva pròpia història, atmosfera i regles sobre el funcionament de la màgia."
+      },
+      "doors": {
+        "title": "Diferents portes d’entrada",
+        "text": "Pots entrar-hi mitjançant un cop, un misteri polític, una guerra èpica o una aventura autoconclusiva. No hi ha un únic començament correcte."
+      },
+      "universe": {
+        "title": "Connexions per descobrir",
+        "text": "Noms, personatges i idees recurrents recompensen l’atenció, encara que la majoria d’històries també funcionen per si soles."
+      }
+    },
+    "author": {
+      "kicker": "L’autor",
+      "heading": "Un constructor de mons connectats",
+      "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut per la seva construcció de mons, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. Elantris, publicada el 2005, va ser la seva primera novel·la publicada i la primera història que va llançar dins del Cosmere. Darrere de llibres i sagues independents, fa anys que construeix un univers molt més gran.",
+      "imageLabel": "Retrat de l’autor",
+      "imageDimensions": "2:3 · retrat vertical"
+    },
+    "whyRead": {
+      "kicker": "Una raó per començar",
+      "heading": "Per què llegir el Cosmere?",
+      "start": {
+        "title": "Comença on vulguis",
+        "text": "Molts llibres es poden llegir de manera independent. Tria la primera història pel tipus d’experiència que busques, no per por d’equivocar-te d’ordre."
+      },
+      "curiosity": {
+        "title": "Segueix les pistes",
+        "text": "Fixa’t en els detalls recurrents, especialment en un viatger anomenat Hoid, i deixa que les connexions apareguin al seu ritme."
+      },
+      "discovering": {
+        "title": "Continua descobrint",
+        "text": "El Cosmere funciona en dos nivells: una història immediata que pots gaudir avui i un univers més gran que es torna més clar amb el temps."
+      }
+    },
+    "routes": {
+      "kicker": "Comença aquí",
+      "heading": "Tria la teva ruta",
+      "description": "No existeix un ordre universalment correcte. Aquí trobaràs diverses maneres d’entrar al Cosmere segons quant context i connexió vulguis des del principi.",
+      "communityText": "Una ruta acollidora per conèixer de manera equilibrada els mons i les idees principals.",
+      "publicationText": "Segueix les històries segons l’ordre de publicació i observa com creix l’univers compartit.",
+      "journeyText": "Descobreix el recorregut personal que va inspirar Cosmereando."
+    },
+    "library": {
+      "kicker": "La biblioteca",
+      "heading": "Llibres, sagues i planetes",
+      "description": "Explora novel·les, novel·les curtes, relats i novel·les gràfiques per la saga a la qual pertanyen o el planeta on transcorren.",
+      "books": "Veure llibres",
+      "sagas": "Veure sagues",
+      "planets": "Veure planetes"
+    },
+    "tableOfContents": "En aquesta pàgina",
+    "toc": {
+      "introduction": "Introducció",
+      "cosmere": "Què és el Cosmere?",
+      "author": "L’autor",
+      "whyRead": "Per què llegir-lo?",
+      "routes": "Rutes de lectura",
+      "library": "La biblioteca"
+    }
   },
-  "pages": { "books": { "title": "Llibres", "description": "Explora les obres publicades del Cosmere agrupades per saga i per història independent." }, "routes": { "title": "Rutes de lectura", "description": "Aquí hi haurà les recomanacions comunitàries, l’ordre de publicació i el recorregut personal pel Cosmere." }, "sagas": { "title": "Sagues", "description": "Cada saga del Cosmere tindrà aquí la seva pròpia pàgina guiada amb les seves obres i el seu planeta relacionat." }, "planets": { "title": "Planetes", "description": "Les pàgines de planetes reuniran les seves sagues, obres, mapes i sistemes de màgia relacionats." }, "credits": { "title": "Crèdits", "description": "Aquí apareixeran els autors de les imatges, les fonts i els reconeixements del projecte." }, "imageLabel": "Imatge de portada de {title}", "imageDimensions": "3:2 · imatge de capçalera de secció" }
+  "pages": {
+    "books": {
+      "title": "Llibres",
+      "description": "Explora les obres publicades del Cosmere agrupades per saga i per història independent."
+    },
+    "routes": {
+      "title": "Rutes de lectura",
+      "description": "Aquí hi haurà les recomanacions comunitàries, l’ordre de publicació i el recorregut personal pel Cosmere."
+    },
+    "sagas": {
+      "title": "Sagues",
+      "description": "Cada saga del Cosmere tindrà aquí la seva pròpia pàgina guiada amb les seves obres i el seu planeta relacionat."
+    },
+    "planets": {
+      "title": "Planetes",
+      "description": "Les pàgines de planetes reuniran les seves sagues, obres, mapes i sistemes de màgia relacionats."
+    },
+    "credits": {
+      "title": "Crèdits",
+      "description": "Aquí apareixeran els autors de les imatges, les fonts i els reconeixements del projecte."
+    },
+    "imageLabel": "Imatge de portada de {title}",
+    "imageDimensions": "3:2 · imatge de capçalera de secció"
+  },
+  "stormlightPage": {
+    "intro": {
+      "eyebrow": "Fitxa de saga",
+      "description": "L’arxiu de les tempestes segueix els habitants de Roshar, un món marcat per tempestes recurrents, juraments antics i poders que comencen a despertar de nou. El primer arc combina una escala èpica amb històries íntimes sobre el deure, la sanació i el canvi.",
+      "planet": "Món",
+      "imageLabel": "Els mons del Cosmere, inclòs Roshar"
+    },
+    "publication": {
+      "kicker": "Mapa de publicació",
+      "heading": "Un arc llarg amb històries entre els seus passos.",
+      "description": "Llegeix les novel·les principals en ordre de publicació. Ballarí de tall i Esquirla de l’alba apareixen entre les novel·les on aporten més context, mentre que els relats curts són desviaments opcionals."
+    },
+    "books": {
+      "wayOfKings": "El volum inicial presenta Roshar, les seves grans tempestes i els primers senyals que els poders antics estan tornant.",
+      "wordsOfRadiance": "La segona novel·la amplia el món i aprofundeix en les preguntes sobre els Cavallers Radiants i els juraments que pronuncien.",
+      "edgedancer": "Una novel·la curta centrada en Lift, recomanable després de Paraules radiants i abans de Juramentada.",
+      "oathbringer": "La tercera novel·la gira cap a la història, la responsabilitat i el difícil treball de reconstruir un ordre trencat.",
+      "dawnshard": "Una novel·la curta situada abans de El ritme de la guerra, amb una expedició menor que aporta context al conflicte més ampli.",
+      "rhythmOfWar": "La quarta novel·la enfronta directament estudi, tecnologia i guerra mentre els personatges busquen noves maneres de sobreviure.",
+      "windAndTruth": "La cinquena novel·la tanca el primer gran arc de la sèrie i manté les seves preguntes centrals sobre les promeses i la identitat.",
+      "elsecaller": "Un relat curt complementari relacionat amb el material més ampli de la saga. És context opcional del catàleg.",
+      "kingLopen": "Un relat breu i més lleuger sobre Lopen i la seva particular relació amb el lideratge."
+    },
+    "supplementary": {
+      "detailsAction": "Per què és aquí?",
+      "typeLabel": "Format",
+      "originLabel": "Com es va publicar",
+      "whyLabel": "Per què llegir-lo",
+      "whenLabel": "Quan llegir-lo",
+      "works": {
+        "edgedancer": { "origin": "És una novel·la curta situada entre Paraules radiants i Juramentada en la seqüència de lectura àmplia.", "why": "Dona més espai perquè Lift creixi i ofereix una mirada diferent i més juganera al món abans de la novel·la principal següent.", "when": "Després de Paraules radiants i abans de Juramentada." },
+        "dawnshard": { "origin": "És una novel·la curta situada entre Juramentada i El ritme de la guerra i publicada com a complement de la seqüència principal.", "why": "Desenvolupa una expedició menor i aporta context que ajuda a situar parts d’El ritme de la guerra.", "when": "Després de Juramentada i abans d’El ritme de la guerra." }
+      }
+    },
+    "magic": {
+      "kicker": "Sistemes de Roshar",
+      "heading": "Llum tempestuosa, juraments i vincles vius.",
+      "description": "Els sistemes centrals de L’arxiu de les tempestes connecten energia, intenció i relació. Aquesta introducció manté deliberadament un nivell lleuger de revelacions.",
+      "imageLabel": "Il·lustració conceptual de L’arxiu de les tempestes a Roshar",
+      "stormlight": { "title": "Llum tempestuosa", "text": "La Llum tempestuosa és una forma lluminosa d’Investidura que porten les gemmes carregades i els éssers vius. Alimenta moltes habilitats extraordinàries de Roshar i està unida a les seves tempestes." },
+      "surgebinding": { "title": "Vinculació d’ones", "text": "La vinculació d’ones combina dues forces fonamentals, o Ones, de maneres diferents. Els Cavallers Radiants hi accedeixen mitjançant juraments i vincles, no només amb l’estudi." },
+      "spren": { "title": "Spren i vincles", "text": "Els spren són manifestacions d’idees, forces i emocions. Alguns poden formar un vincle nahel amb una persona, una relació que transforma tots dos i sosté el centre moral de la saga." }
+    },
+    "curiosities": {
+      "kicker": "Alguns detalls de Roshar",
+      "heading": "El que fa diferent aquesta saga.",
+      "first": "La sèrie es construeix sobre un món on el clima, l’arquitectura, la fauna i la vida quotidiana responen a les grans tempestes.",
+      "second": "La seva màgia central s’organitza al voltant d’ideals pronunciats, de manera que el creixement personal i la capacitat sobrenatural estan connectats.",
+      "third": "La seqüència principal inclou interludis i novel·les curtes complementàries que amplien la mirada més enllà del repartiment central sense substituir l’ordre principal."
+    },
+    "tableOfContents": "Fitxa de Stormlight",
+    "toc": { "introduction": "Introducció", "publicationOrder": "Ordre de publicació", "magic": "Sistemes de Roshar", "curiosities": "Curiositats" }
+  },
+  "arcanumPage": {
+    "intro": { "eyebrow": "Col·lecció especial", "description": "Arcanum Il·limitat és una antologia del Cosmere: un prestatge guiat de relats, novel·les curtes i fragments que obre finestres a mons, èpoques i racons diferents de l'univers més ampli.", "countLabel": "Històries d'aquesta col·lecció", "countText": "històries del Cosmere" },
+    "purpose": { "kicker": "Per què existeix", "heading": "Un mapa del Cosmere en miniatura.", "text": "No és una saga ni un ordre de lectura continu. La col·lecció reuneix històries que d'una altra manera quedarien repartides en edicions diferents i hi afegeix assaigs breus, notes planetàries i material visual per mostrar com es connecta el Cosmere sense exigir que coneguis totes les connexions per endavant." },
+    "stories": {
+      "kicker": "El contingut", "heading": "Nou històries, sis sistemes i molts punts d'entrada.", "description": "Obre cada fitxa per veure quin tipus d'història és, on encaixa i quan funciona millor dins d'un recorregut de lectura més ampli.",
+      "items": {
+        "the-hope-of-elantris": { "description": "Un breu epíleg d'Elantris, explicat des d'un altre punt de vista i ple de l'escalf i l'humor de la vida després de la crisi central de la novel·la.", "when": "Després d'Elantris.", "context": "Un petit retorn a Sel i als seus habitants; funciona millor com a coda que com a introducció." },
+        "the-emperors-soul": { "description": "Una novel·la curta, precisa i autoconclusiva sobre una artista obligada a crear una ànima nova per a un emperador mentre negocia amb la identitat, l'ofici i el poder.", "when": "En qualsevol moment; després d'Elantris si vols mantenir unit el context de Sel.", "context": "Transcorre a Sel, però mostra una altra regió i una altra màgia diferent d'Elantris." },
+        "the-eleventh-metal": { "description": "Una breu preqüela de Nascuts de la boira que segueix Kelsier abans de la trilogia principal i mostra una de les seves primeres lliçons d'Alomància.", "when": "Després d'El gran imperi, o després de la trilogia original com a retrospectiva.", "context": "Aporta sobretot personatge i atmosfera; no és necessària per començar Nascuts de la boira." },
+        "allomancer-jak": { "description": "Una aventura pulp dins del món sobre un lladre que aspira a ser un heroi, emmarcada per les notes del seu sofert servent terrisà.", "when": "Després d'Aleació de llei, quan ja coneguis el to i l'època de Wax i Wayne.", "context": "Amplia la mitologia quotidiana de la segona era d'Escàdriel més que no pas la trama central." },
+        "mistborn-secret-history": { "description": "Una novel·la curta que revisita fets importants de la primera era de Nascuts de la boira des de darrere del món visible i ofereix una altra perspectiva sobre la seva història oculta.", "when": "Després de Braçalets de dol per minimitzar spoilers; abans també és possible amb risc.", "context": "És un dels relats més connectats amb el Cosmere, així que el context de lectura importa." },
+        "edgedancer": { "description": "Lift protagonitza una història ràpida, divertida i tendra sobre la gana, la responsabilitat i un perill que es mou per Roshar.", "when": "Després de Paraules radiants i abans de Juramentada.", "context": "Uneix les primeres novel·les d'El fitxer de les tempestes i dona espai a un personatge que tornarà més endavant." },
+        "shadows-for-silence": { "description": "Un relat de frontera tens, ambientat en un bosc on la violència atrau depredadors mortals i sobreviure depèn d'unes regles que ningú pot oblidar.", "when": "En qualsevol moment; es pot llegir de manera independent.", "context": "Presenta Threnody i mostra fins a quin punt pot variar un relat del Cosmere fora de la fantasia èpica." },
+        "sixth-of-the-dusk": { "description": "En una illa remota, un guia que caça amb ocells ensinistrats s'enfronta a un futur que podria deixar obsolet el mode de vida del seu poble.", "when": "En qualsevol moment; pots reservar-lo per més endavant si prefereixes descobrir-ne les implicacions a poc a poc.", "context": "Introdueix Primer del Sol i ofereix una de les mirades més llunyanes cap a l'horitzó del Cosmere." },
+        "white-sand-excerpt": { "description": "Un breu tast d'Arena Blanca que presenta Taldain, el seu món dividit i el domini de la sorra que sosté el conflicte.", "when": "Abans d'Arena Blanca com a avançament, o pots saltar-te'l si ja has llegit la novel·la gràfica.", "context": "És un fragment, no un final independent ni un substitut de la novel·la gràfica completa." }
+      }
+    },
+    "sections": { "selishSystem": "Sistema selish · Sel", "scadrianSystem": "Sistema scadrià · Escàdriel", "rosharanSystem": "Sistema rosharià · Roshar", "threnoditeSystem": "Sistema threnodita · Threnody", "firstOfTheSunSystem": "Sistema de Primer del Sol", "taldainSystem": "Sistema taldainià · Taldain" },
+    "detailsAction": "Llegir el context", "whenLabel": "Quan llegir-la", "contextLabel": "Què aporta",
+    "essays": { "kicker": "Més enllà de les històries", "heading": "La col·lecció també ensenya a mirar cap enfora.", "text": "El volum inclou assaigs breus sobre diversos sistemes planetaris, un mapa del Cosmere i material visual de suport. Són opcionals, però converteixen l'antologia en alguna cosa més que un conjunt de relats extra: ajuden a orientar-se i a detectar connexions entre mons.", "drominadImageLabel": "El mapa del sistema Drominad", "shardImageLabel": "Símbols relacionats amb els poders del Cosmere", "nebulaImageLabel": "Una visió abstracta i acolorida del Cosmere" },
+    "tableOfContents": "Fitxa d'Arcanum Il·limitat", "toc": { "introduction": "Introducció", "purpose": "Per què existeix", "stories": "Històries", "essays": "Assaigs i mapa" }
+  },
+  "whiteSandPage": {
+    "back": "Tornar a Sagues",
+    "intro": {
+      "eyebrow": "Fitxa de saga",
+      "description": "Sorra blanca es una trilogía de novel·la gràfica ambientada en Taldain, un mundo dividido entre un Dia iluminado y una Nit misteriosa.",
+      "planet": "Món",
+      "imageLabel": "Taldain y sus dos lados",
+      "imageDimensions": "16:9 · marcador de imagen de Sorra blanca"
+    },
+    "publication": {
+      "kicker": "Mapa de publicació",
+      "heading": "Una novel·la gràfica en tres movimientos.",
+      "description": "La lista sigue el orden de publicación y distingue los volums, la edición recopilatoria y el fragmento."
+    },
+    "books": {
+      "volume1": "Presenta a Kenton y a los maestros de la arena.",
+      "volume2": "Amplía el conflicto entre el Dia y la Nit.",
+      "volume3": "Lleva la conspiración central a una nueva etapa.",
+      "omnibus": "Recopila los volums 1–3 con material nuevo y revisado.",
+      "excerpt": "Fragmento del inicio incluido en Arcanum Ilimitado."
+    },
+    "supplementary": {
+      "detailsAction": "Per què és aquí?",
+      "typeLabel": "Format",
+      "originLabel": "Com es va publicar",
+      "whyLabel": "Per què llegir-lo",
+      "whenLabel": "Quan llegir-lo",
+      "works": {
+        "volume1": {
+          "origin": "La primera part de la història es va adaptar com a novel·la gràfica i es va publicar com el volum inicial de la trilogia.",
+          "why": "Presenta Taldain, Kenton, els mestres de la sorra i el conflicte que dona a Sorra blanca la seva identitat visual.",
+          "when": "Comença aquí si llegiràs els volums per separat."
+        },
+        "volume2": {
+          "origin": "És la segona part de l’adaptació en novel·la gràfica, publicada com a volum independent abans que arribés la conclusió.",
+          "why": "Amplia el conflicte polític i desenvolupa la relació entre el Dia i la Nit.",
+          "when": "Després del volum 1, o dins de l’Omnibus."
+        },
+        "volume3": {
+          "origin": "És el volum final de la seqüència de publicació original de la novel·la gràfica.",
+          "why": "Porta la conspiració central i la lluita de Kenton a una nova etapa i completa la seqüència principal.",
+          "when": "Després dels volums 1 i 2, tret que llegeixis l’Omnibus."
+        },
+        "omnibus": {
+          "origin": "És l’edició de lectura unificada per a qui prefereix un sol llibre físic, amb revisions editorials i material addicional al costat de la història principal.",
+          "why": "El seu avantatge principal és la comoditat: permet llegir la novel·la gràfica com una obra contínua, sense repartir-la entre diversos volums.",
+          "when": "Es llegeix en lloc dels tres volums; no és una quarta entrega."
+        },
+        "excerpt": {
+          "origin": "A diferència dels volums i de l’Omnibus, aquesta entrada és una mostra i no una edició completa, conservada entre els materials del Cosmere d’Arcanum Il·limitat.",
+          "why": "Permet comparar l’esborrany inicial en prosa amb l’adaptació en novel·la gràfica i descobrir com va canviar la història.",
+          "when": "És opcional. Pots llegir-lo després o al costat de les novel·les gràfiques si t’interessa el procés d’adaptació."
+        }
+      }
+    },
+    "magic": {
+      "kicker": "El sistema de Taldain",
+      "heading": "Poder bajo dos cielos.",
+      "description": "Taldain está marcado por dos lados y por formas distintas de entender el poder.",
+      "sandMastery": {
+        "title": "Maestría de la arena",
+        "text": "Los maestros manipulan telequinéticamente la arena blanca. La arena se vuelve negra temporalmente y la práctica consume el agua del usuario."
+      },
+      "starmarks": {
+        "title": "Marcas estelares",
+        "text": "Son signos asociados con la Nit y sus Starcarved. Su relación con la maestría de la arena forma parte del misterio."
+      },
+      "taldain": {
+        "title": "Dia y Nit",
+        "text": "Los dos lados de Taldain tienen luz, culturas y formas de entender el poder diferentes."
+      }
+    },
+    "curiosities": {
+      "kicker": "Una mica de context",
+      "heading": "Detalls a tenir en compte",
+      "first": "Sorra blanca se basa en una historia en prosa reelaborada como trilogía canónica de novelas gráficas.",
+      "second": "Khriss conecta Sorra blanca con el Cosmere más amplio como personaje y estudiosa de mundos e Investidura.",
+      "third": "El fragmento de Arcanum Ilimitado permite probar la historia en prosa."
+    },
+    "tableOfContents": "Fitxa de Sorra blanca",
+    "toc": {
+      "introduction": "Introducció",
+      "publicationOrder": "Ordre de publicació",
+      "magic": "Sistema de Taldain",
+      "curiosities": "Curiositats"
+    }
+  }
 }
