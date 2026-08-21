@@ -13,7 +13,7 @@ export interface NavigationEntryData {
 export interface WorkData extends NavigationEntryData {
   slug: string;
   sagaId?: string;
-  typeKey: 'novel' | 'novella' | 'short-story' | 'graphic-novel' | 'anthology' | 'excerpt';
+  typeKey: 'novel' | 'novella' | 'short-story' | 'graphic-novel' | 'omnibus' | 'anthology' | 'excerpt';
   publicationOrder?: number;
   publicationYear: number;
   arcanumStatus?: 'arcanum-original' | 'previously-published';
@@ -23,6 +23,12 @@ export interface WorkData extends NavigationEntryData {
 
 export interface CatalogueItemData extends NavigationEntryData {
   slug: string;
+}
+
+export interface PlanetProfile {
+  systemKey: string;
+  imageLabelKey: string;
+  storyKeys: string[];
 }
 
 export interface TranslationDictionary {

@@ -6,5 +6,8 @@
   { "id": "taldain", "slug": "taldain", "labelKey": "planets.taldain" },
   { "id": "lumar", "slug": "lumar", "labelKey": "planets.lumar" },
   { "id": "canticle", "slug": "canticle", "labelKey": "planets.canticle" },
-  { "id": "komashi", "slug": "komashi", "labelKey": "planets.komashi" }
+  { "id": "komashi", "slug": "komashi", "labelKey": "planets.komashi" },
+  { "id": "threnody", "slug": "threnody", "labelKey": "planets.threnody" },
+  { "id": "first-of-the-sun", "slug": "first-of-the-sun", "labelKey": "planets.firstOfTheSun" },
+  { "id": "ashyn", "slug": "ashyn", "labelKey": "planets.ashyn" }
 ]

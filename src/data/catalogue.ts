@@ -5,6 +5,7 @@ import sagasData from './sagas.json';
 import worksData from './works.json';
 import { defaultLocale, locales, translations } from './locales';
 import { getLocalizedPath, getTranslation } from './i18n';
+import { getBookImage } from './book-images';
 import type { Locale } from './locales';
 import type { NavigationEntryData, NavigationGroupData, WorkData } from './types';
 
@@ -35,6 +36,7 @@ export interface BookCollection {
     type: string;
     typeKey: WorkData['typeKey'];
     publicationYear: number;
+    image: ReturnType<typeof getBookImage>;
     arcanumStatus?: WorkData['arcanumStatus'];
   }[];
   subsections?: { id: string; label: string; works: BookCollection['works'] }[];
@@ -51,7 +53,7 @@ const catalogueSources: Record<NavigationGroupData['source'], CatalogueEntryData
 const getItems = (locale: Locale, group: NavigationGroupData): NavigationItem[] =>
   catalogueSources[group.source].map((item) => {
     const anchor = item.slug ?? item.id;
-    const href = group.source === 'routes'
+    const href = group.source === 'routes' || group.source === 'sagas' || group.source === 'planets'
       ? getLocalizedPath(locale, `${group.href}/${item.id}`)
       : `${getLocalizedPath(locale, group.href)}#${anchor}`;
 
@@ -84,6 +86,7 @@ export const getBookCollections = (locale: Locale): BookCollection[] => {
     type: getTranslation(locale, `books.types.${work.typeKey}`),
     typeKey: work.typeKey,
     publicationYear: work.publicationYear,
+    image: getBookImage(work),
     arcanumStatus: work.arcanumStatus,
   });
   const sortWorks = (items: WorkData[]) => [...items].sort((first, second) =>
