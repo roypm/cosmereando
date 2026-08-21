@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GlobalNavbar from './GlobalNavbar.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import EditorialImage from './EditorialImage.astro';
 import Sidebar from './Sidebar.astro';
 import TableOfContents from './TableOfContents.astro';
+import PageTrail from './PageTrail.astro';
+import PageReturn from './PageReturn.astro';
 import { getSections } from '../data/catalogue';
 import { getLocalizedPath, getTranslation } from '../data/i18n';
 import type { Locale } from '../data/locales';
+import headerBackground from '../assets/images/general/cosmere_book_cover_mashup.webp';
 
 interface Props {
   locale: Locale;
@@ -23,6 +26,7 @@ const sagas = getSections('sagas', locale);
     <Sidebar locale={locale} />
     <div class="page-layout">
       <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title') }]} />
       <main class="main-content sagas-page">
         <section class="sagas-page__masthead" id="introduction" aria-labelledby="sagas-heading">
           <div class="sagas-page__masthead-copy">
@@ -43,7 +47,7 @@ const sagas = getSections('sagas', locale);
             <h2 id="orientation-heading">{t('sagaPage.orientation.heading')}</h2>
             <p>{t('sagaPage.orientation.description')}</p>
           </div>
-          <ImagePlaceholder label={t('sagaPage.orientation.imageLabel')} dimensions={t('sagaPage.orientation.imageDimensions')} imageText={t('common.imageHere')} variant="feature" />
+          <EditorialImage src={headerBackground} alt={t('sagaPage.orientation.imageLabel')} variant="feature" />
         </section>
 
         <section class="sagas-page__directory" id="directory" aria-labelledby="directory-heading">
@@ -56,7 +60,7 @@ const sagas = getSections('sagas', locale);
           </div>
           <div class="saga-directory">
             {sagas.map((saga, index) => (
-              <a class="saga-directory__item" href={path(`/sagas/${saga.id}`)}>
+              <a class="saga-directory__item" id={saga.id} href={path(`/sagas/${saga.id}`)}>
                 <span class="saga-directory__number">{String(index + 1).padStart(2, '0')}</span>
                 <span class="saga-directory__body">
                   <span class="saga-directory__label">{saga.label}</span>
@@ -67,6 +71,7 @@ const sagas = getSections('sagas', locale);
             ))}
           </div>
         </section>
+        <PageReturn locale={locale} href="/" label={t('common.home')} />
       </main>
       <TableOfContents title={t('sagaPage.tableOfContents')} items={[
         { id: 'introduction', label: t('sagaPage.toc.introduction') },

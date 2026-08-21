@@ -1,0 +1,17 @@
+---
+import PlanetDetailPage from '../../../components/PlanetDetailPage.astro';
+import { getSections } from '../../../data/catalogue';
+import { locales } from '../../../data/i18n';
+import type { Locale } from '../../../data/locales';
+
+export function getStaticPaths() {
+  return locales.filter((locale) => locale !== 'en').flatMap((locale) =>
+    getSections('planets', locale).map((planet) => ({ params: { locale, planet: planet.id } })),
+  );
+}
+
+const locale = Astro.params.locale as Exclude<Locale, 'en'>;
+const planetId = Astro.params.planet as string;
+---
+
+<PlanetDetailPage locale={locale} planetId={planetId} />

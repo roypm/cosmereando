@@ -1,0 +1,28 @@
+---
+interface Props {
+  action: string;
+  typeLabel: string;
+  type: string;
+  originLabel: string;
+  origin: string;
+  whyLabel: string;
+  why: string;
+  whenLabel: string;
+  when: string;
+}
+
+const { action, typeLabel, type, originLabel, origin, whyLabel, why, whenLabel, when } = Astro.props;
+---
+
+<details class="supplementary-work">
+  <summary>
+    <span class="supplementary-work__icon" aria-hidden="true">+</span>
+    {action}
+  </summary>
+  <div class="supplementary-work__content">
+    <p><strong>{typeLabel}:</strong> {type}</p>
+    <p><strong>{originLabel}:</strong> {origin}</p>
+    <p><strong>{whyLabel}:</strong> {why}</p>
+    <p><strong>{whenLabel}:</strong> {when}</p>
+  </div>
+</details>

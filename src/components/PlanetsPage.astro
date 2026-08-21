@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialImage from './EditorialImage.astro';
+import GlobalNavbar from './GlobalNavbar.astro';
+import PageReturn from './PageReturn.astro';
+import PageTrail from './PageTrail.astro';
+import Sidebar from './Sidebar.astro';
+import TableOfContents from './TableOfContents.astro';
+import { getSections } from '../data/catalogue';
+import { getLocalizedPath, getTranslation } from '../data/i18n';
+import type { Locale } from '../data/locales';
+import worldsMap from '../assets/images/general/cosmere_worlds_map.webp';
+import { planetImages } from '../data/planet-images';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) => getTranslation(locale, key, replacements);
+const path = (value: string) => getLocalizedPath(locale, value);
+const planets = getSections('planets', locale);
+---
+
+<BaseLayout title={`Cosmereando — ${t('pages.planets.title')}`} description={t('pages.planets.description')} locale={locale}>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.planets.title') }]} />
+      <main class="main-content planets-page">
+        <section class="planets-page__masthead" id="introduction" aria-labelledby="planets-heading">
+          <div>
+            <p class="eyebrow">{t('planetPage.intro.eyebrow')}</p>
+            <h1 id="planets-heading">{t('planetPage.intro.heading')}</h1>
+            <p>{t('planetPage.intro.description')}</p>
+          </div>
+          <EditorialImage src={worldsMap} alt={t('planetPage.intro.imageLabel')} variant="feature" />
+        </section>
+
+        <section class="planets-page__directory" id="directory" aria-labelledby="directory-heading">
+          <div class="planets-page__directory-heading">
+            <div>
+              <p class="section-kicker">{t('planetPage.directory.kicker')}</p>
+              <h2 id="directory-heading">{t('planetPage.directory.heading')}</h2>
+            </div>
+            <p>{t('planetPage.directory.description')}</p>
+          </div>
+          <div class="planet-grid">
+            {planets.map((planet, index) => (
+              <a class="planet-card" id={planet.id} href={path(`/planets/${planet.id}`)}>
+                <span class="planet-card__number">{String(index + 1).padStart(2, '0')}</span>
+                {planetImages[planet.id] ? <img class="planet-card__visual" src={planetImages[planet.id].src} width={planetImages[planet.id].width} height={planetImages[planet.id].height} alt="" loading="lazy" /> : <span class="planet-card__visual" aria-hidden="true">{t('common.imageHere')}</span>}
+                <span class="planet-card__label">{planet.label}</span>
+                <span class="planet-card__description">{t('planetPage.directory.cardDescription', { title: planet.label })}</span>
+                <span class="planet-card__arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <PageReturn locale={locale} href="/" label={t('common.home')} />
+      </main>
+      <TableOfContents title={t('planetPage.tableOfContents')} items={[
+        { id: 'introduction', label: t('planetPage.toc.introduction') },
+        { id: 'directory', label: t('planetPage.toc.directory') },
+      ]} />
+    </div>
+  </div>
+</BaseLayout>

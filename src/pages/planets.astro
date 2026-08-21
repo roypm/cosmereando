@@ -1,15 +1,6 @@
 ---
-import PlaceholderPage from '../components/PlaceholderPage.astro';
-import { getSections } from '../data/catalogue';
-import { getTranslation } from '../data/i18n';
+import PlanetsPage from '../components/PlanetsPage.astro';
 
-const title = getTranslation('en', 'pages.planets.title');
-const description = getTranslation('en', 'pages.planets.description');
 ---
 
-<PlaceholderPage
-  locale="en"
-  title={title}
-  description={description}
-  sections={getSections('planets', 'en')}
-/>
+<PlanetsPage locale="en" />
