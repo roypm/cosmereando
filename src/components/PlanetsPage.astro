@@ -27,7 +27,7 @@ const planets = getSections('planets', locale);
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.planets.title') }]} />
       <main class="main-content planets-page">
-        <section class="planets-page__masthead" id="introduction" aria-labelledby="planets-heading">
+        <section class="page-intro planets-page__masthead" id="introduction" aria-labelledby="planets-heading">
           <div>
             <p class="eyebrow">{t('planetPage.intro.eyebrow')}</p>
             <h1 id="planets-heading">{t('planetPage.intro.heading')}</h1>

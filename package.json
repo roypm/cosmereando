@@ -7,13 +7,21 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
-    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build"
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint": "pnpm lint:css",
+    "format": "prettier --write \"src/styles/**/*.css\" package.json .stylelintrc.json",
+    "format:check": "prettier --check \"src/styles/**/*.css\" package.json .stylelintrc.json",
+    "check": "pnpm lint:css && ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build"
   },
   "dependencies": {
     "astro": "^5.13.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.8.3"
   },
   "packageManager": "pnpm@10.14.0"

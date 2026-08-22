@@ -1,0 +1,411 @@
+/* ========================================
+   Responsive navigation
+   ======================================== */
+
+@media (width <= 52rem) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  :root.mobile-menu-open,
+  :root.mobile-menu-open body {
+    overflow: hidden;
+  }
+
+  .global-navbar {
+    z-index: calc(var(--layer-sidebar) + 3);
+    left: 0;
+    height: calc(var(--top-navbar-height) + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    padding-right: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-right))
+    );
+    padding-left: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-left))
+    );
+  }
+
+  .global-navbar__links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    gap: 0.22rem;
+    place-content: center;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    cursor: pointer;
+    padding: 0.45rem;
+  }
+
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle:focus-visible,
+  :root.mobile-menu-open .mobile-menu-toggle {
+    border-color: var(--color-accent);
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 1.15rem;
+    height: 1px;
+    background: currentcolor;
+    transition:
+      transform var(--transition-standard),
+      opacity var(--transition-standard);
+  }
+
+  :root.mobile-menu-open .mobile-menu-toggle span:first-child {
+    transform: translateY(0.23rem) rotate(45deg);
+  }
+
+  :root.mobile-menu-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  :root.mobile-menu-open .mobile-menu-toggle span:last-child {
+    transform: translateY(-0.23rem) rotate(-45deg);
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: calc(var(--layer-sidebar) + 2);
+    width: min(22rem, calc(100vw - 2.5rem));
+    min-height: 100dvh;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 0;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-mobile-sidebar);
+    overflow-y: auto;
+    padding: calc(
+        var(--space-4) + var(--top-navbar-height) + env(safe-area-inset-top)
+      )
+      max(var(--space-3), calc(var(--space-3) + env(safe-area-inset-right)))
+      calc(var(--space-3) + env(safe-area-inset-bottom))
+      max(var(--space-3), calc(var(--space-3) + env(safe-area-inset-left)));
+    transform: translateX(-105%);
+    transition:
+      transform var(--transition-standard),
+      visibility var(--transition-standard);
+    visibility: hidden;
+  }
+
+  .sidebar.sidebar--mobile-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .sidebar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--layer-sidebar) + 1);
+    display: block;
+    background: var(--color-overlay);
+    border: 0;
+    cursor: pointer;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--transition-standard),
+      visibility var(--transition-standard);
+    visibility: hidden;
+  }
+
+  .sidebar__overlay--visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .sidebar__header {
+    min-height: 5rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .sidebar__header-art {
+    max-width: 10rem;
+    transform: translateY(-0.2rem);
+  }
+
+  .sidebar__group-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar__submenu {
+    display: block;
+  }
+
+  .sidebar__submenu > summary {
+    display: none;
+  }
+
+  .sidebar__submenu-panel,
+  .sidebar__submenu:not([open]) > .sidebar__submenu-panel {
+    display: grid;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .sidebar__sublink {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .main-content {
+    min-height: 100dvh;
+    padding: calc(var(--top-navbar-height) + env(safe-area-inset-top))
+      max(var(--space-2), calc(var(--space-2) + env(safe-area-inset-right)))
+      var(--space-2)
+      max(var(--space-2), calc(var(--space-2) + env(safe-area-inset-left)));
+  }
+
+  .page-trail + .main-content {
+    padding-top: var(--space-2);
+  }
+
+  .page-trail {
+    margin-right: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-right))
+    );
+    margin-left: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-left))
+    );
+    padding-top: calc(
+      var(--top-navbar-height) + env(safe-area-inset-top) + var(--space-1)
+    );
+  }
+
+  .placeholder-page {
+    min-height: 100dvh;
+    padding-top: var(--space-2);
+    padding-right: max(0rem, env(safe-area-inset-right));
+    padding-left: max(0rem, env(safe-area-inset-left));
+  }
+
+  .not-found {
+    min-height: 100dvh;
+    padding-top: calc(
+      var(--top-navbar-height) + env(safe-area-inset-top) + var(--space-3)
+    );
+    padding-right: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-right))
+    );
+    padding-left: max(
+      var(--space-2),
+      calc(var(--space-2) + env(safe-area-inset-left))
+    );
+  }
+
+  .hero__layout,
+  .author-layout,
+  .books-page__intro,
+  .books-page__section-heading,
+  .sagas-page__masthead,
+  .sagas-page__orientation,
+  .sagas-page__directory-heading,
+  .planets-page__masthead,
+  .planets-page__directory-heading,
+  .mistborn-page__header,
+  .mistborn-page__section-intro,
+  .arcanum-page__header,
+  .arcanum-page__purpose,
+  .arcanum-page__section-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    max-width: 54rem;
+  }
+
+  .image-placeholder--hero {
+    width: min(100%, 42rem);
+  }
+
+  .image-placeholder--portrait {
+    width: min(100%, 14rem);
+  }
+
+  .page-layout {
+    display: block;
+    min-height: 100dvh;
+    margin-left: 0;
+  }
+
+  .main-content > * {
+    width: 100%;
+  }
+
+  .table-of-contents {
+    display: none;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .books-page__index {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .sagas-page__masthead-index {
+    justify-items: start;
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2) 0 0;
+    text-align: left;
+  }
+
+  .sagas-page__orientation-mark {
+    display: none;
+  }
+
+  .mistborn-page__header-meta {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+    padding: var(--space-2) 0 0;
+  }
+
+  .mistborn-page__section-intro > p:last-child {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .arcanum-page__section-intro > p:last-child {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .arcanum-page__count {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+    padding: var(--space-2) 0 0;
+  }
+
+  .arcanum-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mistborn-magic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .magic-systems-page__masthead,
+  .magic-systems-page__directory-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .magic-systems-page__count {
+    justify-items: start;
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+    padding: var(--space-2) 0 0;
+    text-align: left;
+  }
+
+  .magic-system-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .stormlight-page .mistborn-page__magic > .editorial-image {
+    margin-left: 0;
+  }
+
+  .arcanum-page__essays-visuals {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .arcanum-page__essays-visuals .editorial-image--feature {
+    grid-column: 1 / -1;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .language-switcher__trigger {
+    min-height: 2.75rem;
+  }
+
+  .control-button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+}
+
+@media (width <= 34rem) {
+  .global-navbar {
+    gap: var(--space-1);
+    padding-right: max(0.5rem, calc(0.5rem + env(safe-area-inset-right)));
+    padding-left: max(0.5rem, calc(0.5rem + env(safe-area-inset-left)));
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand__mark {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .brand__name {
+    min-width: 0;
+    overflow: hidden;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .arcanum-story {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+}
+
+@media (width <= 70rem) {
+  .table-of-contents {
+    display: none;
+  }
+}
+
+@media (width >= 71rem) {
+  .main-content {
+    padding-right: calc(
+      var(--content-padding) + var(--table-of-contents-space)
+    );
+  }
+}
+
+/* ========================================
+   Motion preferences
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}

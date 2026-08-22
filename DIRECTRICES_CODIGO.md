@@ -156,6 +156,10 @@ Dirección general:
 - Organizar el proyecto por responsabilidad y agrupar lo específico por sección.
 - Usar estilos globales para reset, variables, tipografía y base.
 - Mantener estilos específicos junto al componente o página.
+- Mantener el layout compartido y los componentes reutilizables en las hojas globales de `src/styles`.
+- Mantener los estilos específicos de una página junto a su componente Astro mediante `<style>` scoped cuando sea posible.
+- Ordenar la cascada con las capas `tokens`, `base`, `layout`, `components`, `pages` y `overrides`.
+- Usar `page-intro` como convención para la primera sección de páginas que incluyen breadcrumb.
 - Usar CSS normal, no Tailwind.
 - Usar BEM y clases en kebab-case.
 - Mantener anidación y especificidad bajas.

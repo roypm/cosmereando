@@ -32,7 +32,7 @@ if (!saga) {
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: saga.label }]} />
       <main class="main-content saga-detail-page">
-        <header class="saga-detail-page__header" id="introduction" aria-labelledby="saga-heading">
+        <header class="page-intro saga-detail-page__header" id="introduction" aria-labelledby="saga-heading">
           <p class="eyebrow">{t('sagaPage.detail.eyebrow')}</p>
           <p class="saga-detail-page__index">{sagaId}</p>
           <h1 id="saga-heading">{saga.label}</h1>

@@ -244,7 +244,7 @@
     "warning": {
       "kicker": "Optional spoiler note",
       "heading": "Do you want to know how Era 2 relates to Era 1?",
-      "text": "Era 2 takes place centuries later. Reading its Era 2 section may give you a clue about what happens to the Era 1 characters. It is not a major or particularly important spoiler, but the clue is there.",
+      "text": "Reading its Era 2 section may give you a clue about what happens to the Era 1 characters. It is not a major or particularly important spoiler, but the clue is there.",
       "action": "If you are curious, read it. If you would rather not know, skip only Era 2 and continue to the Metallic Arts."
     },
     "eras": {
@@ -520,7 +520,41 @@
     "routes": { "title": "Routes" },
     "books": { "title": "Books" },
     "sagas": { "title": "Sagas" },
-    "planets": { "title": "Planets" }
+    "planets": { "title": "Planets" },
+    "magicSystems": { "title": "Magic systems" }
+  },
+  "magicSystems": {
+    "metallicArts": "Metallic Arts",
+    "surgebinding": "Surgebinding",
+    "aonDor": "AonDor",
+    "awakening": "Awakening",
+    "sandMastery": "Sand mastery",
+    "forgery": "Forgery"
+  },
+  "magicSystemsPage": {
+    "intro": {
+      "eyebrow": "Investiture directory",
+      "heading": "The forces that shape each world.",
+      "description": "A growing catalogue of the Cosmere's magic systems and invested arts, organised by the worlds where they are best understood.",
+      "countLabel": "Documented magic systems",
+      "countText": "systems in this catalogue"
+    },
+    "directory": {
+      "kicker": "The catalogue",
+      "heading": "Systems and expressions of power.",
+      "description": "Start with a world, then follow the connections between its stories, people and forms of Investiture.",
+      "worldLink": "Explore {world}"
+    },
+    "items": {
+      "metallic-arts": { "description": "Allomancy, Feruchemy and Hemalurgy form Scadrial's three interrelated Metallic Arts." },
+      "surgebinding": { "description": "A Rosharan system shaped by Surges, bonds and the spren who make those bonds possible." },
+      "aondor": { "description": "AonDor turns symbols, place and intention into a precise form of power connected to Sel." },
+      "awakening": { "description": "An art of giving life and command through Breath, colour and carefully spoken words." },
+      "sand-mastery": { "description": "Taldain's sand mastery channels Investiture through the living sands of Dayside." },
+      "forgery": { "description": "Forgery uses soulstamps to impose a possible history on an object or person." }
+    },
+    "tableOfContents": "On this page",
+    "toc": { "introduction": "Introduction", "directory": "The catalogue" }
   },
   "routes": {
     "community": "Community routes",
@@ -760,6 +794,10 @@
     "planets": {
       "title": "Planets",
       "description": "Planet pages will collect their related sagas, works, maps and magic systems."
+    },
+    "magic-systems": {
+      "title": "Magic systems",
+      "description": "Explore the invested arts and magic systems connected to the Cosmere's worlds and stories."
     },
     "credits": {
       "title": "Credits",

@@ -22,5 +22,11 @@
     "href": "/planets",
     "labelKey": "navigation.planets.title",
     "source": "planets"
+  },
+  {
+    "id": "magic-systems",
+    "href": "/magic-systems",
+    "labelKey": "navigation.magicSystems.title",
+    "source": "magicSystems"
   }
 ]

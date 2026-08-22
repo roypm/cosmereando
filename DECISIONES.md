@@ -92,7 +92,8 @@ Registro de decisiones tomadas para la web estática sobre el Cosmere de Brandon
 - Se usará “Planetas” en lugar de “Mundos”.
 - Habrá una página índice y una página individual para cada planeta.
 - Cada página incluirá nombre, imagen o mapa, descripción breve, sagas relacionadas, obras y sistema de magia.
-- Los sistemas de magia no tendrán sección propia.
+- Habrá una sección propia de sistemas de magia, organizada por arte y mundo de origen.
+- La sección comenzará como un catálogo editorial enlazado a las páginas de planetas y podrá crecer hacia fichas individuales.
 - Las páginas de planeta usarán una paleta neutra.
 
 ## Fichas de obras

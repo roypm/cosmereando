@@ -38,7 +38,7 @@ const routeImage = detailType === 'community' ? communityRoute : detailType === 
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.routes.title'), href: '/routes' }, { label: route.label }]} />
       <main class="main-content">
-        <section class="hero route-detail__hero" id="introduction" aria-labelledby="route-heading">
+        <section class="page-intro hero route-detail__hero" id="introduction" aria-labelledby="route-heading">
           <div class="hero__layout">
             <div class="hero__content">
               <p class="eyebrow">{t(`${detailKey}.eyebrow`)}</p>
