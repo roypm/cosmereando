@@ -3,11 +3,12 @@ import planetsData from './planets.json';
 import routesData from './routes.json';
 import sagasData from './sagas.json';
 import worksData from './works.json';
+import magicSystemsData from './magic-systems.json';
 import { defaultLocale, locales, translations } from './locales';
 import { getLocalizedPath, getTranslation } from './i18n';
 import { getBookImage } from './book-images';
 import type { Locale } from './locales';
-import type { NavigationEntryData, NavigationGroupData, WorkData } from './types';
+import type { MagicSystemData, NavigationEntryData, NavigationGroupData, WorkData } from './types';
 
 export interface NavigationItem {
   id: string;
@@ -48,6 +49,7 @@ const catalogueSources: Record<NavigationGroupData['source'], CatalogueEntryData
   works: worksData,
   sagas: sagasData,
   planets: planetsData,
+  magicSystems: magicSystemsData,
 };
 
 const getItems = (locale: Locale, group: NavigationGroupData): NavigationItem[] =>
@@ -77,6 +79,12 @@ export const getSections = (source: NavigationGroupData['source'], locale: Local
     id: item.slug ?? item.id,
     label: getTranslation(locale, item.labelKey),
   }));
+
+export const getMagicSystems = (locale: Locale) => (magicSystemsData as MagicSystemData[]).map((system) => ({
+  ...system,
+  label: getTranslation(locale, system.labelKey),
+  world: getTranslation(locale, `planets.${system.worldId}`),
+}));
 
 export const getBookCollections = (locale: Locale): BookCollection[] => {
   const works = worksData as WorkData[];
@@ -164,6 +172,7 @@ export const validateProjectData = () => {
   ensureUniqueIds(worksData, 'work');
   ensureUniqueIds(sagasData, 'saga');
   ensureUniqueIds(planetsData, 'planet');
+  ensureUniqueIds(magicSystemsData, 'magic system');
 
   const sourceKeys = getTranslationKeys(translations[defaultLocale]);
   locales.forEach((locale) => {

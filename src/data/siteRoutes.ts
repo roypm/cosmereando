@@ -3,6 +3,7 @@ export const localizedSectionNames = [
   'routes',
   'sagas',
   'planets',
+  'magic-systems',
   'credits',
 ] as const;
 

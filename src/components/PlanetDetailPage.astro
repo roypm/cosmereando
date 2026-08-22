@@ -50,7 +50,7 @@ const profileKey = `planetPage.detail.profiles.${planetId}`;
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.planets.title'), href: '/planets' }, { label: planet.label }]} />
       <main class="main-content planet-detail-page">
-        <header class="planet-detail-page__header" id="introduction" aria-labelledby="planet-heading">
+        <header class="page-intro planet-detail-page__header" id="introduction" aria-labelledby="planet-heading">
           <p class="eyebrow">{t('planetPage.detail.eyebrow')}</p>
           <h1 id="planet-heading">{planet.label}</h1>
           <p>{t(`${profileKey}.description`)}</p>

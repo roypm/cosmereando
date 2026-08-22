@@ -47,7 +47,7 @@ const getStory = (id: string) => {
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: t('works.arcanumUnbounded') }]} />
       <main class="main-content arcanum-page">
-        <header class="arcanum-page__header" id="introduction" aria-labelledby="arcanum-heading">
+        <header class="page-intro arcanum-page__header" id="introduction" aria-labelledby="arcanum-heading">
           <div>
             <p class="eyebrow">{t('arcanumPage.intro.eyebrow')}</p>
             <h1 id="arcanum-heading">{t('works.arcanumUnbounded')}</h1>

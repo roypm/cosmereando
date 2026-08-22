@@ -28,7 +28,7 @@ const sagas = getSections('sagas', locale);
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title') }]} />
       <main class="main-content sagas-page">
-        <section class="sagas-page__masthead" id="introduction" aria-labelledby="sagas-heading">
+        <section class="page-intro sagas-page__masthead" id="introduction" aria-labelledby="sagas-heading">
           <div class="sagas-page__masthead-copy">
             <p class="eyebrow">{t('sagaPage.intro.eyebrow')}</p>
             <h1 id="sagas-heading">{t('sagaPage.intro.heading')}</h1>

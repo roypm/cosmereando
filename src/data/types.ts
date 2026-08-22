@@ -1,8 +1,8 @@
 export interface NavigationGroupData {
-  id: 'routes' | 'works' | 'sagas' | 'planets';
+  id: 'routes' | 'works' | 'sagas' | 'planets' | 'magic-systems';
   href: string;
   labelKey: string;
-  source: 'routes' | 'works' | 'sagas' | 'planets';
+  source: 'routes' | 'works' | 'sagas' | 'planets' | 'magicSystems';
 }
 
 export interface NavigationEntryData {
@@ -29,6 +29,11 @@ export interface PlanetProfile {
   systemKey: string;
   imageLabelKey: string;
   storyKeys: string[];
+}
+
+export interface MagicSystemData extends NavigationEntryData {
+  slug: string;
+  worldId: string;
 }
 
 export interface TranslationDictionary {

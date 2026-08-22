@@ -4,6 +4,7 @@ import BooksPage from '../../components/BooksPage.astro';
 import RoutesPage from '../../components/RoutesPage.astro';
 import SagasPage from '../../components/SagasPage.astro';
 import PlanetsPage from '../../components/PlanetsPage.astro';
+import MagicSystemsPage from '../../components/MagicSystemsPage.astro';
 import { getSections } from '../../data/catalogue';
 import { getTranslation, locales } from '../../data/i18n';
 import {
@@ -23,8 +24,8 @@ const locale = Astro.params.locale as Exclude<Locale, 'en'>;
 const section = Astro.params.section as LocalizedSection;
 const title = getTranslation(locale, `pages.${section}.title`);
 const description = getTranslation(locale, `pages.${section}.description`);
-const source = section === 'books' ? 'works' : section;
-const sections = section === 'credits' ? [] : getSections(source as 'routes' | 'works' | 'sagas' | 'planets', locale);
+const source = section === 'books' ? 'works' : section === 'magic-systems' ? 'magicSystems' : section;
+const sections = section === 'credits' ? [] : getSections(source as 'routes' | 'works' | 'sagas' | 'planets' | 'magicSystems', locale);
 ---
 
 {section === 'books' ? (
@@ -35,6 +36,8 @@ const sections = section === 'credits' ? [] : getSections(source as 'routes' | '
   <SagasPage locale={locale} />
 ) : section === 'planets' ? (
   <PlanetsPage locale={locale} />
+) : section === 'magic-systems' ? (
+  <MagicSystemsPage locale={locale} />
 ) : (
   <PlaceholderPage locale={locale} title={title} description={description} sections={sections} parent={{ label: getTranslation(locale, 'common.home'), href: '/' }} />
 )}

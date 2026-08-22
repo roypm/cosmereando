@@ -247,7 +247,7 @@
     "warning": {
       "kicker": "Aviso opcional",
       "heading": "¿Quieres saber qué relación tiene la Era 2 con la Era 1?",
-      "text": "La Era 2 transcurre siglos después. Leer la sección de Era 2 puede darte una pista sobre el destino de los personajes de la Era 1. No es un spoiler contundente ni especialmente relevante, pero la pista existe.",
+      "text": "Leer la sección de Era 2 puede darte una pista sobre el destino de los personajes de la Era 1. No es un spoiler contundente ni especialmente relevante, pero la pista existe.",
       "action": "Si te interesa, léela. Si prefieres no saberlo, sáltate únicamente la Era 2 y continúa con Artes metálicas."
     },
     "eras": {
@@ -339,7 +339,41 @@
     "routes": { "title": "Rutas" },
     "books": { "title": "Libros" },
     "sagas": { "title": "Sagas" },
-    "planets": { "title": "Planetas" }
+    "planets": { "title": "Planetas" },
+    "magicSystems": { "title": "Sistemas de magia" }
+  },
+  "magicSystems": {
+    "metallicArts": "Artes Metálicas",
+    "surgebinding": "Vinculación de Potencias",
+    "aonDor": "AonDor",
+    "awakening": "Despertar",
+    "sandMastery": "Maestría de la arena",
+    "forgery": "Falsificación"
+  },
+  "magicSystemsPage": {
+    "intro": {
+      "eyebrow": "Directorio de Investidura",
+      "heading": "Las fuerzas que dan forma a cada mundo.",
+      "description": "Un catálogo en crecimiento de los sistemas de magia y las artes investidas del Cosmere, organizado por los mundos donde se entienden mejor.",
+      "countLabel": "Sistemas de magia documentados",
+      "countText": "sistemas en este catálogo"
+    },
+    "directory": {
+      "kicker": "El catálogo",
+      "heading": "Sistemas y expresiones de poder.",
+      "description": "Empieza por un mundo y sigue las conexiones entre sus historias, personajes y formas de Investidura.",
+      "worldLink": "Explorar {world}"
+    },
+    "items": {
+      "metallic-arts": { "description": "La Alomancia, la Feruquimia y la Hemalurgia forman las tres Artes Metálicas interrelacionadas de Scadrial." },
+      "surgebinding": { "description": "Un sistema roshariano formado por las Potencias, los vínculos y los spren que hacen posibles esos vínculos." },
+      "aondor": { "description": "La AonDor convierte símbolos, lugar e intención en una forma precisa de poder vinculada a Sel." },
+      "awakening": { "description": "Un arte que da vida y órdenes mediante Alientos, color y palabras pronunciadas con precisión." },
+      "sand-mastery": { "description": "La maestría de la arena de Taldain canaliza la Investidura a través de las arenas vivas del Lado del Día." },
+      "forgery": { "description": "La Falsificación utiliza sellos de alma para imponer una historia posible a un objeto o una persona." }
+    },
+    "tableOfContents": "En esta página",
+    "toc": { "introduction": "Introducción", "directory": "El catálogo" }
   },
   "routes": {
     "community": "Rutas comunitarias",
@@ -579,6 +613,10 @@
     "planets": {
       "title": "Planetas",
       "description": "Las páginas de planetas reunirán sus sagas, obras, mapas y sistemas de magia relacionados."
+    },
+    "magic-systems": {
+      "title": "Sistemas de magia",
+      "description": "Explora las artes investidas y los sistemas de magia relacionados con los mundos e historias del Cosmere."
     },
     "credits": {
       "title": "Créditos",

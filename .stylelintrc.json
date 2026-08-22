@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "ignoreFiles": ["dist/**/*.css", "node_modules/**/*.css"],
+  "rules": {
+    "declaration-no-important": true,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "selector-max-specificity": "0,5,0"
+  }
+}

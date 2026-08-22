@@ -1,0 +1,8 @@
+[
+  { "id": "metallic-arts", "slug": "metallic-arts", "labelKey": "magicSystems.metallicArts", "worldId": "scadrial" },
+  { "id": "surgebinding", "slug": "surgebinding", "labelKey": "magicSystems.surgebinding", "worldId": "roshar" },
+  { "id": "aondor", "slug": "aondor", "labelKey": "magicSystems.aonDor", "worldId": "sel" },
+  { "id": "awakening", "slug": "awakening", "labelKey": "magicSystems.awakening", "worldId": "nalthis" },
+  { "id": "sand-mastery", "slug": "sand-mastery", "labelKey": "magicSystems.sandMastery", "worldId": "taldain" },
+  { "id": "forgery", "slug": "forgery", "labelKey": "magicSystems.forgery", "worldId": "sel" }
+]

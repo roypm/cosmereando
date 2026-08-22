@@ -48,7 +48,7 @@ const workTitles: Record<string, string> = {
       <GlobalNavbar locale={locale} />
       <PageTrail locale={locale} items={[{ label: t('common.home'), href: '/' }, { label: t('navigation.sagas.title'), href: '/sagas' }, { label: t('sagas.theStormlightArchive') }]} />
       <main class="main-content mistborn-page stormlight-page">
-        <header class="mistborn-page__header" id="introduction" aria-labelledby="stormlight-heading">
+        <header class="page-intro mistborn-page__header" id="introduction" aria-labelledby="stormlight-heading">
           <div>
             <p class="eyebrow">{t('stormlightPage.intro.eyebrow')}</p>
             <h1 id="stormlight-heading">{t('sagas.theStormlightArchive')}</h1>

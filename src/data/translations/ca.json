@@ -247,7 +247,7 @@
     "warning": {
       "kicker": "Avís opcional",
       "heading": "Vols saber quina relació té l’Era 2 amb l’Era 1?",
-      "text": "L’Era 2 transcorre segles després. Llegir-ne la secció de l’Era 2 et pot donar una pista sobre el destí dels personatges de l’Era 1. No és un espòiler contundent ni especialment rellevant, però la pista hi és.",
+      "text": "Llegir-ne la secció de l’Era 2 et pot donar una pista sobre el destí dels personatges de l’Era 1. No és un espòiler contundent ni especialment rellevant, però la pista hi és.",
       "action": "Si t’interessa, llegeix-la. Si prefereixes no saber-ho, salta’t únicament l’Era 2 i continua amb les Arts metàl·liques."
     },
     "eras": {
@@ -339,7 +339,41 @@
     "routes": { "title": "Rutes" },
     "books": { "title": "Llibres" },
     "sagas": { "title": "Sagues" },
-    "planets": { "title": "Planetes" }
+    "planets": { "title": "Planetes" },
+    "magicSystems": { "title": "Sistemes de màgia" }
+  },
+  "magicSystems": {
+    "metallicArts": "Arts Metàl·liques",
+    "surgebinding": "Vinculació de Potències",
+    "aonDor": "AonDor",
+    "awakening": "Despertar",
+    "sandMastery": "Mestratge de la sorra",
+    "forgery": "Falsificació"
+  },
+  "magicSystemsPage": {
+    "intro": {
+      "eyebrow": "Directori d’Investidura",
+      "heading": "Les forces que donen forma a cada món.",
+      "description": "Un catàleg en creixement dels sistemes de màgia i les arts investides del Cosmere, organitzat pels mons on s’entenen millor.",
+      "countLabel": "Sistemes de màgia documentats",
+      "countText": "sistemes en aquest catàleg"
+    },
+    "directory": {
+      "kicker": "El catàleg",
+      "heading": "Sistemes i expressions de poder.",
+      "description": "Comença per un món i segueix les connexions entre les seves històries, personatges i formes d’Investidura.",
+      "worldLink": "Explora {world}"
+    },
+    "items": {
+      "metallic-arts": { "description": "L’Alomància, la Feruquímia i l’Hemalúrgia formen les tres Arts Metàl·liques interrelacionades de Scadrial." },
+      "surgebinding": { "description": "Un sistema rosharià format per les Potències, els vincles i els spren que fan possibles aquests vincles." },
+      "aondor": { "description": "L’AonDor converteix símbols, lloc i intenció en una forma precisa de poder vinculada a Sel." },
+      "awakening": { "description": "Un art que dona vida i ordres mitjançant Alens, color i paraules pronunciades amb precisió." },
+      "sand-mastery": { "description": "El mestratge de la sorra de Taldain canalitza la Investidura a través de les sorres vives del Costat del Dia." },
+      "forgery": { "description": "La Falsificació utilitza segells d’ànima per imposar una història possible a un objecte o una persona." }
+    },
+    "tableOfContents": "En aquesta pàgina",
+    "toc": { "introduction": "Introducció", "directory": "El catàleg" }
   },
   "routes": {
     "community": "Rutes comunitàries",
@@ -579,6 +613,10 @@
     "planets": {
       "title": "Planetes",
       "description": "Les pàgines de planetes reuniran les seves sagues, obres, mapes i sistemes de màgia relacionats."
+    },
+    "magic-systems": {
+      "title": "Sistemes de màgia",
+      "description": "Explora les arts investides i els sistemes de màgia relacionats amb els mons i les històries del Cosmere."
     },
     "credits": {
       "title": "Crèdits",
