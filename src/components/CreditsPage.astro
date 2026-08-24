@@ -5,6 +5,7 @@ import PageTrail from "./PageTrail.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import imageCredits from "../data/image-credits.json";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -33,67 +34,71 @@ const t = (key: string) => getTranslation(locale, key);
           { label: t("common.credits") },
         ]}
       />
-      <main class="main-content credits-page">
-        <header
-          class="page-intro credits-page__header"
-          id="introduction"
-          aria-labelledby="credits-heading"
-        >
-          <p class="eyebrow">{t("creditsPage.eyebrow")}</p>
-          <h1 id="credits-heading">{t("creditsPage.heading")}</h1>
-          <p>{t("creditsPage.description")}</p>
-        </header>
+      <main class="main-content">
+        <PageContent pageClass="credits-page">
+          <header
+            class="page-intro credits-page__header"
+            id="introduction"
+            aria-labelledby="credits-heading"
+          >
+            <p class="eyebrow">{t("creditsPage.eyebrow")}</p>
+            <h1 id="credits-heading">{t("creditsPage.heading")}</h1>
+            <p>{t("creditsPage.description")}</p>
+          </header>
 
-        <section
-          class="credits-page__notice"
-          aria-labelledby="credits-notice-heading"
-        >
-          <h2 id="credits-notice-heading">{t("creditsPage.notice.heading")}</h2>
-          <p>{t("creditsPage.notice.text")}</p>
-        </section>
+          <section
+            class="credits-page__notice"
+            aria-labelledby="credits-notice-heading"
+          >
+            <h2 id="credits-notice-heading">
+              {t("creditsPage.notice.heading")}
+            </h2>
+            <p>{t("creditsPage.notice.text")}</p>
+          </section>
 
-        <section
-          class="credits-page__groups"
-          id="assets"
-          aria-labelledby="assets-heading"
-        >
-          <p class="section-kicker">{t("creditsPage.assetsKicker")}</p>
-          <h2 id="assets-heading">{t("creditsPage.assetsHeading")}</h2>
-          {
-            imageCredits.map((group) => (
-              <section
-                class="credits-page__group"
-                aria-labelledby={`${group.id}-heading`}
-              >
-                <h3 id={`${group.id}-heading`}>{t(group.titleKey)}</h3>
-                <p>{t(group.descriptionKey)}</p>
-                <ul class="credits-page__list">
-                  {group.items.map((item) => (
-                    <li>
-                      <code>{item.file}</code>
-                      <dl>
-                        <div>
-                          <dt>{t("creditsPage.fields.author")}</dt>
-                          <dd>{item.author}</dd>
-                        </div>
-                        <div>
-                          <dt>{t("creditsPage.fields.source")}</dt>
-                          <dd>{item.source}</dd>
-                        </div>
-                        <div>
-                          <dt>{t("creditsPage.fields.license")}</dt>
-                          <dd>{item.license}</dd>
-                        </div>
-                      </dl>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))
-          }
-        </section>
+          <section
+            class="credits-page__groups"
+            id="assets"
+            aria-labelledby="assets-heading"
+          >
+            <p class="section-kicker">{t("creditsPage.assetsKicker")}</p>
+            <h2 id="assets-heading">{t("creditsPage.assetsHeading")}</h2>
+            {
+              imageCredits.map((group) => (
+                <section
+                  class="credits-page__group"
+                  aria-labelledby={`${group.id}-heading`}
+                >
+                  <h3 id={`${group.id}-heading`}>{t(group.titleKey)}</h3>
+                  <p>{t(group.descriptionKey)}</p>
+                  <ul class="credits-page__list">
+                    {group.items.map((item) => (
+                      <li>
+                        <code>{item.file}</code>
+                        <dl>
+                          <div>
+                            <dt>{t("creditsPage.fields.author")}</dt>
+                            <dd>{item.author}</dd>
+                          </div>
+                          <div>
+                            <dt>{t("creditsPage.fields.source")}</dt>
+                            <dd>{item.source}</dd>
+                          </div>
+                          <div>
+                            <dt>{t("creditsPage.fields.license")}</dt>
+                            <dd>{item.license}</dd>
+                          </div>
+                        </dl>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))
+            }
+          </section>
 
-        <PageReturn locale={locale} href="/" label={t("common.home")} />
+          <PageReturn locale={locale} href="/" label={t("common.home")} />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("creditsPage.tableOfContents")}

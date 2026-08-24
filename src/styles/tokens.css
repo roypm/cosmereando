@@ -4,7 +4,8 @@
 
     --sidebar-width: 18rem;
     --top-navbar-height: 3.25rem;
-    --content-max-width: 74rem;
+    --content-standard-max-width: 74rem;
+    --content-wide-max-width: 90rem;
     --content-padding: clamp(1.25rem, 3.5vw, 4rem);
     --table-of-contents-space: 15rem;
     --color-background: #f4f1eb;

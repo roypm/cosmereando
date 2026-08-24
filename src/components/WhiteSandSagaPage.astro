@@ -7,6 +7,7 @@ import SupplementaryWorkDetails from "./SupplementaryWorkDetails.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
 import whiteSandCover from "../assets/images/books/white_sand_graphic_novel.webp";
@@ -79,130 +80,136 @@ const workTitles: Record<string, string> = {
           { label: t("sagas.whiteSand") },
         ]}
       />
-      <main class="main-content white-sand-page">
-        <header
-          class="page-intro mistborn-page__header"
-          id="introduction"
-          aria-labelledby="white-sand-heading"
-        >
-          <div>
-            <p class="eyebrow">{t("whiteSandPage.intro.eyebrow")}</p>
-            <h1 id="white-sand-heading">{t("sagas.whiteSand")}</h1>
-            <p>{t("whiteSandPage.intro.description")}</p>
-          </div>
-          <div class="mistborn-page__header-meta">
-            <span>{t("whiteSandPage.intro.planet")}</span>
-            <strong>Taldain</strong>
-          </div>
-        </header>
+      <main class="main-content">
+        <PageContent pageClass="white-sand-page">
+          <header
+            class="page-intro mistborn-page__header"
+            id="introduction"
+            aria-labelledby="white-sand-heading"
+          >
+            <div>
+              <p class="eyebrow">{t("whiteSandPage.intro.eyebrow")}</p>
+              <h1 id="white-sand-heading">{t("sagas.whiteSand")}</h1>
+              <p>{t("whiteSandPage.intro.description")}</p>
+            </div>
+            <div class="mistborn-page__header-meta">
+              <span>{t("whiteSandPage.intro.planet")}</span>
+              <strong>Taldain</strong>
+            </div>
+          </header>
 
-        <EditorialImage
-          src={whiteSandCover}
-          alt={t("whiteSandPage.intro.imageLabel")}
-          variant="book"
-        />
+          <EditorialImage
+            src={whiteSandCover}
+            alt={t("whiteSandPage.intro.imageLabel")}
+            variant="book"
+          />
 
-        <section
-          class="mistborn-page__eras"
-          id="publication-order"
-          aria-labelledby="publication-order-heading"
-        >
-          <div class="mistborn-page__section-intro">
-            <p class="section-kicker">
-              {t("whiteSandPage.publication.kicker")}
-            </p>
-            <h2 id="publication-order-heading">
-              {t("whiteSandPage.publication.heading")}
-            </h2>
-            <p>{t("whiteSandPage.publication.description")}</p>
-          </div>
-          <ol class="mistborn-book-list">
-            {
-              publicationOrder.map((book) => (
-                <li class="mistborn-book-list__item">
-                  <span class="mistborn-book-list__year">{book.year}</span>
-                  <div>
-                    <h4>{t(workTitles[book.id])}</h4>
-                    <span class="mistborn-book-list__type">
-                      {t(`books.types.${book.typeKey}`)}
+          <section
+            class="mistborn-page__eras"
+            id="publication-order"
+            aria-labelledby="publication-order-heading"
+          >
+            <div class="mistborn-page__section-intro">
+              <p class="section-kicker">
+                {t("whiteSandPage.publication.kicker")}
+              </p>
+              <h2 id="publication-order-heading">
+                {t("whiteSandPage.publication.heading")}
+              </h2>
+              <p>{t("whiteSandPage.publication.description")}</p>
+            </div>
+            <ol class="mistborn-book-list">
+              {
+                publicationOrder.map((book) => (
+                  <li class="mistborn-book-list__item">
+                    <span class="mistborn-book-list__year">{book.year}</span>
+                    <div>
+                      <h4>{t(workTitles[book.id])}</h4>
+                      <span class="mistborn-book-list__type">
+                        {t(`books.types.${book.typeKey}`)}
+                      </span>
+                      <p>{t(book.note)}</p>
+                      {book.contextKey && (
+                        <SupplementaryWorkDetails
+                          id={`${book.id}-context`}
+                          title={t("independentPage.detailsHeading")}
+                          action={t(
+                            "whiteSandPage.supplementary.detailsAction",
+                          )}
+                          closeLabel={t("independentPage.closeDetails")}
+                          typeLabel={t("whiteSandPage.supplementary.typeLabel")}
+                          type={t(`books.types.${book.typeKey}`)}
+                          originLabel={t(
+                            "whiteSandPage.supplementary.originLabel",
+                          )}
+                          origin={t(
+                            `whiteSandPage.supplementary.works.${book.contextKey}.origin`,
+                          )}
+                          whyLabel={t("whiteSandPage.supplementary.whyLabel")}
+                          why={t(
+                            `whiteSandPage.supplementary.works.${book.contextKey}.why`,
+                          )}
+                          whenLabel={t("whiteSandPage.supplementary.whenLabel")}
+                          when={t(
+                            `whiteSandPage.supplementary.works.${book.contextKey}.when`,
+                          )}
+                        />
+                      )}
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+          </section>
+
+          <section
+            class="mistborn-page__magic"
+            id="magic"
+            aria-labelledby="magic-heading"
+          >
+            <div class="mistborn-page__section-intro">
+              <p class="section-kicker">{t("whiteSandPage.magic.kicker")}</p>
+              <h2 id="magic-heading">{t("whiteSandPage.magic.heading")}</h2>
+              <p>{t("whiteSandPage.magic.description")}</p>
+            </div>
+            <div class="mistborn-magic-grid">
+              {
+                ["sandMastery", "starmarks", "taldain"].map((topic, index) => (
+                  <article class="mistborn-magic-card">
+                    <span class="mistborn-magic-card__number">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p>{t(book.note)}</p>
-                    {book.contextKey && (
-                      <SupplementaryWorkDetails
-                        id={`${book.id}-context`}
-                        title={t("independentPage.detailsHeading")}
-                        action={t("whiteSandPage.supplementary.detailsAction")}
-                        closeLabel={t("independentPage.closeDetails")}
-                        typeLabel={t("whiteSandPage.supplementary.typeLabel")}
-                        type={t(`books.types.${book.typeKey}`)}
-                        originLabel={t(
-                          "whiteSandPage.supplementary.originLabel",
-                        )}
-                        origin={t(
-                          `whiteSandPage.supplementary.works.${book.contextKey}.origin`,
-                        )}
-                        whyLabel={t("whiteSandPage.supplementary.whyLabel")}
-                        why={t(
-                          `whiteSandPage.supplementary.works.${book.contextKey}.why`,
-                        )}
-                        whenLabel={t("whiteSandPage.supplementary.whenLabel")}
-                        when={t(
-                          `whiteSandPage.supplementary.works.${book.contextKey}.when`,
-                        )}
-                      />
-                    )}
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
-        </section>
+                    <h3>{t(`whiteSandPage.magic.${topic}.title`)}</h3>
+                    <p>{t(`whiteSandPage.magic.${topic}.text`)}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </section>
 
-        <section
-          class="mistborn-page__magic"
-          id="magic"
-          aria-labelledby="magic-heading"
-        >
-          <div class="mistborn-page__section-intro">
-            <p class="section-kicker">{t("whiteSandPage.magic.kicker")}</p>
-            <h2 id="magic-heading">{t("whiteSandPage.magic.heading")}</h2>
-            <p>{t("whiteSandPage.magic.description")}</p>
-          </div>
-          <div class="mistborn-magic-grid">
-            {
-              ["sandMastery", "starmarks", "taldain"].map((topic, index) => (
-                <article class="mistborn-magic-card">
-                  <span class="mistborn-magic-card__number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3>{t(`whiteSandPage.magic.${topic}.title`)}</h3>
-                  <p>{t(`whiteSandPage.magic.${topic}.text`)}</p>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-
-        <section
-          class="mistborn-page__curiosities"
-          id="curiosities"
-          aria-labelledby="curiosities-heading"
-        >
-          <p class="section-kicker">{t("whiteSandPage.curiosities.kicker")}</p>
-          <h2 id="curiosities-heading">
-            {t("whiteSandPage.curiosities.heading")}
-          </h2>
-          <ul>
-            <li>{t("whiteSandPage.curiosities.first")}</li>
-            <li>{t("whiteSandPage.curiosities.second")}</li>
-            <li>{t("whiteSandPage.curiosities.third")}</li>
-          </ul>
-        </section>
-        <PageReturn
-          locale={locale}
-          href="/sagas"
-          label={t("navigation.sagas.title")}
-        />
+          <section
+            class="mistborn-page__curiosities"
+            id="curiosities"
+            aria-labelledby="curiosities-heading"
+          >
+            <p class="section-kicker">
+              {t("whiteSandPage.curiosities.kicker")}
+            </p>
+            <h2 id="curiosities-heading">
+              {t("whiteSandPage.curiosities.heading")}
+            </h2>
+            <ul>
+              <li>{t("whiteSandPage.curiosities.first")}</li>
+              <li>{t("whiteSandPage.curiosities.second")}</li>
+              <li>{t("whiteSandPage.curiosities.third")}</li>
+            </ul>
+          </section>
+          <PageReturn
+            locale={locale}
+            href="/sagas"
+            label={t("navigation.sagas.title")}
+          />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("whiteSandPage.tableOfContents")}

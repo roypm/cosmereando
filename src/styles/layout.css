@@ -468,9 +468,13 @@
     padding-top: var(--space-3);
   }
 
-  .main-content > * {
-    width: min(100%, var(--content-max-width));
+  .page-content {
+    width: min(100%, var(--content-standard-max-width));
     margin-inline: auto;
+  }
+
+  .page-content--wide {
+    width: min(100%, var(--content-wide-max-width));
   }
 
   .table-of-contents {

@@ -4,17 +4,78 @@ import GlobalNavbar from "./GlobalNavbar.astro";
 import EditorialImage from "./EditorialImage.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
+import PageContent from "./PageContent.astro";
+import {
+  getBookCount,
+  getMagicSystems,
+  getRoutes,
+  getSections,
+} from "../data/catalogue";
 import { getLocalizedPath, getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
-import cosmereRealmsArtwork from "../assets/images/general/cosmere_header_background.webp";
+import cosmereHeaderArtwork from "../assets/images/general/cosmere_header_background.webp";
+import cosmereWorldsMap from "../assets/images/general/cosmere_worlds_map.webp";
 import brandonSandersonPortrait from "../assets/images/general/brandon_sanderson_portrait.webp";
 
 interface Props {
   locale: Locale;
 }
+
 const { locale } = Astro.props;
 const t = (key: string) => getTranslation(locale, key);
 const path = (value: string) => getLocalizedPath(locale, value);
+const routes = getRoutes(locale);
+
+const stats = [
+  { value: getBookCount(), label: t("home.atlas.stats.works") },
+  {
+    value: getSections("planets", locale).length,
+    label: t("home.atlas.stats.worlds"),
+  },
+  {
+    value: getMagicSystems(locale).length,
+    label: t("home.atlas.stats.systems"),
+  },
+  { value: routes.length, label: t("home.atlas.stats.routes") },
+];
+
+const explorationItems = [
+  {
+    number: "01",
+    symbol: "◌",
+    href: path("/books"),
+    label: t("pages.books.title"),
+    text: t("home.explore.booksText"),
+  },
+  {
+    number: "02",
+    symbol: "◒",
+    href: path("/sagas"),
+    label: t("pages.sagas.title"),
+    text: t("home.explore.sagasText"),
+  },
+  {
+    number: "03",
+    symbol: "✦",
+    href: path("/planets"),
+    label: t("pages.planets.title"),
+    text: t("home.explore.planetsText"),
+  },
+  {
+    number: "04",
+    symbol: "⌁",
+    href: path("/magic-systems"),
+    label: t("pages.magic-systems.title"),
+    text: t("home.explore.magicText"),
+  },
+  {
+    number: "05",
+    symbol: "∞",
+    href: path("/independents"),
+    label: t("pages.independents.title"),
+    text: t("home.explore.independentsText"),
+  },
+];
 ---
 
 <BaseLayout
@@ -27,153 +88,205 @@ const path = (value: string) => getLocalizedPath(locale, value);
     <div class="page-layout">
       <GlobalNavbar locale={locale} />
       <main class="main-content">
-        <section class="hero" id="introduction" aria-labelledby="page-heading">
-          <div class="hero__layout">
-            <div class="hero__content">
-              <p class="eyebrow">{t("home.hero.eyebrow")}</p>
+        <PageContent variant="wide" pageClass="home-page">
+          <section
+            class="home-hero"
+            id="introduction"
+            aria-labelledby="page-heading"
+          >
+            <div class="home-hero__copy">
+              <div class="home-hero__meta">
+                <p class="eyebrow">{t("home.hero.eyebrow")}</p>
+                <span>{t("home.hero.edition")}</span>
+              </div>
               <h1 id="page-heading">{t("home.hero.heading")}</h1>
-              <p class="hero__intro">{t("home.hero.intro")}</p>
-              <a class="primary-link" href="#cosmere"
-                >{t("home.hero.discover")} <span aria-hidden="true">→</span></a
-              >
+              <p class="home-hero__intro">{t("home.hero.intro")}</p>
+              <div class="home-hero__actions">
+                <a class="primary-link" href={path("/routes")}
+                  >{t("home.hero.discover")}
+                  <span aria-hidden="true">↗</span></a
+                >
+                <a class="home-text-link" href={path("/books")}
+                  >{t("home.hero.secondary")}
+                  <span aria-hidden="true">→</span></a
+                >
+              </div>
             </div>
-            <EditorialImage
-              src={cosmereRealmsArtwork}
-              alt={t("home.hero.imageLabel")}
-              variant="hero"
-            />
-          </div>
-        </section>
+            <div class="home-hero__visual">
+              <EditorialImage
+                src={cosmereHeaderArtwork}
+                alt={t("home.hero.imageLabel")}
+                variant="hero"
+              />
+            </div>
+          </section>
 
-        <section
-          class="content-section"
-          id="cosmere"
-          aria-labelledby="cosmere-heading"
-        >
-          <p class="section-kicker">{t("home.cosmere.kicker")}</p>
-          <h2 id="cosmere-heading">{t("home.cosmere.heading")}</h2>
-          <p>{t("home.cosmere.description")}</p>
-          <div class="info-grid">
-            <article class="info-card">
-              <span class="info-card__number">01</span><h3>
-                {t("home.cosmere.worlds.title")}
-              </h3><p>{t("home.cosmere.worlds.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">02</span><h3>
-                {t("home.cosmere.doors.title")}
-              </h3><p>{t("home.cosmere.doors.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">03</span><h3>
-                {t("home.cosmere.universe.title")}
-              </h3><p>{t("home.cosmere.universe.text")}</p>
-            </article>
-          </div>
-        </section>
+          <section
+            class="home-atlas"
+            id="atlas"
+            aria-labelledby="atlas-heading"
+          >
+            <div class="home-atlas__intro">
+              <p class="section-kicker">{t("home.atlas.kicker")}</p>
+              <h2 id="atlas-heading">{t("home.atlas.heading")}</h2>
+              <p>{t("home.atlas.description")}</p>
+            </div>
+            <div class="home-stat-line" aria-label={t("home.atlas.statsLabel")}>
+              {
+                stats.map((stat) => (
+                  <div class="home-stat">
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </section>
 
-        <section
-          class="content-section content-section--quiet"
-          id="author"
-          aria-labelledby="author-heading"
-        >
-          <div class="author-layout">
-            <EditorialImage
-              src={brandonSandersonPortrait}
-              alt={t("home.author.imageLabel")}
-              variant="portrait"
-            />
-            <div class="author-layout__copy">
+          <section
+            class="home-explore"
+            id="explore"
+            aria-labelledby="explore-heading"
+          >
+            <div class="home-section-heading">
+              <div>
+                <p class="section-kicker">{t("home.explore.kicker")}</p>
+                <h2 id="explore-heading">{t("home.explore.heading")}</h2>
+              </div>
+              <p>{t("home.explore.description")}</p>
+            </div>
+            <div class="home-explore__grid">
+              {
+                explorationItems.map((item) => (
+                  <a class="home-explore-card" href={item.href}>
+                    <span class="home-explore-card__number">{item.number}</span>
+                    <span class="home-explore-card__symbol" aria-hidden="true">
+                      {item.symbol}
+                    </span>
+                    <h3>{item.label}</h3>
+                    <p>{item.text}</p>
+                    <span class="home-explore-card__link" aria-hidden="true">
+                      {t("home.explore.open")} →
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </section>
+
+          <section
+            class="home-map"
+            id="cosmere"
+            aria-labelledby="cosmere-heading"
+          >
+            <div class="home-map__copy">
+              <p class="section-kicker">{t("home.cosmere.kicker")}</p>
+              <h2 id="cosmere-heading">{t("home.cosmere.heading")}</h2>
+              <p>{t("home.cosmere.description")}</p>
+              <div class="home-map__notes">
+                <article>
+                  <span>01</span>
+                  <h3>{t("home.cosmere.worlds.title")}</h3>
+                  <p>{t("home.cosmere.worlds.text")}</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <h3>{t("home.cosmere.doors.title")}</h3>
+                  <p>{t("home.cosmere.doors.text")}</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <h3>{t("home.cosmere.universe.title")}</h3>
+                  <p>{t("home.cosmere.universe.text")}</p>
+                </article>
+              </div>
+            </div>
+            <figure class="home-map__figure">
+              <EditorialImage
+                src={cosmereWorldsMap}
+                alt={t("home.cosmere.mapLabel")}
+                variant="feature"
+              />
+              <figcaption>{t("home.cosmere.mapCaption")}</figcaption>
+            </figure>
+          </section>
+
+          <section
+            class="home-routes"
+            id="routes"
+            aria-labelledby="routes-heading"
+          >
+            <div class="home-section-heading">
+              <div>
+                <p class="section-kicker">{t("home.routes.kicker")}</p>
+                <h2 id="routes-heading">{t("home.routes.heading")}</h2>
+              </div>
+              <p>{t("home.routes.description")}</p>
+            </div>
+            <div class="home-routes__list">
+              {
+                routes.map((route, index) => (
+                  <a class="home-route" href={path(`/routes/${route.id}`)}>
+                    <span class="home-route__number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span class="home-route__body">
+                      <h3>{route.label}</h3>
+                      <p>{route.summary}</p>
+                    </span>
+                    <span class="home-route__arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </section>
+
+          <section
+            class="home-editorial"
+            id="author"
+            aria-labelledby="author-heading"
+          >
+            <div class="home-editorial__portrait">
+              <EditorialImage
+                src={brandonSandersonPortrait}
+                alt={t("home.author.imageLabel")}
+                variant="portrait"
+              />
+              <span>{t("home.author.imageCaption")}</span>
+            </div>
+            <div class="home-editorial__copy">
               <p class="section-kicker">{t("home.author.kicker")}</p>
               <h2 id="author-heading">{t("home.author.heading")}</h2>
               <p>{t("home.author.text")}</p>
+              <div class="home-principles">
+                <article>
+                  <h3>{t("home.whyRead.start.title")}</h3>
+                  <p>{t("home.whyRead.start.text")}</p>
+                </article>
+                <article>
+                  <h3>{t("home.whyRead.curiosity.title")}</h3>
+                  <p>{t("home.whyRead.curiosity.text")}</p>
+                </article>
+                <article>
+                  <h3>{t("home.whyRead.discovering.title")}</h3>
+                  <p>{t("home.whyRead.discovering.text")}</p>
+                </article>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section
-          class="content-section"
-          id="why-read"
-          aria-labelledby="why-read-heading"
-        >
-          <p class="section-kicker">{t("home.whyRead.kicker")}</p>
-          <h2 id="why-read-heading">{t("home.whyRead.heading")}</h2>
-          <div class="info-grid">
-            <article class="info-card">
-              <span class="info-card__number">01</span><h3>
-                {t("home.whyRead.start.title")}
-              </h3><p>{t("home.whyRead.start.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">02</span><h3>
-                {t("home.whyRead.curiosity.title")}
-              </h3><p>{t("home.whyRead.curiosity.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">03</span><h3>
-                {t("home.whyRead.discovering.title")}
-              </h3><p>{t("home.whyRead.discovering.text")}</p>
-            </article>
-          </div>
-        </section>
-
-        <section
-          class="content-section"
-          id="routes"
-          aria-labelledby="routes-heading"
-        >
-          <p class="section-kicker">{t("home.routes.kicker")}</p>
-          <h2 id="routes-heading">{t("home.routes.heading")}</h2>
-          <p>{t("home.routes.description")}</p>
-          <div class="preview-grid">
-            <a class="preview-card" href={path("/routes")}
-              ><span class="preview-card__number">01</span><h3>
-                {t("routes.community")}
-              </h3><p>{t("home.routes.communityText")}</p></a
-            >
-            <a class="preview-card" href={path("/routes")}
-              ><span class="preview-card__number">02</span><h3>
-                {t("routes.publication")}
-              </h3><p>{t("home.routes.publicationText")}</p></a
-            >
-            <a class="preview-card" href={path("/routes")}
-              ><span class="preview-card__number">03</span><h3>
-                {t("routes.myJourney")}
-              </h3><p>{t("home.routes.journeyText")}</p></a
-            >
-          </div>
-        </section>
-
-        <section
-          class="content-section content-section--quiet"
-          id="books"
-          aria-labelledby="books-heading"
-        >
-          <p class="section-kicker">{t("home.library.kicker")}</p>
-          <h2 id="books-heading">{t("home.library.heading")}</h2>
-          <p>{t("home.library.description")}</p>
-          <div class="text-link-row">
-            <a href={path("/books")}
-              >{t("home.library.books")} <span aria-hidden="true">→</span></a
-            >
-            <a href={path("/sagas")}
-              >{t("home.library.sagas")} <span aria-hidden="true">→</span></a
-            >
-            <a href={path("/planets")}
-              >{t("home.library.planets")} <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </section>
+          </section>
+        </PageContent>
       </main>
       <TableOfContents
         title={t("home.tableOfContents")}
         items={[
           { id: "introduction", label: t("home.toc.introduction") },
+          { id: "atlas", label: t("home.toc.atlas") },
+          { id: "explore", label: t("home.toc.explore") },
           { id: "cosmere", label: t("home.toc.cosmere") },
-          { id: "author", label: t("home.toc.author") },
-          { id: "why-read", label: t("home.toc.whyRead") },
           { id: "routes", label: t("home.toc.routes") },
-          { id: "books", label: t("home.toc.library") },
+          { id: "author", label: t("home.toc.author") },
         ]}
       />
     </div>

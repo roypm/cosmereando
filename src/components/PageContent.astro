@@ -1,0 +1,12 @@
+---
+interface Props {
+  variant?: "standard" | "wide";
+  pageClass?: string;
+}
+
+const { variant = "standard", pageClass } = Astro.props;
+---
+
+<div class:list={["page-content", `page-content--${variant}`, pageClass]}>
+  <slot />
+</div>

@@ -209,6 +209,11 @@
     }
 
     .hero__layout,
+    .home-hero,
+    .home-atlas,
+    .home-section-heading,
+    .home-map,
+    .home-editorial,
     .author-layout,
     .books-page__intro,
     .books-page__section-heading,
@@ -245,7 +250,7 @@
       margin-left: 0;
     }
 
-    .main-content > * {
+    .page-content {
       width: 100%;
     }
 
@@ -255,6 +260,29 @@
 
     .preview-grid {
       grid-template-columns: 1fr;
+    }
+
+    .home-explore__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-stat-line {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: var(--space-2);
+    }
+
+    .home-stat:nth-child(2) {
+      border-right: 0;
+    }
+
+    .home-stat:nth-child(3),
+    .home-stat:nth-child(4) {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-2);
+    }
+
+    .home-map__figure {
+      width: min(100%, 34rem);
     }
 
     .info-grid {
@@ -489,6 +517,30 @@
 
     .arcanum-story {
       grid-template-columns: 5.5rem minmax(0, 1fr);
+    }
+
+    .home-hero h1 {
+      font-size: clamp(3.2rem, 16vw, 4.8rem);
+    }
+
+    .home-hero__meta {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .home-explore__grid,
+    .home-map__notes,
+    .home-principles {
+      grid-template-columns: 1fr;
+    }
+
+    .home-stat-line {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .home-stat:nth-child(3),
+    .home-stat:nth-child(4) {
+      border-top: 1px solid var(--color-border);
     }
   }
 

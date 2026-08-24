@@ -170,6 +170,9 @@ Dirección general:
 - Evitar estilos inline salvo para valores dinámicos sin alternativa limpia.
 - Usar reset ligero y box-sizing coherente.
 - Mantener las media queries junto al componente.
+- Mantener `<main class="main-content">` como contenedor estructural sin `max-width`.
+- Controlar el ancho de cada página mediante `PageContent` y sus variantes `standard` o `wide`.
+- Aplicar los límites de lectura a textos e imágenes concretos, nunca al contenedor estructural de la página.
 - Usar una escala pequeña de capas CSS: base, header, sidebar, overlay y modal.
 
 ## Responsive y accesibilidad

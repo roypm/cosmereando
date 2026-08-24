@@ -6,6 +6,7 @@ import PageTrail from "./PageTrail.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
 import ContextPopover from "./ContextPopover.astro";
+import PageContent from "./PageContent.astro";
 import { getBookCollections } from "../data/catalogue";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -93,152 +94,154 @@ const getStory = (id: string) => {
           { label: t("works.arcanumUnbounded") },
         ]}
       />
-      <main class="main-content arcanum-page">
-        <header
-          class="page-intro arcanum-page__header"
-          id="introduction"
-          aria-labelledby="arcanum-heading"
-        >
-          <div>
-            <p class="eyebrow">{t("arcanumPage.intro.eyebrow")}</p>
-            <h1 id="arcanum-heading">{t("works.arcanumUnbounded")}</h1>
-            <p>{t("arcanumPage.intro.description")}</p>
-          </div>
-          <div
-            class="arcanum-page__count"
-            aria-label={t("arcanumPage.intro.countLabel")}
+      <main class="main-content">
+        <PageContent pageClass="arcanum-page">
+          <header
+            class="page-intro arcanum-page__header"
+            id="introduction"
+            aria-labelledby="arcanum-heading"
           >
-            <strong
-              >{String(collection.works.length - 1).padStart(2, "0")}</strong
+            <div>
+              <p class="eyebrow">{t("arcanumPage.intro.eyebrow")}</p>
+              <h1 id="arcanum-heading">{t("works.arcanumUnbounded")}</h1>
+              <p>{t("arcanumPage.intro.description")}</p>
+            </div>
+            <div
+              class="arcanum-page__count"
+              aria-label={t("arcanumPage.intro.countLabel")}
             >
-            <span>{t("arcanumPage.intro.countText")}</span>
-          </div>
-        </header>
-
-        <section
-          class="arcanum-page__purpose"
-          id="purpose"
-          aria-labelledby="purpose-heading"
-        >
-          <div>
-            <p class="section-kicker">{t("arcanumPage.purpose.kicker")}</p>
-            <h2 id="purpose-heading">{t("arcanumPage.purpose.heading")}</h2>
-          </div>
-          <p>{t("arcanumPage.purpose.text")}</p>
-        </section>
-
-        <section
-          class="arcanum-page__stories"
-          id="stories"
-          aria-labelledby="stories-heading"
-        >
-          <div class="arcanum-page__section-intro">
-            <p class="section-kicker">{t("arcanumPage.stories.kicker")}</p>
-            <h2 id="stories-heading">{t("arcanumPage.stories.heading")}</h2>
-            <p>{t("arcanumPage.stories.description")}</p>
-          </div>
-
-          {
-            storyGroups.map((group, groupIndex) => (
-              <section
-                class="arcanum-system"
-                id={group.id}
-                aria-labelledby={`${group.id}-heading`}
+              <strong
+                >{String(collection.works.length - 1).padStart(2, "0")}</strong
               >
-                <div class="arcanum-system__heading">
-                  <span class="arcanum-system__number">
-                    {String(groupIndex + 1).padStart(2, "0")}
-                  </span>
-                  <h3 id={`${group.id}-heading`}>{t(group.labelKey)}</h3>
-                </div>
-                <div class="arcanum-story-grid">
-                  {group.workIds.map((workId, storyIndex) => {
-                    const work = getStory(workId);
-                    return (
-                      <article class="arcanum-story" id={work.id}>
-                        <img
-                          src={work.image.src}
-                          alt={t("pages.imageLabel", { title: work.title })}
-                          class="arcanum-story__cover"
-                        />
-                        <div class="arcanum-story__body">
-                          <span class="arcanum-story__number">
-                            {String(storyIndex + 1).padStart(2, "0")}
-                          </span>
-                          <h4>{work.title}</h4>
-                          <div class="arcanum-story__meta">
-                            <span>{work.type}</span>
-                            <span>{work.publicationYear}</span>
-                          </div>
-                          <p>
-                            {t(
-                              `arcanumPage.stories.items.${work.id}.description`,
-                            )}
-                          </p>
-                          <ContextPopover
-                            id={`${work.id}-context`}
-                            title={t("independentPage.detailsHeading")}
-                            triggerLabel={t("independentPage.openDetails", {
-                              title: work.title,
-                            })}
-                            closeLabel={t("independentPage.closeDetails")}
-                            rows={[
-                              {
-                                label: t("arcanumPage.whenLabel"),
-                                value: t(
-                                  `arcanumPage.stories.items.${work.id}.when`,
-                                ),
-                              },
-                              {
-                                label: t("arcanumPage.contextLabel"),
-                                value: t(
-                                  `arcanumPage.stories.items.${work.id}.context`,
-                                ),
-                              },
-                            ]}
+              <span>{t("arcanumPage.intro.countText")}</span>
+            </div>
+          </header>
+
+          <section
+            class="arcanum-page__purpose"
+            id="purpose"
+            aria-labelledby="purpose-heading"
+          >
+            <div>
+              <p class="section-kicker">{t("arcanumPage.purpose.kicker")}</p>
+              <h2 id="purpose-heading">{t("arcanumPage.purpose.heading")}</h2>
+            </div>
+            <p>{t("arcanumPage.purpose.text")}</p>
+          </section>
+
+          <section
+            class="arcanum-page__stories"
+            id="stories"
+            aria-labelledby="stories-heading"
+          >
+            <div class="arcanum-page__section-intro">
+              <p class="section-kicker">{t("arcanumPage.stories.kicker")}</p>
+              <h2 id="stories-heading">{t("arcanumPage.stories.heading")}</h2>
+              <p>{t("arcanumPage.stories.description")}</p>
+            </div>
+
+            {
+              storyGroups.map((group, groupIndex) => (
+                <section
+                  class="arcanum-system"
+                  id={group.id}
+                  aria-labelledby={`${group.id}-heading`}
+                >
+                  <div class="arcanum-system__heading">
+                    <span class="arcanum-system__number">
+                      {String(groupIndex + 1).padStart(2, "0")}
+                    </span>
+                    <h3 id={`${group.id}-heading`}>{t(group.labelKey)}</h3>
+                  </div>
+                  <div class="arcanum-story-grid">
+                    {group.workIds.map((workId, storyIndex) => {
+                      const work = getStory(workId);
+                      return (
+                        <article class="arcanum-story" id={work.id}>
+                          <img
+                            src={work.image.src}
+                            alt={t("pages.imageLabel", { title: work.title })}
+                            class="arcanum-story__cover"
                           />
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </section>
-            ))
-          }
-        </section>
+                          <div class="arcanum-story__body">
+                            <span class="arcanum-story__number">
+                              {String(storyIndex + 1).padStart(2, "0")}
+                            </span>
+                            <h4>{work.title}</h4>
+                            <div class="arcanum-story__meta">
+                              <span>{work.type}</span>
+                              <span>{work.publicationYear}</span>
+                            </div>
+                            <p>
+                              {t(
+                                `arcanumPage.stories.items.${work.id}.description`,
+                              )}
+                            </p>
+                            <ContextPopover
+                              id={`${work.id}-context`}
+                              title={t("independentPage.detailsHeading")}
+                              triggerLabel={t("independentPage.openDetails", {
+                                title: work.title,
+                              })}
+                              closeLabel={t("independentPage.closeDetails")}
+                              rows={[
+                                {
+                                  label: t("arcanumPage.whenLabel"),
+                                  value: t(
+                                    `arcanumPage.stories.items.${work.id}.when`,
+                                  ),
+                                },
+                                {
+                                  label: t("arcanumPage.contextLabel"),
+                                  value: t(
+                                    `arcanumPage.stories.items.${work.id}.context`,
+                                  ),
+                                },
+                              ]}
+                            />
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </section>
+              ))
+            }
+          </section>
 
-        <section
-          class="arcanum-page__essays"
-          id="essays"
-          aria-labelledby="essays-heading"
-        >
-          <p class="section-kicker">{t("arcanumPage.essays.kicker")}</p>
-          <h2 id="essays-heading">{t("arcanumPage.essays.heading")}</h2>
-          <p>{t("arcanumPage.essays.text")}</p>
-          <div class="arcanum-page__essays-visuals">
-            <EditorialImage
-              src={drominadSystem}
-              alt={t("arcanumPage.essays.drominadImageLabel")}
-              variant="feature"
-            />
-            <EditorialImage
-              src={shardSymbols}
-              alt={t("arcanumPage.essays.shardImageLabel")}
-              variant="square"
-            />
-            <EditorialImage
-              src={cosmicNebula}
-              alt={t("arcanumPage.essays.nebulaImageLabel")}
-              variant="square"
-            />
-          </div>
-        </section>
+          <section
+            class="arcanum-page__essays"
+            id="essays"
+            aria-labelledby="essays-heading"
+          >
+            <p class="section-kicker">{t("arcanumPage.essays.kicker")}</p>
+            <h2 id="essays-heading">{t("arcanumPage.essays.heading")}</h2>
+            <p>{t("arcanumPage.essays.text")}</p>
+            <div class="arcanum-page__essays-visuals">
+              <EditorialImage
+                src={drominadSystem}
+                alt={t("arcanumPage.essays.drominadImageLabel")}
+                variant="feature"
+              />
+              <EditorialImage
+                src={shardSymbols}
+                alt={t("arcanumPage.essays.shardImageLabel")}
+                variant="square"
+              />
+              <EditorialImage
+                src={cosmicNebula}
+                alt={t("arcanumPage.essays.nebulaImageLabel")}
+                variant="square"
+              />
+            </div>
+          </section>
 
-        <PageReturn
-          locale={locale}
-          href="/independents"
-          label={t("navigation.independents.title")}
-        />
+          <PageReturn
+            locale={locale}
+            href="/independents"
+            label={t("navigation.independents.title")}
+          />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("arcanumPage.tableOfContents")}

@@ -7,6 +7,7 @@ import SupplementaryWorkDetails from "./SupplementaryWorkDetails.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
 import mistbornIllustration from "../assets/images/general/scadrial_red_fields.webp";
@@ -122,215 +123,229 @@ const workTitle = (id: string) => {
           { label: t("sagas.mistborn") },
         ]}
       />
-      <main class="main-content mistborn-page">
-        <header
-          class="page-intro mistborn-page__header"
-          id="introduction"
-          aria-labelledby="mistborn-heading"
-        >
-          <div>
-            <p class="eyebrow">{t("mistbornPage.intro.eyebrow")}</p>
-            <h1 id="mistborn-heading">{t("sagas.mistborn")}</h1>
-            <p>{t("mistbornPage.intro.description")}</p>
-          </div>
-          <div class="mistborn-page__header-meta">
-            <span>{t("mistbornPage.intro.planet")}</span>
-            <strong>Scadrial</strong>
-          </div>
-        </header>
-
-        <EditorialImage
-          src={mistbornIllustration}
-          alt={t("mistbornPage.intro.imageLabel")}
-          variant="feature"
-        />
-
-        <section
-          class="mistborn-page__eras"
-          id="publication-order"
-          aria-labelledby="publication-order-heading"
-        >
-          <div class="mistborn-page__section-intro">
-            <p class="section-kicker">{t("mistbornPage.eras.kicker")}</p>
-            <h2 id="publication-order-heading">
-              {t("mistbornPage.eras.heading")}
-            </h2>
-            <p>{t("mistbornPage.eras.description")}</p>
-          </div>
-
-          <div class="mistborn-era" id="era-1">
-            <div class="mistborn-era__heading">
-              <span class="mistborn-era__number">01</span>
-              <div>
-                <p class="section-kicker">{t("mistbornPage.era1.kicker")}</p>
-                <h3>{t("mistbornPage.era1.heading")}</h3>
-                <p>{t("mistbornPage.era1.description")}</p>
-              </div>
-            </div>
-            <ol class="mistborn-book-list">
-              {
-                eraOneBooks.map((book) => (
-                  <li class="mistborn-book-list__item">
-                    <span class="mistborn-book-list__year">{book.year}</span>
-                    <div>
-                      <h4>{workTitle(book.id)}</h4>
-                      <span class="mistborn-book-list__type">
-                        {t(`books.types.${book.typeKey}`)}
-                      </span>
-                      <p>{t(book.note)}</p>
-                      {book.contextKey && (
-                        <SupplementaryWorkDetails
-                          id={`${book.id}-context`}
-                          title={t("independentPage.detailsHeading")}
-                          action={t("mistbornPage.supplementary.detailsAction")}
-                          closeLabel={t("independentPage.closeDetails")}
-                          typeLabel={t("mistbornPage.supplementary.typeLabel")}
-                          type={t(`books.types.${book.typeKey}`)}
-                          originLabel={t(
-                            "mistbornPage.supplementary.originLabel",
-                          )}
-                          origin={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.origin`,
-                          )}
-                          whyLabel={t("mistbornPage.supplementary.whyLabel")}
-                          why={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.why`,
-                          )}
-                          whenLabel={t("mistbornPage.supplementary.whenLabel")}
-                          when={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.when`,
-                          )}
-                        />
-                      )}
-                    </div>
-                  </li>
-                ))
-              }
-            </ol>
-          </div>
-
-          <aside
-            class="mistborn-page__warning"
-            id="reading-note"
-            aria-labelledby="reading-note-heading"
+      <main class="main-content">
+        <PageContent pageClass="mistborn-page">
+          <header
+            class="page-intro mistborn-page__header"
+            id="introduction"
+            aria-labelledby="mistborn-heading"
           >
-            <span class="mistborn-page__warning-symbol" aria-hidden="true"
-              >!</span
-            >
             <div>
-              <p class="section-kicker">{t("mistbornPage.warning.kicker")}</p>
-              <h2 id="reading-note-heading">
-                {t("mistbornPage.warning.heading")}
-              </h2>
-              <p>{t("mistbornPage.warning.text")}</p>
-              <p class="mistborn-page__warning-action">
-                {t("mistbornPage.warning.action")}
-              </p>
+              <p class="eyebrow">{t("mistbornPage.intro.eyebrow")}</p>
+              <h1 id="mistborn-heading">{t("sagas.mistborn")}</h1>
+              <p>{t("mistbornPage.intro.description")}</p>
             </div>
-          </aside>
+            <div class="mistborn-page__header-meta">
+              <span>{t("mistbornPage.intro.planet")}</span>
+              <strong>Scadrial</strong>
+            </div>
+          </header>
 
-          <div class="mistborn-era" id="era-2">
-            <div class="mistborn-era__heading">
-              <span class="mistborn-era__number">02</span>
-              <div>
-                <p class="section-kicker">{t("mistbornPage.era2.kicker")}</p>
-                <h3>{t("mistbornPage.era2.heading")}</h3>
-                <p>{t("mistbornPage.era2.description")}</p>
-              </div>
+          <EditorialImage
+            src={mistbornIllustration}
+            alt={t("mistbornPage.intro.imageLabel")}
+            variant="feature"
+          />
+
+          <section
+            class="mistborn-page__eras"
+            id="publication-order"
+            aria-labelledby="publication-order-heading"
+          >
+            <div class="mistborn-page__section-intro">
+              <p class="section-kicker">{t("mistbornPage.eras.kicker")}</p>
+              <h2 id="publication-order-heading">
+                {t("mistbornPage.eras.heading")}
+              </h2>
+              <p>{t("mistbornPage.eras.description")}</p>
             </div>
-            <ol class="mistborn-book-list">
+
+            <div class="mistborn-era" id="era-1">
+              <div class="mistborn-era__heading">
+                <span class="mistborn-era__number">01</span>
+                <div>
+                  <p class="section-kicker">{t("mistbornPage.era1.kicker")}</p>
+                  <h3>{t("mistbornPage.era1.heading")}</h3>
+                  <p>{t("mistbornPage.era1.description")}</p>
+                </div>
+              </div>
+              <ol class="mistborn-book-list">
+                {
+                  eraOneBooks.map((book) => (
+                    <li class="mistborn-book-list__item">
+                      <span class="mistborn-book-list__year">{book.year}</span>
+                      <div>
+                        <h4>{workTitle(book.id)}</h4>
+                        <span class="mistborn-book-list__type">
+                          {t(`books.types.${book.typeKey}`)}
+                        </span>
+                        <p>{t(book.note)}</p>
+                        {book.contextKey && (
+                          <SupplementaryWorkDetails
+                            id={`${book.id}-context`}
+                            title={t("independentPage.detailsHeading")}
+                            action={t(
+                              "mistbornPage.supplementary.detailsAction",
+                            )}
+                            closeLabel={t("independentPage.closeDetails")}
+                            typeLabel={t(
+                              "mistbornPage.supplementary.typeLabel",
+                            )}
+                            type={t(`books.types.${book.typeKey}`)}
+                            originLabel={t(
+                              "mistbornPage.supplementary.originLabel",
+                            )}
+                            origin={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.origin`,
+                            )}
+                            whyLabel={t("mistbornPage.supplementary.whyLabel")}
+                            why={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.why`,
+                            )}
+                            whenLabel={t(
+                              "mistbornPage.supplementary.whenLabel",
+                            )}
+                            when={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.when`,
+                            )}
+                          />
+                        )}
+                      </div>
+                    </li>
+                  ))
+                }
+              </ol>
+            </div>
+
+            <aside
+              class="mistborn-page__warning"
+              id="reading-note"
+              aria-labelledby="reading-note-heading"
+            >
+              <span class="mistborn-page__warning-symbol" aria-hidden="true"
+                >!</span
+              >
+              <div>
+                <p class="section-kicker">{t("mistbornPage.warning.kicker")}</p>
+                <h2 id="reading-note-heading">
+                  {t("mistbornPage.warning.heading")}
+                </h2>
+                <p>{t("mistbornPage.warning.text")}</p>
+                <p class="mistborn-page__warning-action">
+                  {t("mistbornPage.warning.action")}
+                </p>
+              </div>
+            </aside>
+
+            <div class="mistborn-era" id="era-2">
+              <div class="mistborn-era__heading">
+                <span class="mistborn-era__number">02</span>
+                <div>
+                  <p class="section-kicker">{t("mistbornPage.era2.kicker")}</p>
+                  <h3>{t("mistbornPage.era2.heading")}</h3>
+                  <p>{t("mistbornPage.era2.description")}</p>
+                </div>
+              </div>
+              <ol class="mistborn-book-list">
+                {
+                  eraTwoBooks.map((book) => (
+                    <li class="mistborn-book-list__item">
+                      <span class="mistborn-book-list__year">{book.year}</span>
+                      <div>
+                        <h4>{workTitle(book.id)}</h4>
+                        <span class="mistborn-book-list__type">
+                          {t(`books.types.${book.typeKey}`)}
+                        </span>
+                        <p>{t(book.note)}</p>
+                        {book.contextKey && (
+                          <SupplementaryWorkDetails
+                            id={`${book.id}-context`}
+                            title={t("independentPage.detailsHeading")}
+                            action={t(
+                              "mistbornPage.supplementary.detailsAction",
+                            )}
+                            closeLabel={t("independentPage.closeDetails")}
+                            typeLabel={t(
+                              "mistbornPage.supplementary.typeLabel",
+                            )}
+                            type={t(`books.types.${book.typeKey}`)}
+                            originLabel={t(
+                              "mistbornPage.supplementary.originLabel",
+                            )}
+                            origin={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.origin`,
+                            )}
+                            whyLabel={t("mistbornPage.supplementary.whyLabel")}
+                            why={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.why`,
+                            )}
+                            whenLabel={t(
+                              "mistbornPage.supplementary.whenLabel",
+                            )}
+                            when={t(
+                              `mistbornPage.supplementary.works.${book.contextKey}.when`,
+                            )}
+                          />
+                        )}
+                      </div>
+                    </li>
+                  ))
+                }
+              </ol>
+            </div>
+          </section>
+
+          <section
+            class="mistborn-page__magic"
+            id="magic"
+            aria-labelledby="magic-heading"
+          >
+            <div class="mistborn-page__section-intro">
+              <p class="section-kicker">{t("mistbornPage.magic.kicker")}</p>
+              <h2 id="magic-heading">{t("mistbornPage.magic.heading")}</h2>
+              <p>{t("mistbornPage.magic.description")}</p>
+            </div>
+            <div class="mistborn-magic-grid">
               {
-                eraTwoBooks.map((book) => (
-                  <li class="mistborn-book-list__item">
-                    <span class="mistborn-book-list__year">{book.year}</span>
-                    <div>
-                      <h4>{workTitle(book.id)}</h4>
-                      <span class="mistborn-book-list__type">
-                        {t(`books.types.${book.typeKey}`)}
-                      </span>
-                      <p>{t(book.note)}</p>
-                      {book.contextKey && (
-                        <SupplementaryWorkDetails
-                          id={`${book.id}-context`}
-                          title={t("independentPage.detailsHeading")}
-                          action={t("mistbornPage.supplementary.detailsAction")}
-                          closeLabel={t("independentPage.closeDetails")}
-                          typeLabel={t("mistbornPage.supplementary.typeLabel")}
-                          type={t(`books.types.${book.typeKey}`)}
-                          originLabel={t(
-                            "mistbornPage.supplementary.originLabel",
-                          )}
-                          origin={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.origin`,
-                          )}
-                          whyLabel={t("mistbornPage.supplementary.whyLabel")}
-                          why={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.why`,
-                          )}
-                          whenLabel={t("mistbornPage.supplementary.whenLabel")}
-                          when={t(
-                            `mistbornPage.supplementary.works.${book.contextKey}.when`,
-                          )}
-                        />
-                      )}
-                    </div>
-                  </li>
+                ["allomancy", "feruchemy", "hemalurgy"].map((system, index) => (
+                  <article class="mistborn-magic-card">
+                    <span class="mistborn-magic-card__number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3>{t(`mistbornPage.magic.${system}.title`)}</h3>
+                    <p>{t(`mistbornPage.magic.${system}.text`)}</p>
+                  </article>
                 ))
               }
-            </ol>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <section
-          class="mistborn-page__magic"
-          id="magic"
-          aria-labelledby="magic-heading"
-        >
-          <div class="mistborn-page__section-intro">
-            <p class="section-kicker">{t("mistbornPage.magic.kicker")}</p>
-            <h2 id="magic-heading">{t("mistbornPage.magic.heading")}</h2>
-            <p>{t("mistbornPage.magic.description")}</p>
-          </div>
-          <div class="mistborn-magic-grid">
-            {
-              ["allomancy", "feruchemy", "hemalurgy"].map((system, index) => (
-                <article class="mistborn-magic-card">
-                  <span class="mistborn-magic-card__number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3>{t(`mistbornPage.magic.${system}.title`)}</h3>
-                  <p>{t(`mistbornPage.magic.${system}.text`)}</p>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-
-        <section
-          class="mistborn-page__curiosities"
-          id="curiosities"
-          aria-labelledby="curiosities-heading"
-        >
-          <p class="section-kicker">{t("mistbornPage.curiosities.kicker")}</p>
-          <h2 id="curiosities-heading">
-            {t("mistbornPage.curiosities.heading")}
-          </h2>
-          <ul>
-            <li>{t("mistbornPage.curiosities.first")}</li>
-            <li>{t("mistbornPage.curiosities.second")}</li>
-            <li>{t("mistbornPage.curiosities.third")}</li>
-          </ul>
-          <EditorialImage
-            src={sazedArtwork}
-            alt={t("mistbornPage.curiosities.imageLabel")}
-            variant="portrait"
+          <section
+            class="mistborn-page__curiosities"
+            id="curiosities"
+            aria-labelledby="curiosities-heading"
+          >
+            <p class="section-kicker">{t("mistbornPage.curiosities.kicker")}</p>
+            <h2 id="curiosities-heading">
+              {t("mistbornPage.curiosities.heading")}
+            </h2>
+            <ul>
+              <li>{t("mistbornPage.curiosities.first")}</li>
+              <li>{t("mistbornPage.curiosities.second")}</li>
+              <li>{t("mistbornPage.curiosities.third")}</li>
+            </ul>
+            <EditorialImage
+              src={sazedArtwork}
+              alt={t("mistbornPage.curiosities.imageLabel")}
+              variant="portrait"
+            />
+          </section>
+          <PageReturn
+            locale={locale}
+            href="/sagas"
+            label={t("navigation.sagas.title")}
           />
-        </section>
-        <PageReturn
-          locale={locale}
-          href="/sagas"
-          label={t("navigation.sagas.title")}
-        />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("mistbornPage.tableOfContents")}

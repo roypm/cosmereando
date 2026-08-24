@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import { getTranslation } from "../data/i18n";
 import { getSections } from "../data/catalogue";
 import type { Locale } from "../data/locales";
@@ -45,79 +46,81 @@ if (!saga) {
           { label: saga.label },
         ]}
       />
-      <main class="main-content saga-detail-page">
-        <header
-          class="page-intro saga-detail-page__header"
-          id="introduction"
-          aria-labelledby="saga-heading"
-        >
-          <p class="eyebrow">{t("sagaPage.detail.eyebrow")}</p>
-          <p class="saga-detail-page__index">{sagaId}</p>
-          <h1 id="saga-heading">{saga.label}</h1>
-          <p>{t("sagaPage.detail.description", { title: saga.label })}</p>
-        </header>
+      <main class="main-content">
+        <PageContent pageClass="saga-detail-page">
+          <header
+            class="page-intro saga-detail-page__header"
+            id="introduction"
+            aria-labelledby="saga-heading"
+          >
+            <p class="eyebrow">{t("sagaPage.detail.eyebrow")}</p>
+            <p class="saga-detail-page__index">{sagaId}</p>
+            <h1 id="saga-heading">{saga.label}</h1>
+            <p>{t("sagaPage.detail.description", { title: saga.label })}</p>
+          </header>
 
-        <EditorialImage
-          src={cosmereSymbol}
-          alt={t("sagaPage.detail.imageLabel", { title: saga.label })}
-          variant="square"
-        />
+          <EditorialImage
+            src={cosmereSymbol}
+            alt={t("sagaPage.detail.imageLabel", { title: saga.label })}
+            variant="square"
+          />
 
-        <section
-          class="saga-detail-page__section"
-          id="overview"
-          aria-labelledby="overview-heading"
-        >
-          <span class="saga-detail-page__section-number">01</span>
-          <div>
-            <p class="section-kicker">
-              {t("sagaPage.detail.sections.overview.kicker")}
-            </p>
-            <h2 id="overview-heading">
-              {t("sagaPage.detail.sections.overview.heading")}
-            </h2>
-            <p>{t("common.placeholderSection")}</p>
-          </div>
-        </section>
+          <section
+            class="saga-detail-page__section"
+            id="overview"
+            aria-labelledby="overview-heading"
+          >
+            <span class="saga-detail-page__section-number">01</span>
+            <div>
+              <p class="section-kicker">
+                {t("sagaPage.detail.sections.overview.kicker")}
+              </p>
+              <h2 id="overview-heading">
+                {t("sagaPage.detail.sections.overview.heading")}
+              </h2>
+              <p>{t("common.placeholderSection")}</p>
+            </div>
+          </section>
 
-        <section
-          class="saga-detail-page__section"
-          id="works"
-          aria-labelledby="works-heading"
-        >
-          <span class="saga-detail-page__section-number">02</span>
-          <div>
-            <p class="section-kicker">
-              {t("sagaPage.detail.sections.works.kicker")}
-            </p>
-            <h2 id="works-heading">
-              {t("sagaPage.detail.sections.works.heading")}
-            </h2>
-            <p>{t("common.placeholderSection")}</p>
-          </div>
-        </section>
+          <section
+            class="saga-detail-page__section"
+            id="works"
+            aria-labelledby="works-heading"
+          >
+            <span class="saga-detail-page__section-number">02</span>
+            <div>
+              <p class="section-kicker">
+                {t("sagaPage.detail.sections.works.kicker")}
+              </p>
+              <h2 id="works-heading">
+                {t("sagaPage.detail.sections.works.heading")}
+              </h2>
+              <p>{t("common.placeholderSection")}</p>
+            </div>
+          </section>
 
-        <section
-          class="saga-detail-page__section"
-          id="connections"
-          aria-labelledby="connections-heading"
-        >
-          <span class="saga-detail-page__section-number">03</span>
-          <div>
-            <p class="section-kicker">
-              {t("sagaPage.detail.sections.connections.kicker")}
-            </p>
-            <h2 id="connections-heading">
-              {t("sagaPage.detail.sections.connections.heading")}
-            </h2>
-            <p>{t("common.placeholderSection")}</p>
-          </div>
-        </section>
-        <PageReturn
-          locale={locale}
-          href="/sagas"
-          label={t("navigation.sagas.title")}
-        />
+          <section
+            class="saga-detail-page__section"
+            id="connections"
+            aria-labelledby="connections-heading"
+          >
+            <span class="saga-detail-page__section-number">03</span>
+            <div>
+              <p class="section-kicker">
+                {t("sagaPage.detail.sections.connections.kicker")}
+              </p>
+              <h2 id="connections-heading">
+                {t("sagaPage.detail.sections.connections.heading")}
+              </h2>
+              <p>{t("common.placeholderSection")}</p>
+            </div>
+          </section>
+          <PageReturn
+            locale={locale}
+            href="/sagas"
+            label={t("navigation.sagas.title")}
+          />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("sagaPage.detail.tableOfContents")}

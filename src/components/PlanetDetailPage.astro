@@ -6,6 +6,7 @@ import PageReturn from "./PageReturn.astro";
 import PageTrail from "./PageTrail.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
+import PageContent from "./PageContent.astro";
 import { getPlanetProfile, getSections } from "../data/catalogue";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -48,176 +49,184 @@ const profileKey = `planetPage.scienceProfiles.${planetId}`;
           { label: planet.label },
         ]}
       />
-      <main
-        class:list={[
-          "main-content",
-          "planet-detail-page",
-          `planet-detail-page--${profile.visualMode}`,
-        ]}
-      >
-        <header
-          class="page-intro planet-detail-page__header"
-          id="introduction"
-          aria-labelledby="planet-heading"
+      <main class="main-content">
+        <PageContent
+          pageClass={`planet-detail-page planet-detail-page--${profile.visualMode}`}
         >
-          <p class="eyebrow">{t("planetPage.detail.eyebrow")}</p>
-          <h1 id="planet-heading">{planet.label}</h1>
-          <p>{t("planetPage.detail.description", { title: planet.label })}</p>
-          <dl class="planet-detail-page__system">
-            <div>
-              <dt>{t("planetPage.detail.systemLabel")}</dt><dd>
-                {t(`planetPage.detail.systems.${profile.systemKey}`)}
-              </dd>
-            </div>
-            <div>
-              <dt>{t("planetPage.detail.scaleLabel")}</dt><dd>
-                {t(`${profileKey}.scale`)}
-              </dd>
-            </div>
-          </dl>
-        </header>
+          <header
+            class="page-intro planet-detail-page__header"
+            id="introduction"
+            aria-labelledby="planet-heading"
+          >
+            <p class="eyebrow">{t("planetPage.detail.eyebrow")}</p>
+            <h1 id="planet-heading">{planet.label}</h1>
+            <p>{t("planetPage.detail.description", { title: planet.label })}</p>
+            <dl class="planet-detail-page__system">
+              <div>
+                <dt>{t("planetPage.detail.systemLabel")}</dt><dd>
+                  {t(`planetPage.detail.systems.${profile.systemKey}`)}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("planetPage.detail.scaleLabel")}</dt><dd>
+                  {t(`${profileKey}.scale`)}
+                </dd>
+              </div>
+            </dl>
+          </header>
 
-        {
-          planetImage ? (
-            <EditorialImage
-              src={planetImage}
-              alt={t(`planetPage.detail.imageLabels.${profile.imageLabelKey}`)}
-              variant="feature"
-            />
-          ) : (
-            <ImagePlaceholder
-              label={t("planetPage.detail.imageLabel", { title: planet.label })}
-              dimensions={t("planetPage.detail.imageDimensions")}
-              imageText={t("common.imageHere")}
-              variant="feature"
-            />
-          )
-        }
+          {
+            planetImage ? (
+              <EditorialImage
+                src={planetImage}
+                alt={t(
+                  `planetPage.detail.imageLabels.${profile.imageLabelKey}`,
+                )}
+                variant="feature"
+              />
+            ) : (
+              <ImagePlaceholder
+                label={t("planetPage.detail.imageLabel", {
+                  title: planet.label,
+                })}
+                dimensions={t("planetPage.detail.imageDimensions")}
+                imageText={t("common.imageHere")}
+                variant="feature"
+              />
+            )
+          }
 
-        <section
-          class="planet-detail-page__section planet-detail-page__section--visual"
-          id="geology"
-          aria-labelledby="geology-heading"
-        >
-          <span class="planet-detail-page__number">01</span>
-          <div>
-            <p class="section-kicker">{t("planetPage.detail.geologyKicker")}</p>
-            <h2 id="geology-heading">{t(`${profileKey}.geologyHeading`)}</h2>
-            <p>{t(`${profileKey}.geology`)}</p>
+          <section
+            class="planet-detail-page__section planet-detail-page__section--visual"
+            id="geology"
+            aria-labelledby="geology-heading"
+          >
+            <span class="planet-detail-page__number">01</span>
+            <div>
+              <p class="section-kicker">
+                {t("planetPage.detail.geologyKicker")}
+              </p>
+              <h2 id="geology-heading">{t(`${profileKey}.geologyHeading`)}</h2>
+              <p>{t(`${profileKey}.geology`)}</p>
+              {
+                detailImage?.section === "geology" && (
+                  <EditorialImage
+                    src={detailImage.image}
+                    alt={t("planetPage.detail.visuals.geologyLabel", {
+                      title: planet.label,
+                    })}
+                    variant={detailImage.variant}
+                  />
+                )
+              }
+            </div>
+          </section>
+
+          <section
+            class="planet-detail-page__section planet-detail-page__section--split"
+            id="climate"
+            aria-labelledby="climate-heading"
+          >
+            <span class="planet-detail-page__number">02</span>
+            <div class="planet-detail-page__copy">
+              <p class="section-kicker">
+                {t("planetPage.detail.climateKicker")}
+              </p>
+              <h2 id="climate-heading">{t(`${profileKey}.climateHeading`)}</h2>
+              <p>{t(`${profileKey}.climate`)}</p>
+            </div>
             {
-              detailImage?.section === "geology" && (
+              detailImage?.section === "climate" && (
                 <EditorialImage
                   src={detailImage.image}
-                  alt={t("planetPage.detail.visuals.geologyLabel", {
+                  alt={t("planetPage.detail.visuals.climateLabel", {
                     title: planet.label,
                   })}
                   variant={detailImage.variant}
                 />
               )
             }
-          </div>
-        </section>
+          </section>
 
-        <section
-          class="planet-detail-page__section planet-detail-page__section--split"
-          id="climate"
-          aria-labelledby="climate-heading"
-        >
-          <span class="planet-detail-page__number">02</span>
-          <div class="planet-detail-page__copy">
-            <p class="section-kicker">{t("planetPage.detail.climateKicker")}</p>
-            <h2 id="climate-heading">{t(`${profileKey}.climateHeading`)}</h2>
-            <p>{t(`${profileKey}.climate`)}</p>
-          </div>
-          {
-            detailImage?.section === "climate" && (
-              <EditorialImage
-                src={detailImage.image}
-                alt={t("planetPage.detail.visuals.climateLabel", {
-                  title: planet.label,
-                })}
-                variant={detailImage.variant}
-              />
-            )
-          }
-        </section>
+          <section
+            class="planet-detail-page__section planet-detail-page__section--visual"
+            id="biosphere"
+            aria-labelledby="biosphere-heading"
+          >
+            <span class="planet-detail-page__number">03</span>
+            <div>
+              <p class="section-kicker">
+                {t("planetPage.detail.biosphereKicker")}
+              </p>
+              <h2 id="biosphere-heading">
+                {t(`${profileKey}.biosphereHeading`)}
+              </h2>
+              <p>{t(`${profileKey}.biosphere`)}</p>
+              {
+                detailImage?.section === "biosphere" && (
+                  <EditorialImage
+                    src={detailImage.image}
+                    alt={t("planetPage.detail.visuals.biosphereLabel", {
+                      title: planet.label,
+                    })}
+                    variant={detailImage.variant}
+                  />
+                )
+              }
+            </div>
+          </section>
 
-        <section
-          class="planet-detail-page__section planet-detail-page__section--visual"
-          id="biosphere"
-          aria-labelledby="biosphere-heading"
-        >
-          <span class="planet-detail-page__number">03</span>
-          <div>
-            <p class="section-kicker">
-              {t("planetPage.detail.biosphereKicker")}
-            </p>
-            <h2 id="biosphere-heading">
-              {t(`${profileKey}.biosphereHeading`)}
-            </h2>
-            <p>{t(`${profileKey}.biosphere`)}</p>
+          <section
+            class="planet-detail-page__section planet-detail-page__section--split"
+            id="habitats"
+            aria-labelledby="habitats-heading"
+          >
+            <span class="planet-detail-page__number">04</span>
+            <div class="planet-detail-page__copy">
+              <p class="section-kicker">
+                {t("planetPage.detail.habitatsKicker")}
+              </p>
+              <h2 id="habitats-heading">
+                {t(`${profileKey}.habitatsHeading`)}
+              </h2>
+              <p>{t(`${profileKey}.habitats`)}</p>
+            </div>
             {
-              detailImage?.section === "biosphere" && (
+              detailImage?.section === "habitats" && (
                 <EditorialImage
                   src={detailImage.image}
-                  alt={t("planetPage.detail.visuals.biosphereLabel", {
+                  alt={t("planetPage.detail.visuals.habitatsLabel", {
                     title: planet.label,
                   })}
                   variant={detailImage.variant}
                 />
               )
             }
-          </div>
-        </section>
+          </section>
 
-        <section
-          class="planet-detail-page__section planet-detail-page__section--split"
-          id="habitats"
-          aria-labelledby="habitats-heading"
-        >
-          <span class="planet-detail-page__number">04</span>
-          <div class="planet-detail-page__copy">
-            <p class="section-kicker">
-              {t("planetPage.detail.habitatsKicker")}
-            </p>
-            <h2 id="habitats-heading">{t(`${profileKey}.habitatsHeading`)}</h2>
-            <p>{t(`${profileKey}.habitats`)}</p>
-          </div>
-          {
-            detailImage?.section === "habitats" && (
-              <EditorialImage
-                src={detailImage.image}
-                alt={t("planetPage.detail.visuals.habitatsLabel", {
-                  title: planet.label,
-                })}
-                variant={detailImage.variant}
-              />
-            )
-          }
-        </section>
+          <section
+            class="planet-detail-page__section"
+            id="curiosities"
+            aria-labelledby="curiosities-heading"
+          >
+            <span class="planet-detail-page__number">05</span>
+            <div>
+              <p class="section-kicker">
+                {t("planetPage.detail.researchKicker")}
+              </p>
+              <h2 id="curiosities-heading">
+                {t(`${profileKey}.questionsHeading`)}
+              </h2>
+              <p>{t(`${profileKey}.questions`)}</p>
+            </div>
+          </section>
 
-        <section
-          class="planet-detail-page__section"
-          id="curiosities"
-          aria-labelledby="curiosities-heading"
-        >
-          <span class="planet-detail-page__number">05</span>
-          <div>
-            <p class="section-kicker">
-              {t("planetPage.detail.researchKicker")}
-            </p>
-            <h2 id="curiosities-heading">
-              {t(`${profileKey}.questionsHeading`)}
-            </h2>
-            <p>{t(`${profileKey}.questions`)}</p>
-          </div>
-        </section>
-
-        <PageReturn
-          locale={locale}
-          href="/planets"
-          label={t("navigation.planets.title")}
-        />
+          <PageReturn
+            locale={locale}
+            href="/planets"
+            label={t("navigation.planets.title")}
+          />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("planetPage.tableOfContents")}

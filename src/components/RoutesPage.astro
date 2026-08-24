@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import { getRoutes } from "../data/catalogue";
 import { getLocalizedPath, getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -38,76 +39,83 @@ const routeSections = getRoutes(locale);
         ]}
       />
       <main class="main-content">
-        <section
-          class="page-intro hero routes-page__hero"
-          id="introduction"
-          aria-labelledby="routes-heading"
-        >
-          <div class="hero__layout">
-            <div class="hero__content">
-              <p class="eyebrow">{t("routePage.intro.eyebrow")}</p>
-              <h1 id="routes-heading">{t("routePage.intro.heading")}</h1>
-              <p class="hero__intro">{t("routePage.intro.description")}</p>
+        <PageContent variant="wide">
+          <section
+            class="page-intro hero routes-page__hero"
+            id="introduction"
+            aria-labelledby="routes-heading"
+          >
+            <div class="hero__layout">
+              <div class="hero__content">
+                <p class="eyebrow">{t("routePage.intro.eyebrow")}</p>
+                <h1 id="routes-heading">{t("routePage.intro.heading")}</h1>
+                <p class="hero__intro">{t("routePage.intro.description")}</p>
+              </div>
+              <EditorialImage
+                src={routeConstellation}
+                alt={t("routePage.intro.imageLabel")}
+                variant="hero"
+              />
             </div>
-            <EditorialImage
-              src={routeConstellation}
-              alt={t("routePage.intro.imageLabel")}
-              variant="hero"
-            />
-          </div>
-        </section>
+          </section>
 
-        <section
-          class="content-section"
-          id="why-routes"
-          aria-labelledby="why-routes-heading"
-        >
-          <p class="section-kicker">{t("routePage.why.kicker")}</p>
-          <h2 id="why-routes-heading">{t("routePage.why.heading")}</h2>
-          <p>{t("routePage.why.description")}</p>
-          <div class="info-grid">
-            <article class="info-card">
-              <span class="info-card__number">01</span>
-              <h3>{t("routePage.why.entry.title")}</h3>
-              <p>{t("routePage.why.entry.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">02</span>
-              <h3>{t("routePage.why.context.title")}</h3>
-              <p>{t("routePage.why.context.text")}</p>
-            </article>
-            <article class="info-card">
-              <span class="info-card__number">03</span>
-              <h3>{t("routePage.why.pace.title")}</h3>
-              <p>{t("routePage.why.pace.text")}</p>
-            </article>
-          </div>
-        </section>
+          <section
+            class="content-section"
+            id="why-routes"
+            aria-labelledby="why-routes-heading"
+          >
+            <p class="section-kicker">{t("routePage.why.kicker")}</p>
+            <h2 id="why-routes-heading">{t("routePage.why.heading")}</h2>
+            <p>{t("routePage.why.description")}</p>
+            <div class="info-grid">
+              <article class="info-card">
+                <span class="info-card__number">01</span>
+                <h3>{t("routePage.why.entry.title")}</h3>
+                <p>{t("routePage.why.entry.text")}</p>
+              </article>
+              <article class="info-card">
+                <span class="info-card__number">02</span>
+                <h3>{t("routePage.why.context.title")}</h3>
+                <p>{t("routePage.why.context.text")}</p>
+              </article>
+              <article class="info-card">
+                <span class="info-card__number">03</span>
+                <h3>{t("routePage.why.pace.title")}</h3>
+                <p>{t("routePage.why.pace.text")}</p>
+              </article>
+            </div>
+          </section>
 
-        <section
-          class="content-section content-section--quiet"
-          id="available-routes"
-          aria-labelledby="available-routes-heading"
-        >
-          <p class="section-kicker">{t("routePage.routes.kicker")}</p>
-          <h2 id="available-routes-heading">{t("routePage.routes.heading")}</h2>
-          <p>{t("routePage.routes.description")}</p>
-          <div class="preview-grid routes-page__grid">
-            {
-              routeSections.map((route) => (
-                <a class="preview-card" href={path(`/routes/${route.id}`)}>
-                  <span class="preview-card__number">
-                    {String(routeSections.indexOf(route) + 1).padStart(2, "0")}
-                  </span>
-                  <h3>{route.label}</h3>
-                  <p>{route.summary}</p>
-                </a>
-              ))
-            }
-          </div>
-        </section>
+          <section
+            class="content-section content-section--quiet"
+            id="available-routes"
+            aria-labelledby="available-routes-heading"
+          >
+            <p class="section-kicker">{t("routePage.routes.kicker")}</p>
+            <h2 id="available-routes-heading">
+              {t("routePage.routes.heading")}
+            </h2>
+            <p>{t("routePage.routes.description")}</p>
+            <div class="preview-grid routes-page__grid">
+              {
+                routeSections.map((route) => (
+                  <a class="preview-card" href={path(`/routes/${route.id}`)}>
+                    <span class="preview-card__number">
+                      {String(routeSections.indexOf(route) + 1).padStart(
+                        2,
+                        "0",
+                      )}
+                    </span>
+                    <h3>{route.label}</h3>
+                    <p>{route.summary}</p>
+                  </a>
+                ))
+              }
+            </div>
+          </section>
 
-        <PageReturn locale={locale} href="/" label={t("common.home")} />
+          <PageReturn locale={locale} href="/" label={t("common.home")} />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("routePage.tableOfContents")}

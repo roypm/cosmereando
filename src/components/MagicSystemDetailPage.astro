@@ -5,6 +5,7 @@ import PageReturn from "./PageReturn.astro";
 import PageTrail from "./PageTrail.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
+import PageContent from "./PageContent.astro";
 import EditorialImage from "./EditorialImage.astro";
 import { getMagicSystems } from "../data/catalogue";
 import magicSystemProfiles from "../data/magic-system-profiles.json";
@@ -69,82 +70,80 @@ const systemImage = systemImages[systemId];
           { label: system.label },
         ]}
       />
-      <main
-        class:list={[
-          "main-content",
-          "magic-system-detail-page",
-          `magic-system-detail-page--${systemId}`,
-        ]}
-      >
-        <header
-          class="page-intro magic-system-detail-page__header"
-          id="introduction"
-          aria-labelledby="magic-system-heading"
+      <main class="main-content">
+        <PageContent
+          pageClass={`magic-system-detail-page magic-system-detail-page--${systemId}`}
         >
-          <p class="eyebrow">{t("magicSystemDetails.eyebrow")}</p>
-          <h1 id="magic-system-heading">{system.label}</h1>
-          <p>{t(`${profileKey}.description`)}</p>
-          <dl class="magic-system-detail-page__facts">
-            <div>
-              <dt>{t("magicSystemDetails.worldLabel")}</dt><dd>
-                {system.world}
-              </dd>
-            </div>
-            <div>
-              <dt>{t("magicSystemDetails.typeLabel")}</dt><dd>
-                {t(`${profileKey}.type`)}
-              </dd>
-            </div>
-          </dl>
-        </header>
+          <header
+            class="page-intro magic-system-detail-page__header"
+            id="introduction"
+            aria-labelledby="magic-system-heading"
+          >
+            <p class="eyebrow">{t("magicSystemDetails.eyebrow")}</p>
+            <h1 id="magic-system-heading">{system.label}</h1>
+            <p>{t(`${profileKey}.description`)}</p>
+            <dl class="magic-system-detail-page__facts">
+              <div>
+                <dt>{t("magicSystemDetails.worldLabel")}</dt><dd>
+                  {system.world}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("magicSystemDetails.typeLabel")}</dt><dd>
+                  {t(`${profileKey}.type`)}
+                </dd>
+              </div>
+            </dl>
+          </header>
 
-        {
-          systemImage && (
-            <div class="magic-system-detail-page__visual">
-              <EditorialImage
-                src={systemImage.image}
-                alt={t("magicSystemDetails.visualLabel", {
-                  system: system.label,
-                })}
-                variant={systemImage.variant}
-              />
-            </div>
-          )
-        }
-
-        <aside class="magic-system-detail-page__example">
-          <p class="section-kicker">{t("magicSystemDetails.exampleLabel")}</p>
-          <p>{t(`${profileKey}.example`)}</p>
-        </aside>
-
-        <div class="magic-system-detail-page__sections">
           {
-            sectionIds.map((sectionId, index) => (
-              <section
-                class="magic-system-detail-page__section"
-                id={sectionId}
-                aria-labelledby={`${sectionId}-heading`}
-              >
-                <span class="magic-system-detail-page__number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p class="section-kicker">{sectionLabel(sectionId)}</p>
-                  <h2 id={`${sectionId}-heading`}>
-                    {t(`${profileKey}.${sectionId}.heading`)}
-                  </h2>
-                  <p>{t(`${profileKey}.${sectionId}.body`)}</p>
-                </div>
-              </section>
-            ))
+            systemImage && (
+              <div class="magic-system-detail-page__visual">
+                <EditorialImage
+                  src={systemImage.image}
+                  alt={t("magicSystemDetails.visualLabel", {
+                    system: system.label,
+                  })}
+                  variant={systemImage.variant}
+                />
+              </div>
+            )
           }
-        </div>
 
-        <PageReturn
-          locale={locale}
-          href="/magic-systems"
-          label={t("navigation.magicSystems.title")}
-        />
+          <aside class="magic-system-detail-page__example">
+            <p class="section-kicker">{t("magicSystemDetails.exampleLabel")}</p>
+            <p>{t(`${profileKey}.example`)}</p>
+          </aside>
+
+          <div class="magic-system-detail-page__sections">
+            {
+              sectionIds.map((sectionId, index) => (
+                <section
+                  class="magic-system-detail-page__section"
+                  id={sectionId}
+                  aria-labelledby={`${sectionId}-heading`}
+                >
+                  <span class="magic-system-detail-page__number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p class="section-kicker">{sectionLabel(sectionId)}</p>
+                    <h2 id={`${sectionId}-heading`}>
+                      {t(`${profileKey}.${sectionId}.heading`)}
+                    </h2>
+                    <p>{t(`${profileKey}.${sectionId}.body`)}</p>
+                  </div>
+                </section>
+              ))
+            }
+          </div>
+
+          <PageReturn
+            locale={locale}
+            href="/magic-systems"
+            label={t("navigation.magicSystems.title")}
+          />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("magicSystemDetails.tableOfContents")}
