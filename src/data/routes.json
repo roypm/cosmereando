@@ -1,5 +1,17 @@
 [
-  { "id": "community-routes", "labelKey": "routes.community" },
-  { "id": "publication-order", "labelKey": "routes.publication" },
-  { "id": "my-journey", "labelKey": "routes.myJourney" }
+  {
+    "id": "community-routes",
+    "labelKey": "routes.community",
+    "summaryKey": "routePage.cards.community"
+  },
+  {
+    "id": "publication-order",
+    "labelKey": "routes.publication",
+    "summaryKey": "routePage.cards.publication"
+  },
+  {
+    "id": "my-journey",
+    "labelKey": "routes.myJourney",
+    "summaryKey": "routePage.cards.myJourney"
+  }
 ]

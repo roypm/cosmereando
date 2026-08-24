@@ -1,6 +1,6 @@
 {
   "name": "cosmereando",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,12 +9,15 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint": "pnpm lint:css",
-    "format": "prettier --write \"src/styles/**/*.css\" package.json .stylelintrc.json",
-    "format:check": "prettier --check \"src/styles/**/*.css\" package.json .stylelintrc.json",
-    "check": "pnpm lint:css && ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build"
+    "format": "prettier --write \"src/**/*.{astro,ts,json,css}\" package.json astro.config.mjs tsconfig.json .prettierrc.json .stylelintrc.json",
+    "format:check": "prettier --check \"src/**/*.{astro,ts,json,css}\" package.json astro.config.mjs tsconfig.json .prettierrc.json .stylelintrc.json",
+    "typecheck": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "test": "vitest run",
+    "check": "pnpm lint:css && pnpm format:check && pnpm typecheck && pnpm test && ASTRO_TELEMETRY_DISABLED=1 astro build"
   },
   "dependencies": {
-    "astro": "^5.13.0"
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -22,7 +25,16 @@
     "prettier-plugin-astro": "^0.14.1",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.11"
   },
-  "packageManager": "pnpm@10.14.0"
+  "packageManager": "pnpm@10.14.0",
+  "pnpm": {
+    "overrides": {
+      "sharp": ">=0.35.0"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
 }

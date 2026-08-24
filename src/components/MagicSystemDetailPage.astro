@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GlobalNavbar from "./GlobalNavbar.astro";
+import PageReturn from "./PageReturn.astro";
+import PageTrail from "./PageTrail.astro";
+import Sidebar from "./Sidebar.astro";
+import TableOfContents from "./TableOfContents.astro";
+import EditorialImage from "./EditorialImage.astro";
+import { getMagicSystems } from "../data/catalogue";
+import magicSystemProfiles from "../data/magic-system-profiles.json";
+import { getLocalizedPath, getTranslation } from "../data/i18n";
+import type { Locale } from "../data/locales";
+import metallicArtsStudy from "../assets/images/general/metallic_arts_study.png";
+import surgebindingForcesStudy from "../assets/images/general/surgebinding_forces_study.png";
+import aondorSymbolicStudy from "../assets/images/general/aondor_symbolic_study.png";
+import awakeningMaterialStudy from "../assets/images/general/awakening_material_study.png";
+import sandMasteryMaterialStudy from "../assets/images/general/sand_mastery_material_study.png";
+import forgerySealStudy from "../assets/images/general/forgery_seal_study.png";
+
+interface Props {
+  locale: Locale;
+  systemId: string;
+}
+
+const { locale, systemId } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) =>
+  getTranslation(locale, key, replacements);
+const system = getMagicSystems(locale).find((item) => item.id === systemId);
+const sectionIds =
+  magicSystemProfiles[systemId as keyof typeof magicSystemProfiles];
+
+if (!system || !sectionIds)
+  throw new Error(`Unknown magic system: ${systemId}`);
+
+const profileKey = `magicSystemDetails.${systemId}`;
+const sectionLabel = (sectionId: string) =>
+  t(`magicSystemDetails.labels.${sectionId}`);
+const systemImages: Record<
+  string,
+  { image: typeof metallicArtsStudy; variant: "feature" | "portrait" }
+> = {
+  "metallic-arts": { image: metallicArtsStudy, variant: "feature" },
+  surgebinding: { image: surgebindingForcesStudy, variant: "feature" },
+  aondor: { image: aondorSymbolicStudy, variant: "portrait" },
+  awakening: { image: awakeningMaterialStudy, variant: "feature" },
+  "sand-mastery": { image: sandMasteryMaterialStudy, variant: "feature" },
+  forgery: { image: forgerySealStudy, variant: "portrait" },
+};
+const systemImage = systemImages[systemId];
+---
+
+<BaseLayout
+  title={`Cosmereando — ${system.label}`}
+  description={t(`${profileKey}.description`)}
+  locale={locale}
+>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail
+        locale={locale}
+        items={[
+          { label: t("common.home"), href: "/" },
+          {
+            label: t("navigation.magicSystems.title"),
+            href: getLocalizedPath(locale, "/magic-systems"),
+          },
+          { label: system.label },
+        ]}
+      />
+      <main
+        class:list={[
+          "main-content",
+          "magic-system-detail-page",
+          `magic-system-detail-page--${systemId}`,
+        ]}
+      >
+        <header
+          class="page-intro magic-system-detail-page__header"
+          id="introduction"
+          aria-labelledby="magic-system-heading"
+        >
+          <p class="eyebrow">{t("magicSystemDetails.eyebrow")}</p>
+          <h1 id="magic-system-heading">{system.label}</h1>
+          <p>{t(`${profileKey}.description`)}</p>
+          <dl class="magic-system-detail-page__facts">
+            <div>
+              <dt>{t("magicSystemDetails.worldLabel")}</dt><dd>
+                {system.world}
+              </dd>
+            </div>
+            <div>
+              <dt>{t("magicSystemDetails.typeLabel")}</dt><dd>
+                {t(`${profileKey}.type`)}
+              </dd>
+            </div>
+          </dl>
+        </header>
+
+        {
+          systemImage && (
+            <div class="magic-system-detail-page__visual">
+              <EditorialImage
+                src={systemImage.image}
+                alt={t("magicSystemDetails.visualLabel", {
+                  system: system.label,
+                })}
+                variant={systemImage.variant}
+              />
+            </div>
+          )
+        }
+
+        <aside class="magic-system-detail-page__example">
+          <p class="section-kicker">{t("magicSystemDetails.exampleLabel")}</p>
+          <p>{t(`${profileKey}.example`)}</p>
+        </aside>
+
+        <div class="magic-system-detail-page__sections">
+          {
+            sectionIds.map((sectionId, index) => (
+              <section
+                class="magic-system-detail-page__section"
+                id={sectionId}
+                aria-labelledby={`${sectionId}-heading`}
+              >
+                <span class="magic-system-detail-page__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p class="section-kicker">{sectionLabel(sectionId)}</p>
+                  <h2 id={`${sectionId}-heading`}>
+                    {t(`${profileKey}.${sectionId}.heading`)}
+                  </h2>
+                  <p>{t(`${profileKey}.${sectionId}.body`)}</p>
+                </div>
+              </section>
+            ))
+          }
+        </div>
+
+        <PageReturn
+          locale={locale}
+          href="/magic-systems"
+          label={t("navigation.magicSystems.title")}
+        />
+      </main>
+      <TableOfContents
+        title={t("magicSystemDetails.tableOfContents")}
+        items={[
+          {
+            id: "introduction",
+            label: t("magicSystemDetails.toc.introduction"),
+          },
+          ...sectionIds.map((sectionId) => ({
+            id: sectionId,
+            label: t(`${profileKey}.${sectionId}.heading`),
+          })),
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>

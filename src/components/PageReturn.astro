@@ -1,6 +1,6 @@
 ---
-import { getLocalizedPath, getTranslation } from '../data/i18n';
-import type { Locale } from '../data/locales';
+import { getLocalizedPath, getTranslation } from "../data/i18n";
+import type { Locale } from "../data/locales";
 
 interface Props {
   locale: Locale;
@@ -12,5 +12,8 @@ const { locale, href, label } = Astro.props;
 ---
 
 <div class="page-return-wrapper">
-  <a class="page-return" href={getLocalizedPath(locale, href)}>{getTranslation(locale, 'common.returnTo', { label })} <span aria-hidden="true">↗</span></a>
+  <a class="page-return" href={getLocalizedPath(locale, href)}
+    >{getTranslation(locale, "common.returnTo", { label })}
+    <span aria-hidden="true">↗</span></a
+  >
 </div>

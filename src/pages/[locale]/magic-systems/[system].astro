@@ -1,0 +1,21 @@
+---
+import MagicSystemDetailPage from "../../../components/MagicSystemDetailPage.astro";
+import { getMagicSystems } from "../../../data/catalogue";
+import { locales } from "../../../data/i18n";
+import type { Locale } from "../../../data/locales";
+
+export function getStaticPaths() {
+  return locales
+    .filter((locale) => locale !== "en")
+    .flatMap((locale) =>
+      getMagicSystems(locale).map((system) => ({
+        params: { locale, system: system.id },
+      })),
+    );
+}
+
+const locale = Astro.params.locale as Exclude<Locale, "en">;
+const systemId = Astro.params.system as string;
+---
+
+<MagicSystemDetailPage locale={locale} systemId={systemId} />

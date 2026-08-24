@@ -1,9 +1,11 @@
 ---
-import PlanetDetailPage from '../../components/PlanetDetailPage.astro';
-import { getSections } from '../../data/catalogue';
+import PlanetDetailPage from "../../components/PlanetDetailPage.astro";
+import { getSections } from "../../data/catalogue";
 
 export function getStaticPaths() {
-  return getSections('planets', 'en').map((planet) => ({ params: { planet: planet.id } }));
+  return getSections("planets", "en").map((planet) => ({
+    params: { planet: planet.id },
+  }));
 }
 
 const planetId = Astro.params.planet as string;

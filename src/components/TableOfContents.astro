@@ -17,34 +17,42 @@ const { title, items } = Astro.props;
   <p class="table-of-contents__title">{title}</p>
   <nav>
     <ol class="table-of-contents__list">
-      {items.map((item) => (
-        <li class:list={{ 'table-of-contents__item--nested': item.level === 1 }}>
-          <a class="table-of-contents__link" href={`#${item.id}`} data-section-id={item.id}>
-            {item.label}
-          </a>
-        </li>
-      ))}
+      {
+        items.map((item) => (
+          <li
+            class:list={{ "table-of-contents__item--nested": item.level === 1 }}
+          >
+            <a
+              class="table-of-contents__link"
+              href={`#${item.id}`}
+              data-section-id={item.id}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ol>
   </nav>
 </aside>
 
 <script>
   const tableOfContentsLinks = Array.from(
-    document.querySelectorAll<HTMLAnchorElement>('[data-section-id]'),
+    document.querySelectorAll<HTMLAnchorElement>("[data-section-id]"),
   );
   const tableOfContentsSections = tableOfContentsLinks
-    .map((link) => document.getElementById(link.dataset.sectionId ?? ''))
+    .map((link) => document.getElementById(link.dataset.sectionId ?? ""))
     .filter((section): section is HTMLElement => section !== null);
 
   const setActiveSection = (sectionId: string) => {
     tableOfContentsLinks.forEach((link) => {
       const isActive = link.dataset.sectionId === sectionId;
-      link.classList.toggle('table-of-contents__link--active', isActive);
+      link.classList.toggle("table-of-contents__link--active", isActive);
 
       if (isActive) {
-        link.setAttribute('aria-current', 'location');
+        link.setAttribute("aria-current", "location");
       } else {
-        link.removeAttribute('aria-current');
+        link.removeAttribute("aria-current");
       }
     });
   };
@@ -56,15 +64,21 @@ const { title, items } = Astro.props;
       (entries) => {
         const visibleEntry = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((firstEntry, secondEntry) => firstEntry.boundingClientRect.top - secondEntry.boundingClientRect.top)[0];
+          .sort(
+            (firstEntry, secondEntry) =>
+              firstEntry.boundingClientRect.top -
+              secondEntry.boundingClientRect.top,
+          )[0];
 
         if (visibleEntry) {
           setActiveSection((visibleEntry.target as HTMLElement).id);
         }
       },
-      { rootMargin: '-10% 0px -70% 0px' },
+      { rootMargin: "-10% 0px -70% 0px" },
     );
 
-    tableOfContentsSections.forEach((section) => sectionObserver.observe(section));
+    tableOfContentsSections.forEach((section) =>
+      sectionObserver.observe(section),
+    );
   }
 </script>

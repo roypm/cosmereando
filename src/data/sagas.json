@@ -1,6 +1,9 @@
 [
   { "id": "mistborn", "slug": "mistborn", "labelKey": "sagas.mistborn" },
-  { "id": "the-stormlight-archive", "slug": "the-stormlight-archive", "labelKey": "sagas.theStormlightArchive" },
-  { "id": "white-sand", "slug": "white-sand", "labelKey": "sagas.whiteSand" },
-  { "id": "arcanum-unbounded", "slug": "arcanum-unbounded", "labelKey": "sagas.arcanumUnbounded" }
+  {
+    "id": "the-stormlight-archive",
+    "slug": "the-stormlight-archive",
+    "labelKey": "sagas.theStormlightArchive"
+  },
+  { "id": "white-sand", "slug": "white-sand", "labelKey": "sagas.whiteSand" }
 ]

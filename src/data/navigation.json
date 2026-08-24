@@ -18,6 +18,12 @@
     "source": "sagas"
   },
   {
+    "id": "independents",
+    "href": "/independents",
+    "labelKey": "navigation.independents.title",
+    "source": "independents"
+  },
+  {
     "id": "planets",
     "href": "/planets",
     "labelKey": "navigation.planets.title",

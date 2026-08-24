@@ -445,25 +445,6 @@
     font-size: 0.88rem;
   }
 
-  .arcanum-story__details {
-    margin-top: var(--space-2);
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--space-2);
-  }
-
-  .arcanum-story__details summary {
-    cursor: pointer;
-    color: var(--color-accent-dark);
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
-
-  .arcanum-story__details p {
-    margin: 0.65rem 0 0;
-    color: var(--color-muted);
-    font-size: 0.82rem;
-  }
-
   .arcanum-page__essays p:last-child {
     max-width: 48rem;
     color: var(--color-muted);
@@ -623,64 +604,6 @@
     text-transform: uppercase;
   }
 
-  .supplementary-work {
-    max-width: 42rem;
-    margin-top: var(--space-2);
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
-  }
-
-  .supplementary-work summary {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    padding: 0.55rem 0.7rem;
-    color: var(--color-accent-dark);
-    font-size: 0.78rem;
-    font-weight: 600;
-    list-style: none;
-  }
-
-  .supplementary-work summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .supplementary-work summary:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: -2px;
-  }
-
-  .supplementary-work__icon {
-    display: grid;
-    width: 1.15rem;
-    height: 1.15rem;
-    place-items: center;
-    border: 1px solid currentcolor;
-    border-radius: 50%;
-    font-size: 0.9rem;
-    line-height: 1;
-    transition: transform var(--transition-standard);
-  }
-
-  .supplementary-work[open] .supplementary-work__icon {
-    transform: rotate(45deg);
-  }
-
-  .supplementary-work__content {
-    border-top: 1px solid var(--color-border);
-    padding: 0.7rem;
-  }
-
-  .supplementary-work__content p {
-    margin: 0.45rem 0 0;
-    font-size: 0.82rem;
-  }
-
-  .supplementary-work__content p:first-child {
-    margin-top: 0;
-  }
-
   .mistborn-magic-grid {
     display: grid;
     gap: var(--space-2);
@@ -757,6 +680,207 @@
 
   .arcanum-page__essays-visuals .editorial-image--square {
     aspect-ratio: 1;
+  }
+
+  /* ========================================
+   Independents page
+   ======================================== */
+
+  .independents-page__header {
+    display: grid;
+    align-items: end;
+    gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr) minmax(9rem, 13rem);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
+  }
+
+  .independents-page__header h1 {
+    margin-top: var(--space-1);
+  }
+
+  .independents-page__header p:last-child {
+    max-width: 44rem;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  .independents-page > .editorial-image {
+    width: min(100%, 48rem);
+    margin: var(--space-4) 0 0;
+  }
+
+  .independents-page__count {
+    display: grid;
+    gap: 0.2rem;
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--space-2);
+    color: var(--color-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .independents-page__count strong {
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+  }
+
+  .independents-page__works,
+  .independents-page__connections {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    scroll-margin-top: calc(var(--top-navbar-height) + var(--space-2));
+  }
+
+  .independents-page__section-intro > p:last-child,
+  .independents-page__connections > p {
+    max-width: 46rem;
+    margin-bottom: 0;
+    color: var(--color-muted);
+  }
+
+  .independents-page__section-intro {
+    display: grid;
+    gap: 0 var(--space-4);
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.8fr);
+    margin-bottom: var(--space-5);
+  }
+
+  .independents-page__section-intro .section-kicker,
+  .independents-page__section-intro h2 {
+    grid-column: 1;
+  }
+
+  .independents-page__section-intro > p:last-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: end;
+    margin-top: 0;
+  }
+
+  .independent-work-grid,
+  .independents-connection-grid {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .independent-work-section {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+    scroll-margin-top: calc(var(--top-navbar-height) + var(--space-2));
+  }
+
+  .independent-work-section + .independent-work-section {
+    margin-top: var(--space-5);
+  }
+
+  .independent-work-section__intro {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 3rem minmax(0, 1fr);
+    margin-bottom: var(--space-3);
+  }
+
+  .independent-work-section__number {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding-top: 0.35rem;
+  }
+
+  .independent-work-section__intro h3 {
+    margin: 0;
+    font-size: clamp(1.55rem, 3vw, 2.5rem);
+  }
+
+  .independent-work-section__intro p {
+    max-width: 52rem;
+    margin: 0.35rem 0 0;
+    color: var(--color-muted);
+  }
+
+  .independent-work {
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.35fr) minmax(0, 1fr);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-3);
+  }
+
+  .independent-work__cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+
+  .independent-work__body {
+    position: relative;
+    padding: 0 var(--space-3);
+  }
+
+  .independent-work__number,
+  .independents-connection-card > span {
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  .independent-work h4 {
+    margin: var(--space-1) 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.05;
+  }
+
+  .independent-work__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem var(--space-2);
+    margin-top: var(--space-2);
+    color: var(--color-accent-dark);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .independent-work__body > p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+  }
+
+  .independents-page__connections > p {
+    margin-top: 0;
+  }
+
+  .independents-connection-grid {
+    margin-top: var(--space-4);
+  }
+
+  .independents-connection-card {
+    border: 1px solid var(--color-border);
+    padding: var(--space-3);
+  }
+
+  .independents-connection-card h3 {
+    margin: var(--space-2) 0 0;
+  }
+
+  .independents-connection-card p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-muted);
+    font-size: 0.88rem;
   }
 
   /* ========================================
@@ -1225,7 +1349,8 @@
   }
 
   .planet-detail-page {
-    max-width: 64rem;
+    width: 100%;
+    max-width: none;
   }
 
   .planet-detail-page__header {
@@ -1238,7 +1363,7 @@
   }
 
   .planet-detail-page__header p:last-child {
-    max-width: 42rem;
+    max-width: 56rem;
     margin: 0;
     color: var(--color-muted);
     font-size: 1.05rem;
@@ -1250,7 +1375,7 @@
   }
 
   .planet-detail-page > .editorial-image {
-    width: 100%;
+    width: min(100%, 52rem);
     margin: var(--space-4) 0 0;
   }
 
@@ -1258,7 +1383,7 @@
     display: grid;
     gap: var(--space-3);
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 42rem;
+    max-width: 56rem;
     margin: var(--space-3) 0 0;
   }
 
@@ -1310,9 +1435,139 @@
   }
 
   .planet-detail-page__section p:last-child {
-    max-width: 38rem;
+    max-width: 56rem;
     margin-bottom: 0;
     color: var(--color-muted);
+  }
+
+  .planet-detail-page__section--visual > div,
+  .planet-detail-page__section--split > div {
+    min-width: 0;
+  }
+
+  .planet-detail-page__section--visual .image-placeholder--feature {
+    width: min(100%, 46rem);
+    margin: var(--space-4) 0 0;
+  }
+
+  .planet-detail-page__section--visual > div > .editorial-image {
+    width: min(100%, 34rem);
+    margin: var(--space-4) 0 0;
+  }
+
+  .planet-detail-page__section--split {
+    grid-template-columns: 3rem minmax(0, 1.3fr) minmax(14rem, 0.7fr);
+    align-items: start;
+  }
+
+  .planet-detail-page__section--split .image-placeholder {
+    width: min(100%, 18rem);
+    margin: 0;
+  }
+
+  .planet-detail-page__section--split > .editorial-image {
+    width: min(100%, 18rem);
+    margin: 0;
+  }
+
+  .planet-detail-page__copy {
+    min-width: 0;
+  }
+
+  .planet-detail-page__placeholder-grid {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-4);
+  }
+
+  .planet-detail-page__placeholder-grid .image-placeholder {
+    width: 100%;
+    margin: 0;
+  }
+
+  .planet-detail-page--terrain > .editorial-image,
+  .planet-detail-page--terrain
+    .planet-detail-page__section--visual
+    .image-placeholder--feature {
+    max-width: 42rem;
+  }
+
+  .planet-detail-page--climate > .editorial-image {
+    max-width: 46rem;
+  }
+
+  .planet-detail-page--climate .planet-detail-page__placeholder-grid,
+  .planet-detail-page--cycle .planet-detail-page__placeholder-grid,
+  .planet-detail-page--recovery .planet-detail-page__placeholder-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+  }
+
+  .planet-detail-page--biosphere
+    .planet-detail-page__section--visual
+    .image-placeholder--feature {
+    max-width: 34rem;
+  }
+
+  .planet-detail-page--map > .editorial-image,
+  .planet-detail-page--map
+    .planet-detail-page__section--visual
+    .image-placeholder--feature {
+    max-width: 50rem;
+  }
+
+  .planet-detail-page--contrast .planet-detail-page__section--split,
+  .planet-detail-page--forest .planet-detail-page__section--split {
+    grid-template-columns: 3rem minmax(14rem, 0.7fr) minmax(0, 1.3fr);
+  }
+
+  .planet-detail-page--contrast
+    .planet-detail-page__section--split
+    .planet-detail-page__copy,
+  .planet-detail-page--forest
+    .planet-detail-page__section--split
+    .planet-detail-page__copy {
+    grid-column: 3;
+  }
+
+  .planet-detail-page--contrast
+    .planet-detail-page__section--split
+    .image-placeholder,
+  .planet-detail-page--forest
+    .planet-detail-page__section--split
+    .image-placeholder {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .planet-detail-page--contrast
+    .planet-detail-page__section--split
+    > .editorial-image,
+  .planet-detail-page--forest
+    .planet-detail-page__section--split
+    > .editorial-image {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .planet-detail-page--oceans .planet-detail-page__placeholder-grid {
+    grid-template-columns: 1.35fr 0.85fr;
+    max-width: 42rem;
+  }
+
+  .planet-detail-page--islands
+    .planet-detail-page__section--visual
+    .image-placeholder--feature {
+    max-width: 38rem;
+    margin-left: auto;
+  }
+
+  .planet-detail-page--ruins > .editorial-image {
+    max-width: 40rem;
+    margin-left: auto;
   }
 
   @media (width <= 52rem) {
@@ -1400,6 +1655,145 @@
      Magic systems index
      ======================================== */
 
+  .magic-system-detail-page {
+    width: 100%;
+    max-width: none;
+  }
+
+  .magic-system-detail-page__header {
+    max-width: 58rem;
+    border-bottom: 1px solid var(--color-border);
+    padding: clamp(2rem, 5vw, 4.5rem) 0 var(--space-5);
+  }
+
+  .magic-system-detail-page__header > p:last-of-type {
+    max-width: 48rem;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  .magic-system-detail-page__facts {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: var(--space-4) 0 0;
+  }
+
+  .magic-system-detail-page__facts div {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-1);
+  }
+
+  .magic-system-detail-page__facts dt {
+    color: var(--color-accent-dark);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .magic-system-detail-page__facts dd {
+    margin: 0.35rem 0 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+
+  .magic-system-detail-page__visual {
+    width: min(100%, 44rem);
+    margin: var(--space-4) 0 var(--space-2);
+  }
+
+  .magic-system-detail-page__visual .editorial-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  .magic-system-detail-page--surgebinding .magic-system-detail-page__visual,
+  .magic-system-detail-page--sand-mastery .magic-system-detail-page__visual {
+    width: min(100%, 48rem);
+    margin-left: auto;
+  }
+
+  .magic-system-detail-page--aondor .magic-system-detail-page__visual,
+  .magic-system-detail-page--forgery .magic-system-detail-page__visual {
+    width: min(100%, 19rem);
+    margin-left: clamp(0rem, 12vw, 10rem);
+  }
+
+  .magic-system-detail-page--awakening .magic-system-detail-page__visual {
+    width: min(100%, 40rem);
+  }
+
+  .magic-system-detail-page__example {
+    max-width: 44rem;
+    border-left: 3px solid var(--color-accent);
+    margin: var(--space-4) 0 var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  }
+
+  .magic-system-detail-page__example p:last-child {
+    max-width: 40rem;
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  .magic-system-detail-page__sections {
+    max-width: 62rem;
+  }
+
+  .magic-system-detail-page__section {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 3rem minmax(0, 1fr);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-5) 0;
+  }
+
+  .magic-system-detail-page__number {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding-top: 0.5rem;
+  }
+
+  .magic-system-detail-page__section h2 {
+    max-width: 26ch;
+    margin-top: 0;
+  }
+
+  .magic-system-detail-page__section p:last-child {
+    max-width: 54rem;
+    margin-bottom: 0;
+    color: var(--color-muted);
+  }
+
+  .magic-system-detail-page--metallic-arts
+    .magic-system-detail-page__section:nth-child(even),
+  .magic-system-detail-page--aondor
+    .magic-system-detail-page__section:nth-child(even),
+  .magic-system-detail-page--forgery
+    .magic-system-detail-page__section:nth-child(even) {
+    padding-left: clamp(0rem, 8vw, 8rem);
+  }
+
+  .magic-system-detail-page--surgebinding
+    .magic-system-detail-page__section:nth-child(2),
+  .magic-system-detail-page--awakening
+    .magic-system-detail-page__section:nth-child(3) {
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    padding-right: clamp(0rem, 8vw, 8rem);
+    padding-left: clamp(0rem, 8vw, 8rem);
+  }
+
+  .magic-system-detail-page--sand-mastery
+    .magic-system-detail-page__section:nth-child(3) {
+    max-width: 48rem;
+    margin-left: auto;
+  }
+
   .magic-systems-page__masthead {
     display: grid;
     align-items: end;
@@ -1471,15 +1865,22 @@
     border: 1px solid var(--color-border);
     background: var(--color-surface);
     padding: var(--space-3);
+    color: inherit;
+    text-decoration: none;
     transition:
       border-color var(--transition-standard),
       transform var(--transition-standard);
   }
 
   .magic-system-card:hover,
-  .magic-system-card:focus-within {
+  .magic-system-card:focus-visible {
     border-color: var(--color-accent);
     transform: translateY(-0.2rem);
+  }
+
+  .magic-system-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0.2rem;
   }
 
   .magic-system-card__meta {
@@ -1508,7 +1909,7 @@
     color: var(--color-muted);
   }
 
-  .magic-system-card a {
+  .magic-system-card__link {
     width: fit-content;
     margin-top: auto;
     color: var(--color-accent-dark);
@@ -1517,10 +1918,123 @@
     text-decoration: none;
   }
 
-  .magic-system-card a:hover,
-  .magic-system-card a:focus-visible {
+  .magic-system-card:hover .magic-system-card__link,
+  .magic-system-card:focus-visible .magic-system-card__link {
     text-decoration: underline;
     text-underline-offset: 0.2em;
+  }
+
+  /* ========================================
+   Credits page
+   ======================================== */
+
+  .credits-page {
+    max-width: 68rem;
+  }
+
+  .credits-page__header {
+    max-width: 56rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-5);
+  }
+
+  .credits-page__header h1 {
+    margin-top: var(--space-1);
+  }
+
+  .credits-page__header p:last-child {
+    max-width: 50rem;
+    margin-bottom: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  .credits-page__notice {
+    max-width: 56rem;
+    border-left: 3px solid var(--color-accent);
+    margin-top: var(--space-5);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-accent-soft);
+  }
+
+  .credits-page__notice h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
+
+  .credits-page__notice p {
+    max-width: 48rem;
+    margin-bottom: 0;
+    color: var(--color-muted);
+  }
+
+  .credits-page__groups {
+    max-width: 62rem;
+    margin-top: var(--space-6);
+  }
+
+  .credits-page__groups > h2 {
+    margin-top: var(--space-1);
+  }
+
+  .credits-page__group {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+  }
+
+  .credits-page__group h3 {
+    margin-top: 0;
+  }
+
+  .credits-page__group > p {
+    max-width: 50rem;
+    color: var(--color-muted);
+  }
+
+  .credits-page__list {
+    display: grid;
+    gap: var(--space-2);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .credits-page__list li {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
+  }
+
+  .credits-page__list code {
+    color: var(--color-accent-dark);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+
+  .credits-page__list dl {
+    display: grid;
+    gap: 0.25rem var(--space-3);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0.45rem 0 0;
+  }
+
+  .credits-page__list dl div {
+    min-width: 0;
+  }
+
+  .credits-page__list dt {
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .credits-page__list dd {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
   }
 
   @keyframes not-found-drift {

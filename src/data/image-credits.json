@@ -1,0 +1,581 @@
+[
+  {
+    "id": "ai-generated",
+    "titleKey": "creditsPage.groups.ai.title",
+    "descriptionKey": "creditsPage.groups.ai.description",
+    "items": [
+      {
+        "file": "aondor_symbolic_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "ashyn_scientific_ruins.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "awakening_material_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "canticle_scientific_thermal.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "canticle_thermal_boundary.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "first_of_the_sun_scientific_islands.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "forgery_seal_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "komashi_scientific_steam.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "lumar_scientific_ocean.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "metallic_arts_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "nalthis_scientific_biosphere.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "roshar_geology_study.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "roshar_scientific_landscape.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "sand_mastery_material_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "scadrial_scientific_landscape.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "sel_scientific_regions.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "surgebinding_forces_study.png",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "taldain_scientific_desert.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      },
+      {
+        "file": "threnody_scientific_forest.webp",
+        "author": "Cosmereando",
+        "source": "Generated with AI",
+        "license": "Original project asset"
+      }
+    ]
+  },
+  {
+    "id": "legacy-assets",
+    "titleKey": "creditsPage.groups.legacy.title",
+    "descriptionKey": "creditsPage.groups.legacy.description",
+    "items": [
+      {
+        "file": "ambush_by_ernanda_souza.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "ashyn_burning_world_banner.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "brandon_sanderson_portrait.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_book_cover_mashup.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_character_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_constellation_map.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_dragon_character_illustration.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_dual_character_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_header_background.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_realms_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_shard_symbols.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_symbol.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmere_worlds_map.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "cosmic_nebula_texture.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "death_of_the_dream.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "drominad_system.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "elantris_cover_process.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "elantris_feature.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "emerald_sea_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "final_empire_opening_scene.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "first_of_the_sun_islands_banner.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "komashi_city.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "komashi_hion_city_banner.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "lumar_red_landscape.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "lumar_spore_sea_banner.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "mistborn_action_illustration.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "mistborn_campaign_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "mistborn_character_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "nalthis_feature.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "recognition_by_aliya_chen.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "sazed_official_artwork.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "scadrial_red_fields.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "stormlight_arc_collage.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "stormlight_archive_concept_art.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "stormlight_archive_landscape.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "stormlight_key_art.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "sunlit_man_endpaper.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "taldain_city.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "taldain_sandscape.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "thaylen_field_heroes.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "threnody_forest_banner.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      },
+      {
+        "file": "warbreaker_endpaper.webp",
+        "author": "Unrecorded",
+        "source": "Legacy repository asset",
+        "license": "Unverified — review required"
+      }
+    ]
+  },
+  {
+    "id": "book-covers",
+    "titleKey": "creditsPage.groups.covers.title",
+    "descriptionKey": "creditsPage.groups.covers.description",
+    "items": [
+      {
+        "file": "arcanum_unbounded.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "dawnshard.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "edgedancer.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "elantris.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "elsecaller.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "isles_of_emberdark.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "king_lopen.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "mistborn.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "oathbringer.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "rhythm_of_war.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "secret_history.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "shadows_for_silence_in_the_forests_of_hell.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "shadows_of_self.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "sixth_of_the_dusk.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_alloy_of_law.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_bands_of_mourning.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_eleven_metal.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_emperors_soul.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_hero_of_ages.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_lost_metal.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_sunlit_man.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_way_of_kings.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "the_well_of_ascension.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "tress_of_the_emerald_sea.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "warbreaker.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "white_sand_graphic_novel.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "white_sand_volume_1.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "white_sand_volume_2.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "white_sand_volume_3.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "wind_and_truth.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "words_of_radiance.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      },
+      {
+        "file": "yumi_and_the_nightmare_painter.webp",
+        "author": "Unrecorded",
+        "source": "Book cover asset",
+        "license": "Third-party rights retained — review required"
+      }
+    ]
+  }
+]

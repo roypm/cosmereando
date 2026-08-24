@@ -204,3 +204,11 @@ Incluirá:
 
 - El repositorio está prácticamente vacío: solo contiene README.md y LICENSE.
 - La siguiente fase será crear el prototipo y la estructura inicial de Astro.
+
+## Decisiones vigentes de implementación
+
+- **Independientes** es una sección propia. Arcanum Ilimitado se muestra allí como una obra recopilatoria, mientras sus relatos internos no se suman al recuento general de libros.
+- **Sistemas de magia** tiene índice y fichas individuales. Sus tarjetas completas son enlaces y sus submenús apuntan a esas fichas.
+- Las fichas de **Planetas** priorizan una lectura científica y ambiental: geología, clima, biosfera, hábitats y preguntas abiertas, sin convertirlas en resúmenes de historias.
+- Las configuraciones editoriales de planetas y rutas se mantienen en datos tipados para que añadir contenido no requiera duplicar lógica de presentación.
+- Las imágenes se registran en `src/data/image-credits.json`. Los recursos con licencia o procedencia pendiente se consideran no verificados hasta completar su revisión.

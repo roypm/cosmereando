@@ -1,6 +1,6 @@
 ---
-import { getLocalizedPath, getTranslation } from '../data/i18n';
-import type { Locale } from '../data/locales';
+import { getLocalizedPath, getTranslation } from "../data/i18n";
+import type { Locale } from "../data/locales";
 
 interface TrailItem {
   label: string;
@@ -16,12 +16,18 @@ const { locale, items } = Astro.props;
 const t = (key: string) => getTranslation(locale, key);
 ---
 
-<nav class="page-trail" aria-label={t('common.breadcrumbs')}>
+<nav class="page-trail" aria-label={t("common.breadcrumbs")}>
   <ol>
-    {items.map((item, index) => (
-      <li>
-        {item.href && index < items.length - 1 ? <a href={getLocalizedPath(locale, item.href)}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
-      </li>
-    ))}
+    {
+      items.map((item, index) => (
+        <li>
+          {item.href && index < items.length - 1 ? (
+            <a href={getLocalizedPath(locale, item.href)}>{item.label}</a>
+          ) : (
+            <span aria-current="page">{item.label}</span>
+          )}
+        </li>
+      ))
+    }
   </ol>
 </nav>

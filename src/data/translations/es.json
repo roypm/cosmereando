@@ -10,7 +10,8 @@
     "toggleSidebar": "Mostrar u ocultar la navegación principal",
     "closeSidebar": "Cerrar la navegación principal",
     "projectLinks": "Enlaces del proyecto",
-    "lastUpdated": "Última actualización: 20 de agosto de 2026",
+    "projectRepository": "Repositorio del código fuente de Cosmereando",
+    "lastUpdated": "Última actualización: 24 de agosto de 2026",
     "version": "Versión",
     "createdBy": "Creado por",
     "credits": "Créditos",
@@ -23,6 +24,7 @@
     "placeholderSection": "Esta sección se ampliará con el contenido del catálogo de Cosmereando."
   },
   "notFound": {
+    "eyebrow": "404 · Perdida en el Cosmere",
     "title": "Esta página se ha perdido en el Reino Cognitivo.",
     "description": "El camino que has seguido parece haberse escapado del mapa. Hasta una Esquirla puede perderse.",
     "returnHome": "Volver al Cosmere",
@@ -202,8 +204,7 @@
       "cards": {
         "mistborn": "Un ciclo de revoluciones, metales y eras cambiantes en Scadrial.",
         "the-stormlight-archive": "Una historia épica de Roshar, los Radiantes y el regreso de las tormentas.",
-        "white-sand": "Una saga gráfica marcada por la luz implacable y las culturas de Taldain.",
-        "arcanum-unbounded": "Una colección que reúne historias del Cosmere y les da un marco más amplio."
+        "white-sand": "Una saga gráfica marcada por la luz implacable y las culturas de Taldain."
       }
     },
     "tableOfContents": "En esta página",
@@ -339,6 +340,7 @@
     "routes": { "title": "Rutas" },
     "books": { "title": "Libros" },
     "sagas": { "title": "Sagas" },
+    "independents": { "title": "Independientes" },
     "planets": { "title": "Planetas" },
     "magicSystems": { "title": "Sistemas de magia" }
   },
@@ -362,18 +364,186 @@
       "kicker": "El catálogo",
       "heading": "Sistemas y expresiones de poder.",
       "description": "Empieza por un mundo y sigue las conexiones entre sus historias, personajes y formas de Investidura.",
-      "worldLink": "Explorar {world}"
+      "worldLink": "Explorar {world}",
+      "detailLink": "Abrir ficha técnica"
     },
     "items": {
-      "metallic-arts": { "description": "La Alomancia, la Feruquimia y la Hemalurgia forman las tres Artes Metálicas interrelacionadas de Scadrial." },
-      "surgebinding": { "description": "Un sistema roshariano formado por las Potencias, los vínculos y los spren que hacen posibles esos vínculos." },
-      "aondor": { "description": "La AonDor convierte símbolos, lugar e intención en una forma precisa de poder vinculada a Sel." },
-      "awakening": { "description": "Un arte que da vida y órdenes mediante Alientos, color y palabras pronunciadas con precisión." },
-      "sand-mastery": { "description": "La maestría de la arena de Taldain canaliza la Investidura a través de las arenas vivas del Lado del Día." },
-      "forgery": { "description": "La Falsificación utiliza sellos de alma para imponer una historia posible a un objeto o una persona." }
+      "metallic-arts": {
+        "description": "La Alomancia, la Feruquimia y la Hemalurgia forman las tres Artes Metálicas interrelacionadas de Scadrial."
+      },
+      "surgebinding": {
+        "description": "Un sistema roshariano formado por las Potencias, los vínculos y los spren que hacen posibles esos vínculos."
+      },
+      "aondor": {
+        "description": "La AonDor convierte símbolos, lugar e intención en una forma precisa de poder vinculada a Sel."
+      },
+      "awakening": {
+        "description": "Un arte que da vida y órdenes mediante Alientos, color y palabras pronunciadas con precisión."
+      },
+      "sand-mastery": {
+        "description": "La maestría de la arena de Taldain canaliza la Investidura a través de las arenas vivas del Lado del Día."
+      },
+      "forgery": {
+        "description": "La Falsificación utiliza sellos de alma para imponer una historia posible a un objeto o una persona."
+      }
     },
     "tableOfContents": "En esta página",
     "toc": { "introduction": "Introducción", "directory": "El catálogo" }
+  },
+  "magicSystemDetails": {
+    "eyebrow": "Ficha técnica del sistema",
+    "worldLabel": "Mundo de origen",
+    "typeLabel": "Comportamiento energético",
+    "tableOfContents": "En esta página",
+    "visualLabel": "Estudio visual del sistema {system}",
+    "exampleLabel": "Ejemplo de uso",
+    "toc": { "introduction": "Introducción" },
+    "labels": {
+      "overview": "Descripción del sistema",
+      "classification": "Clasificación",
+      "tradeoffs": "Intercambio y coste",
+      "failure": "Fallos conocidos",
+      "access": "Acceso al sistema",
+      "surges": "Fuerzas manipulables",
+      "bond": "Estabilidad del vínculo",
+      "notation": "Lenguaje formal",
+      "geography": "Dependencia geográfica",
+      "limits": "Límites operativos",
+      "resources": "Recursos de trabajo",
+      "commands": "Órdenes y control",
+      "thresholds": "Umbrales de capacidad",
+      "material": "Material reactivo",
+      "capacity": "Capacidad y alcance",
+      "risks": "Riesgos fisiológicos",
+      "process": "Proceso de alteración",
+      "persistence": "Persistencia del efecto"
+    },
+    "metallic-arts": {
+      "description": "Un conjunto de tres métodos que usan metales como focos para empujar, almacenar o transferir atributos. Su comportamiento puede analizarse según el origen de la energía y el balance entre entrada, conservación y pérdida.",
+      "type": "Tres regímenes: entrada, conservación y pérdida",
+      "example": "Para mover una pieza pesada, un usuario puede activar un metal que genere una fuerza de empuje; para repetir el esfuerzo más tarde, otro método permite guardar temporalmente la fuerza física en una reserva metálica.",
+      "overview": {
+        "heading": "El metal funciona como interfaz, no como combustible",
+        "body": "Las Artes Metálicas no dependen de consumir el metal para obtener su propiedad. Cada metal organiza una interacción concreta: puede activar un efecto, guardar una magnitud para recuperarla después o trasladar una capacidad entre organismos."
+      },
+      "classification": {
+        "heading": "Tres arquitecturas con reglas distintas",
+        "body": "La Alomancia introduce energía en el sistema mediante el metal como catalizador; la Feruquimia conserva una propiedad en un metal y la devuelve más tarde; la Hemalurgia extrae una propiedad de un individuo y la fija en otro soporte, con pérdida durante la transferencia."
+      },
+      "tradeoffs": {
+        "heading": "Potencia, reserva y precisión se intercambian",
+        "body": "La capacidad depende de las reservas disponibles, la pureza y aleación correctas, el momento de activación y la tolerancia del usuario. Guardar una propiedad exige renunciar temporalmente a ella, mientras que transferirla reduce el resultado total."
+      },
+      "failure": {
+        "heading": "Los errores suelen ser de identificación o dosificación",
+        "body": "Un metal incorrecto, una aleación contaminada o una reserva insuficiente puede producir un efecto nulo o incompleto. El uso continuado también puede alterar la percepción del usuario y generar dependencia de una única propiedad."
+      }
+    },
+    "surgebinding": {
+      "description": "Un sistema capaz de modificar fuerzas físicas locales mediante energía ambiental y un vínculo estable con una entidad cognitiva. Su interés científico está en la relación entre acceso, intención, geometría y conservación de energía.",
+      "type": "Manipulación local de fuerzas naturales",
+      "example": "Para cambiar la trayectoria de un objeto, el usuario altera de forma temporal la relación gravitatoria que lo une al suelo y la sustituye por una dirección elegida.",
+      "overview": {
+        "heading": "Diez fuerzas, combinadas en pares funcionales",
+        "body": "El sistema describe diez Potencias que afectan fenómenos como gravedad, fricción, cohesión, crecimiento, luz o transformación. El usuario no obtiene un repertorio ilimitado: su acceso se concentra en una combinación concreta de fuerzas."
+      },
+      "access": {
+        "heading": "El acceso depende de una relación adquirida",
+        "body": "La capacidad no aparece como una destreza universal. Requiere establecer un vínculo con un spren o utilizar un foco alternativo, y la combinación resultante determina qué fuerzas pueden manipularse y con qué grado de estabilidad."
+      },
+      "surges": {
+        "heading": "La energía se aplica sobre objetos y cuerpos",
+        "body": "La energía ambiental puede infundirse en materia o seres vivos para alterar temporalmente su comportamiento. La precisión depende de la fuerza aplicada, la cantidad disponible, la distancia y la comprensión del fenómeno que se intenta modificar."
+      },
+      "bond": {
+        "heading": "La estabilidad es también un problema de coherencia",
+        "body": "El vínculo se fortalece cuando la conducta del usuario mantiene el patrón que lo originó. Las contradicciones reducen la estabilidad, interrumpen el acceso y pueden dañar la relación que sostiene el sistema."
+      }
+    },
+    "aondor": {
+      "description": "Un sistema de programación simbólica que convierte formas, posición e intención en efectos físicos. Su rendimiento depende de la exactitud del patrón y de la conexión entre el usuario y el territorio de referencia.",
+      "type": "Conversión simbólica de intención en efecto",
+      "example": "Una figura base puede describir una fuente de calor; al añadir líneas de alcance y duración, la misma operación queda limitada a una zona y a un tiempo concretos.",
+      "overview": {
+        "heading": "Una forma gráfica puede describir un proceso",
+        "body": "AonDor funciona como un lenguaje formal: una figura base define una operación y sus líneas adicionales especifican destino, duración, intensidad o condiciones. La capacidad no está en dibujar cualquier símbolo, sino en construir una instrucción completa."
+      },
+      "notation": {
+        "heading": "Los modificadores funcionan como parámetros",
+        "body": "Los enlaces y líneas secundarias permiten encadenar operaciones, cambiar su escala o definir cuándo se activan. Las ecuaciones avanzadas combinan varios Aons y exigen precisión espacial, memoria y práctica prolongada."
+      },
+      "geography": {
+        "heading": "El mapa forma parte del cálculo",
+        "body": "Las formas de referencia reflejan el territorio asociado al sistema. Cuando la geografía cambia, el patrón debe actualizarse; al alejarse de la región de conexión, la eficacia disminuye progresivamente."
+      },
+      "limits": {
+        "heading": "La complejidad crece más rápido que la potencia",
+        "body": "Los efectos sencillos son más fiables que las construcciones con muchas condiciones. Un error mínimo puede cambiar el resultado, y las aplicaciones complejas requieren tanto conocimiento del objetivo como dominio del lenguaje."
+      }
+    },
+    "awakening": {
+      "description": "Un proceso de animación que combina una reserva transferible, una fuente de color y una orden correctamente formulada. El resultado depende de la claridad de la instrucción y de la cantidad de energía almacenada.",
+      "type": "Animación mediante energía, color y lenguaje",
+      "example": "Una orden como mantener una puerta cerrada puede transferirse a un objeto adecuado; si la orden no define bien su tarea, el objeto no sabrá cuándo detenerse o puede no reaccionar.",
+      "overview": {
+        "heading": "La materia recibe una pauta de comportamiento",
+        "body": "El sistema no crea vida biológica completa: introduce una orden en un objeto y le permite ejecutar una secuencia limitada. La complejidad del resultado depende de la reserva disponible, el material y la interpretación de la orden."
+      },
+      "resources": {
+        "heading": "Color y reserva energética son variables medibles",
+        "body": "La activación consume una reserva que puede transferirse entre personas. El color actúa como reactivo visible y se agota durante el proceso, mientras que la cantidad almacenada determina qué objetos y tareas son viables."
+      },
+      "commands": {
+        "heading": "La orden es una especificación, no una conversación",
+        "body": "Una orden debe ser breve, coherente y visualizada con precisión. Si la instrucción es ambigua o el usuario no puede representarla mentalmente, el objeto puede no reaccionar o ejecutar solo una versión incompleta."
+      },
+      "thresholds": {
+        "heading": "La capacidad aumenta por saltos de umbral",
+        "body": "Al acumular más reserva, algunas órdenes se vuelven instintivas y aparecen aplicaciones que antes eran imposibles. La relación no es lineal: ciertos cambios requieren superar cantidades concretas antes de manifestarse."
+      }
+    },
+    "sand-mastery": {
+      "description": "Un sistema de control remoto de arena blanca que transforma un material reactivo en bandas móviles. Su rendimiento está limitado por la humedad interna del usuario y por el estado de carga de la arena.",
+      "type": "Control material condicionado por hidratación",
+      "example": "Un usuario puede dividir la arena en varias cintas para levantar un objeto, pero cada cinta adicional aumenta la coordinación necesaria y acelera el consumo de agua.",
+      "overview": {
+        "heading": "La arena es a la vez herramienta y sensor",
+        "body": "El control organiza la arena en cintas que pueden sujetar, mover o elevar objetos. Durante el uso, el material cambia de color y pierde respuesta hasta que vuelve a exponerse a la radiación adecuada."
+      },
+      "material": {
+        "heading": "Un microorganismo convierte el grano en material reactivo",
+        "body": "La superficie de los granos contiene un organismo que responde a la energía y hace visible el estado de la arena. El contacto con agua desencadena la reacción, vuelve negra la arena y puede dejarla temporalmente inerte."
+      },
+      "capacity": {
+        "heading": "La capacidad se expresa en número de cintas",
+        "body": "La fuerza y la complejidad aumentan con la cantidad de cintas que pueden mantenerse coordinadas. El alcance depende de la concentración, la reserva de agua y la continuidad del material disponible."
+      },
+      "risks": {
+        "heading": "El límite más peligroso es fisiológico",
+        "body": "Cada uso extrae agua del cuerpo para activar el material. Sobrepasar la reserva provoca deshidratación, pérdida de control y riesgo vital; por eso la gestión del agua es parte central de la técnica."
+      }
+    },
+    "forgery": {
+      "description": "Un sistema de modificación contextual que aplica sellos para proponer una historia alternativa a un objeto o una persona. La duración depende de lo plausible y detallada que sea esa historia.",
+      "type": "Reescritura temporal mediante modelos simbólicos",
+      "example": "Un artesano que conoce el material y el historial de una vasija puede diseñar un sello que le atribuya temporalmente una resistencia propia de otra etapa de su fabricación.",
+      "overview": {
+        "heading": "El objetivo cambia porque cambia su historia",
+        "body": "La Falsificación no sustituye directamente las propiedades de un objeto. Construye un modelo de cómo habría sido si ciertas decisiones, accidentes o aprendizajes hubieran ocurrido de otra manera, y aplica ese modelo como una condición temporal."
+      },
+      "process": {
+        "heading": "Investigar es parte del mecanismo",
+        "body": "El sello debe describir una cadena de causas convincente: material, uso, contexto y cambios acumulados. Cuanto mejor se conoce el objetivo y más coherente es la secuencia propuesta, mayor es la probabilidad de que el efecto se mantenga."
+      },
+      "persistence": {
+        "heading": "La estabilidad depende de la plausibilidad",
+        "body": "Un sello puede durar mucho tiempo si la historia alternativa encaja con el objetivo. Cuando la explicación contiene saltos o contradicciones, el efecto se degrada y el objeto vuelve gradualmente a su estado original."
+      },
+      "limits": {
+        "heading": "La complejidad encuentra resistencia en la materia investida",
+        "body": "Los objetos con una carga energética propia son más difíciles de modificar. La distancia respecto a la región de conexión también reduce la eficacia, y los sellos universales son rápidos pero mucho menos duraderos."
+      }
+    }
   },
   "routes": {
     "community": "Rutas comunitarias",
@@ -440,29 +610,83 @@
     "intro": {
       "eyebrow": "Directorio de mundos",
       "heading": "Lugares que dan forma al Cosmere.",
-      "description": "Cada planeta tiene su propia historia, atmósfera y reglas. Estas páginas reúnen su naturaleza, sus pueblos, sus curiosidades y las historias relacionadas.",
+      "description": "Cada planeta se trata como un estudio de campo: terreno, atmósfera, clima, vida, hábitats y las preguntas que su entorno todavía plantea.",
       "imageLabel": "Mapa de los mundos del Cosmere"
     },
     "directory": {
       "kicker": "El directorio",
       "heading": "Elige un mundo para explorar.",
-      "description": "Empieza por un planeta y sigue las historias relacionadas con él. Cada ficha ofrece una lectura breve del mundo y deja espacio para ampliarla con mapas y conexiones.",
-      "cardDescription": "Una ficha de {title}, con su entorno, sus formas de vida y las historias relacionadas."
+      "description": "Elige un mundo para examinar sus condiciones físicas, sus sistemas vivos y sus presiones ambientales más inusuales.",
+      "cardDescription": "Un perfil de campo de {title}: terreno, clima, biosfera y preguntas abiertas."
     },
     "detail": {
       "eyebrow": "Ficha del mundo",
-      "description": "La página de {title} reúne su entorno, sus formas de vida, sus sociedades y las historias relacionadas en una guía con spoilers controlados.",
+      "description": "La página de {title} reúne su entorno físico, clima, biosfera, hábitats y preguntas de investigación todavía abiertas.",
       "imageLabel": "Guía visual de {title}",
       "imageDimensions": "16:9 · imagen editorial del planeta",
-      "systemLabel": "Sistema",
+      "systemLabel": "Sistema planetario",
+      "scaleLabel": "Escala física",
       "worldLabel": "Referencia visual",
-      "systems": { "scadrian": "Sistema scadriano", "rosharan": "Sistema rosharano", "nalthian": "Sistema nalthisiano", "selish": "Sistema selish", "taldain": "Sistema de Taldain", "unknown": "Sistema aún no identificado públicamente", "utol": "Sistema de UTol", "threnodite": "Sistema threnodita", "drominad": "Sistema de Drominad" },
-      "imageLabels": { "scadrial": "Campos de ceniza y horizonte volcánico de Scadrial", "roshar": "Un paisaje rosharano bajo cielos de tormenta", "nalthis": "Una región exuberante de Nalthis", "sel": "Elantris y los paisajes divididos de Sel", "taldain": "Una ciudad en el lado luminoso de Taldain", "lumar": "El Mar Esmeralda de Lumar", "canticle": "Un paisaje bajo el sol abrasador de Cántico", "komashi": "Una calle iluminada por neones en Komashi", "threnody": "Un bosque encantado de Threnody", "firstOfTheSun": "Una costa peligrosa del Primero del Sol", "ashyn": "Ashyn, el planeta en llamas" },
+      "geologyKicker": "Geología y terreno",
+      "climateKicker": "Clima y atmósfera",
+      "biosphereKicker": "Biosfera",
+      "habitatsKicker": "Hábitats",
+      "researchKicker": "Preguntas abiertas",
+      "visuals": {
+        "geologyLabel": "Marcador de mapa geológico de {title}",
+        "geologyDimensions": "16:9 · mapa de relieve o corte geológico",
+        "geologyText": "Mapa del terreno",
+        "climateLabel": "Marcador de diagrama climático de {title}",
+        "climateDimensions": "2:3 · diagrama atmosférico o del ciclo diario",
+        "climateText": "Perfil climático",
+        "biosphereLabel": "Marcador de ilustración de la biosfera de {title}",
+        "biosphereDimensions": "1:1 · bioma representativo",
+        "biosphereText": "Estudio del bioma",
+        "speciesLabel": "Marcador de estudio de especies de {title}",
+        "speciesDimensions": "1:1 · detalle de flora o fauna",
+        "speciesText": "Detalle de vida",
+        "habitatsLabel": "Marcador de mapa de hábitats de {title}",
+        "habitatsDimensions": "3:2 · mapa de asentamientos o hábitats",
+        "habitatsText": "Mapa de hábitats"
+      },
+      "systems": {
+        "scadrian": "Sistema scadriano",
+        "rosharan": "Sistema rosharano",
+        "nalthian": "Sistema nalthisiano",
+        "selish": "Sistema selish",
+        "taldain": "Sistema de Taldain",
+        "unknown": "Sistema aún no identificado públicamente",
+        "utol": "Sistema de UTol",
+        "threnodite": "Sistema threnodita",
+        "drominad": "Sistema de Drominad"
+      },
+      "imageLabels": {
+        "scadrial": "Llanura volcánica cubierta de ceniza en Scadrial",
+        "roshar": "Llanuras rocosas bajo las tormentas de Roshar",
+        "nalthis": "Selva húmeda y costa tropical de Nalthis",
+        "sel": "Regiones geológicas variadas de Sel",
+        "taldain": "Desierto iluminado de Taldain",
+        "lumar": "Océano de esporas e islas de Lumar",
+        "canticle": "Frontera térmica entre el calor y el hielo de Cántico",
+        "komashi": "Pozos de vapor en el terreno rocoso de Komashi",
+        "threnody": "Bosque templado y húmedo de Threnody",
+        "firstOfTheSun": "Archipiélago tropical del Primero del Sol",
+        "ashyn": "Terreno fracturado y rocas suspendidas de Ashyn"
+      },
       "environmentKicker": "Entorno",
       "lifeKicker": "Vida",
       "societyKicker": "Formas de vivir",
       "noDedicatedStory": "No hay ninguna historia principal publicada ambientada actualmente en Ashyn. Su historia y sus asentamientos supervivientes están ligados al sistema rosharano y a la migración antigua hacia Roshar.",
-      "toc": { "introduction": "Introducción", "directory": "Directorio de mundos", "overview": "La ambientación", "environment": "Entorno", "life": "Flora y fauna", "society": "Formas de vivir", "stories": "Historias relacionadas", "magic": "Sistemas y curiosidades" },
+      "toc": {
+        "introduction": "Introducción",
+        "directory": "Directorio de mundos",
+        "overview": "La ambientación",
+        "environment": "Entorno",
+        "life": "Flora y fauna",
+        "society": "Formas de vivir",
+        "stories": "Historias relacionadas",
+        "magic": "Sistemas y curiosidades"
+      },
       "overviewKicker": "La ambientación",
       "overviewHeading": "Un mundo esperando ser cartografiado.",
       "storiesKicker": "Historias relacionadas",
@@ -470,21 +694,306 @@
       "magicKicker": "Sistemas y fuerzas",
       "magicHeading": "Las reglas que dan forma a este mundo.",
       "profiles": {
-        "scadrial": { "description": "Scadrial es un planeta cuyo clima, geografía y sociedades han sido transformados por Preservación, Ruina y quienes sostuvieron su poder.", "overviewHeading": "Un mundo construido sobre el cambio.", "overview": "Scadrial no es el mismo mundo en todas las eras: pasó de ceniza, brumas y montañas volcánicas a una época más verde, industrial y tecnológica tras la Catacendra.", "environmentHeading": "Ceniza, brumas y horizontes restaurados.", "environment": "El Lord Legislador acercó el planeta a su sol y usó los Ashmounts para controlar el clima, provocando lluvias de ceniza y nieblas nocturnas. Más tarde, la geografía y el clima fueron reparados.", "lifeHeading": "Criaturas transformadas por la Investidura.", "life": "Los nieblinos y los kandra son ejemplos propios de Scadrial de vida alterada por la Hemalurgia. El mundo restaurado también sostiene cultivos, caballos, perros y una biodiversidad más amplia.", "societyHeading": "De la rebelión skaa al ferrocarril.", "society": "La vida pasó de la jerarquía entre nobles y skaa a gobiernos urbanos, trenes, armas de fuego y comercio industrial. Terris, los koloss y los kandra siguen formando parte de su identidad.", "curiositiesHeading": "Las Artes Metálicas forman parte de la ecología.", "curiosities": "Alomancia, Feruquimia y Hemalurgia influyen en la medicina, el transporte, la política y los propios cuerpos de varios pueblos. Scadrial es planeta y experimento de creación deliberada." },
-        "roshar": { "description": "Roshar es un planeta de mucho oxígeno y poca gravedad, donde las tormentas, los spren y los juramentos condicionan casi toda la vida.", "overviewHeading": "Un planeta diseñado por el clima.", "overview": "Un supercontinente y un sistema de tormentas que lo cruza de este a oeste definen Roshar. Sus culturas, edificios y calendarios solo se entienden al tratar las altas tormentas como una fuerza permanente.", "environmentHeading": "Altas tormentas, crem y valles protegidos.", "environment": "Las altas tormentas traen viento violento, lluvia y crem rico en minerales. El este recibe el golpe primero; los valles occidentales y Shinovar están más protegidos.", "lifeHeading": "Caparazones, corazones de gema y spren.", "life": "Muchos animales nativos tienen caparazón y las especies grandes poseen corazones de gema. Rockbuds, hierba, chulls y greatshells han evolucionado para sobrevivir a las tormentas.", "societyHeading": "Culturas organizadas alrededor de sobrevivir.", "society": "Alezi, herdazianos, shin, horneater y cantores mantienen relaciones distintas con las tormentas, los juramentos y la tierra. El comercio y la guerra los conectan.", "curiositiesHeading": "El planeta tiene más de un tipo de tormenta.", "curiosities": "Las altas tormentas son naturales e Investidas; la Everstorm sigue otro patrón. En Shadesmar, la geografía de Roshar se convierte en un océano de cuentas." },
-        "nalthis": { "description": "Nalthis es un planeta de reinos, color vivo y Despertar, aunque gran parte de su geografía sigue sin describirse.", "overviewHeading": "Un mundo donde el color tiene poder.", "overview": "Hallandren e Idris muestran solo una parte de Nalthis, marcado por la Manywar, los Cinco Sabios y el regreso de los Devueltos.", "environmentHeading": "Junglas, montañas y el Mar Luminoso.", "environment": "Hallandren alberga la única jungla conocida y las Lágrimas de Edgli. Hay montañas, un mar interior y terremotos frecuentes.", "lifeHeading": "Una biosfera variada y poco cartografiada.", "life": "La jungla alberga panteras, loros, monos y cocodrilos. El Mar Luminoso contiene peces, mejillones y vida tentaculada; elefantes y cebras llegan del sur.", "societyHeading": "Reinos, colores y objetos vivientes.", "society": "La riqueza y vida urbana de Hallandren contrastan con las tradiciones austeras de Idris. El Aliento forma parte de la economía y el Despertar vuelve activos los objetos.", "curiositiesHeading": "El planeta se conoce por lo que entrega.", "curiosities": "Nalthis tiene una luna, Rrendos, y su Investidura está ligada a Endowment. BioCroma, color e identidad son partes visibles de su cultura." },
-        "sel": { "description": "Sel es un gran planeta de imperios separados, historia densa y formas de Investidura ligadas a cada región.", "overviewHeading": "Muchas civilizaciones sobre un mismo mapa.", "overview": "Elantris, Arelon y MaiPon muestran solo una fracción de un planeta cuyas identidades políticas y mágicas dependen de la geografía.", "environmentHeading": "Un mundo continental muy diverso.", "environment": "Sel contiene climas y paisajes variados. Su tamaño y gravedad favorecen identidades locales, mientras que el Reino Cognitivo es peligroso por culpa del Dor.", "lifeHeading": "Sociedades humanas y vida construida.", "life": "Los humanos comparten Sel con seons y skaze, seres conectados a su Investidura. La ecología más amplia sigue siendo una de las incógnitas del Cosmere.", "societyHeading": "El lenguaje también es geografía mágica.", "society": "AonDor, Forgery, ChayShan, Dakhor y Bloodsealing dependen de símbolos, formas o tradiciones locales. Fronteras, idiomas y religión afectan al poder.", "curiositiesHeading": "Sel es planeta y paisaje cognitivo peligroso.", "curiosities": "Devoción y Dominio fueron quebrados aquí, y el Dor llena el Reino Cognitivo de poder descontrolado. Por eso la magia selish es tan regional." },
-        "taldain": { "description": "Taldain es un planeta dividido entre un lado luminoso y un lado oscuro, donde la arena y el aislamiento político definen la vida cotidiana.", "overviewHeading": "Dos rostros para un mismo mundo.", "overview": "Dayside y Darkside viven condiciones radicalmente distintas. White Sand sigue a los Maestros de la Arena y las tensiones alrededor del Diem.", "environmentHeading": "Luz, oscuridad y arena en movimiento.", "environment": "El lado luminoso está dominado por el sol intenso y desiertos enormes. La arena responde a los maestros y se convierte en recurso, lenguaje y defensa.", "lifeHeading": "Vida adaptada a los extremos.", "life": "La ecología conocida es sobre todo desértica, mientras que Darkside permanece poco documentado. El vínculo más singular es el de los maestros con la arena.", "societyHeading": "El Diem y los Maestros de la Arena.", "society": "La sociedad del lado luminoso gira alrededor del Diem y las instituciones que regulan el conocimiento de los maestros. La historia de Kenton revela la fragilidad de ese aislamiento.", "curiositiesHeading": "Darkside no es solo el reverso de Dayside.", "curiosities": "Taldain muestra cómo la Investidura puede expresarse mediante un contraste ambiental extremo. Arcanum Unbounded solo abre una ventana a este mundo." },
-        "lumar": { "description": "Lumar es un planeta cubierto por doce océanos de esporas, cada uno ligado a una luna y a una variedad de aéter.", "overviewHeading": "Un mundo hecho de mares y lunas.", "overview": "La superficie está dividida en mares pentagonales de esporas. Las comunidades humanas viven en islas y costas y navegan usando el extraño comportamiento de las esporas.", "environmentHeading": "Lunagrees, calmas y seethe.", "environment": "Las doce lunas dejan caer esporas durante las lunagrees. La descomposición y los respiraderos térmicos hacen que los mares se comporten como líquido durante el seethe y se solidifiquen en las stillings.", "lifeHeading": "Vida corriente sobre mares alienígenas.", "life": "Las islas sostienen cultivos, árboles, flores, ratas, gatos, palomas, mariposas y gaviotas. La vida profunda de los mares sigue siendo desconocida.", "societyHeading": "Culturas insulares y navegación.", "society": "Las comunidades construyen su identidad alrededor de islas, lunas y mares. El Mar Esmeralda conecta rutas que cada vez importan más al Cosmere.", "curiositiesHeading": "Las lunas forman parte del clima.", "curiosities": "La sombra de una luna enfría la tierra cada día al pasar entre el sol y el planeta. Astronomía, navegación y lenguaje son inseparables en Lumar." },
-        "canticle": { "description": "Cántico es un planeta pequeño y de rotación lenta donde un sol Investido obliga a sus habitantes a mantenerse delante de la luz del amanecer.", "overviewHeading": "Un mundo que huye de su sol.", "overview": "La luz de Cántico quema o vaporiza a quien queda expuesto. Las comunidades viven en ciudades voladoras y avanzan por estrechos corredores habitables.", "environmentHeading": "Luz abrasadora y sombras de anillos.", "environment": "Los anillos reflejan algo de luz Investida hacia la cara oscura, creando breves oportunidades para cultivar y viajar. El territorio cambia con el calor y las rutas de supervivencia.", "lifeHeading": "Crecimiento rápido y ciclos peligrosos.", "life": "El sol acelera el crecimiento vegetal: las cosechas maduran durante la corta ventana del amanecer. La flora, la fauna y los sunhearts dependen de este ciclo.", "societyHeading": "Ciudades voladoras hechas de naves.", "society": "La gente ensambla ciudades con naves conectadas y alimentadas por sunhearts. Unión coordina a las comunidades y agricultores, pilotos y buscadores las mantienen vivas.", "curiositiesHeading": "Una diáspora threnodita en el cielo.", "curiosities": "Muchos habitantes descienden de threnoditas que huyeron de su mundo. Cántico muestra cómo una cultura conserva su historia mientras se adapta a otra amenaza." },
-        "komashi": { "description": "Komashi es un mundo doble marcado por la tecnología hion, la mortaja y sociedades que sobrevivieron alrededor de pozos de vapor.", "overviewHeading": "Un planeta que se reconstruye tras una catástrofe oculta.", "overview": "Komashi y UTol orbitan un sol rojo anaranjado. La máquina padre consumió almas, alteró la ecología y dejó una mortaja alrededor de buena parte del mundo habitado.", "environmentHeading": "Piedra parda, pozos de vapor y mortaja.", "environment": "La tierra de Komashi es sobre todo piedra parda. Antes de la mortaja, los espíritus calentaban el suelo y llevaban agua subterránea a la superficie mediante pozos de vapor.", "lifeHeading": "Espíritus, pesadillas y plantas que regresan.", "life": "Los espíritus hijo alimentan la tecnología hion y los yoki-hijo son una forma de vida singular. Las pesadillas nacen de la mortaja y las semillas guardadas permiten recuperar la ecología.", "societyHeading": "Pintores, ciudades y servicio.", "society": "Las naciones crecieron alrededor de pozos de vapor y líneas hion. Los pintores de pesadillas patrullan las ciudades y convierten el arte en defensa práctica.", "curiositiesHeading": "El arte es una tecnología de supervivencia.", "curiosities": "En Komashi, pintar puede neutralizar una pesadilla y apilar piedras puede afectar a la mortaja. La atención, el oficio y la conexión tienen efectos materiales." },
-        "threnody": { "description": "Threnody es un planeta templado de bosques, montañas y océanos donde los muertos pueden regresar como shades y sobrevivir depende de reglas sencillas.", "overviewHeading": "Un mundo que recuerda a sus muertos.", "overview": "Threnody tiene dos continentes principales. Tras la devastación causada por el Mal, los supervivientes huyeron al continente menor y se asentaron junto a los Bosques del Infierno.", "environmentHeading": "Bosques silenciosos y noches peligrosas.", "environment": "Los Bosques del Infierno contienen ríos, cuevas, montañas y bosques caducifolios. Su silencio resulta antinatural, sobre todo de noche, cuando el paisaje pertenece tanto a los shades como al clima.", "lifeHeading": "Animales bajo una ley de sangre.", "life": "Ciervos, roedores, conejos, aves y pavos comparten el bosque con cerdos y ganado doméstico. Los depredadores desaparecieron porque la sangre derramada atrae a los shades.", "societyHeading": "Fortalezas, granjas y refugios.", "society": "Las ciudades fortaleza protegen a sus habitantes y controlan la economía de la plata. Los colonos cultivan claros y las waystops ofrecen suelo neutral a viajeros y fugitivos.", "curiositiesHeading": "La plata es moneda, medicina y frontera.", "curiosities": "Los shades son sombras cognitivas que atacan a quien rompe las Reglas Sencillas. La plata puede herirlos, curar su contacto y proteger una casa." },
-        "first-of-the-sun": { "description": "El Primero del Sol es el primer planeta del sistema Drominad, un mundo oceánico conocido por sus Aviar y el peligroso archipiélago Pantheon.", "overviewHeading": "Un mundo de islas observado desde el cielo.", "overview": "Tiene un continente, muchas islas y al menos una luna. Las islas natales de los Eelakin sostienen sociedades asentadas, mientras Pantheon es territorio sagrado y extremadamente peligroso.", "environmentHeading": "El continente y Pantheon.", "environment": "Pantheon reúne unas cuarenta islas de playas, acantilados e interiores letales. Su flora y fauna son mucho más peligrosas que las de las islas natales.", "lifeHeading": "Aviar y vida depredadora.", "life": "Los Aviar son aves nativas capaces de otorgar habilidades a sus compañeros humanos. Las demás formas de vida de Pantheon suelen ser mortales.", "societyHeading": "Vida eelakin entre tradición e industria.", "society": "Los Eelakin viven en las islas natales y han desarrollado su tecnología con el tiempo. Su relación con Pantheon mezcla reverencia, exploración y presión industrial.", "curiositiesHeading": "Primero del Sol y Drominad no son lo mismo.", "curiosities": "Drominad es un nombre usado por la sociedad cosmereana para el sistema, que contiene siete planetas y un cinturón de asteroides. Arcanum muestra un mapa del sistema, no solo del planeta." },
-        "ashyn": { "description": "Ashyn es el primer planeta del sistema rosharano, recordado como el planeta en llamas después de que una catástrofe ecológica destruyera gran parte de su biosfera.", "overviewHeading": "El mundo perdido detrás del mito rosharano.", "overview": "La mayoría de los ashynitas huyó a Roshar tras el Desgarramiento. Quedaron regiones fértiles aisladas y ciudades flotantes, mientras su historia sobrevivió en los relatos de los Salones Tranquilos.", "environmentHeading": "Tierra yerma y ciudades flotantes.", "environment": "Ashyn fue más fértil y quizá se parecía a Shinovar, pero hoy es casi estéril. Quedan zonas habitables, corrientes extrañas y ciudades sostenidas por una Investidura basada en enfermedades.", "lifeHeading": "Una biosfera dañada.", "life": "Antes había aves, caballos, uvas y animales domésticos. Hoy se conoce poca vida, incluidos reptiles y organismos relacionados con su magia infecciosa.", "societyHeading": "Sobrevivir por encima de un mundo roto.", "society": "La población superviviente vive en ciudades flotantes o zonas fértiles aisladas. Algunas enfermedades producen efectos útiles, pero vuelven dependiente a la sociedad de los infectados.", "curiositiesHeading": "Una magia que cambia el sentido de sistema.", "curiosities": "La magia posterior al Desgarramiento funciona mediante infecciones simbióticas. Ashyn demuestra que un planeta puede ser central para la historia de una saga aunque aún no tenga una novela principal." }
+        "scadrial": {
+          "description": "Scadrial es un planeta cuyo clima, geografía y sociedades han sido transformados por Preservación, Ruina y quienes sostuvieron su poder.",
+          "overviewHeading": "Un mundo construido sobre el cambio.",
+          "overview": "Scadrial no es el mismo mundo en todas las eras: pasó de ceniza, brumas y montañas volcánicas a una época más verde, industrial y tecnológica tras la Catacendra.",
+          "environmentHeading": "Ceniza, brumas y horizontes restaurados.",
+          "environment": "El Lord Legislador acercó el planeta a su sol y usó los Ashmounts para controlar el clima, provocando lluvias de ceniza y nieblas nocturnas. Más tarde, la geografía y el clima fueron reparados.",
+          "lifeHeading": "Criaturas transformadas por la Investidura.",
+          "life": "Los nieblinos y los kandra son ejemplos propios de Scadrial de vida alterada por la Hemalurgia. El mundo restaurado también sostiene cultivos, caballos, perros y una biodiversidad más amplia.",
+          "societyHeading": "De la rebelión skaa al ferrocarril.",
+          "society": "La vida pasó de la jerarquía entre nobles y skaa a gobiernos urbanos, trenes, armas de fuego y comercio industrial. Terris, los koloss y los kandra siguen formando parte de su identidad.",
+          "curiositiesHeading": "Las Artes Metálicas forman parte de la ecología.",
+          "curiosities": "Alomancia, Feruquimia y Hemalurgia influyen en la medicina, el transporte, la política y los propios cuerpos de varios pueblos. Scadrial es planeta y experimento de creación deliberada."
+        },
+        "roshar": {
+          "description": "Roshar es un planeta de mucho oxígeno y poca gravedad, donde las tormentas, los spren y los juramentos condicionan casi toda la vida.",
+          "overviewHeading": "Un planeta diseñado por el clima.",
+          "overview": "Un supercontinente y un sistema de tormentas que lo cruza de este a oeste definen Roshar. Sus culturas, edificios y calendarios solo se entienden al tratar las altas tormentas como una fuerza permanente.",
+          "environmentHeading": "Altas tormentas, crem y valles protegidos.",
+          "environment": "Las altas tormentas traen viento violento, lluvia y crem rico en minerales. El este recibe el golpe primero; los valles occidentales y Shinovar están más protegidos.",
+          "lifeHeading": "Caparazones, corazones de gema y spren.",
+          "life": "Muchos animales nativos tienen caparazón y las especies grandes poseen corazones de gema. Rockbuds, hierba, chulls y greatshells han evolucionado para sobrevivir a las tormentas.",
+          "societyHeading": "Culturas organizadas alrededor de sobrevivir.",
+          "society": "Alezi, herdazianos, shin, horneater y cantores mantienen relaciones distintas con las tormentas, los juramentos y la tierra. El comercio y la guerra los conectan.",
+          "curiositiesHeading": "El planeta tiene más de un tipo de tormenta.",
+          "curiosities": "Las altas tormentas son naturales e Investidas; la Everstorm sigue otro patrón. En Shadesmar, la geografía de Roshar se convierte en un océano de cuentas."
+        },
+        "nalthis": {
+          "description": "Nalthis es un planeta de reinos, color vivo y Despertar, aunque gran parte de su geografía sigue sin describirse.",
+          "overviewHeading": "Un mundo donde el color tiene poder.",
+          "overview": "Hallandren e Idris muestran solo una parte de Nalthis, marcado por la Manywar, los Cinco Sabios y el regreso de los Devueltos.",
+          "environmentHeading": "Junglas, montañas y el Mar Luminoso.",
+          "environment": "Hallandren alberga la única jungla conocida y las Lágrimas de Edgli. Hay montañas, un mar interior y terremotos frecuentes.",
+          "lifeHeading": "Una biosfera variada y poco cartografiada.",
+          "life": "La jungla alberga panteras, loros, monos y cocodrilos. El Mar Luminoso contiene peces, mejillones y vida tentaculada; elefantes y cebras llegan del sur.",
+          "societyHeading": "Reinos, colores y objetos vivientes.",
+          "society": "La riqueza y vida urbana de Hallandren contrastan con las tradiciones austeras de Idris. El Aliento forma parte de la economía y el Despertar vuelve activos los objetos.",
+          "curiositiesHeading": "El planeta se conoce por lo que entrega.",
+          "curiosities": "Nalthis tiene una luna, Rrendos, y su Investidura está ligada a Endowment. BioCroma, color e identidad son partes visibles de su cultura."
+        },
+        "sel": {
+          "description": "Sel es un gran planeta de imperios separados, historia densa y formas de Investidura ligadas a cada región.",
+          "overviewHeading": "Muchas civilizaciones sobre un mismo mapa.",
+          "overview": "Elantris, Arelon y MaiPon muestran solo una fracción de un planeta cuyas identidades políticas y mágicas dependen de la geografía.",
+          "environmentHeading": "Un mundo continental muy diverso.",
+          "environment": "Sel contiene climas y paisajes variados. Su tamaño y gravedad favorecen identidades locales, mientras que el Reino Cognitivo es peligroso por culpa del Dor.",
+          "lifeHeading": "Sociedades humanas y vida construida.",
+          "life": "Los humanos comparten Sel con seons y skaze, seres conectados a su Investidura. La ecología más amplia sigue siendo una de las incógnitas del Cosmere.",
+          "societyHeading": "El lenguaje también es geografía mágica.",
+          "society": "AonDor, Forgery, ChayShan, Dakhor y Bloodsealing dependen de símbolos, formas o tradiciones locales. Fronteras, idiomas y religión afectan al poder.",
+          "curiositiesHeading": "Sel es planeta y paisaje cognitivo peligroso.",
+          "curiosities": "Devoción y Dominio fueron quebrados aquí, y el Dor llena el Reino Cognitivo de poder descontrolado. Por eso la magia selish es tan regional."
+        },
+        "taldain": {
+          "description": "Taldain es un planeta dividido entre un lado luminoso y un lado oscuro, donde la arena y el aislamiento político definen la vida cotidiana.",
+          "overviewHeading": "Dos rostros para un mismo mundo.",
+          "overview": "Dayside y Darkside viven condiciones radicalmente distintas. White Sand sigue a los Maestros de la Arena y las tensiones alrededor del Diem.",
+          "environmentHeading": "Luz, oscuridad y arena en movimiento.",
+          "environment": "El lado luminoso está dominado por el sol intenso y desiertos enormes. La arena responde a los maestros y se convierte en recurso, lenguaje y defensa.",
+          "lifeHeading": "Vida adaptada a los extremos.",
+          "life": "La ecología conocida es sobre todo desértica, mientras que Darkside permanece poco documentado. El vínculo más singular es el de los maestros con la arena.",
+          "societyHeading": "El Diem y los Maestros de la Arena.",
+          "society": "La sociedad del lado luminoso gira alrededor del Diem y las instituciones que regulan el conocimiento de los maestros. La historia de Kenton revela la fragilidad de ese aislamiento.",
+          "curiositiesHeading": "Darkside no es solo el reverso de Dayside.",
+          "curiosities": "Taldain muestra cómo la Investidura puede expresarse mediante un contraste ambiental extremo. Arcanum Unbounded solo abre una ventana a este mundo."
+        },
+        "lumar": {
+          "description": "Lumar es un planeta cubierto por doce océanos de esporas, cada uno ligado a una luna y a una variedad de aéter.",
+          "overviewHeading": "Un mundo hecho de mares y lunas.",
+          "overview": "La superficie está dividida en mares pentagonales de esporas. Las comunidades humanas viven en islas y costas y navegan usando el extraño comportamiento de las esporas.",
+          "environmentHeading": "Lunagrees, calmas y seethe.",
+          "environment": "Las doce lunas dejan caer esporas durante las lunagrees. La descomposición y los respiraderos térmicos hacen que los mares se comporten como líquido durante el seethe y se solidifiquen en las stillings.",
+          "lifeHeading": "Vida corriente sobre mares alienígenas.",
+          "life": "Las islas sostienen cultivos, árboles, flores, ratas, gatos, palomas, mariposas y gaviotas. La vida profunda de los mares sigue siendo desconocida.",
+          "societyHeading": "Culturas insulares y navegación.",
+          "society": "Las comunidades construyen su identidad alrededor de islas, lunas y mares. El Mar Esmeralda conecta rutas que cada vez importan más al Cosmere.",
+          "curiositiesHeading": "Las lunas forman parte del clima.",
+          "curiosities": "La sombra de una luna enfría la tierra cada día al pasar entre el sol y el planeta. Astronomía, navegación y lenguaje son inseparables en Lumar."
+        },
+        "canticle": {
+          "description": "Cántico es un planeta pequeño y de rotación lenta donde un sol Investido obliga a sus habitantes a mantenerse delante de la luz del amanecer.",
+          "overviewHeading": "Un mundo que huye de su sol.",
+          "overview": "La luz de Cántico quema o vaporiza a quien queda expuesto. Las comunidades viven en ciudades voladoras y avanzan por estrechos corredores habitables.",
+          "environmentHeading": "Luz abrasadora y sombras de anillos.",
+          "environment": "Los anillos reflejan algo de luz Investida hacia la cara oscura, creando breves oportunidades para cultivar y viajar. El territorio cambia con el calor y las rutas de supervivencia.",
+          "lifeHeading": "Crecimiento rápido y ciclos peligrosos.",
+          "life": "El sol acelera el crecimiento vegetal: las cosechas maduran durante la corta ventana del amanecer. La flora, la fauna y los sunhearts dependen de este ciclo.",
+          "societyHeading": "Ciudades voladoras hechas de naves.",
+          "society": "La gente ensambla ciudades con naves conectadas y alimentadas por sunhearts. Unión coordina a las comunidades y agricultores, pilotos y buscadores las mantienen vivas.",
+          "curiositiesHeading": "Una diáspora threnodita en el cielo.",
+          "curiosities": "Muchos habitantes descienden de threnoditas que huyeron de su mundo. Cántico muestra cómo una cultura conserva su historia mientras se adapta a otra amenaza."
+        },
+        "komashi": {
+          "description": "Komashi es un mundo doble marcado por la tecnología hion, la mortaja y sociedades que sobrevivieron alrededor de pozos de vapor.",
+          "overviewHeading": "Un planeta que se reconstruye tras una catástrofe oculta.",
+          "overview": "Komashi y UTol orbitan un sol rojo anaranjado. La máquina padre consumió almas, alteró la ecología y dejó una mortaja alrededor de buena parte del mundo habitado.",
+          "environmentHeading": "Piedra parda, pozos de vapor y mortaja.",
+          "environment": "La tierra de Komashi es sobre todo piedra parda. Antes de la mortaja, los espíritus calentaban el suelo y llevaban agua subterránea a la superficie mediante pozos de vapor.",
+          "lifeHeading": "Espíritus, pesadillas y plantas que regresan.",
+          "life": "Los espíritus hijo alimentan la tecnología hion y los yoki-hijo son una forma de vida singular. Las pesadillas nacen de la mortaja y las semillas guardadas permiten recuperar la ecología.",
+          "societyHeading": "Pintores, ciudades y servicio.",
+          "society": "Las naciones crecieron alrededor de pozos de vapor y líneas hion. Los pintores de pesadillas patrullan las ciudades y convierten el arte en defensa práctica.",
+          "curiositiesHeading": "El arte es una tecnología de supervivencia.",
+          "curiosities": "En Komashi, pintar puede neutralizar una pesadilla y apilar piedras puede afectar a la mortaja. La atención, el oficio y la conexión tienen efectos materiales."
+        },
+        "threnody": {
+          "description": "Threnody es un planeta templado de bosques, montañas y océanos donde los muertos pueden regresar como shades y sobrevivir depende de reglas sencillas.",
+          "overviewHeading": "Un mundo que recuerda a sus muertos.",
+          "overview": "Threnody tiene dos continentes principales. Tras la devastación causada por el Mal, los supervivientes huyeron al continente menor y se asentaron junto a los Bosques del Infierno.",
+          "environmentHeading": "Bosques silenciosos y noches peligrosas.",
+          "environment": "Los Bosques del Infierno contienen ríos, cuevas, montañas y bosques caducifolios. Su silencio resulta antinatural, sobre todo de noche, cuando el paisaje pertenece tanto a los shades como al clima.",
+          "lifeHeading": "Animales bajo una ley de sangre.",
+          "life": "Ciervos, roedores, conejos, aves y pavos comparten el bosque con cerdos y ganado doméstico. Los depredadores desaparecieron porque la sangre derramada atrae a los shades.",
+          "societyHeading": "Fortalezas, granjas y refugios.",
+          "society": "Las ciudades fortaleza protegen a sus habitantes y controlan la economía de la plata. Los colonos cultivan claros y las waystops ofrecen suelo neutral a viajeros y fugitivos.",
+          "curiositiesHeading": "La plata es moneda, medicina y frontera.",
+          "curiosities": "Los shades son sombras cognitivas que atacan a quien rompe las Reglas Sencillas. La plata puede herirlos, curar su contacto y proteger una casa."
+        },
+        "first-of-the-sun": {
+          "description": "El Primero del Sol es el primer planeta del sistema Drominad, un mundo oceánico conocido por sus Aviar y el peligroso archipiélago Pantheon.",
+          "overviewHeading": "Un mundo de islas observado desde el cielo.",
+          "overview": "Tiene un continente, muchas islas y al menos una luna. Las islas natales de los Eelakin sostienen sociedades asentadas, mientras Pantheon es territorio sagrado y extremadamente peligroso.",
+          "environmentHeading": "El continente y Pantheon.",
+          "environment": "Pantheon reúne unas cuarenta islas de playas, acantilados e interiores letales. Su flora y fauna son mucho más peligrosas que las de las islas natales.",
+          "lifeHeading": "Aviar y vida depredadora.",
+          "life": "Los Aviar son aves nativas capaces de otorgar habilidades a sus compañeros humanos. Las demás formas de vida de Pantheon suelen ser mortales.",
+          "societyHeading": "Vida eelakin entre tradición e industria.",
+          "society": "Los Eelakin viven en las islas natales y han desarrollado su tecnología con el tiempo. Su relación con Pantheon mezcla reverencia, exploración y presión industrial.",
+          "curiositiesHeading": "Primero del Sol y Drominad no son lo mismo.",
+          "curiosities": "Drominad es un nombre usado por la sociedad cosmereana para el sistema, que contiene siete planetas y un cinturón de asteroides. Arcanum muestra un mapa del sistema, no solo del planeta."
+        },
+        "ashyn": {
+          "description": "Ashyn es el primer planeta del sistema rosharano, recordado como el planeta en llamas después de que una catástrofe ecológica destruyera gran parte de su biosfera.",
+          "overviewHeading": "El mundo perdido detrás del mito rosharano.",
+          "overview": "La mayoría de los ashynitas huyó a Roshar tras el Desgarramiento. Quedaron regiones fértiles aisladas y ciudades flotantes, mientras su historia sobrevivió en los relatos de los Salones Tranquilos.",
+          "environmentHeading": "Tierra yerma y ciudades flotantes.",
+          "environment": "Ashyn fue más fértil y quizá se parecía a Shinovar, pero hoy es casi estéril. Quedan zonas habitables, corrientes extrañas y ciudades sostenidas por una Investidura basada en enfermedades.",
+          "lifeHeading": "Una biosfera dañada.",
+          "life": "Antes había aves, caballos, uvas y animales domésticos. Hoy se conoce poca vida, incluidos reptiles y organismos relacionados con su magia infecciosa.",
+          "societyHeading": "Sobrevivir por encima de un mundo roto.",
+          "society": "La población superviviente vive en ciudades flotantes o zonas fértiles aisladas. Algunas enfermedades producen efectos útiles, pero vuelven dependiente a la sociedad de los infectados.",
+          "curiositiesHeading": "Una magia que cambia el sentido de sistema.",
+          "curiosities": "La magia posterior al Desgarramiento funciona mediante infecciones simbióticas. Ashyn demuestra que un planeta puede ser central para la historia de una saga aunque aún no tenga una novela principal."
+        }
+      }
+    },
+    "scienceProfiles": {
+      "scadrial": {
+        "scale": "Tamaño terrestre; gravedad estándar",
+        "geologyHeading": "Un mundo volcánico reconstruido",
+        "geology": "Planeta rocoso de regiones volcánicas, cordilleras y grandes cuencas templadas. Su superficie ha sido remodelada a escala planetaria y conserva una topografía excepcional.",
+        "climateHeading": "Ceniza, niebla y recuperación climática",
+        "climate": "Su clima pasó de una atmósfera fría cargada de ceniza a un régimen más cálido y verde. Los aerosoles volcánicos siguen influyendo en el tiempo local.",
+        "biosphereHeading": "Vida bajo un cielo cambiante",
+        "biosphere": "Mamíferos, aves, cultivos y plantas resistentes ocupan entornos adaptados a la ceniza, la oscuridad y los suelos volcánicos. La mayor biodiversidad está en las regiones templadas restauradas.",
+        "habitatsHeading": "Cuencas, tierras áridas y montañas",
+        "habitats": "Las cuencas protegidas y los ríos fértiles son los hábitats más estables. Las tierras áridas, las laderas volcánicas y las zonas de ceniza crean fronteras ecológicas marcadas.",
+        "questionsHeading": "Un planeta que registra sus transformaciones",
+        "questions": "¿Cuánto tarda un clima dañado en alcanzar un nuevo equilibrio? La distribución de especies y los efectos a largo plazo de la ingeniería atmosférica siguen abiertos al estudio."
+      },
+      "roshar": {
+        "scale": "Planeta rocoso pequeño; 0,7 gravedades estándar",
+        "geologyHeading": "Un supercontinente moldeado por tormentas",
+        "geology": "Las tierras conocidas se concentran en un enorme supercontinente de costas quebradas, mesetas, valles profundos y roca expuesta. No tiene tectónica de placas activa, aunque los terremotos y la erosión siguen transformándolo.",
+        "climateHeading": "Los huracanes como reloj planetario",
+        "climate": "Tormentas poderosas viajan regularmente de este a oeste. Con una inclinación axial casi nula, no hay estaciones convencionales: la temperatura y la lluvia dependen sobre todo de las tormentas y la latitud.",
+        "biosphereHeading": "Caparazones, madrigueras y animales enormes",
+        "biosphere": "El oxígeno abundante y la baja gravedad permiten animales de gran tamaño. Muchas especies usan caparazones, raíces flexibles o refugios para sobrevivir al viento y la lluvia abrasiva.",
+        "habitatsHeading": "Valles protegidos y llanuras expuestas",
+        "habitats": "La vida se concentra en valles, depresiones y regiones resguardadas. Las llanuras abiertas están dominadas por el viento y los sedimentos; las zonas cálidas y húmedas sostienen más vegetación.",
+        "questionsHeading": "Un sistema climático lleno de variables",
+        "questions": "El origen del ciclo de tormentas, los ecosistemas subterráneos y la distribución completa de tierras más allá del continente principal siguen sin documentarse del todo."
+      },
+      "nalthis": {
+        "scale": "Planeta rocoso con una luna conocida",
+        "geologyHeading": "Un mundo continental parcialmente cartografiado",
+        "geology": "La superficie conocida incluye cordilleras, un mar interior, islas y extensas tierras bajas. La tectónica activa apunta a un interior dinámico, aunque gran parte del planeta sigue sin mapear.",
+        "climateHeading": "Tierras húmedas y zonas sísmicas",
+        "climate": "La jungla conocida se concentra en Hallandren; las montañas y regiones septentrionales son más frías y secas. Los terremotos son frecuentes alrededor del mar interior y la costa.",
+        "biosphereHeading": "Una biosfera rica pero desigual",
+        "biosphere": "Las junglas albergan panteras, loros, monos y cocodrilos. El Mar Luminoso contiene peces, mejillones y criaturas tentaculadas; la fauna del sur sigue siendo incierta.",
+        "habitatsHeading": "Costa selvática, montañas y aguas interiores",
+        "habitats": "Los hábitats más favorables se agrupan en costas selváticas, llanuras regadas por ríos y el mar interior. Las montañas proporcionan minerales y separan ecosistemas.",
+        "questionsHeading": "Un mundo conocido a través de una sola región",
+        "questions": "Los continentes del sur, la red alimentaria oceánica y varias distribuciones vegetales inusuales siguen siendo áreas abiertas de investigación."
+      },
+      "sel": {
+        "scale": "Planeta rocoso grande; 1,2 gravedades estándar",
+        "geologyHeading": "Un planeta continental muy diverso",
+        "geology": "Sel contiene grandes regiones continentales con climas, cordilleras y cuencas fluviales contrastados. Su geografía sostiene zonas ambientales muy separadas.",
+        "climateHeading": "Climas regionales, no un único patrón global",
+        "climate": "El clima va de regiones templadas y fértiles a interiores secos y tierras altas frías. La distancia, la altitud y las barreras continentales dominan las condiciones locales.",
+        "biosphereHeading": "Una vida dividida por la geografía",
+        "biosphere": "La biosfera conocida incluye cultivos, bosques, praderas y aguas dulces. La ecología exterior está poco descrita fuera de las zonas mejor cartografiadas.",
+        "habitatsHeading": "Cuencas fluviales, tierras altas y corredores",
+        "habitats": "Los asentamientos prefieren valles fluviales, llanuras fértiles y corredores elevados defendibles. Las cordilleras y la distancia aíslan poblaciones y ambientes.",
+        "questionsHeading": "Un mapa con grandes espacios en blanco",
+        "questions": "Los continentes inexplorados, los ciclos climáticos completos y la diversidad de los ecosistemas remotos aún no permiten construir un modelo global."
+      },
+      "taldain": {
+        "scale": "Planeta rocoso bloqueado por marea; una luna",
+        "geologyHeading": "Un planeta con dos caras ambientales",
+        "geology": "Taldain tiene un lado de día permanente, otro de noche permanente y un océano crepuscular peligroso entre ambos. Una gran masa circular domina el mapa conocido del lado luminoso.",
+        "climateHeading": "Luz perpetua, noche perpetua y una frontera violenta",
+        "climate": "El lado luminoso es cálido y desértico; el oscuro es más frío, aunque no glacial. El océano fronterizo y su tormenta permanente forman una zona de transición peligrosa.",
+        "biosphereHeading": "Vida bajo la superficie",
+        "biosphere": "La luz extrema obliga a gran parte de la ecología diurna a vivir bajo la arena. Se conocen líquenes, cultivos y flores en ambos lados, pero la noche sigue poco documentada.",
+        "habitatsHeading": "Agua subterránea y masas aisladas",
+        "habitats": "Los hábitats más productivos del lado luminoso aparecen donde el agua subterránea está cerca de la superficie. El tamaño y la forma completos del lado oscuro son inciertos.",
+        "questionsHeading": "El hemisferio oscuro es una frontera",
+        "questions": "La geografía nocturna, el intercambio de calor en el crepúsculo y la estabilidad del sistema de mareas invitan a seguir investigando."
+      },
+      "lumar": {
+        "scale": "Planeta rocoso insular con doce lunas cercanas",
+        "geologyHeading": "Una superficie dividida en doce océanos de esporas",
+        "geology": "Lumar está dominado por doce océanos aproximadamente pentagonales formados por la caída de esporas. Islas, montañas y fondos marinos poco profundos interrumpen el patrón.",
+        "climateHeading": "Sombras lunares, bandas de lluvia y mares fluidos",
+        "climate": "Cada luna proyecta una sombra diaria que enfría la tierra. Las bandas de lluvia cruzan el cielo y el calor, la descomposición y los gases del fondo pueden fluidificar los mares.",
+        "biosphereHeading": "Vida insular sobre un ecosistema profundo desconocido",
+        "biosphere": "Las islas sostienen árboles, flores, cultivos, ratas, gatos, palomas, mariposas y gaviotas. El ecosistema profundo de los océanos es casi completamente desconocido.",
+        "habitatsHeading": "Islas, salinas y rutas marítimas móviles",
+        "habitats": "La población se concentra en islas con suelo, agua dulce y fondeaderos seguros. La sal y los barcos reforzados son recursos esenciales para cruzar los océanos.",
+        "questionsHeading": "Un ciclo del agua que nadie entiende por completo",
+        "questions": "Las bandas de lluvia, la ecología de las profundidades y la forma en que la descomposición devuelve agua a la atmósfera siguen siendo grandes enigmas científicos."
+      },
+      "canticle": {
+        "scale": "Planeta pequeño y anillado; 0,7 gravedades estándar",
+        "geologyHeading": "Un mundo compacto moldeado por el calor",
+        "geology": "Cántico es un planeta rocoso pequeño con anillos y una geografía habitable que cambia con el día. La frontera entre la oscuridad y el amanecer es su paisaje móvil principal.",
+        "climateHeading": "Una carrera térmica alrededor del planeta",
+        "climate": "La luz solar calienta la atmósfera y el suelo hasta temperaturas destructivas. Cerca del ocaso, los cambios de presión y humedad producen un gran ciclón de fuego.",
+        "biosphereHeading": "Crecimiento rápido en una ventana de luz",
+        "biosphere": "Las plantas crecen con rapidez cuando la luz reflejada por los anillos alcanza el suelo. Se conocen animales parecidos a gacelas cerca del amanecer, pero su ciclo vital es poco conocido.",
+        "habitatsHeading": "Asentamientos móviles y agricultura del amanecer",
+        "habitats": "El corredor habitable se encuentra justo delante del amanecer. Las comunidades unen naves para formar asentamientos móviles y cultivan durante breves intervalos seguros.",
+        "questionsHeading": "¿Cómo sobrevive la vida al día?",
+        "questions": "Aún se desconoce cómo se protegen animales, semillas y suelo del calor diurno y cómo se estabilizan los hábitats móviles a largo plazo."
+      },
+      "komashi": {
+        "scale": "Una mitad de un sistema de planetas dobles",
+        "geologyHeading": "Piedra parda, océanos y un mundo compañero",
+        "geology": "Komashi es un mundo oceánico dominado por piedra parda y unido gravitacionalmente a UTol. Su superficie ha sufrido cambios repetidos, con regiones de fertilidad y estabilidad muy distintas.",
+        "climateHeading": "Mortaja atmosférica, pozos de vapor y sol rojizo",
+        "climate": "La cubierta atmosférica, el calor subterráneo y un sol rojo anaranjado definen el clima. Los pozos de vapor aportan agua y calor a pequeñas cuencas habitables.",
+        "biosphereHeading": "Recuperación ecológica tras el colapso",
+        "biosphere": "La biosfera conocida incluye plantas que regresan, cultivos y organismos adaptados al suelo cálido y al agua escasa. Grandes regiones siguen dañadas u ocultas.",
+        "habitatsHeading": "Cuencas de pozos de vapor y ciudades protegidas",
+        "habitats": "Los asentamientos permanentes crecieron alrededor de los pozos de vapor, donde el calor y el agua permiten cultivar. Fuera de esas cuencas, el suelo y la visibilidad limitan la vida.",
+        "questionsHeading": "Un planeta que se reconstruye con pruebas incompletas",
+        "questions": "La biosfera original, la geografía bajo la mortaja y la relación climática entre ambos planetas siguen siendo problemas abiertos."
+      },
+      "threnody": {
+        "scale": "Planeta rocoso templado con bosques y dos continentes",
+        "geologyHeading": "Bosques, montañas y continentes divididos",
+        "geology": "Threnody posee bosques, montañas, ríos y al menos dos continentes principales. Los paisajes conocidos son templados, frondosos y difíciles de conectar.",
+        "climateHeading": "Clima templado con noches peligrosas",
+        "climate": "El planeta sostiene bosques estacionales y lluvias normales, pero la noche cambia radicalmente el riesgo ambiental. La oscuridad, la sangre y el aislamiento vuelven peligroso el terreno conocido.",
+        "biosphereHeading": "Un ecosistema forestal con reglas estrictas",
+        "biosphere": "Se conocen ciervos, roedores, conejos, aves, pavos y ganado doméstico. Los grandes depredadores son escasos o inexistentes en muchas zonas.",
+        "habitatsHeading": "Claros fortificados y bordes del bosque",
+        "habitats": "La población vive en fortalezas, claros cultivados y refugios protegidos. Los hábitats más seguros controlan la visibilidad, la sangre y el acceso a las viviendas.",
+        "questionsHeading": "¿Dónde empieza el peligro del bosque?",
+        "questions": "Los fenómenos nocturnos, el estado del continente mayor y los efectos a largo plazo sobre la fauna siguen poco documentados."
+      },
+      "first-of-the-sun": {
+        "scale": "Planeta oceánico e insular con al menos una luna",
+        "geologyHeading": "Un mundo de archipiélagos y un continente",
+        "geology": "Tiene un continente, muchas islas natales y un archipiélago separado de unas cuarenta islas. Playas, acantilados e interiores densos crean variaciones locales muy marcadas.",
+        "climateHeading": "Climas marítimos y tiempo insular peligroso",
+        "climate": "Las zonas habitadas disfrutan de condiciones moderadas por el océano, mientras que Pantheon es más aislado e impredecible. El viento, la sal, las tormentas y el agua dulce definen la costa.",
+        "biosphereHeading": "Un ecosistema de aves y depredadores extremos",
+        "biosphere": "Las aves nativas ocupan muchos nichos, mientras Pantheon alberga flora y fauna especialmente peligrosa. El aislamiento ha permitido que sus ecosistemas evolucionen por separado.",
+        "habitatsHeading": "Islas natales, costas e interiores restringidos",
+        "habitats": "Las islas natales sostienen comunidades costeras y cultivos. Las playas de Pantheon pueden visitarse, pero sus interiores son hostiles para cualquier asentamiento estable.",
+        "questionsHeading": "Un ecosistema observado desde los bordes",
+        "questions": "El número total de especies, el interior de Pantheon y la red alimentaria oceánica siguen siendo prácticamente desconocidos."
+      },
+      "ashyn": {
+        "scale": "Planeta rocoso con variación estacional marcada",
+        "geologyHeading": "Tierras yermas con bolsas fértiles",
+        "geology": "La superficie de Ashyn es mayoritariamente yerma tras un colapso ecológico global, aunque permanecen regiones fértiles aisladas y asentamientos flotantes. La atmósfera sigue siendo inestable.",
+        "climateHeading": "Extremos estacionales sobre una biosfera rota",
+        "climate": "Ashyn tiene una inclinación axial notable y verdaderas variaciones estacionales. Las condiciones cambian mucho entre zonas fértiles, desiertos y la alta atmósfera.",
+        "biosphereHeading": "Fragmentos de un mundo vivo anterior",
+        "biosphere": "Las pruebas históricas apuntan a aves, caballos, uvas y animales domésticos antes del colapso. La vida moderna se concentra en entornos protegidos o especializados.",
+        "habitatsHeading": "Ciudades flotantes y zonas fértiles aisladas",
+        "habitats": "Los supervivientes ocupan ciudades flotantes y pequeñas áreas productivas que dependen de controlar el aire, el agua, los alimentos y el tiempo estable.",
+        "questionsHeading": "¿Puede recuperarse una biosfera planetaria?",
+        "questions": "La causa y la duración del colapso, la vida subterránea superviviente y las posibilidades de recuperación natural siguen sin resolverse."
       }
     },
     "tableOfContents": "Ficha del mundo",
-    "toc": { "introduction": "Introducción", "directory": "Directorio de mundos", "overview": "La ambientación", "environment": "Entorno", "life": "Flora y fauna", "society": "Formas de vivir", "stories": "Historias relacionadas", "magic": "Sistemas y fuerzas" }
+    "toc": {
+      "introduction": "Introducción",
+      "directory": "Directorio de mundos",
+      "geology": "Geología y terreno",
+      "climate": "Clima y atmósfera",
+      "biosphere": "Biosfera",
+      "habitats": "Hábitats",
+      "research": "Preguntas abiertas"
+    }
   },
   "books": {
     "eyebrow": "Catálogo del Cosmere",
@@ -602,6 +1111,10 @@
       "title": "Libros",
       "description": "Explora las obras publicadas del Cosmere agrupadas por saga y por historia independiente."
     },
+    "independents": {
+      "title": "Obras independientes",
+      "description": "Explora novelas del Cosmere que funcionan por sí solas y abren distintas puertas al universo más amplio."
+    },
     "routes": {
       "title": "Rutas de lectura",
       "description": "Aquí estarán las recomendaciones comunitarias, el orden de publicación y el recorrido personal por el Cosmere."
@@ -655,8 +1168,16 @@
       "whyLabel": "Por qué leerlo",
       "whenLabel": "Cuándo leerlo",
       "works": {
-        "edgedancer": { "origin": "Es una novela corta situada entre Palabras radiantes y Juramentada en la secuencia de lectura amplia.", "why": "Da más espacio para que Lift crezca y ofrece una mirada distinta y más juguetona al mundo antes de la siguiente novela principal.", "when": "Después de Palabras radiantes y antes de Juramentada." },
-        "dawnshard": { "origin": "Es una novela corta situada entre Juramentada y El ritmo de la guerra y publicada como complemento de la secuencia principal.", "why": "Desarrolla una expedición menor y aporta contexto que ayuda a situar partes de El ritmo de la guerra.", "when": "Después de Juramentada y antes de El ritmo de la guerra." }
+        "edgedancer": {
+          "origin": "Es una novela corta situada entre Palabras radiantes y Juramentada en la secuencia de lectura amplia.",
+          "why": "Da más espacio para que Lift crezca y ofrece una mirada distinta y más juguetona al mundo antes de la siguiente novela principal.",
+          "when": "Después de Palabras radiantes y antes de Juramentada."
+        },
+        "dawnshard": {
+          "origin": "Es una novela corta situada entre Juramentada y El ritmo de la guerra y publicada como complemento de la secuencia principal.",
+          "why": "Desarrolla una expedición menor y aporta contexto que ayuda a situar partes de El ritmo de la guerra.",
+          "when": "Después de Juramentada y antes de El ritmo de la guerra."
+        }
       }
     },
     "magic": {
@@ -664,9 +1185,18 @@
       "heading": "Luz tormentosa, juramentos y vínculos vivos.",
       "description": "Los sistemas centrales de El archivo de las tormentas conectan energía, intención y relación. Esta introducción mantiene deliberadamente un nivel ligero de revelaciones.",
       "imageLabel": "Ilustración conceptual de El archivo de las tormentas en Roshar",
-      "stormlight": { "title": "Luz tormentosa", "text": "La Luz tormentosa es una forma luminosa de Investidura que portan las gemas cargadas y los seres vivos. Alimenta muchas habilidades extraordinarias de Roshar y está unida a sus tormentas." },
-      "surgebinding": { "title": "Vinculación de ondas", "text": "La vinculación de ondas combina dos fuerzas fundamentales, u Ondas, de distintas maneras. Los Caballeros Radiantes acceden a ellas mediante juramentos y vínculos, no solo mediante el estudio." },
-      "spren": { "title": "Spren y vínculos", "text": "Los spren son manifestaciones de ideas, fuerzas y emociones. Algunos pueden formar un vínculo nahel con una persona, una relación que transforma a ambos y sostiene el centro moral de la saga." }
+      "stormlight": {
+        "title": "Luz tormentosa",
+        "text": "La Luz tormentosa es una forma luminosa de Investidura que portan las gemas cargadas y los seres vivos. Alimenta muchas habilidades extraordinarias de Roshar y está unida a sus tormentas."
+      },
+      "surgebinding": {
+        "title": "Vinculación de ondas",
+        "text": "La vinculación de ondas combina dos fuerzas fundamentales, u Ondas, de distintas maneras. Los Caballeros Radiantes acceden a ellas mediante juramentos y vínculos, no solo mediante el estudio."
+      },
+      "spren": {
+        "title": "Spren y vínculos",
+        "text": "Los spren son manifestaciones de ideas, fuerzas y emociones. Algunos pueden formar un vínculo nahel con una persona, una relación que transforma a ambos y sostiene el centro moral de la saga."
+      }
     },
     "curiosities": {
       "kicker": "Algunos detalles de Roshar",
@@ -676,29 +1206,103 @@
       "third": "La secuencia principal incluye interludios y novelas cortas complementarias que amplían la mirada más allá del reparto central sin sustituir el orden principal."
     },
     "tableOfContents": "Ficha de Stormlight",
-    "toc": { "introduction": "Introducción", "publicationOrder": "Orden de publicación", "magic": "Sistemas de Roshar", "curiosities": "Curiosidades" }
+    "toc": {
+      "introduction": "Introducción",
+      "publicationOrder": "Orden de publicación",
+      "magic": "Sistemas de Roshar",
+      "curiosities": "Curiosidades"
+    }
   },
   "arcanumPage": {
-    "intro": { "eyebrow": "Colección especial", "description": "Arcanum Ilimitado es una antología del Cosmere: un estante guiado de relatos, novelas cortas y fragmentos que abre ventanas a distintos mundos, épocas y rincones del universo más amplio.", "countLabel": "Historias de esta colección", "countText": "historias del Cosmere" },
-    "purpose": { "kicker": "Por qué existe", "heading": "Un mapa del Cosmere en miniatura.", "text": "No es una saga ni un orden de lectura continuo. La colección reúne historias que de otro modo quedarían repartidas en distintas ediciones y añade ensayos breves, notas planetarias y material visual para mostrar cómo se conecta el Cosmere sin exigir que conozcas todas sus conexiones de antemano." },
+    "intro": {
+      "eyebrow": "Colección especial",
+      "description": "Arcanum Ilimitado es una antología del Cosmere: un estante guiado de relatos, novelas cortas y fragmentos que abre ventanas a distintos mundos, épocas y rincones del universo más amplio.",
+      "countLabel": "Historias de esta colección",
+      "countText": "historias del Cosmere"
+    },
+    "purpose": {
+      "kicker": "Por qué existe",
+      "heading": "Un mapa del Cosmere en miniatura.",
+      "text": "No es una saga ni un orden de lectura continuo. La colección reúne historias que de otro modo quedarían repartidas en distintas ediciones y añade ensayos breves, notas planetarias y material visual para mostrar cómo se conecta el Cosmere sin exigir que conozcas todas sus conexiones de antemano."
+    },
     "stories": {
-      "kicker": "El contenido", "heading": "Nueve historias, seis sistemas y muchos puntos de entrada.", "description": "Abre cada ficha para ver qué tipo de historia es, dónde encaja y cuándo funciona mejor dentro de un recorrido de lectura más amplio.",
+      "kicker": "El contenido",
+      "heading": "Nueve historias, seis sistemas y muchos puntos de entrada.",
+      "description": "Abre cada ficha para ver qué tipo de historia es, dónde encaja y cuándo funciona mejor dentro de un recorrido de lectura más amplio.",
       "items": {
-        "the-hope-of-elantris": { "description": "Un breve epílogo de Elantris, contado desde otro punto de vista y lleno de la calidez y el humor de la vida después de la crisis central de la novela.", "when": "Después de Elantris.", "context": "Un pequeño regreso a Sel y a sus habitantes; funciona mejor como coda que como introducción." },
-        "the-emperors-soul": { "description": "Una novela corta, precisa y autoconclusiva sobre una artista obligada a crear un alma nueva para un emperador mientras negocia con la identidad, el oficio y el poder.", "when": "En cualquier momento; después de Elantris si quieres mantener unido el contexto de Sel.", "context": "Transcurre en Sel, pero muestra otra región y otra forma de magia distinta a Elantris." },
-        "the-eleventh-metal": { "description": "Una breve precuela de Nacidos de la bruma que sigue a Kelsier antes de la trilogía principal y muestra una de sus primeras lecciones de Alomancia.", "when": "Después de El imperio final, o después de la trilogía original como retrospectiva.", "context": "Aporta sobre todo personaje y atmósfera; no es necesaria para empezar Nacidos de la bruma." },
-        "allomancer-jak": { "description": "Una aventura pulp dentro del mundo sobre un ladrón que aspira a héroe, enmarcada por las notas de su sufrido sirviente terrisano.", "when": "Después de Aleación de ley, cuando ya conozcas el tono y la época de Wax y Wayne.", "context": "Amplía la mitología cotidiana de la segunda era de Scadrial más que su trama central." },
-        "mistborn-secret-history": { "description": "Una novela corta que revisita acontecimientos importantes de la primera era de Nacidos de la bruma desde detrás del mundo visible, ofreciendo otra perspectiva sobre su historia oculta.", "when": "Después de Brazales de duelo para minimizar spoilers; antes también es posible con riesgo.", "context": "Es uno de los relatos más conectados con el Cosmere, así que el contexto de lectura importa." },
-        "edgedancer": { "description": "Lift protagoniza una historia rápida, divertida y tierna sobre el hambre, la responsabilidad y un peligro que se mueve por Roshar.", "when": "Después de Palabras radiantes y antes de Juramentada.", "context": "Une las primeras novelas de El archivo de las tormentas y da espacio a un personaje que volverá más adelante." },
-        "shadows-for-silence": { "description": "Un relato de frontera tenso, ambientado en un bosque donde la violencia atrae depredadores mortales y sobrevivir depende de unas reglas que nadie puede olvidar.", "when": "En cualquier momento; se puede leer de forma independiente.", "context": "Presenta Threnody y muestra hasta qué punto puede variar un relato del Cosmere fuera de la fantasía épica." },
-        "sixth-of-the-dusk": { "description": "En una isla remota, un guía que caza con aves entrenadas se enfrenta a un futuro que podría volver obsoleto el modo de vida de su pueblo.", "when": "En cualquier momento; puedes reservarlo para más adelante si prefieres descubrir sus implicaciones poco a poco.", "context": "Introduce Primero del Sol y ofrece una de las miradas más lejanas hacia el horizonte del Cosmere." },
-        "white-sand-excerpt": { "description": "Un vistazo breve a Arena Blanca que presenta Taldain, su mundo dividido y el dominio de la arena que sostiene su conflicto.", "when": "Antes de Arena Blanca como anticipo, o puedes saltarlo si ya has leído la novela gráfica.", "context": "Es un fragmento, no un final independiente ni un sustituto de la novela gráfica completa." }
+        "the-hope-of-elantris": {
+          "description": "Un breve epílogo de Elantris, contado desde otro punto de vista y lleno de la calidez y el humor de la vida después de la crisis central de la novela.",
+          "when": "Después de Elantris.",
+          "context": "Un pequeño regreso a Sel y a sus habitantes; funciona mejor como coda que como introducción."
+        },
+        "the-emperors-soul": {
+          "description": "Una novela corta, precisa y autoconclusiva sobre una artista obligada a crear un alma nueva para un emperador mientras negocia con la identidad, el oficio y el poder.",
+          "when": "En cualquier momento; después de Elantris si quieres mantener unido el contexto de Sel.",
+          "context": "Transcurre en Sel, pero muestra otra región y otra forma de magia distinta a Elantris."
+        },
+        "the-eleventh-metal": {
+          "description": "Una breve precuela de Nacidos de la bruma que sigue a Kelsier antes de la trilogía principal y muestra una de sus primeras lecciones de Alomancia.",
+          "when": "Después de El imperio final, o después de la trilogía original como retrospectiva.",
+          "context": "Aporta sobre todo personaje y atmósfera; no es necesaria para empezar Nacidos de la bruma."
+        },
+        "allomancer-jak": {
+          "description": "Una aventura pulp dentro del mundo sobre un ladrón que aspira a héroe, enmarcada por las notas de su sufrido sirviente terrisano.",
+          "when": "Después de Aleación de ley, cuando ya conozcas el tono y la época de Wax y Wayne.",
+          "context": "Amplía la mitología cotidiana de la segunda era de Scadrial más que su trama central."
+        },
+        "mistborn-secret-history": {
+          "description": "Una novela corta que revisita acontecimientos importantes de la primera era de Nacidos de la bruma desde detrás del mundo visible, ofreciendo otra perspectiva sobre su historia oculta.",
+          "when": "Después de Brazales de duelo para minimizar spoilers; antes también es posible con riesgo.",
+          "context": "Es uno de los relatos más conectados con el Cosmere, así que el contexto de lectura importa."
+        },
+        "edgedancer": {
+          "description": "Lift protagoniza una historia rápida, divertida y tierna sobre el hambre, la responsabilidad y un peligro que se mueve por Roshar.",
+          "when": "Después de Palabras radiantes y antes de Juramentada.",
+          "context": "Une las primeras novelas de El archivo de las tormentas y da espacio a un personaje que volverá más adelante."
+        },
+        "shadows-for-silence": {
+          "description": "Un relato de frontera tenso, ambientado en un bosque donde la violencia atrae depredadores mortales y sobrevivir depende de unas reglas que nadie puede olvidar.",
+          "when": "En cualquier momento; se puede leer de forma independiente.",
+          "context": "Presenta Threnody y muestra hasta qué punto puede variar un relato del Cosmere fuera de la fantasía épica."
+        },
+        "sixth-of-the-dusk": {
+          "description": "En una isla remota, un guía que caza con aves entrenadas se enfrenta a un futuro que podría volver obsoleto el modo de vida de su pueblo.",
+          "when": "En cualquier momento; puedes reservarlo para más adelante si prefieres descubrir sus implicaciones poco a poco.",
+          "context": "Introduce Primero del Sol y ofrece una de las miradas más lejanas hacia el horizonte del Cosmere."
+        },
+        "white-sand-excerpt": {
+          "description": "Un vistazo breve a Arena Blanca que presenta Taldain, su mundo dividido y el dominio de la arena que sostiene su conflicto.",
+          "when": "Antes de Arena Blanca como anticipo, o puedes saltarlo si ya has leído la novela gráfica.",
+          "context": "Es un fragmento, no un final independiente ni un sustituto de la novela gráfica completa."
+        }
       }
     },
-    "sections": { "selishSystem": "Sistema selish · Sel", "scadrianSystem": "Sistema scadriano · Scadrial", "rosharanSystem": "Sistema roshariano · Roshar", "threnoditeSystem": "Sistema threnodita · Threnody", "firstOfTheSunSystem": "Sistema de Primero del Sol", "taldainSystem": "Sistema taldainiano · Taldain" },
-    "detailsAction": "Leer el contexto", "whenLabel": "Cuándo leerla", "contextLabel": "Qué aporta",
-    "essays": { "kicker": "Más allá de las historias", "heading": "La colección también enseña a mirar hacia fuera.", "text": "El volumen incluye ensayos breves sobre varios sistemas planetarios, un mapa del Cosmere y material visual de apoyo. Son opcionales, pero convierten la antología en algo más que una pila de relatos extra: ayudan a orientarse y a detectar conexiones entre mundos.", "drominadImageLabel": "El mapa del sistema Drominad", "shardImageLabel": "Símbolos relacionados con los poderes del Cosmere", "nebulaImageLabel": "Una visión abstracta y colorida del Cosmere" },
-    "tableOfContents": "Ficha de Arcanum Ilimitado", "toc": { "introduction": "Introducción", "purpose": "Por qué existe", "stories": "Historias", "essays": "Ensayos y mapa" }
+    "sections": {
+      "selishSystem": "Sistema selish · Sel",
+      "scadrianSystem": "Sistema scadriano · Scadrial",
+      "rosharanSystem": "Sistema roshariano · Roshar",
+      "threnoditeSystem": "Sistema threnodita · Threnody",
+      "firstOfTheSunSystem": "Sistema de Primero del Sol",
+      "taldainSystem": "Sistema taldainiano · Taldain"
+    },
+    "detailsAction": "Leer el contexto",
+    "whenLabel": "Cuándo leerla",
+    "contextLabel": "Qué aporta",
+    "essays": {
+      "kicker": "Más allá de las historias",
+      "heading": "La colección también enseña a mirar hacia fuera.",
+      "text": "El volumen incluye ensayos breves sobre varios sistemas planetarios, un mapa del Cosmere y material visual de apoyo. Son opcionales, pero convierten la antología en algo más que una pila de relatos extra: ayudan a orientarse y a detectar conexiones entre mundos.",
+      "drominadImageLabel": "El mapa del sistema Drominad",
+      "shardImageLabel": "Símbolos relacionados con los poderes del Cosmere",
+      "nebulaImageLabel": "Una visión abstracta y colorida del Cosmere"
+    },
+    "tableOfContents": "Ficha de Arcanum Ilimitado",
+    "toc": {
+      "introduction": "Introducción",
+      "purpose": "Por qué existe",
+      "stories": "Historias",
+      "essays": "Ensayos y mapa"
+    }
   },
   "whiteSandPage": {
     "back": "Volver a Sagas",
@@ -786,5 +1390,145 @@
       "magic": "Sistema de Taldain",
       "curiosities": "Curiosidades"
     }
+  },
+  "independentPage": {
+    "intro": {
+      "eyebrow": "Estantería independiente",
+      "description": "Estas novelas no pertenecen a una saga larga, pero cada una crea un mundo, un tono y una experiencia completos. Son algunos de los puntos de entrada más claros al Cosmere.",
+      "imageLabel": "Una selección de novelas independientes del Cosmere",
+      "countLabel": "Novelas independientes del catálogo",
+      "countText": "obras independientes"
+    },
+    "planets": {
+      "sel": "Sel",
+      "nalthis": "Nalthis",
+      "lumar": "Lumar",
+      "komashi": "Komashi",
+      "canticle": "Cántico",
+      "firstOfTheSun": "Primero del Sol",
+      "multipleWorlds": "Varios mundos"
+    },
+    "sections": {
+      "earlyCosmere": {
+        "title": "La primera arquitectura",
+        "description": "Elantris (2005) fue la primera novela publicada del Cosmere de Brandon Sanderson, seguida por Warbreaker (2009), cuyo borrador compartió capítulo a capítulo en internet. En esa etapa el universo todavía estaba convirtiéndose en una arquitectura visible: cada libro debía funcionar por sí mismo mientras los patrones profundos apenas empezaban a aparecer."
+      },
+      "arcanum": {
+        "title": "Una estantería para relatos dispersos",
+        "description": "Arcanum Ilimitado reunió nueve obras breves que en su mayoría habían aparecido por separado, incluidas historias publicadas en Tor.com y otros lugares. También añadió Danzante del filo como obra nueva, además de los ensayos de Khriss, mapas planetarios, ilustraciones y un mapa estelar del Cosmere: puertas dispersas convertidas en una guía de sus sistemas."
+      },
+      "secretProjects": {
+        "title": "Historias nacidas en secreto",
+        "description": "Durante los años en que quedarse en casa dejó espacio para escribir más, Brandon creó cuatro novelas secretas como regalos y experimentos. La primera y la tercera estaban dirigidas especialmente a su esposa; la segunda nació porque necesitaba escribir algo distinto y también se la regaló. En 2022 reveló los libros mediante el récord de Year of Sanderson en Kickstarter: Tress, Yumi y El hombre iluminado son sus novelas cosmereanas independientes."
+      },
+      "emberdark": {
+        "title": "El horizonte sigue avanzando",
+        "description": "Esta sección reúne novelas independientes más recientes que llevan el Cosmere más allá de sus primeros mundos y hacia un escenario cada vez más conectado y futurista. Algunas amplían historias ya publicadas o desarrollan rincones del universo que antes parecían separados; otras abren puertas completamente nuevas."
+      }
+    },
+    "works": {
+      "kicker": "La estantería",
+      "heading": "Siete formas de entrar en el Cosmere.",
+      "description": "Los grupos siguen el papel cambiante de las obras independientes: fundamentos, puertas recopiladas, experimentos privados y una expansión futurista. Abre cada ficha para leer su sinopsis y usa el interrogante para consultar el contexto.",
+      "items": {
+        "elantris": {
+          "description": "Elantris fue una ciudad resplandeciente cuyos habitantes eran tratados como dioses. Cuando su magia falló, se convirtió en un lugar de decadencia, y un príncipe marcado por la misma maldición debe descubrir qué ocurrió antes de que su reino siga el mismo camino.",
+          "when": "En cualquier momento; es la primera novela publicada del Cosmere.",
+          "context": "Una introducción autoconclusiva a Sel, la AonDor y la primera capa publicada del Cosmere."
+        },
+        "warbreaker": {
+          "description": "Siri es enviada a casarse con el Dios Rey de Hallandren en lugar de su hermana, mientras Vivenna la sigue para rescatarla. A su alrededor, un dios retornado y un soldado misterioso quedan atrapados en un reino donde el color y el Aliento pueden despertar lo inanimado.",
+          "when": "En cualquier momento; funciona especialmente bien como experiencia completa de un solo libro.",
+          "context": "Presenta Nalthis, el Despertar y conceptos que reaparecen en conexiones posteriores del Cosmere."
+        },
+        "tressOfTheEmeraldSea": {
+          "description": "Tress ha vivido tranquilamente en una isla del mar esmeralda, coleccionando tazas y escuchando historias. Cuando desaparece la persona que ama, se oculta en un barco y cruza océanos de esporas mortales para encontrar a la Hechicera del Mar de Medianoche.",
+          "when": "En cualquier momento; es una entrada moderna y acogedora, con conexiones ligeras.",
+          "context": "Una historia situada en Lumar, con voz de cuento y una perspectiva cosmereana más amplia en segundo plano."
+        },
+        "yumiAndTheNightmarePainter": {
+          "description": "Yumi ha pasado su vida invocando espíritus para un mundo luminoso de piedras apiladas. Painter patrulla las calles llenas de pesadillas de otro mundo. Cuando ambos quedan unidos de repente, deben descubrir el misterio de su conexión antes de que los dos mundos cambien para siempre.",
+          "when": "En cualquier momento; conviene abordarla como una historia independiente centrada en sus personajes.",
+          "context": "Explora Komashi, la tecnología hion y la relación entre oficio, memoria e identidad."
+        },
+        "theSunlitMan": {
+          "description": "Nomad ha sobrevivido durante años huyendo de la Brigada Nocturna de mundo en mundo. Ahora, atrapado en Cántico, donde el amanecer puede fundir la piedra, se ve arrastrado a una rebelión y obligado a luchar por algo más que su vida.",
+          "when": "Después de conocer una parte amplia del Cosmere, porque su contexto es deliberadamente más grande.",
+          "context": "Transcurre en Cántico y contiene implicaciones cosmereanas importantes, aunque mantiene una historia inmediata muy concreta."
+        },
+        "islesOfTheEmberdark": {
+          "description": "Ocaso es un trampero de aviares sobrenaturales en la peligrosa isla de Patji. Cuando invasores llegados de las estrellas amenazan a su pueblo, navega más allá de un portal místico, mientras Starling y su tripulación de exiliados persiguen un mapa que podría cambiar su suerte y el destino de la Ascuaoscura.",
+          "when": "En cualquier momento como nueva aventura independiente; el relato anterior de Sexto del ocaso aporta contexto útil.",
+          "context": "Amplía la región del Primero del Sol hacia una historia cosmereana futurista de portales, estrellas y poderes enfrentados."
+        },
+        "arcanumUnbounded": {
+          "description": "Una antología reúne relatos, novelas cortas y fragmentos de distintos rincones del Cosmere, y facilita explorar mundos lejanos desde una sola estantería.",
+          "when": "Cuando quieras explorar obras breves; cada historia tiene su propio contexto recomendado.",
+          "context": "Es una colección, no una saga: sus nueve historias siguen agrupadas en su página propia y no cuentan como obras independientes adicionales."
+        }
+      }
+    },
+    "connections": {
+      "kicker": "Más allá de la estantería",
+      "heading": "Independiente no significa desconectado.",
+      "description": "Cada novela tiene primero su propia promesa. El universo mayor aparece mediante ideas, lugares y visitantes recurrentes, y recompensa la atención sin exigir un orden maestro de lectura.",
+      "entryPoints": {
+        "title": "Entradas flexibles",
+        "text": "Elige según el ambiente: misterio, fantasía política, aventura de cuento, romance íntimo o una visión más amplia del Cosmere."
+      },
+      "worlds": {
+        "title": "Mundos diferentes",
+        "text": "Sel, Nalthis, Lumar, Komashi, Cántico y la región del Primero del Sol muestran la variedad del Cosmere."
+      },
+      "cosmere": {
+        "title": "Un horizonte mayor",
+        "text": "Lee primero la historia principal y deja que los nombres, símbolos y preguntas recurrentes se conviertan en invitaciones para explorar más."
+      }
+    },
+    "detailsAction": "Leer el contexto",
+    "planetLabel": "Mundo",
+    "whenLabel": "Cuándo leerlo",
+    "contextLabel": "Qué aporta",
+    "detailsHeading": "Un poco más de contexto",
+    "openDetails": "Abrir más contexto sobre {title}",
+    "closeDetails": "Cerrar el contexto adicional",
+    "tableOfContents": "Ficha de independientes",
+    "toc": {
+      "introduction": "Introducción",
+      "works": "La estantería independiente",
+      "connections": "Conexiones más amplias"
+    }
+  },
+  "creditsPage": {
+    "eyebrow": "Fuentes y derechos",
+    "heading": "Créditos",
+    "description": "Registro de trabajo de los recursos visuales utilizados por Cosmereando, sus fuentes y los permisos que todavía deben confirmarse.",
+    "notice": {
+      "heading": "Un proyecto fan con material de terceros",
+      "text": "Cosmereando es un proyecto fan no oficial. Las portadas, ilustraciones oficiales y demás materiales de terceros pertenecen a sus respectivos titulares. Los recursos no verificados están marcados para revisarlos antes de publicar."
+    },
+    "assetsKicker": "Archivo visual",
+    "assetsHeading": "Imágenes registradas actualmente",
+    "groups": {
+      "ai": {
+        "title": "Imágenes generadas para Cosmereando",
+        "description": "Estas ilustraciones ambientales y de estudio se han generado para el proyecto y se consideran recursos originales de Cosmereando."
+      },
+      "legacy": {
+        "title": "Recursos visuales existentes",
+        "description": "Estos recursos ya estaban en el repositorio. Su fuente o licencia original todavía no está registrada y deben revisarse antes de publicar."
+      },
+      "covers": {
+        "title": "Portadas de libros",
+        "description": "Las portadas se utilizan para la navegación del catálogo, pero sus derechos pertenecen a sus autores, artistas y editoriales."
+      }
+    },
+    "fields": {
+      "author": "Autoría",
+      "source": "Fuente",
+      "license": "Licencia"
+    },
+    "tableOfContents": "Página de créditos",
+    "toc": { "introduction": "Introducción", "assets": "Imágenes registradas" }
   }
 }

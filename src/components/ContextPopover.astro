@@ -1,0 +1,179 @@
+---
+interface ContextRow {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  triggerLabel: string;
+  closeLabel: string;
+  rows: ContextRow[];
+}
+
+const { id, title, triggerLabel, closeLabel, rows } = Astro.props;
+---
+
+<div class="context-popover">
+  <button
+    class="context-popover__trigger"
+    type="button"
+    aria-label={triggerLabel}
+    aria-controls={id}
+    aria-expanded="false"
+    data-context-trigger>?</button
+  >
+  <div
+    class="context-popover__panel"
+    id={id}
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby={`${id}-title`}
+    hidden
+    data-context-panel
+  >
+    <div class="context-popover__heading">
+      <h5 id={`${id}-title`}>{title}</h5>
+      <button
+        class="context-popover__close"
+        type="button"
+        aria-label={closeLabel}
+        data-context-close>×</button
+      >
+    </div>
+    {
+      rows.map((row) => (
+        <p>
+          <strong>{row.label}:</strong> {row.value}
+        </p>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const contextTriggers = Array.from(
+    document.querySelectorAll<HTMLButtonElement>("[data-context-trigger]"),
+  );
+
+  const closeContext = (trigger: HTMLButtonElement, panel: HTMLElement) => {
+    panel.classList.remove("is-open");
+    trigger.setAttribute("aria-expanded", "false");
+    window.setTimeout(() => {
+      if (!panel.classList.contains("is-open")) panel.hidden = true;
+    }, 180);
+  };
+
+  const positionContext = (trigger: HTMLButtonElement, panel: HTMLElement) => {
+    const container = trigger.parentElement;
+    if (!container) return;
+    container.classList.remove("is-right", "is-left", "is-below");
+    panel.hidden = false;
+
+    const triggerRect = trigger.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+    const edgePadding = 16;
+    const rightSpace = window.innerWidth - triggerRect.right;
+    const leftSpace = triggerRect.left;
+
+    if (rightSpace >= panelRect.width + edgePadding) {
+      container.classList.add("is-right");
+    } else if (leftSpace >= panelRect.width + edgePadding) {
+      container.classList.add("is-left");
+    } else {
+      container.classList.add("is-below");
+    }
+  };
+
+  contextTriggers.forEach((trigger) => {
+    const panelId = trigger.getAttribute("aria-controls");
+    const panel = panelId ? document.getElementById(panelId) : null;
+    if (!panel) return;
+
+    trigger.addEventListener("click", () => {
+      contextTriggers.forEach((otherTrigger) => {
+        const otherPanelId = otherTrigger.getAttribute("aria-controls");
+        const otherPanel = otherPanelId
+          ? document.getElementById(otherPanelId)
+          : null;
+        if (otherPanel && otherTrigger !== trigger)
+          closeContext(otherTrigger, otherPanel);
+      });
+
+      if (!panel.hidden) {
+        closeContext(trigger, panel);
+        return;
+      }
+
+      positionContext(trigger, panel);
+      panel.classList.remove("is-open");
+      requestAnimationFrame(() => panel.classList.add("is-open"));
+      trigger.setAttribute("aria-expanded", "true");
+      panel.querySelector<HTMLButtonElement>("[data-context-close]")?.focus();
+    });
+
+    panel
+      .querySelector<HTMLButtonElement>("[data-context-close]")
+      ?.addEventListener("click", () => {
+        closeContext(trigger, panel);
+        trigger.focus();
+      });
+
+    panel.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+
+      const focusableElements = Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => !element.hasAttribute("disabled"));
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      !(event.target instanceof Element) ||
+      event.target.closest("[data-context-trigger], [data-context-panel]")
+    )
+      return;
+
+    contextTriggers.forEach((trigger) => {
+      const panelId = trigger.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel && !panel.hidden) closeContext(trigger, panel);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    contextTriggers.forEach((trigger) => {
+      const panelId = trigger.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel && !panel.hidden) {
+        closeContext(trigger, panel);
+        trigger.focus();
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    contextTriggers.forEach((trigger) => {
+      const panelId = trigger.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel && !panel.hidden) positionContext(trigger, panel);
+    });
+  });
+</script>
