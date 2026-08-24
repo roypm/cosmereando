@@ -1037,8 +1037,33 @@
       "heading": "Un univers.\nMolts mons.\nInfinites històries.",
       "intro": "El Cosmere és l’univers de fantasia interconnectat de Brandon Sanderson: històries independents amb identitat pròpia, unides per connexions més profundes per a qui té curiositat.",
       "discover": "Descobreix-ne les connexions",
+      "secondary": "Explora la biblioteca",
+      "edition": "Una guia de camp viva",
       "imageLabel": "Els regnes connectats del Cosmere",
       "imageDimensions": "16:9 · imatge editorial panoràmica"
+    },
+    "atlas": {
+      "kicker": "L’índex de treball",
+      "heading": "Comença per una forma, no per una llista.",
+      "description": "Cosmereando enfoca l’univers des de diversos angles: les obres, els mons que habiten, els sistemes que els transformen i les rutes que els connecten.",
+      "statsLabel": "El catàleg de Cosmereando d’un cop d’ull",
+      "stats": {
+        "works": "obres catalogades",
+        "worlds": "mons estudiats",
+        "systems": "sistemes de màgia",
+        "routes": "formes d’entrar"
+      }
+    },
+    "explore": {
+      "kicker": "Tria una mirada",
+      "heading": "L’univers, secció per secció.",
+      "description": "Cada secció respon una pregunta diferent. Segueix les històries, estudia els escenaris o troba un ordre de lectura que sigui teu.",
+      "open": "Obre la secció",
+      "booksText": "Un catàleg creixent de novel·les, novel·les curtes, relats i novel·les gràfiques.",
+      "sagasText": "Les grans seqüències, la seva estructura de lectura i els mons que fan visibles.",
+      "planetsText": "Perfils de climes, terrenys, biosferes i hàbitats amb mirada científica.",
+      "magicText": "Com funciona cada sistema, què permet i on apareixen els seus límits.",
+      "independentsText": "Portes autoconclusives al Cosmere, des dels primers experiments fins a nous horitzons."
     },
     "cosmere": {
       "kicker": "La visió general",
@@ -1055,13 +1080,16 @@
       "universe": {
         "title": "Connexions per descobrir",
         "text": "Noms, personatges i idees recurrents recompensen l’atenció, encara que la majoria d’històries també funcionen per si soles."
-      }
+      },
+      "mapLabel": "Mapa il·lustrat dels mons del Cosmere",
+      "mapCaption": "El mapa és una invitació a la curiositat, no una ruta que hagis de memoritzar."
     },
     "author": {
       "kicker": "L’autor",
       "heading": "Un constructor de mons connectats",
       "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut per la seva construcció de mons, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. Elantris, publicada el 2005, va ser la seva primera novel·la publicada i la primera història que va llançar dins del Cosmere. Darrere de llibres i sagues independents, fa anys que construeix un univers molt més gran.",
       "imageLabel": "Retrat de l’autor",
+      "imageCaption": "Brandon Sanderson · arquitecte del Cosmere",
       "imageDimensions": "2:3 · retrat vertical"
     },
     "whyRead": {
@@ -1099,11 +1127,11 @@
     "tableOfContents": "En aquesta pàgina",
     "toc": {
       "introduction": "Introducció",
+      "atlas": "L’índex de treball",
+      "explore": "Tria una mirada",
       "cosmere": "Què és el Cosmere?",
-      "author": "L’autor",
-      "whyRead": "Per què llegir-lo?",
       "routes": "Rutes de lectura",
-      "library": "La biblioteca"
+      "author": "L’autor"
     }
   },
   "pages": {

@@ -1037,8 +1037,33 @@
       "heading": "Un universo.\nMuchos mundos.\nInfinitas historias.",
       "intro": "El Cosmere es el universo de fantasía interconectado de Brandon Sanderson: historias independientes con identidad propia, unidas por conexiones más profundas para quienes sienten curiosidad.",
       "discover": "Descubre sus conexiones",
+      "secondary": "Explora la biblioteca",
+      "edition": "Una guía viva de campo",
       "imageLabel": "Los reinos conectados del Cosmere",
       "imageDimensions": "16:9 · imagen editorial panorámica"
+    },
+    "atlas": {
+      "kicker": "El índice de trabajo",
+      "heading": "Empieza por una forma, no por una lista.",
+      "description": "Cosmereando enfoca el universo desde varios ángulos: las obras, los mundos que habitan, los sistemas que los transforman y las rutas que los conectan.",
+      "statsLabel": "El catálogo de Cosmereando de un vistazo",
+      "stats": {
+        "works": "obras catalogadas",
+        "worlds": "mundos estudiados",
+        "systems": "sistemas de magia",
+        "routes": "formas de entrar"
+      }
+    },
+    "explore": {
+      "kicker": "Elige una mirada",
+      "heading": "El universo, sección por sección.",
+      "description": "Cada sección responde a una pregunta distinta. Sigue las historias, estudia los escenarios o encuentra un orden de lectura que sea tuyo.",
+      "open": "Abrir sección",
+      "booksText": "Un catálogo creciente de novelas, novelas cortas, relatos y novelas gráficas.",
+      "sagasText": "Las grandes secuencias, su estructura de lectura y los mundos que hacen visibles.",
+      "planetsText": "Perfiles de climas, terrenos, biosferas y hábitats con mirada científica.",
+      "magicText": "Cómo funciona cada sistema, qué permite y dónde aparecen sus límites.",
+      "independentsText": "Puertas autoconclusivas al Cosmere, desde los primeros experimentos hasta nuevos horizontes."
     },
     "cosmere": {
       "kicker": "La visión general",
@@ -1055,13 +1080,16 @@
       "universe": {
         "title": "Conexiones por descubrir",
         "text": "Nombres, personajes e ideas recurrentes recompensan la atención, aunque la mayoría de historias también funcionan por sí solas."
-      }
+      },
+      "mapLabel": "Mapa ilustrado de los mundos del Cosmere",
+      "mapCaption": "El mapa es una invitación a la curiosidad, no una ruta que tengas que memorizar."
     },
     "author": {
       "kicker": "El autor",
       "heading": "Un constructor de mundos conectados",
       "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por su construcción de mundos, sus sistemas de magia innovadores y sus ambiciosas historias largas. Elantris, publicada en 2005, fue su primera novela publicada y la primera historia que lanzó dentro del Cosmere. Detrás de libros y sagas independientes, lleva años construyendo un universo mucho mayor.",
       "imageLabel": "Retrato del autor",
+      "imageCaption": "Brandon Sanderson · arquitecto del Cosmere",
       "imageDimensions": "2:3 · retrato vertical"
     },
     "whyRead": {
@@ -1099,11 +1127,11 @@
     "tableOfContents": "En esta página",
     "toc": {
       "introduction": "Introducción",
+      "atlas": "El índice de trabajo",
+      "explore": "Elige una mirada",
       "cosmere": "¿Qué es el Cosmere?",
-      "author": "El autor",
-      "whyRead": "¿Por qué leerlo?",
       "routes": "Rutas de lectura",
-      "library": "La biblioteca"
+      "author": "El autor"
     }
   },
   "pages": {

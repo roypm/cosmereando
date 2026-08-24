@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
 import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
+import PageContent from "./PageContent.astro";
 import { getBookCollections, getBookCount } from "../data/catalogue";
 import { getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -50,124 +51,131 @@ const tableOfContentsItems = [
           { label: t("navigation.books.title") },
         ]}
       />
-      <main class="main-content books-page">
-        <section
-          class="page-intro books-page__intro"
-          id="introduction"
-          aria-labelledby="books-heading"
-        >
-          <div>
-            <p class="eyebrow">{t("books.eyebrow")}</p>
-            <h1 id="books-heading">{t("books.heading")}</h1>
-            <p class="books-page__lead">{t("books.description")}</p>
-          </div>
-          <div class="books-page__index" aria-label={t("books.indexLabel")}>
-            <span class="books-page__index-number"
-              >{String(bookCount).padStart(2, "0")}</span
-            >
-            <span>{t("books.catalogueCount")}</span>
-          </div>
-          <EditorialImage
-            src={bookMashup}
-            alt={t("books.imageLabel")}
-            variant="feature"
-          />
-        </section>
-
-        <section
-          class="books-page__catalogue"
-          id="catalogue"
-          aria-labelledby="catalogue-heading"
-        >
-          <div class="books-page__section-heading">
+      <main class="main-content">
+        <PageContent variant="wide" pageClass="books-page">
+          <section
+            class="page-intro books-page__intro"
+            id="introduction"
+            aria-labelledby="books-heading"
+          >
             <div>
-              <p class="section-kicker">{t("books.catalogueKicker")}</p>
-              <h2 id="catalogue-heading">{t("books.catalogueHeading")}</h2>
+              <p class="eyebrow">{t("books.eyebrow")}</p>
+              <h1 id="books-heading">{t("books.heading")}</h1>
+              <p class="books-page__lead">{t("books.description")}</p>
             </div>
-            <p>{t("books.catalogueDescription")}</p>
-          </div>
-
-          {
-            collections.map((collection, collectionIndex) => (
-              <section
-                class="book-collection"
-                id={collection.id}
-                aria-labelledby={`${collection.id}-heading`}
+            <div class="books-page__index" aria-label={t("books.indexLabel")}>
+              <span class="books-page__index-number"
+                >{String(bookCount).padStart(2, "0")}</span
               >
-                <div class="book-collection__heading">
-                  <span class="book-collection__number">
-                    {String(collectionIndex + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 id={`${collection.id}-heading`}>{collection.label}</h3>
-                    {collection.sagaHref && (
-                      <a href={collection.sagaHref}>
-                        {t("books.viewSaga")} <span aria-hidden="true">→</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-                {collection.subsections ? (
-                  collection.subsections.map((subsection) => (
-                    <div class="book-subcollection" id={subsection.id}>
-                      <h4 class="book-subcollection__heading">
-                        {subsection.label}
-                      </h4>
-                      <div class="book-grid">
-                        {subsection.works.map((work, workIndex) => (
-                          <article
-                            class="book-card"
-                            id={work.id}
-                            data-work-type={work.typeKey}
-                          >
-                            <img
-                              src={work.image.src}
-                              alt={t("pages.imageLabel", { title: work.title })}
-                              class="book-card__cover"
-                            />
-                            <span class="book-card__number">
-                              {String(workIndex + 1).padStart(2, "0")}
-                            </span>
-                            <h4>{work.title}</h4>
-                            <span class="book-card__type">{work.type}</span>
-                            <span class="book-card__year">
-                              {work.publicationYear}
-                            </span>
-                          </article>
-                        ))}
-                      </div>
+              <span>{t("books.catalogueCount")}</span>
+            </div>
+            <EditorialImage
+              src={bookMashup}
+              alt={t("books.imageLabel")}
+              variant="feature"
+            />
+          </section>
+
+          <section
+            class="books-page__catalogue"
+            id="catalogue"
+            aria-labelledby="catalogue-heading"
+          >
+            <div class="books-page__section-heading">
+              <div>
+                <p class="section-kicker">{t("books.catalogueKicker")}</p>
+                <h2 id="catalogue-heading">{t("books.catalogueHeading")}</h2>
+              </div>
+              <p>{t("books.catalogueDescription")}</p>
+            </div>
+
+            {
+              collections.map((collection, collectionIndex) => (
+                <section
+                  class="book-collection"
+                  id={collection.id}
+                  aria-labelledby={`${collection.id}-heading`}
+                >
+                  <div class="book-collection__heading">
+                    <span class="book-collection__number">
+                      {String(collectionIndex + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 id={`${collection.id}-heading`}>
+                        {collection.label}
+                      </h3>
+                      {collection.sagaHref && (
+                        <a href={collection.sagaHref}>
+                          {t("books.viewSaga")}{" "}
+                          <span aria-hidden="true">→</span>
+                        </a>
+                      )}
                     </div>
-                  ))
-                ) : (
-                  <div class="book-grid">
-                    {collection.works.map((work, workIndex) => (
-                      <article
-                        class="book-card"
-                        id={work.id}
-                        data-work-type={work.typeKey}
-                      >
-                        <img
-                          src={work.image.src}
-                          alt={t("pages.imageLabel", { title: work.title })}
-                          class="book-card__cover"
-                        />
-                        <span class="book-card__number">
-                          {String(workIndex + 1).padStart(2, "0")}
-                        </span>
-                        <h4>{work.title}</h4>
-                        <span class="book-card__type">{work.type}</span>
-                        <span class="book-card__year">
-                          {work.publicationYear}
-                        </span>
-                      </article>
-                    ))}
                   </div>
-                )}
-              </section>
-            ))
-          }
-        </section>
-        <PageReturn locale={locale} href="/" label={t("common.home")} />
+                  {collection.subsections ? (
+                    collection.subsections.map((subsection) => (
+                      <div class="book-subcollection" id={subsection.id}>
+                        <h4 class="book-subcollection__heading">
+                          {subsection.label}
+                        </h4>
+                        <div class="book-grid">
+                          {subsection.works.map((work, workIndex) => (
+                            <article
+                              class="book-card"
+                              id={work.id}
+                              data-work-type={work.typeKey}
+                            >
+                              <img
+                                src={work.image.src}
+                                alt={t("pages.imageLabel", {
+                                  title: work.title,
+                                })}
+                                class="book-card__cover"
+                              />
+                              <span class="book-card__number">
+                                {String(workIndex + 1).padStart(2, "0")}
+                              </span>
+                              <h4>{work.title}</h4>
+                              <span class="book-card__type">{work.type}</span>
+                              <span class="book-card__year">
+                                {work.publicationYear}
+                              </span>
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div class="book-grid">
+                      {collection.works.map((work, workIndex) => (
+                        <article
+                          class="book-card"
+                          id={work.id}
+                          data-work-type={work.typeKey}
+                        >
+                          <img
+                            src={work.image.src}
+                            alt={t("pages.imageLabel", { title: work.title })}
+                            class="book-card__cover"
+                          />
+                          <span class="book-card__number">
+                            {String(workIndex + 1).padStart(2, "0")}
+                          </span>
+                          <h4>{work.title}</h4>
+                          <span class="book-card__type">{work.type}</span>
+                          <span class="book-card__year">
+                            {work.publicationYear}
+                          </span>
+                        </article>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              ))
+            }
+          </section>
+          <PageReturn locale={locale} href="/" label={t("common.home")} />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("books.tableOfContents")}

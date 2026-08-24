@@ -5,6 +5,7 @@ import PageReturn from "./PageReturn.astro";
 import PageTrail from "./PageTrail.astro";
 import Sidebar from "./Sidebar.astro";
 import TableOfContents from "./TableOfContents.astro";
+import PageContent from "./PageContent.astro";
 import { getMagicSystems } from "../data/catalogue";
 import { getLocalizedPath, getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
@@ -36,69 +37,73 @@ const systems = getMagicSystems(locale);
           { label: t("navigation.magicSystems.title") },
         ]}
       />
-      <main class="main-content magic-systems-page">
-        <section
-          class="page-intro magic-systems-page__masthead"
-          id="introduction"
-          aria-labelledby="magic-systems-heading"
-        >
-          <div>
-            <p class="eyebrow">{t("magicSystemsPage.intro.eyebrow")}</p>
-            <h1 id="magic-systems-heading">
-              {t("magicSystemsPage.intro.heading")}
-            </h1>
-            <p>{t("magicSystemsPage.intro.description")}</p>
-          </div>
-          <div
-            class="magic-systems-page__count"
-            aria-label={t("magicSystemsPage.intro.countLabel")}
+      <main class="main-content">
+        <PageContent variant="wide" pageClass="magic-systems-page">
+          <section
+            class="page-intro magic-systems-page__masthead"
+            id="introduction"
+            aria-labelledby="magic-systems-heading"
           >
-            <span>{String(systems.length).padStart(2, "0")}</span>
-            <small>{t("magicSystemsPage.intro.countText")}</small>
-          </div>
-        </section>
-
-        <section
-          class="magic-systems-page__directory"
-          id="directory"
-          aria-labelledby="directory-heading"
-        >
-          <div class="magic-systems-page__directory-heading">
             <div>
-              <p class="section-kicker">
-                {t("magicSystemsPage.directory.kicker")}
-              </p>
-              <h2 id="directory-heading">
-                {t("magicSystemsPage.directory.heading")}
-              </h2>
+              <p class="eyebrow">{t("magicSystemsPage.intro.eyebrow")}</p>
+              <h1 id="magic-systems-heading">
+                {t("magicSystemsPage.intro.heading")}
+              </h1>
+              <p>{t("magicSystemsPage.intro.description")}</p>
             </div>
-            <p>{t("magicSystemsPage.directory.description")}</p>
-          </div>
-          <div class="magic-system-directory">
-            {
-              systems.map((system, index) => (
-                <a
-                  class="magic-system-card"
-                  id={system.id}
-                  href={path(`/magic-systems/${system.id}`)}
-                >
-                  <div class="magic-system-card__meta">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <span>{system.world}</span>
-                  </div>
-                  <h3>{system.label}</h3>
-                  <p>{t(`magicSystemsPage.items.${system.id}.description`)}</p>
-                  <span class="magic-system-card__link">
-                    {t("magicSystemsPage.directory.detailLink")}{" "}
-                    <span aria-hidden="true">↗</span>
-                  </span>
-                </a>
-              ))
-            }
-          </div>
-        </section>
+            <div
+              class="magic-systems-page__count"
+              aria-label={t("magicSystemsPage.intro.countLabel")}
+            >
+              <span>{String(systems.length).padStart(2, "0")}</span>
+              <small>{t("magicSystemsPage.intro.countText")}</small>
+            </div>
+          </section>
 
-        <PageReturn locale={locale} href="/" label={t("common.home")} />
+          <section
+            class="magic-systems-page__directory"
+            id="directory"
+            aria-labelledby="directory-heading"
+          >
+            <div class="magic-systems-page__directory-heading">
+              <div>
+                <p class="section-kicker">
+                  {t("magicSystemsPage.directory.kicker")}
+                </p>
+                <h2 id="directory-heading">
+                  {t("magicSystemsPage.directory.heading")}
+                </h2>
+              </div>
+              <p>{t("magicSystemsPage.directory.description")}</p>
+            </div>
+            <div class="magic-system-directory">
+              {
+                systems.map((system, index) => (
+                  <a
+                    class="magic-system-card"
+                    id={system.id}
+                    href={path(`/magic-systems/${system.id}`)}
+                  >
+                    <div class="magic-system-card__meta">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <span>{system.world}</span>
+                    </div>
+                    <h3>{system.label}</h3>
+                    <p>
+                      {t(`magicSystemsPage.items.${system.id}.description`)}
+                    </p>
+                    <span class="magic-system-card__link">
+                      {t("magicSystemsPage.directory.detailLink")}{" "}
+                      <span aria-hidden="true">↗</span>
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </section>
+
+          <PageReturn locale={locale} href="/" label={t("common.home")} />
+        </PageContent>
       </main>
       <TableOfContents
         title={t("magicSystemsPage.tableOfContents")}
