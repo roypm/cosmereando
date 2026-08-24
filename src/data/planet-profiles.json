@@ -1,0 +1,68 @@
+[
+  {
+    "id": "scadrial",
+    "systemKey": "scadrian",
+    "imageLabelKey": "scadrial",
+    "visualMode": "terrain"
+  },
+  {
+    "id": "roshar",
+    "systemKey": "rosharan",
+    "imageLabelKey": "roshar",
+    "visualMode": "climate"
+  },
+  {
+    "id": "nalthis",
+    "systemKey": "nalthian",
+    "imageLabelKey": "nalthis",
+    "visualMode": "biosphere"
+  },
+  {
+    "id": "sel",
+    "systemKey": "selish",
+    "imageLabelKey": "sel",
+    "visualMode": "map"
+  },
+  {
+    "id": "taldain",
+    "systemKey": "taldain",
+    "imageLabelKey": "taldain",
+    "visualMode": "contrast"
+  },
+  {
+    "id": "lumar",
+    "systemKey": "unknown",
+    "imageLabelKey": "lumar",
+    "visualMode": "oceans"
+  },
+  {
+    "id": "canticle",
+    "systemKey": "unknown",
+    "imageLabelKey": "canticle",
+    "visualMode": "cycle"
+  },
+  {
+    "id": "komashi",
+    "systemKey": "utol",
+    "imageLabelKey": "komashi",
+    "visualMode": "recovery"
+  },
+  {
+    "id": "threnody",
+    "systemKey": "threnodite",
+    "imageLabelKey": "threnody",
+    "visualMode": "forest"
+  },
+  {
+    "id": "first-of-the-sun",
+    "systemKey": "drominad",
+    "imageLabelKey": "firstOfTheSun",
+    "visualMode": "islands"
+  },
+  {
+    "id": "ashyn",
+    "systemKey": "rosharan",
+    "imageLabelKey": "ashyn",
+    "visualMode": "ruins"
+  }
+]

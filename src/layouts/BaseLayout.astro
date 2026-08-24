@@ -1,13 +1,19 @@
 ---
-import '../styles/tokens.css';
-import '../styles/base.css';
-import '../styles/layout.css';
-import '../styles/components.css';
-import '../styles/pages.css';
-import '../styles/responsive.css';
-import '../styles/global.css';
-import { defaultLocale, getCanonicalPath, getLocalizedPath, localeConfig, locales } from '../data/i18n';
-import type { Locale } from '../data/locales';
+import "../styles/tokens.css";
+import "../styles/base.css";
+import "../styles/layout.css";
+import "../styles/components.css";
+import "../styles/pages.css";
+import "../styles/responsive.css";
+import "../styles/global.css";
+import {
+  defaultLocale,
+  getCanonicalPath,
+  getLocalizedPath,
+  localeConfig,
+  locales,
+} from "../data/i18n";
+import type { Locale } from "../data/locales";
 
 interface Props {
   title: string;
@@ -26,34 +32,56 @@ const canonicalHref = getLocalizedPath(defaultLocale, canonicalPath);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalHref} />
+    <meta property="og:site_name" content="Cosmereando" />
     <meta property="og:locale" content={localeConfig[locale].openGraphLocale} />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}/favicon.svg`}
+    />
     <link rel="canonical" href={canonicalHref} />
-    {locales.map((targetLocale) => (
-      <link
-        rel="alternate"
-        hreflang={localeConfig[targetLocale].languageTag}
-        href={getLocalizedPath(targetLocale, canonicalPath)}
-      />
-    ))}
+    {
+      locales.map((targetLocale) => (
+        <link
+          rel="alternate"
+          hreflang={localeConfig[targetLocale].languageTag}
+          href={getLocalizedPath(targetLocale, canonicalPath)}
+        />
+      ))
+    }
     <link rel="alternate" hreflang="x-default" href={canonicalHref} />
     <script is:inline>
       (() => {
         try {
-          const storedTheme = localStorage.getItem('cosmereando-theme');
-          const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          const theme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : systemTheme;
+          const storedTheme = localStorage.getItem("cosmereando-theme");
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+            .matches
+            ? "dark"
+            : "light";
+          const theme =
+            storedTheme === "dark" || storedTheme === "light"
+              ? storedTheme
+              : systemTheme;
           document.documentElement.dataset.theme = theme;
         } catch {
-          document.documentElement.dataset.theme = 'light';
+          document.documentElement.dataset.theme = "light";
         }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"

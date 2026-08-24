@@ -1,4 +1,4 @@
-@layer tokens, base, layout, components, pages, overrides;
+@layer tokens, base, layout, components, pages, responsive, overrides;
 
 @layer overrides {
   .main-content > .page-intro {

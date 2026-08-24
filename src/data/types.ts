@@ -1,8 +1,10 @@
 export interface NavigationGroupData {
-  id: 'routes' | 'works' | 'sagas' | 'planets' | 'magic-systems';
+  id:
+    "routes" | "works" | "sagas" | "independents" | "planets" | "magic-systems";
   href: string;
   labelKey: string;
-  source: 'routes' | 'works' | 'sagas' | 'planets' | 'magicSystems';
+  source:
+    "routes" | "works" | "sagas" | "planets" | "magicSystems" | "independents";
 }
 
 export interface NavigationEntryData {
@@ -10,14 +12,25 @@ export interface NavigationEntryData {
   labelKey: string;
 }
 
+export interface RouteData extends NavigationEntryData {
+  summaryKey: string;
+}
+
 export interface WorkData extends NavigationEntryData {
   slug: string;
   sagaId?: string;
-  typeKey: 'novel' | 'novella' | 'short-story' | 'graphic-novel' | 'omnibus' | 'anthology' | 'excerpt';
+  typeKey:
+    | "novel"
+    | "novella"
+    | "short-story"
+    | "graphic-novel"
+    | "omnibus"
+    | "anthology"
+    | "excerpt";
   publicationOrder?: number;
   publicationYear: number;
-  arcanumStatus?: 'arcanum-original' | 'previously-published';
-  era?: 'era-1' | 'era-2';
+  arcanumStatus?: "arcanum-original" | "previously-published";
+  era?: "era-1" | "era-2";
   collectionIds?: string[];
 }
 
@@ -26,9 +39,10 @@ export interface CatalogueItemData extends NavigationEntryData {
 }
 
 export interface PlanetProfile {
+  id: string;
   systemKey: string;
   imageLabelKey: string;
-  storyKeys: string[];
+  visualMode: string;
 }
 
 export interface MagicSystemData extends NavigationEntryData {

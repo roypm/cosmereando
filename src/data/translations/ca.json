@@ -10,7 +10,8 @@
     "toggleSidebar": "Mostrar o ocultar la navegació principal",
     "closeSidebar": "Tancar la navegació principal",
     "projectLinks": "Enllaços del projecte",
-    "lastUpdated": "Última actualització: 20 d’agost de 2026",
+    "projectRepository": "Repositori del codi font de Cosmereando",
+    "lastUpdated": "Última actualització: 24 d’agost de 2026",
     "version": "Versió",
     "createdBy": "Creat per",
     "credits": "Crèdits",
@@ -23,6 +24,7 @@
     "placeholderSection": "Aquesta secció s’ampliarà amb el contingut del catàleg de Cosmereando."
   },
   "notFound": {
+    "eyebrow": "404 · Perduda al Cosmere",
     "title": "Aquesta pàgina s’ha perdut al Regne Cognitiu.",
     "description": "El camí que has seguit sembla haver fugit del mapa. Fins i tot una Esquirla pot perdre’s.",
     "returnHome": "Tornar al Cosmere",
@@ -202,8 +204,7 @@
       "cards": {
         "mistborn": "Un cicle de revolucions, metalls i eres canviants a Scadrial.",
         "the-stormlight-archive": "Una història èpica de Roshar, els Radiants i el retorn de les tempestes.",
-        "white-sand": "Una saga gràfica marcada per la llum implacable i les cultures de Taldain.",
-        "arcanum-unbounded": "Una col·lecció que reuneix històries del Cosmere i els dona un marc més ampli."
+        "white-sand": "Una saga gràfica marcada per la llum implacable i les cultures de Taldain."
       }
     },
     "tableOfContents": "En aquesta pàgina",
@@ -339,6 +340,7 @@
     "routes": { "title": "Rutes" },
     "books": { "title": "Llibres" },
     "sagas": { "title": "Sagues" },
+    "independents": { "title": "Independents" },
     "planets": { "title": "Planetes" },
     "magicSystems": { "title": "Sistemes de màgia" }
   },
@@ -362,18 +364,186 @@
       "kicker": "El catàleg",
       "heading": "Sistemes i expressions de poder.",
       "description": "Comença per un món i segueix les connexions entre les seves històries, personatges i formes d’Investidura.",
-      "worldLink": "Explora {world}"
+      "worldLink": "Explora {world}",
+      "detailLink": "Obre la fitxa tècnica"
     },
     "items": {
-      "metallic-arts": { "description": "L’Alomància, la Feruquímia i l’Hemalúrgia formen les tres Arts Metàl·liques interrelacionades de Scadrial." },
-      "surgebinding": { "description": "Un sistema rosharià format per les Potències, els vincles i els spren que fan possibles aquests vincles." },
-      "aondor": { "description": "L’AonDor converteix símbols, lloc i intenció en una forma precisa de poder vinculada a Sel." },
-      "awakening": { "description": "Un art que dona vida i ordres mitjançant Alens, color i paraules pronunciades amb precisió." },
-      "sand-mastery": { "description": "El mestratge de la sorra de Taldain canalitza la Investidura a través de les sorres vives del Costat del Dia." },
-      "forgery": { "description": "La Falsificació utilitza segells d’ànima per imposar una història possible a un objecte o una persona." }
+      "metallic-arts": {
+        "description": "L’Alomància, la Feruquímia i l’Hemalúrgia formen les tres Arts Metàl·liques interrelacionades de Scadrial."
+      },
+      "surgebinding": {
+        "description": "Un sistema rosharià format per les Potències, els vincles i els spren que fan possibles aquests vincles."
+      },
+      "aondor": {
+        "description": "L’AonDor converteix símbols, lloc i intenció en una forma precisa de poder vinculada a Sel."
+      },
+      "awakening": {
+        "description": "Un art que dona vida i ordres mitjançant Alens, color i paraules pronunciades amb precisió."
+      },
+      "sand-mastery": {
+        "description": "El mestratge de la sorra de Taldain canalitza la Investidura a través de les sorres vives del Costat del Dia."
+      },
+      "forgery": {
+        "description": "La Falsificació utilitza segells d’ànima per imposar una història possible a un objecte o una persona."
+      }
     },
     "tableOfContents": "En aquesta pàgina",
     "toc": { "introduction": "Introducció", "directory": "El catàleg" }
+  },
+  "magicSystemDetails": {
+    "eyebrow": "Fitxa tècnica del sistema",
+    "worldLabel": "Món d’origen",
+    "typeLabel": "Comportament energètic",
+    "tableOfContents": "En aquesta pàgina",
+    "visualLabel": "Estudi visual del sistema {system}",
+    "exampleLabel": "Exemple d’ús",
+    "toc": { "introduction": "Introducció" },
+    "labels": {
+      "overview": "Descripció del sistema",
+      "classification": "Classificació",
+      "tradeoffs": "Intercanvi i cost",
+      "failure": "Errors coneguts",
+      "access": "Accés al sistema",
+      "surges": "Forces disponibles",
+      "bond": "Estabilitat del vincle",
+      "notation": "Llenguatge formal",
+      "geography": "Dependència geogràfica",
+      "limits": "Límits operatius",
+      "resources": "Recursos de treball",
+      "commands": "Ordres i control",
+      "thresholds": "Llindars de capacitat",
+      "material": "Material reactiu",
+      "capacity": "Capacitat i abast",
+      "risks": "Riscos fisiològics",
+      "process": "Procés d’alteració",
+      "persistence": "Persistència de l’efecte"
+    },
+    "metallic-arts": {
+      "description": "Tres mètodes que utilitzen metalls com a focus per empènyer, emmagatzemar o transferir atributs. El seu comportament es pot estudiar segons l’entrada, la conservació i la pèrdua d’energia.",
+      "type": "Règims d’entrada, conservació i pèrdua",
+      "example": "Per moure una peça pesada, un usuari pot activar un metall que generi una força d’empenta; un altre mètode permet guardar temporalment la força física en una reserva metàl·lica.",
+      "overview": {
+        "heading": "El metall és una interfície, no pas combustible",
+        "body": "Les Arts Metàl·liques no consumeixen el metall per obtenir-ne la propietat. Cada metall organitza una interacció concreta: activa un efecte, guarda una magnitud o trasllada una capacitat entre organismes."
+      },
+      "classification": {
+        "heading": "Tres arquitectures amb regles diferents",
+        "body": "L’Alomància introdueix energia i utilitza el metall com a catalitzador; la Feruquímia conserva una propietat i la retorna més tard; la Hemalúrgia n’extreu una propietat i la fixa en un altre suport, amb pèrdua durant la transferència."
+      },
+      "tradeoffs": {
+        "heading": "Potència, reserva i precisió s’intercanvien",
+        "body": "La capacitat depèn de les reserves, del metall i l’aliatge correctes, del moment d’activació i de la tolerància de l’usuari. Guardar una propietat exigeix renunciar-hi temporalment i transferir-la redueix el resultat total."
+      },
+      "failure": {
+        "heading": "Els errors solen ser d’identificació o dosificació",
+        "body": "Un metall incorrecte, un aliatge contaminat o una reserva insuficient pot produir un efecte nul o incomplet. L’ús continuat també pot alterar la percepció i crear dependència d’un sol atribut."
+      }
+    },
+    "surgebinding": {
+      "description": "Un sistema que modifica forces físiques locals mitjançant energia ambiental i un vincle estable amb una entitat cognitiva. Les variables principals són l’accés, la intenció, la geometria i la conservació d’energia.",
+      "type": "Manipulació local de forces naturals",
+      "example": "Per canviar la trajectòria d’un objecte, l’usuari altera temporalment la seva relació gravitatòria amb el terra i hi substitueix una direcció escollida.",
+      "overview": {
+        "heading": "Deu forces combinades en parelles funcionals",
+        "body": "El sistema descriu deu Potències que afecten fenòmens com la gravetat, la fricció, la cohesió, el creixement, la llum i la transformació. L’usuari només accedeix a una combinació concreta de forces."
+      },
+      "access": {
+        "heading": "L’accés depèn d’una relació adquirida",
+        "body": "La capacitat no és una habilitat universal. Requereix un vincle amb un spren o un focus alternatiu, i la combinació resultant determina quines forces es poden manipular i amb quina estabilitat."
+      },
+      "surges": {
+        "heading": "L’energia s’aplica sobre objectes i cossos",
+        "body": "L’energia ambiental es pot infondre en la matèria o en éssers vius per alterar-ne temporalment el comportament. La precisió depèn de la força, la quantitat, la distància i la comprensió del fenomen."
+      },
+      "bond": {
+        "heading": "L’estabilitat també és un problema de coherència",
+        "body": "El vincle s’enforteix quan la conducta de l’usuari manté el patró que el va originar. Les contradiccions en redueixen l’estabilitat i poden danyar la relació que sosté el sistema."
+      }
+    },
+    "aondor": {
+      "description": "Un sistema de programació simbòlica que converteix forma, posició i intenció en efectes físics. El rendiment depèn de la precisió del patró i de la connexió amb el territori de referència.",
+      "type": "Conversió simbòlica de la intenció en efecte",
+      "example": "Una forma base pot descriure una font de calor; afegir-hi línies d’abast i durada limita l’operació a una zona i un temps concrets.",
+      "overview": {
+        "heading": "Una forma gràfica pot descriure un procés",
+        "body": "L’AonDor funciona com un llenguatge formal: una figura base defineix una operació i les línies addicionals especifiquen destinació, durada, intensitat o condicions. Cal construir una instrucció completa."
+      },
+      "notation": {
+        "heading": "Els modificadors actuen com a paràmetres",
+        "body": "Els enllaços i les línies secundàries encadenen operacions, en canvien l’escala o en defineixen l’activació. Les equacions avançades exigeixen precisió espacial, memòria i pràctica prolongada."
+      },
+      "geography": {
+        "heading": "El mapa forma part del càlcul",
+        "body": "Les formes de referència reflecteixen el territori associat al sistema. Quan la geografia canvia, el patró s’ha d’actualitzar; la distància en redueix progressivament l’eficàcia."
+      },
+      "limits": {
+        "heading": "La complexitat creix més ràpid que la potència",
+        "body": "Els efectes senzills són més fiables que les construccions amb moltes condicions. Un error petit pot canviar el resultat, i les aplicacions complexes requereixen coneixement de l’objectiu i domini del llenguatge."
+      }
+    },
+    "awakening": {
+      "description": "Un procés d’animació que combina una reserva transferible, una font de color i una ordre formulada correctament. El resultat depèn de la claredat de la instrucció i de l’energia emmagatzemada.",
+      "type": "Animació mitjançant energia, color i llenguatge",
+      "example": "Una ordre com mantenir una porta tancada es pot transferir a un objecte adequat; si la tasca no està ben definida, pot no saber quan aturar-se o no reaccionar.",
+      "overview": {
+        "heading": "La matèria rep una pauta de comportament",
+        "body": "El sistema introdueix una ordre en un objecte i li permet executar una seqüència limitada. La complexitat depèn de la reserva, del material i de la interpretació de l’ordre."
+      },
+      "resources": {
+        "heading": "El color i la reserva són variables mesurables",
+        "body": "L’activació consumeix una reserva que es pot transferir entre persones. El color actua com a reactiu visible i s’esgota durant el procés, mentre que la quantitat determina quines tasques són viables."
+      },
+      "commands": {
+        "heading": "Una ordre és una especificació, no una conversa",
+        "body": "Una ordre ha de ser breu, coherent i visualitzada amb precisió. Si és ambigua o no es pot representar mentalment, l’objecte pot no reaccionar o executar-la de manera incompleta."
+      },
+      "thresholds": {
+        "heading": "La capacitat augmenta per llindars",
+        "body": "Quan s’acumula més reserva, algunes ordres es tornen instintives i apareixen noves aplicacions. La relació no és lineal: certs canvis exigeixen superar quantitats concretes."
+      }
+    },
+    "sand-mastery": {
+      "description": "Un sistema de control remot de sorra blanca que converteix un material reactiu en cintes mòbils. El rendiment està limitat per l’aigua interna de l’usuari i l’estat de càrrega de la sorra.",
+      "type": "Control material condicionat per la hidratació",
+      "example": "Un usuari pot dividir la sorra en diverses cintes per aixecar un objecte, però cada cinta addicional augmenta la coordinació necessària i accelera el consum d’aigua.",
+      "overview": {
+        "heading": "La sorra és eina i sensor alhora",
+        "body": "El control organitza la sorra en cintes que poden subjectar, moure o elevar objectes. Durant l’ús, el material canvia de color i perd resposta fins que rep la radiació adequada."
+      },
+      "material": {
+        "heading": "Un microorganisme fa reactiu cada gra",
+        "body": "La superfície dels grans conté un organisme que respon a l’energia i fa visible l’estat de la sorra. El contacte amb aigua activa la reacció, ennegreix la sorra i pot deixar-la inert temporalment."
+      },
+      "capacity": {
+        "heading": "La capacitat s’expressa en nombre de cintes",
+        "body": "La força i la complexitat augmenten amb el nombre de cintes coordinades. L’abast depèn de la concentració, la reserva d’aigua i la continuïtat del material disponible."
+      },
+      "risks": {
+        "heading": "El límit més perillós és fisiològic",
+        "body": "Cada ús extreu aigua del cos per activar el material. Superar la reserva provoca deshidratació, pèrdua de control i risc vital; per això la gestió de l’aigua és central."
+      }
+    },
+    "forgery": {
+      "description": "Un sistema de modificació contextual que utilitza segells per proposar una història alternativa per a un objecte o una persona. La durada depèn de com sigui de plausible i detallada.",
+      "type": "Reescriptura temporal mitjançant models simbòlics",
+      "example": "Un artesà que coneix el material i l’historial d’una gerra pot dissenyar un segell que li atribueixi temporalment la resistència d’una altra etapa de fabricació.",
+      "overview": {
+        "heading": "L’objectiu canvia perquè canvia la seva història",
+        "body": "La Falsificació construeix un model del que l’objecte hauria pogut ser si hagués viscut altres decisions, accidents o aprenentatges, i l’aplica com una condició temporal."
+      },
+      "process": {
+        "heading": "Investigar forma part del mecanisme",
+        "body": "El segell ha de descriure una cadena causal convincent: material, ús, context i canvis acumulats. Com més es coneix l’objectiu i més coherent és la seqüència, més probabilitats hi ha que l’efecte es mantingui."
+      },
+      "persistence": {
+        "heading": "L’estabilitat depèn de la plausibilitat",
+        "body": "Un segell pot durar molt si la història alternativa encaixa amb l’objectiu. Els salts o les contradiccions degraden l’efecte i fan que l’objecte torni gradualment al seu estat original."
+      },
+      "limits": {
+        "heading": "La matèria investida ofereix resistència",
+        "body": "Els objectes amb càrrega energètica pròpia són més difícils de modificar. La distància també en redueix l’eficàcia, mentre que els segells universals són ràpids però menys duradors."
+      }
+    }
   },
   "routes": {
     "community": "Rutes comunitàries",
@@ -440,29 +610,83 @@
     "intro": {
       "eyebrow": "Directori de mons",
       "heading": "Llocs que donen forma al Cosmere.",
-      "description": "Cada planeta té la seva pròpia història, atmosfera i regles. Aquestes pàgines reuneixen la seva natura, els seus pobles, les curiositats i les històries relacionades.",
+      "description": "Cada planeta es tracta com un estudi de camp: terreny, atmosfera, clima, vida, hàbitats i les preguntes que encara planteja el seu entorn.",
       "imageLabel": "Mapa dels mons del Cosmere"
     },
     "directory": {
       "kicker": "El directori",
       "heading": "Tria un món per explorar.",
-      "description": "Comença per un planeta i segueix les històries que hi estan relacionades. Cada fitxa ofereix una lectura breu del món i espai per ampliar-la.",
-      "cardDescription": "Una fitxa de {title}, amb l’entorn, les formes de vida i les històries relacionades."
+      "description": "Tria un món per examinar-ne les condicions físiques, els sistemes vius i les pressions ambientals més inusuals.",
+      "cardDescription": "Un perfil de camp de {title}: terreny, clima, biosfera i preguntes obertes."
     },
     "detail": {
       "eyebrow": "Fitxa del món",
-      "description": "La pàgina de {title} reuneix l’entorn, les formes de vida, les societats i les històries relacionades en una guia amb spoilers controlats.",
+      "description": "La pàgina de {title} reuneix l’entorn físic, el clima, la biosfera, els hàbitats i les preguntes d’investigació encara obertes.",
       "imageLabel": "Guia visual de {title}",
       "imageDimensions": "16:9 · imatge editorial del planeta",
-      "systemLabel": "Sistema",
+      "systemLabel": "Sistema planetari",
+      "scaleLabel": "Escala física",
       "worldLabel": "Referència visual",
-      "systems": { "scadrian": "Sistema scadrià", "rosharan": "Sistema rosharà", "nalthian": "Sistema nalthisià", "selish": "Sistema selish", "taldain": "Sistema de Taldain", "unknown": "Sistema encara no identificat públicament", "utol": "Sistema d’UTol", "threnodite": "Sistema threnodita", "drominad": "Sistema de Drominad" },
-      "imageLabels": { "scadrial": "Camps de cendra i horitzó volcànic de Scadrial", "roshar": "Un paisatge rosharà sota cels de tempesta", "nalthis": "Una regió exuberant de Nalthis", "sel": "Elantris i els paisatges dividits de Sel", "taldain": "Una ciutat al costat lluminós de Taldain", "lumar": "El Mar Esmeralda de Lumar", "canticle": "Un paisatge sota el sol abrasador de Càntic", "komashi": "Un carrer il·luminat per neons a Komashi", "threnody": "Un bosc encantat de Threnody", "firstOfTheSun": "Una costa perillosa del Primer del Sol", "ashyn": "Ashyn, el planeta en flames" },
+      "geologyKicker": "Geologia i terreny",
+      "climateKicker": "Clima i atmosfera",
+      "biosphereKicker": "Biosfera",
+      "habitatsKicker": "Hàbitats",
+      "researchKicker": "Preguntes obertes",
+      "visuals": {
+        "geologyLabel": "Marcador de mapa geològic de {title}",
+        "geologyDimensions": "16:9 · mapa de relleu o tall geològic",
+        "geologyText": "Mapa del terreny",
+        "climateLabel": "Marcador de diagrama climàtic de {title}",
+        "climateDimensions": "2:3 · diagrama atmosfèric o del cicle diari",
+        "climateText": "Perfil climàtic",
+        "biosphereLabel": "Marcador d’il·lustració de la biosfera de {title}",
+        "biosphereDimensions": "1:1 · bioma representatiu",
+        "biosphereText": "Estudi del bioma",
+        "speciesLabel": "Marcador d’estudi d’espècies de {title}",
+        "speciesDimensions": "1:1 · detall de flora o fauna",
+        "speciesText": "Detall de vida",
+        "habitatsLabel": "Marcador de mapa d’hàbitats de {title}",
+        "habitatsDimensions": "3:2 · mapa d’assentaments o hàbitats",
+        "habitatsText": "Mapa d’hàbitats"
+      },
+      "systems": {
+        "scadrian": "Sistema scadrià",
+        "rosharan": "Sistema rosharà",
+        "nalthian": "Sistema nalthisià",
+        "selish": "Sistema selish",
+        "taldain": "Sistema de Taldain",
+        "unknown": "Sistema encara no identificat públicament",
+        "utol": "Sistema d’UTol",
+        "threnodite": "Sistema threnodita",
+        "drominad": "Sistema de Drominad"
+      },
+      "imageLabels": {
+        "scadrial": "Plana volcànica coberta de cendra a Scadrial",
+        "roshar": "Planes rocoses sota les tempestes de Roshar",
+        "nalthis": "Selva humida i costa tropical de Nalthis",
+        "sel": "Regions geològiques variades de Sel",
+        "taldain": "Desert il·luminat de Taldain",
+        "lumar": "Oceà d’espores i illes de Lumar",
+        "canticle": "Frontera tèrmica entre la calor i el gel de Càntic",
+        "komashi": "Pous de vapor al terreny rocós de Komashi",
+        "threnody": "Bosc temperat i humit de Threnody",
+        "firstOfTheSun": "Arxipèlag tropical del Primer del Sol",
+        "ashyn": "Terreny fracturat i roques suspeses d’Ashyn"
+      },
       "environmentKicker": "Entorn",
       "lifeKicker": "Vida",
       "societyKicker": "Maneres de viure",
       "noDedicatedStory": "Actualment no hi ha cap història principal publicada ambientada a Ashyn. La seva història i els assentaments supervivents estan lligats al sistema rosharà i a l’antiga migració cap a Roshar.",
-      "toc": { "introduction": "Introducció", "directory": "Directori de mons", "overview": "L’escenari", "environment": "Entorn", "life": "Flora i fauna", "society": "Maneres de viure", "stories": "Històries relacionades", "magic": "Sistemes i curiositats" },
+      "toc": {
+        "introduction": "Introducció",
+        "directory": "Directori de mons",
+        "overview": "L’escenari",
+        "environment": "Entorn",
+        "life": "Flora i fauna",
+        "society": "Maneres de viure",
+        "stories": "Històries relacionades",
+        "magic": "Sistemes i curiositats"
+      },
       "overviewKicker": "L’escenari",
       "overviewHeading": "Un món que espera ser cartografiat.",
       "storiesKicker": "Històries relacionades",
@@ -470,21 +694,306 @@
       "magicKicker": "Sistemes i forces",
       "magicHeading": "Les regles que donen forma a aquest món.",
       "profiles": {
-        "scadrial": { "description": "Scadrial és un planeta transformat en cada era per la Preservació, la Ruïna i els seus portadors.", "overviewHeading": "Un món construït sobre el canvi.", "overview": "Va passar de la cendra, la boira i les muntanyes volcàniques a una època més verda, industrial i tecnològica després de la Catacendra.", "environmentHeading": "Cendra, boires i horitzons restaurats.", "environment": "El Lord Legislador va apropar el planeta al sol i va controlar el clima amb els Ashmounts. Després, la geografia i el clima van ser restaurats.", "lifeHeading": "Criatures transformades per la Investidura.", "life": "Els mistwraiths i els kandra són formes de vida pròpies de Scadrial alterades per la Hemalúrgia. El món restaurat també sosté cultius i animals diversos.", "societyHeading": "De la rebel·lió skaa al ferrocarril.", "society": "La societat va passar de nobles i skaa a governs urbans, trens, armes de foc i comerç industrial. Terris, koloss i kandra encara en defineixen la identitat.", "curiositiesHeading": "Les Arts Metàl·liques formen part de l’ecologia.", "curiosities": "L’Alomància, la Feruquímia i la Hemalúrgia afecten la medicina, el transport, la política i els cossos de diversos pobles." },
-        "roshar": { "description": "Roshar és un planeta amb molt oxigen i poca gravetat, on les tempestes, els spren i els juraments condicionen la vida.", "overviewHeading": "Un planeta dissenyat pel clima.", "overview": "Un supercontinent i les altes tempestes que el travessen d’est a oest defineixen Roshar i les seves cultures.", "environmentHeading": "Altes tempestes, crem i valls protegides.", "environment": "Les tempestes porten vent violent, pluja i crem ric en minerals. L’est rep el cop primer; les valls occidentals i Shinovar estan més protegides.", "lifeHeading": "Closques, cors de gema i spren.", "life": "Molts animals tenen closca i les espècies grans posseeixen cors de gema. Rockbuds, herba, chulls i greatshells s’han adaptat a les tempestes.", "societyHeading": "Cultures organitzades per sobreviure.", "society": "Alezi, herdazians, shin, horneaters i cantants mantenen relacions diferents amb la tempesta, els juraments i la terra.", "curiositiesHeading": "El planeta té més d’un tipus de tempesta.", "curiosities": "Les altes tempestes són naturals i Investides; l’Everstorm segueix un altre patró. A Shadesmar, Roshar es converteix en un oceà de comptes." },
-        "nalthis": { "description": "Nalthis és un planeta de regnes, color viu i Despertar, amb una geografia encara poc coneguda.", "overviewHeading": "Un món on el color té poder.", "overview": "Hallandren i Idris mostren només una part de Nalthis, marcat per la Manywar, els Cinc Savis i els Retornats.", "environmentHeading": "Jungles, muntanyes i el Mar Lluent.", "environment": "Hallandren conté l’única jungla coneguda i les Llàgrimes d’Edgli. També hi ha muntanyes, un mar interior i terratrèmols freqüents.", "lifeHeading": "Una biosfera variada i poc cartografiada.", "life": "La jungla té panteres, lloros, micos i cocodrils. El Mar Lluent conté peixos, musclos i vida tentaculada.", "societyHeading": "Regnes, colors i objectes vius.", "society": "La riquesa d’Hallandren contrasta amb les tradicions austeres d’Idris. L’Alè forma part de l’economia i el Despertar activa els objectes.", "curiositiesHeading": "El planeta es coneix pel que ofereix.", "curiosities": "Nalthis té una lluna, Rrendos, i la seva Investidura està lligada a Endowment. El color i la identitat són visibles en la cultura." },
-        "sel": { "description": "Sel és un planeta gran d’imperis separats, història densa i formes d’Investidura regionals.", "overviewHeading": "Moltes civilitzacions sobre un mateix mapa.", "overview": "Elantris, Arelon i MaiPon només mostren una part d’un planeta on la geografia defineix la política i la màgia.", "environmentHeading": "Un món continental divers.", "environment": "Sel conté climes i paisatges variats. El Regne Cognitiu és especialment perillós a causa del Dor.", "lifeHeading": "Societats humanes i vida construïda.", "life": "Els humans comparteixen Sel amb seons i skaze, éssers connectats a la seva Investidura. La resta de l’ecologia és poc coneguda.", "societyHeading": "El llenguatge també és geografia màgica.", "society": "AonDor, Forgery, ChayShan, Dakhor i Bloodsealing depenen de símbols i tradicions locals. Les fronteres i les llengües importen.", "curiositiesHeading": "Sel és planeta i paisatge cognitiu perillós.", "curiosities": "Devoció i Domini van ser trencats aquí, i el Dor omple el Regne Cognitiu de poder descontrolat." },
-        "taldain": { "description": "Taldain és un planeta dividit entre un costat lluminós i un costat fosc, on la sorra i l’aïllament polític marquen la vida.", "overviewHeading": "Dues cares d’un mateix món.", "overview": "Dayside i Darkside viuen condicions oposades. White Sand segueix els Mestres de la Sorra i les tensions al voltant del Diem.", "environmentHeading": "Llum, foscor i sorra en moviment.", "environment": "El costat lluminós està dominat pel sol intens i els deserts. La sorra respon als mestres i es converteix en recurs i defensa.", "lifeHeading": "Vida adaptada als extrems.", "life": "La fauna coneguda és sobretot desèrtica i Darkside continua poc documentat. El vincle més singular és el dels mestres amb la sorra.", "societyHeading": "El Diem i els Mestres de la Sorra.", "society": "La societat lluminosa gira al voltant del Diem i les institucions que regulen els mestres. La història de Kenton mostra la fragilitat del seu aïllament.", "curiositiesHeading": "Darkside no és només el revers de Dayside.", "curiosities": "Taldain mostra com la Investidura pot expressar-se mitjançant un contrast ambiental extrem." },
-        "lumar": { "description": "Lumar és un planeta cobert per dotze oceans d’espores, cadascun lligat a una lluna i a un aether diferent.", "overviewHeading": "Un món fet de mars i llunes.", "overview": "La superfície està dividida en mars pentagonals d’espores. Les comunitats viuen a illes i costes i naveguen aprofitant-ne el comportament.", "environmentHeading": "Lunagrees, calmes i seethe.", "environment": "Les dotze llunes deixen caure espores durant les lunagrees. Durant el seethe els mars flueixen; durant les stillings la superfície es pot solidificar.", "lifeHeading": "Vida corrent sobre mars alienígenes.", "life": "Les illes sostenen conreus, arbres, flors, rates, gats, coloms, papallones i gavines. La vida profunda dels mars és desconeguda.", "societyHeading": "Cultures insulars i navegació.", "society": "Les comunitats construeixen la seva identitat al voltant d’illes, llunes i mars. El Mar Esmeralda connecta les rutes més conegudes.", "curiositiesHeading": "Les llunes formen part del clima.", "curiosities": "L’ombra d’una lluna refreda la terra cada dia en passar entre el sol i el planeta. Astronomia i navegació són inseparables." },
-        "canticle": { "description": "Càntic és un planeta petit i de rotació lenta on un sol Investit obliga els habitants a mantenir-se davant de l’alba.", "overviewHeading": "Un món que fuig del seu sol.", "overview": "La llum de Càntic crema o vaporitza qui hi queda exposat. Les comunitats viuen en ciutats voladores i avancen per corredors habitables.", "environmentHeading": "Llum abrasadora i ombres d’anells.", "environment": "Els anells reflecteixen una mica de llum cap a la cara fosca, i creen oportunitats breus per cultivar i viatjar.", "lifeHeading": "Creixement ràpid i cicles perillosos.", "life": "El sol accelera el creixement vegetal i les collites maduren durant la finestra de l’alba. La flora, la fauna i els sunhearts depenen del cicle.", "societyHeading": "Ciutats voladores fetes de naus.", "society": "La gent uneix naus per formar ciutats alimentades per sunhearts. Unió coordina les comunitats i en manté viva la ruta.", "curiositiesHeading": "Una diàspora threnodita al cel.", "curiosities": "Molts habitants descendeixen de threnodites que van fugir del seu món i van adaptar la seva cultura a una nova amenaça." },
-        "komashi": { "description": "Komashi és un món doble marcat per la tecnologia hion, la mortalla i societats nascudes al voltant de pous de vapor.", "overviewHeading": "Un planeta que es reconstrueix després d’una catàstrofe.", "overview": "Komashi i UTol orbiten un sol vermell ataronjat. La màquina pare va consumir ànimes, va alterar l’ecologia i va deixar una mortalla.", "environmentHeading": "Pedra bruna, pous de vapor i mortalla.", "environment": "La terra és sobretot pedra bruna. Abans de la mortalla, els esperits escalfaven el terra i portaven aigua a la superfície.", "lifeHeading": "Esperits, malsons i plantes que tornen.", "life": "Els esperits hijo alimenten la tecnologia hion i els yoki-hijo són una forma de vida singular. Els malsons neixen de la mortalla.", "societyHeading": "Pintors, ciutats i servei.", "society": "Les nacions van créixer al voltant dels pous de vapor i les línies hion. Els pintors de malsons patrullen les ciutats i converteixen l’art en defensa.", "curiositiesHeading": "L’art és una tecnologia de supervivència.", "curiosities": "A Komashi, pintar pot neutralitzar un malson i apilar pedres pot afectar la mortalla. L’atenció i l’ofici tenen efectes materials." },
-        "threnody": { "description": "Threnody és un planeta temperat de boscos, muntanyes i oceans on els morts poden tornar com a shades i sobreviure depèn de regles senzilles.", "overviewHeading": "Un món que recorda els seus morts.", "overview": "Després de la devastació causada pel Mal, els supervivents van fugir al continent menor i es van establir prop dels Boscos de l’Infern.", "environmentHeading": "Boscos silenciosos i nits perilloses.", "environment": "Els boscos tenen rius, coves, muntanyes i arbres caducifolis. El silenci és antinatural, sobretot de nit.", "lifeHeading": "Animals sota una llei de sang.", "life": "Cérvols, rosegadors, conills, ocells i galls dindi conviuen amb bestiar domèstic. Els depredadors van desaparèixer perquè la sang atrau els shades.", "societyHeading": "Fortaleses, granges i refugis.", "society": "Les ciutats fortalesa protegeixen els habitants i controlen l’economia de la plata. Els colons treballen les clarianes i les waystops ofereixen terra neutral.", "curiositiesHeading": "La plata és moneda, medicina i frontera.", "curiosities": "Els shades són ombres cognitives que ataquen qui trenca les Regles Senzilles. La plata els pot ferir i protegir una llar." },
-        "first-of-the-sun": { "description": "El Primer del Sol és el primer planeta del sistema Drominad, un món oceànic conegut pels seus Aviar i l’arxipèlag Pantheon.", "overviewHeading": "Un món d’illes observat des del cel.", "overview": "Té un continent, moltes illes i almenys una lluna. Les illes dels Eelakin sostenen societats establertes; Pantheon és sagrat i perillós.", "environmentHeading": "El continent i Pantheon.", "environment": "Pantheon reuneix unes quaranta illes de platges, penya-segats i interiors letals. La seva flora i fauna són molt més perilloses.", "lifeHeading": "Aviar i vida depredadora.", "life": "Els Aviar són aus natives capaces d’atorgar habilitats als seus companys humans. Les altres formes de vida de Pantheon solen ser mortals.", "societyHeading": "Vida eelakin entre tradició i indústria.", "society": "Els Eelakin viuen a les illes natals i han desenvolupat la tecnologia amb el temps. La relació amb Pantheon barreja reverència, exploració i pressió industrial.", "curiositiesHeading": "Primer del Sol i Drominad no són el mateix.", "curiosities": "Drominad és el nom del sistema, que conté set planetes i un cinturó d’asteroides. Arcanum mostra un mapa del sistema, no només del planeta." },
-        "ashyn": { "description": "Ashyn és el primer planeta del sistema rosharà, recordat com el planeta en flames després que una catàstrofe destruís gran part de la seva biosfera.", "overviewHeading": "El món perdut darrere del mite rosharà.", "overview": "La majoria dels ashynites va fugir a Roshar després de l’Escorxament. Van quedar regions fèrtils aïllades i ciutats flotants.", "environmentHeading": "Terra erma i ciutats flotants.", "environment": "Ashyn era més fèrtil, però avui és gairebé estèril. Queden zones habitables i ciutats sostingudes per una Investidura basada en malalties.", "lifeHeading": "Una biosfera malmesa.", "life": "Abans hi havia ocells, cavalls, raïm i animals domèstics. Avui se’n coneix poca vida, inclosos rèptils i organismes vinculats a la seva màgia infecciosa.", "societyHeading": "Sobreviure per damunt d’un món trencat.", "society": "La població viu en ciutats flotants o zones fèrtils aïllades. Algunes malalties donen efectes útils però fan la societat dependent dels infectats.", "curiositiesHeading": "Una màgia que canvia el sentit del sistema.", "curiosities": "La màgia posterior a l’Escorxament funciona mitjançant infeccions simbiòtiques. Ashyn pot ser central per a una saga encara sense novel·la principal." }
+        "scadrial": {
+          "description": "Scadrial és un planeta transformat en cada era per la Preservació, la Ruïna i els seus portadors.",
+          "overviewHeading": "Un món construït sobre el canvi.",
+          "overview": "Va passar de la cendra, la boira i les muntanyes volcàniques a una època més verda, industrial i tecnològica després de la Catacendra.",
+          "environmentHeading": "Cendra, boires i horitzons restaurats.",
+          "environment": "El Lord Legislador va apropar el planeta al sol i va controlar el clima amb els Ashmounts. Després, la geografia i el clima van ser restaurats.",
+          "lifeHeading": "Criatures transformades per la Investidura.",
+          "life": "Els mistwraiths i els kandra són formes de vida pròpies de Scadrial alterades per la Hemalúrgia. El món restaurat també sosté cultius i animals diversos.",
+          "societyHeading": "De la rebel·lió skaa al ferrocarril.",
+          "society": "La societat va passar de nobles i skaa a governs urbans, trens, armes de foc i comerç industrial. Terris, koloss i kandra encara en defineixen la identitat.",
+          "curiositiesHeading": "Les Arts Metàl·liques formen part de l’ecologia.",
+          "curiosities": "L’Alomància, la Feruquímia i la Hemalúrgia afecten la medicina, el transport, la política i els cossos de diversos pobles."
+        },
+        "roshar": {
+          "description": "Roshar és un planeta amb molt oxigen i poca gravetat, on les tempestes, els spren i els juraments condicionen la vida.",
+          "overviewHeading": "Un planeta dissenyat pel clima.",
+          "overview": "Un supercontinent i les altes tempestes que el travessen d’est a oest defineixen Roshar i les seves cultures.",
+          "environmentHeading": "Altes tempestes, crem i valls protegides.",
+          "environment": "Les tempestes porten vent violent, pluja i crem ric en minerals. L’est rep el cop primer; les valls occidentals i Shinovar estan més protegides.",
+          "lifeHeading": "Closques, cors de gema i spren.",
+          "life": "Molts animals tenen closca i les espècies grans posseeixen cors de gema. Rockbuds, herba, chulls i greatshells s’han adaptat a les tempestes.",
+          "societyHeading": "Cultures organitzades per sobreviure.",
+          "society": "Alezi, herdazians, shin, horneaters i cantants mantenen relacions diferents amb la tempesta, els juraments i la terra.",
+          "curiositiesHeading": "El planeta té més d’un tipus de tempesta.",
+          "curiosities": "Les altes tempestes són naturals i Investides; l’Everstorm segueix un altre patró. A Shadesmar, Roshar es converteix en un oceà de comptes."
+        },
+        "nalthis": {
+          "description": "Nalthis és un planeta de regnes, color viu i Despertar, amb una geografia encara poc coneguda.",
+          "overviewHeading": "Un món on el color té poder.",
+          "overview": "Hallandren i Idris mostren només una part de Nalthis, marcat per la Manywar, els Cinc Savis i els Retornats.",
+          "environmentHeading": "Jungles, muntanyes i el Mar Lluent.",
+          "environment": "Hallandren conté l’única jungla coneguda i les Llàgrimes d’Edgli. També hi ha muntanyes, un mar interior i terratrèmols freqüents.",
+          "lifeHeading": "Una biosfera variada i poc cartografiada.",
+          "life": "La jungla té panteres, lloros, micos i cocodrils. El Mar Lluent conté peixos, musclos i vida tentaculada.",
+          "societyHeading": "Regnes, colors i objectes vius.",
+          "society": "La riquesa d’Hallandren contrasta amb les tradicions austeres d’Idris. L’Alè forma part de l’economia i el Despertar activa els objectes.",
+          "curiositiesHeading": "El planeta es coneix pel que ofereix.",
+          "curiosities": "Nalthis té una lluna, Rrendos, i la seva Investidura està lligada a Endowment. El color i la identitat són visibles en la cultura."
+        },
+        "sel": {
+          "description": "Sel és un planeta gran d’imperis separats, història densa i formes d’Investidura regionals.",
+          "overviewHeading": "Moltes civilitzacions sobre un mateix mapa.",
+          "overview": "Elantris, Arelon i MaiPon només mostren una part d’un planeta on la geografia defineix la política i la màgia.",
+          "environmentHeading": "Un món continental divers.",
+          "environment": "Sel conté climes i paisatges variats. El Regne Cognitiu és especialment perillós a causa del Dor.",
+          "lifeHeading": "Societats humanes i vida construïda.",
+          "life": "Els humans comparteixen Sel amb seons i skaze, éssers connectats a la seva Investidura. La resta de l’ecologia és poc coneguda.",
+          "societyHeading": "El llenguatge també és geografia màgica.",
+          "society": "AonDor, Forgery, ChayShan, Dakhor i Bloodsealing depenen de símbols i tradicions locals. Les fronteres i les llengües importen.",
+          "curiositiesHeading": "Sel és planeta i paisatge cognitiu perillós.",
+          "curiosities": "Devoció i Domini van ser trencats aquí, i el Dor omple el Regne Cognitiu de poder descontrolat."
+        },
+        "taldain": {
+          "description": "Taldain és un planeta dividit entre un costat lluminós i un costat fosc, on la sorra i l’aïllament polític marquen la vida.",
+          "overviewHeading": "Dues cares d’un mateix món.",
+          "overview": "Dayside i Darkside viuen condicions oposades. White Sand segueix els Mestres de la Sorra i les tensions al voltant del Diem.",
+          "environmentHeading": "Llum, foscor i sorra en moviment.",
+          "environment": "El costat lluminós està dominat pel sol intens i els deserts. La sorra respon als mestres i es converteix en recurs i defensa.",
+          "lifeHeading": "Vida adaptada als extrems.",
+          "life": "La fauna coneguda és sobretot desèrtica i Darkside continua poc documentat. El vincle més singular és el dels mestres amb la sorra.",
+          "societyHeading": "El Diem i els Mestres de la Sorra.",
+          "society": "La societat lluminosa gira al voltant del Diem i les institucions que regulen els mestres. La història de Kenton mostra la fragilitat del seu aïllament.",
+          "curiositiesHeading": "Darkside no és només el revers de Dayside.",
+          "curiosities": "Taldain mostra com la Investidura pot expressar-se mitjançant un contrast ambiental extrem."
+        },
+        "lumar": {
+          "description": "Lumar és un planeta cobert per dotze oceans d’espores, cadascun lligat a una lluna i a un aether diferent.",
+          "overviewHeading": "Un món fet de mars i llunes.",
+          "overview": "La superfície està dividida en mars pentagonals d’espores. Les comunitats viuen a illes i costes i naveguen aprofitant-ne el comportament.",
+          "environmentHeading": "Lunagrees, calmes i seethe.",
+          "environment": "Les dotze llunes deixen caure espores durant les lunagrees. Durant el seethe els mars flueixen; durant les stillings la superfície es pot solidificar.",
+          "lifeHeading": "Vida corrent sobre mars alienígenes.",
+          "life": "Les illes sostenen conreus, arbres, flors, rates, gats, coloms, papallones i gavines. La vida profunda dels mars és desconeguda.",
+          "societyHeading": "Cultures insulars i navegació.",
+          "society": "Les comunitats construeixen la seva identitat al voltant d’illes, llunes i mars. El Mar Esmeralda connecta les rutes més conegudes.",
+          "curiositiesHeading": "Les llunes formen part del clima.",
+          "curiosities": "L’ombra d’una lluna refreda la terra cada dia en passar entre el sol i el planeta. Astronomia i navegació són inseparables."
+        },
+        "canticle": {
+          "description": "Càntic és un planeta petit i de rotació lenta on un sol Investit obliga els habitants a mantenir-se davant de l’alba.",
+          "overviewHeading": "Un món que fuig del seu sol.",
+          "overview": "La llum de Càntic crema o vaporitza qui hi queda exposat. Les comunitats viuen en ciutats voladores i avancen per corredors habitables.",
+          "environmentHeading": "Llum abrasadora i ombres d’anells.",
+          "environment": "Els anells reflecteixen una mica de llum cap a la cara fosca, i creen oportunitats breus per cultivar i viatjar.",
+          "lifeHeading": "Creixement ràpid i cicles perillosos.",
+          "life": "El sol accelera el creixement vegetal i les collites maduren durant la finestra de l’alba. La flora, la fauna i els sunhearts depenen del cicle.",
+          "societyHeading": "Ciutats voladores fetes de naus.",
+          "society": "La gent uneix naus per formar ciutats alimentades per sunhearts. Unió coordina les comunitats i en manté viva la ruta.",
+          "curiositiesHeading": "Una diàspora threnodita al cel.",
+          "curiosities": "Molts habitants descendeixen de threnodites que van fugir del seu món i van adaptar la seva cultura a una nova amenaça."
+        },
+        "komashi": {
+          "description": "Komashi és un món doble marcat per la tecnologia hion, la mortalla i societats nascudes al voltant de pous de vapor.",
+          "overviewHeading": "Un planeta que es reconstrueix després d’una catàstrofe.",
+          "overview": "Komashi i UTol orbiten un sol vermell ataronjat. La màquina pare va consumir ànimes, va alterar l’ecologia i va deixar una mortalla.",
+          "environmentHeading": "Pedra bruna, pous de vapor i mortalla.",
+          "environment": "La terra és sobretot pedra bruna. Abans de la mortalla, els esperits escalfaven el terra i portaven aigua a la superfície.",
+          "lifeHeading": "Esperits, malsons i plantes que tornen.",
+          "life": "Els esperits hijo alimenten la tecnologia hion i els yoki-hijo són una forma de vida singular. Els malsons neixen de la mortalla.",
+          "societyHeading": "Pintors, ciutats i servei.",
+          "society": "Les nacions van créixer al voltant dels pous de vapor i les línies hion. Els pintors de malsons patrullen les ciutats i converteixen l’art en defensa.",
+          "curiositiesHeading": "L’art és una tecnologia de supervivència.",
+          "curiosities": "A Komashi, pintar pot neutralitzar un malson i apilar pedres pot afectar la mortalla. L’atenció i l’ofici tenen efectes materials."
+        },
+        "threnody": {
+          "description": "Threnody és un planeta temperat de boscos, muntanyes i oceans on els morts poden tornar com a shades i sobreviure depèn de regles senzilles.",
+          "overviewHeading": "Un món que recorda els seus morts.",
+          "overview": "Després de la devastació causada pel Mal, els supervivents van fugir al continent menor i es van establir prop dels Boscos de l’Infern.",
+          "environmentHeading": "Boscos silenciosos i nits perilloses.",
+          "environment": "Els boscos tenen rius, coves, muntanyes i arbres caducifolis. El silenci és antinatural, sobretot de nit.",
+          "lifeHeading": "Animals sota una llei de sang.",
+          "life": "Cérvols, rosegadors, conills, ocells i galls dindi conviuen amb bestiar domèstic. Els depredadors van desaparèixer perquè la sang atrau els shades.",
+          "societyHeading": "Fortaleses, granges i refugis.",
+          "society": "Les ciutats fortalesa protegeixen els habitants i controlen l’economia de la plata. Els colons treballen les clarianes i les waystops ofereixen terra neutral.",
+          "curiositiesHeading": "La plata és moneda, medicina i frontera.",
+          "curiosities": "Els shades són ombres cognitives que ataquen qui trenca les Regles Senzilles. La plata els pot ferir i protegir una llar."
+        },
+        "first-of-the-sun": {
+          "description": "El Primer del Sol és el primer planeta del sistema Drominad, un món oceànic conegut pels seus Aviar i l’arxipèlag Pantheon.",
+          "overviewHeading": "Un món d’illes observat des del cel.",
+          "overview": "Té un continent, moltes illes i almenys una lluna. Les illes dels Eelakin sostenen societats establertes; Pantheon és sagrat i perillós.",
+          "environmentHeading": "El continent i Pantheon.",
+          "environment": "Pantheon reuneix unes quaranta illes de platges, penya-segats i interiors letals. La seva flora i fauna són molt més perilloses.",
+          "lifeHeading": "Aviar i vida depredadora.",
+          "life": "Els Aviar són aus natives capaces d’atorgar habilitats als seus companys humans. Les altres formes de vida de Pantheon solen ser mortals.",
+          "societyHeading": "Vida eelakin entre tradició i indústria.",
+          "society": "Els Eelakin viuen a les illes natals i han desenvolupat la tecnologia amb el temps. La relació amb Pantheon barreja reverència, exploració i pressió industrial.",
+          "curiositiesHeading": "Primer del Sol i Drominad no són el mateix.",
+          "curiosities": "Drominad és el nom del sistema, que conté set planetes i un cinturó d’asteroides. Arcanum mostra un mapa del sistema, no només del planeta."
+        },
+        "ashyn": {
+          "description": "Ashyn és el primer planeta del sistema rosharà, recordat com el planeta en flames després que una catàstrofe destruís gran part de la seva biosfera.",
+          "overviewHeading": "El món perdut darrere del mite rosharà.",
+          "overview": "La majoria dels ashynites va fugir a Roshar després de l’Escorxament. Van quedar regions fèrtils aïllades i ciutats flotants.",
+          "environmentHeading": "Terra erma i ciutats flotants.",
+          "environment": "Ashyn era més fèrtil, però avui és gairebé estèril. Queden zones habitables i ciutats sostingudes per una Investidura basada en malalties.",
+          "lifeHeading": "Una biosfera malmesa.",
+          "life": "Abans hi havia ocells, cavalls, raïm i animals domèstics. Avui se’n coneix poca vida, inclosos rèptils i organismes vinculats a la seva màgia infecciosa.",
+          "societyHeading": "Sobreviure per damunt d’un món trencat.",
+          "society": "La població viu en ciutats flotants o zones fèrtils aïllades. Algunes malalties donen efectes útils però fan la societat dependent dels infectats.",
+          "curiositiesHeading": "Una màgia que canvia el sentit del sistema.",
+          "curiosities": "La màgia posterior a l’Escorxament funciona mitjançant infeccions simbiòtiques. Ashyn pot ser central per a una saga encara sense novel·la principal."
+        }
+      }
+    },
+    "scienceProfiles": {
+      "scadrial": {
+        "scale": "Mida terrestre; gravetat estàndard",
+        "geologyHeading": "Un món volcànic reconstruït",
+        "geology": "Planeta rocós de volcans, serralades i conques temperades, remodelat a escala planetària.",
+        "climateHeading": "Cendra, boira i recuperació climàtica",
+        "climate": "El clima va passar d’una atmosfera carregada de cendra a un règim més càlid i verd.",
+        "biosphereHeading": "Vida sota un cel canviant",
+        "biosphere": "Mamífers, ocells, conreus i plantes resistents ocupen sòls volcànics i ambients de cendra.",
+        "habitatsHeading": "Conques i terres àrides",
+        "habitats": "Les conques protegides i els rius fèrtils són els hàbitats més estables; les terres àrides creen fronteres ecològiques.",
+        "questionsHeading": "Un planeta que registra els seus canvis",
+        "questions": "La recuperació climàtica i la distribució de les espècies encara són camps d’estudi."
+      },
+      "roshar": {
+        "scale": "Planeta rocós petit; 0,7 gravetats estàndard",
+        "geologyHeading": "Un supercontinent modelat per tempestes",
+        "geology": "Les terres conegudes formen un supercontinent de costes trencades, altiplans i valls profundes; no té tectònica activa.",
+        "climateHeading": "Les tempestes com a rellotge planetari",
+        "climate": "Les tempestes viatgen d’est a oest i substitueixen les estacions convencionals en un planeta sense inclinació axial apreciable.",
+        "biosphereHeading": "Closques, caus i animals enormes",
+        "biosphere": "L’oxigen abundant i la baixa gravetat permeten animals grans i espècies adaptades al vent i la pluja abrasiva.",
+        "habitatsHeading": "Valls protegides i planes exposades",
+        "habitats": "La vida es concentra en valls i depressions; les planes obertes depenen del vent i els sediments.",
+        "questionsHeading": "Un clima ple de variables",
+        "questions": "L’origen del cicle de tempestes i els ecosistemes subterranis encara no estan ben documentats."
+      },
+      "nalthis": {
+        "scale": "Planeta rocós amb una lluna coneguda",
+        "geologyHeading": "Un món continental parcialment cartografiat",
+        "geology": "Cordilleres, un mar interior, illes i terres baixes formen la superfície coneguda; la tectònica és activa.",
+        "climateHeading": "Terres humides i zones sísmiques",
+        "climate": "La jungla coneguda es concentra a Hallandren; les muntanyes són més fredes i els terratrèmols són freqüents.",
+        "biosphereHeading": "Una biosfera rica però desigual",
+        "biosphere": "Jungles, costes i el Mar Lluminós sostenen una fauna diversa, tot i que el sud és poc conegut.",
+        "habitatsHeading": "Costa selvàtica, muntanyes i aigües interiors",
+        "habitats": "Els hàbitats més favorables s’agrupen en costes, planes regades i el mar interior.",
+        "questionsHeading": "Un món conegut a través d’una regió",
+        "questions": "Els continents del sud i la xarxa alimentària oceànica continuen sent àrees obertes d’investigació."
+      },
+      "sel": {
+        "scale": "Planeta rocós gran; 1,2 gravetats estàndard",
+        "geologyHeading": "Un planeta continental molt divers",
+        "geology": "Grans continents, muntanyes i conques fluvials creen zones ambientals molt separades.",
+        "climateHeading": "Climes regionals",
+        "climate": "Les condicions van de regions temperades i fèrtils a interiors secs i terres altes fredes.",
+        "biosphereHeading": "Vida dividida per la geografia",
+        "biosphere": "La biosfera coneguda inclou conreus, boscos, praderies i aigües dolces; l’exterior és poc descrit.",
+        "habitatsHeading": "Conques fluvials i terres altes",
+        "habitats": "Els assentaments prefereixen valls, planes fèrtils i corredors elevats; les serralades els aïllen.",
+        "questionsHeading": "Un mapa amb espais en blanc",
+        "questions": "Els continents inexplorats i els ecosistemes remots encara no permeten un model global."
+      },
+      "taldain": {
+        "scale": "Planeta rocós bloquejat per marea; una lluna",
+        "geologyHeading": "Dues cares ambientals",
+        "geology": "Té un costat de dia, un de nit i un oceà crepuscular entre tots dos.",
+        "climateHeading": "Llum perpètua i frontera violenta",
+        "climate": "El costat lluminós és calent i desèrtic; el fosc és fred però no glacial. L’oceà fronterer té una tempesta permanent.",
+        "biosphereHeading": "Vida sota la superfície",
+        "biosphere": "La llum extrema empeny molta vida diürna sota la sorra; líquens, conreus i flors existeixen als dos costats.",
+        "habitatsHeading": "Aigua subterrània i terres aïllades",
+        "habitats": "Els hàbitats més productius apareixen on l’aigua subterrània és a prop de la superfície.",
+        "questionsHeading": "L’hemisferi fosc és una frontera",
+        "questions": "La geografia nocturna i l’intercanvi de calor del crepuscle conviden a continuar investigant."
+      },
+      "lumar": {
+        "scale": "Planeta insular amb dotze llunes properes",
+        "geologyHeading": "Dotze oceans d’espores",
+        "geology": "Dotze oceans gairebé pentagonals dominen la superfície; illes, muntanyes i fons poc profunds trenquen el patró.",
+        "climateHeading": "Ombres lunars i mars fluids",
+        "climate": "Les llunes projecten ombres diàries i les bandes de pluja, la calor i els gasos del fons poden fluidificar els mars.",
+        "biosphereHeading": "Vida insular sobre profunditats desconegudes",
+        "biosphere": "Les illes tenen arbres, cultius i fauna comuna, però l’ecosistema profund dels oceans és gairebé desconegut.",
+        "habitatsHeading": "Illes, salines i rutes mòbils",
+        "habitats": "La població es concentra en illes amb sòl, aigua dolça i fondejadors segurs.",
+        "questionsHeading": "Un cicle de l’aigua misteriós",
+        "questions": "Les bandes de pluja i la relació entre descomposició i aigua atmosfèrica són grans enigmes."
+      },
+      "canticle": {
+        "scale": "Planeta petit i anellat; 0,7 gravetats estàndard",
+        "geologyHeading": "Un món modelat per la calor",
+        "geology": "Planeta rocós petit amb anells i una geografia habitable que es desplaça amb el dia.",
+        "climateHeading": "Una cursa tèrmica",
+        "climate": "La llum solar escalfa l’atmosfera fins a temperatures destructives i el capvespre produeix un cicló de foc.",
+        "biosphereHeading": "Creixement ràpid en una finestra de llum",
+        "biosphere": "Les plantes creixen quan la llum reflectida pels anells arriba al sòl; els animals de l’alba són poc coneguts.",
+        "habitatsHeading": "Assentaments mòbils",
+        "habitats": "El corredor habitable és davant de l’alba i les comunitats es desplacen amb ell.",
+        "questionsHeading": "Com sobreviu la vida al dia?",
+        "questions": "No se sap com es protegeixen els animals, les llavors i el sòl de la calor diürna."
+      },
+      "komashi": {
+        "scale": "Una meitat d’un sistema de planetes dobles",
+        "geologyHeading": "Pedra bruna i un món company",
+        "geology": "Món oceànic dominat per pedra bruna i unit gravitacionalment a UTol, amb regions de fertilitat molt diferents.",
+        "climateHeading": "Mortalla, pous de vapor i sol rogenc",
+        "climate": "La coberta atmosfèrica, la calor subterrània i els pous de vapor defineixen el clima i les zones habitables.",
+        "biosphereHeading": "Recuperació ecològica",
+        "biosphere": "Plantes, conreus i organismes adaptats al sòl càlid sobreviuen mentre grans regions continuen danyades o ocultes.",
+        "habitatsHeading": "Conques de pous de vapor",
+        "habitats": "Els assentaments permanents creixen al voltant de pous amb aigua i calor suficients per cultivar.",
+        "questionsHeading": "Reconstrucció amb proves incompletes",
+        "questions": "La biosfera original i la geografia sota la mortalla encara són problemes oberts."
+      },
+      "threnody": {
+        "scale": "Planeta temperat de boscos i dos continents",
+        "geologyHeading": "Boscos, muntanyes i continents dividits",
+        "geology": "Boscos, muntanyes i rius cobreixen almenys dos continents difícils de connectar.",
+        "climateHeading": "Clima temperat amb nits perilloses",
+        "climate": "El clima sosté boscos estacionals, però la nit canvia radicalment el risc del medi.",
+        "biosphereHeading": "Un ecosistema forestal estricte",
+        "biosphere": "Es coneixen cérvols, rosegadors, conills, ocells, galls dindi i bestiar; els grans depredadors són escassos.",
+        "habitatsHeading": "Clarianes fortificades i vores del bosc",
+        "habitats": "La població viu en fortaleses, clarianes cultivades i refugis protegits.",
+        "questionsHeading": "On comença el perill?",
+        "questions": "Els fenòmens nocturns i els efectes a llarg termini sobre la fauna estan poc documentats."
+      },
+      "first-of-the-sun": {
+        "scale": "Planeta oceànic amb illes i almenys una lluna",
+        "geologyHeading": "Arxipèlags i un continent",
+        "geology": "Un continent, illes natals i un arxipèlag d’unes quaranta illes creen costes, penya-segats i interiors molt diferents.",
+        "climateHeading": "Climes marítims",
+        "climate": "L’oceà modera les zones habitades, però Pantheon és més aïllat i imprevisible; el vent i l’aigua dolça defineixen les costes.",
+        "biosphereHeading": "Ocells i depredadors extrems",
+        "biosphere": "Els ocells nadius ocupen molts nínxols, mentre que Pantheon conté flora i fauna especialment perilloses.",
+        "habitatsHeading": "Illes natals i interiors restringits",
+        "habitats": "Les illes natals sostenen comunitats costaneres i conreus; els interiors de Pantheon són hostils.",
+        "questionsHeading": "Un ecosistema observat des de les vores",
+        "questions": "El nombre d’espècies, l’interior de Pantheon i la xarxa alimentària oceànica són gairebé desconeguts."
+      },
+      "ashyn": {
+        "scale": "Planeta rocós amb estacions marcades",
+        "geologyHeading": "Terres ermes i bosses fèrtils",
+        "geology": "La superfície és majoritàriament erma després d’un col·lapse ecològic, però queden regions fèrtils i assentaments flotants.",
+        "climateHeading": "Extrems estacionals",
+        "climate": "La inclinació axial produeix variacions estacionals reals entre zones fèrtils, deserts i l’alta atmosfera.",
+        "biosphereHeading": "Fragments d’un món viu anterior",
+        "biosphere": "Les proves apunten a ocells, cavalls, raïm i animals domèstics abans del col·lapse; avui la vida és molt més limitada.",
+        "habitatsHeading": "Ciutats flotants i zones aïllades",
+        "habitats": "Els supervivents depenen de controlar l’aire, l’aigua, els aliments i el temps estable.",
+        "questionsHeading": "Es pot recuperar una biosfera?",
+        "questions": "La causa del col·lapse, la vida subterrània i la recuperació natural continuen sense resoldre."
       }
     },
     "tableOfContents": "Fitxa del món",
-    "toc": { "introduction": "Introducció", "directory": "Directori de mons", "overview": "L’escenari", "environment": "Entorn", "life": "Flora i fauna", "society": "Maneres de viure", "stories": "Històries relacionades", "magic": "Sistemes i forces" }
+    "toc": {
+      "introduction": "Introducció",
+      "directory": "Directori de mons",
+      "geology": "Geologia i terreny",
+      "climate": "Clima i atmosfera",
+      "biosphere": "Biosfera",
+      "habitats": "Hàbitats",
+      "research": "Preguntes obertes"
+    }
   },
   "books": {
     "eyebrow": "Catàleg del Cosmere",
@@ -602,6 +1111,10 @@
       "title": "Llibres",
       "description": "Explora les obres publicades del Cosmere agrupades per saga i per història independent."
     },
+    "independents": {
+      "title": "Obres independents",
+      "description": "Explora novel·les del Cosmere que funcionen per si soles i obren portes diferents a l’univers més ampli."
+    },
     "routes": {
       "title": "Rutes de lectura",
       "description": "Aquí hi haurà les recomanacions comunitàries, l’ordre de publicació i el recorregut personal pel Cosmere."
@@ -655,8 +1168,16 @@
       "whyLabel": "Per què llegir-lo",
       "whenLabel": "Quan llegir-lo",
       "works": {
-        "edgedancer": { "origin": "És una novel·la curta situada entre Paraules radiants i Juramentada en la seqüència de lectura àmplia.", "why": "Dona més espai perquè Lift creixi i ofereix una mirada diferent i més juganera al món abans de la novel·la principal següent.", "when": "Després de Paraules radiants i abans de Juramentada." },
-        "dawnshard": { "origin": "És una novel·la curta situada entre Juramentada i El ritme de la guerra i publicada com a complement de la seqüència principal.", "why": "Desenvolupa una expedició menor i aporta context que ajuda a situar parts d’El ritme de la guerra.", "when": "Després de Juramentada i abans d’El ritme de la guerra." }
+        "edgedancer": {
+          "origin": "És una novel·la curta situada entre Paraules radiants i Juramentada en la seqüència de lectura àmplia.",
+          "why": "Dona més espai perquè Lift creixi i ofereix una mirada diferent i més juganera al món abans de la novel·la principal següent.",
+          "when": "Després de Paraules radiants i abans de Juramentada."
+        },
+        "dawnshard": {
+          "origin": "És una novel·la curta situada entre Juramentada i El ritme de la guerra i publicada com a complement de la seqüència principal.",
+          "why": "Desenvolupa una expedició menor i aporta context que ajuda a situar parts d’El ritme de la guerra.",
+          "when": "Després de Juramentada i abans d’El ritme de la guerra."
+        }
       }
     },
     "magic": {
@@ -664,9 +1185,18 @@
       "heading": "Llum tempestuosa, juraments i vincles vius.",
       "description": "Els sistemes centrals de L’arxiu de les tempestes connecten energia, intenció i relació. Aquesta introducció manté deliberadament un nivell lleuger de revelacions.",
       "imageLabel": "Il·lustració conceptual de L’arxiu de les tempestes a Roshar",
-      "stormlight": { "title": "Llum tempestuosa", "text": "La Llum tempestuosa és una forma lluminosa d’Investidura que porten les gemmes carregades i els éssers vius. Alimenta moltes habilitats extraordinàries de Roshar i està unida a les seves tempestes." },
-      "surgebinding": { "title": "Vinculació d’ones", "text": "La vinculació d’ones combina dues forces fonamentals, o Ones, de maneres diferents. Els Cavallers Radiants hi accedeixen mitjançant juraments i vincles, no només amb l’estudi." },
-      "spren": { "title": "Spren i vincles", "text": "Els spren són manifestacions d’idees, forces i emocions. Alguns poden formar un vincle nahel amb una persona, una relació que transforma tots dos i sosté el centre moral de la saga." }
+      "stormlight": {
+        "title": "Llum tempestuosa",
+        "text": "La Llum tempestuosa és una forma lluminosa d’Investidura que porten les gemmes carregades i els éssers vius. Alimenta moltes habilitats extraordinàries de Roshar i està unida a les seves tempestes."
+      },
+      "surgebinding": {
+        "title": "Vinculació d’ones",
+        "text": "La vinculació d’ones combina dues forces fonamentals, o Ones, de maneres diferents. Els Cavallers Radiants hi accedeixen mitjançant juraments i vincles, no només amb l’estudi."
+      },
+      "spren": {
+        "title": "Spren i vincles",
+        "text": "Els spren són manifestacions d’idees, forces i emocions. Alguns poden formar un vincle nahel amb una persona, una relació que transforma tots dos i sosté el centre moral de la saga."
+      }
     },
     "curiosities": {
       "kicker": "Alguns detalls de Roshar",
@@ -676,29 +1206,103 @@
       "third": "La seqüència principal inclou interludis i novel·les curtes complementàries que amplien la mirada més enllà del repartiment central sense substituir l’ordre principal."
     },
     "tableOfContents": "Fitxa de Stormlight",
-    "toc": { "introduction": "Introducció", "publicationOrder": "Ordre de publicació", "magic": "Sistemes de Roshar", "curiosities": "Curiositats" }
+    "toc": {
+      "introduction": "Introducció",
+      "publicationOrder": "Ordre de publicació",
+      "magic": "Sistemes de Roshar",
+      "curiosities": "Curiositats"
+    }
   },
   "arcanumPage": {
-    "intro": { "eyebrow": "Col·lecció especial", "description": "Arcanum Il·limitat és una antologia del Cosmere: un prestatge guiat de relats, novel·les curtes i fragments que obre finestres a mons, èpoques i racons diferents de l'univers més ampli.", "countLabel": "Històries d'aquesta col·lecció", "countText": "històries del Cosmere" },
-    "purpose": { "kicker": "Per què existeix", "heading": "Un mapa del Cosmere en miniatura.", "text": "No és una saga ni un ordre de lectura continu. La col·lecció reuneix històries que d'una altra manera quedarien repartides en edicions diferents i hi afegeix assaigs breus, notes planetàries i material visual per mostrar com es connecta el Cosmere sense exigir que coneguis totes les connexions per endavant." },
+    "intro": {
+      "eyebrow": "Col·lecció especial",
+      "description": "Arcanum Il·limitat és una antologia del Cosmere: un prestatge guiat de relats, novel·les curtes i fragments que obre finestres a mons, èpoques i racons diferents de l'univers més ampli.",
+      "countLabel": "Històries d'aquesta col·lecció",
+      "countText": "històries del Cosmere"
+    },
+    "purpose": {
+      "kicker": "Per què existeix",
+      "heading": "Un mapa del Cosmere en miniatura.",
+      "text": "No és una saga ni un ordre de lectura continu. La col·lecció reuneix històries que d'una altra manera quedarien repartides en edicions diferents i hi afegeix assaigs breus, notes planetàries i material visual per mostrar com es connecta el Cosmere sense exigir que coneguis totes les connexions per endavant."
+    },
     "stories": {
-      "kicker": "El contingut", "heading": "Nou històries, sis sistemes i molts punts d'entrada.", "description": "Obre cada fitxa per veure quin tipus d'història és, on encaixa i quan funciona millor dins d'un recorregut de lectura més ampli.",
+      "kicker": "El contingut",
+      "heading": "Nou històries, sis sistemes i molts punts d'entrada.",
+      "description": "Obre cada fitxa per veure quin tipus d'història és, on encaixa i quan funciona millor dins d'un recorregut de lectura més ampli.",
       "items": {
-        "the-hope-of-elantris": { "description": "Un breu epíleg d'Elantris, explicat des d'un altre punt de vista i ple de l'escalf i l'humor de la vida després de la crisi central de la novel·la.", "when": "Després d'Elantris.", "context": "Un petit retorn a Sel i als seus habitants; funciona millor com a coda que com a introducció." },
-        "the-emperors-soul": { "description": "Una novel·la curta, precisa i autoconclusiva sobre una artista obligada a crear una ànima nova per a un emperador mentre negocia amb la identitat, l'ofici i el poder.", "when": "En qualsevol moment; després d'Elantris si vols mantenir unit el context de Sel.", "context": "Transcorre a Sel, però mostra una altra regió i una altra màgia diferent d'Elantris." },
-        "the-eleventh-metal": { "description": "Una breu preqüela de Nascuts de la boira que segueix Kelsier abans de la trilogia principal i mostra una de les seves primeres lliçons d'Alomància.", "when": "Després d'El gran imperi, o després de la trilogia original com a retrospectiva.", "context": "Aporta sobretot personatge i atmosfera; no és necessària per començar Nascuts de la boira." },
-        "allomancer-jak": { "description": "Una aventura pulp dins del món sobre un lladre que aspira a ser un heroi, emmarcada per les notes del seu sofert servent terrisà.", "when": "Després d'Aleació de llei, quan ja coneguis el to i l'època de Wax i Wayne.", "context": "Amplia la mitologia quotidiana de la segona era d'Escàdriel més que no pas la trama central." },
-        "mistborn-secret-history": { "description": "Una novel·la curta que revisita fets importants de la primera era de Nascuts de la boira des de darrere del món visible i ofereix una altra perspectiva sobre la seva història oculta.", "when": "Després de Braçalets de dol per minimitzar spoilers; abans també és possible amb risc.", "context": "És un dels relats més connectats amb el Cosmere, així que el context de lectura importa." },
-        "edgedancer": { "description": "Lift protagonitza una història ràpida, divertida i tendra sobre la gana, la responsabilitat i un perill que es mou per Roshar.", "when": "Després de Paraules radiants i abans de Juramentada.", "context": "Uneix les primeres novel·les d'El fitxer de les tempestes i dona espai a un personatge que tornarà més endavant." },
-        "shadows-for-silence": { "description": "Un relat de frontera tens, ambientat en un bosc on la violència atrau depredadors mortals i sobreviure depèn d'unes regles que ningú pot oblidar.", "when": "En qualsevol moment; es pot llegir de manera independent.", "context": "Presenta Threnody i mostra fins a quin punt pot variar un relat del Cosmere fora de la fantasia èpica." },
-        "sixth-of-the-dusk": { "description": "En una illa remota, un guia que caça amb ocells ensinistrats s'enfronta a un futur que podria deixar obsolet el mode de vida del seu poble.", "when": "En qualsevol moment; pots reservar-lo per més endavant si prefereixes descobrir-ne les implicacions a poc a poc.", "context": "Introdueix Primer del Sol i ofereix una de les mirades més llunyanes cap a l'horitzó del Cosmere." },
-        "white-sand-excerpt": { "description": "Un breu tast d'Arena Blanca que presenta Taldain, el seu món dividit i el domini de la sorra que sosté el conflicte.", "when": "Abans d'Arena Blanca com a avançament, o pots saltar-te'l si ja has llegit la novel·la gràfica.", "context": "És un fragment, no un final independent ni un substitut de la novel·la gràfica completa." }
+        "the-hope-of-elantris": {
+          "description": "Un breu epíleg d'Elantris, explicat des d'un altre punt de vista i ple de l'escalf i l'humor de la vida després de la crisi central de la novel·la.",
+          "when": "Després d'Elantris.",
+          "context": "Un petit retorn a Sel i als seus habitants; funciona millor com a coda que com a introducció."
+        },
+        "the-emperors-soul": {
+          "description": "Una novel·la curta, precisa i autoconclusiva sobre una artista obligada a crear una ànima nova per a un emperador mentre negocia amb la identitat, l'ofici i el poder.",
+          "when": "En qualsevol moment; després d'Elantris si vols mantenir unit el context de Sel.",
+          "context": "Transcorre a Sel, però mostra una altra regió i una altra màgia diferent d'Elantris."
+        },
+        "the-eleventh-metal": {
+          "description": "Una breu preqüela de Nascuts de la boira que segueix Kelsier abans de la trilogia principal i mostra una de les seves primeres lliçons d'Alomància.",
+          "when": "Després d'El gran imperi, o després de la trilogia original com a retrospectiva.",
+          "context": "Aporta sobretot personatge i atmosfera; no és necessària per començar Nascuts de la boira."
+        },
+        "allomancer-jak": {
+          "description": "Una aventura pulp dins del món sobre un lladre que aspira a ser un heroi, emmarcada per les notes del seu sofert servent terrisà.",
+          "when": "Després d'Aleació de llei, quan ja coneguis el to i l'època de Wax i Wayne.",
+          "context": "Amplia la mitologia quotidiana de la segona era d'Escàdriel més que no pas la trama central."
+        },
+        "mistborn-secret-history": {
+          "description": "Una novel·la curta que revisita fets importants de la primera era de Nascuts de la boira des de darrere del món visible i ofereix una altra perspectiva sobre la seva història oculta.",
+          "when": "Després de Braçalets de dol per minimitzar spoilers; abans també és possible amb risc.",
+          "context": "És un dels relats més connectats amb el Cosmere, així que el context de lectura importa."
+        },
+        "edgedancer": {
+          "description": "Lift protagonitza una història ràpida, divertida i tendra sobre la gana, la responsabilitat i un perill que es mou per Roshar.",
+          "when": "Després de Paraules radiants i abans de Juramentada.",
+          "context": "Uneix les primeres novel·les d'El fitxer de les tempestes i dona espai a un personatge que tornarà més endavant."
+        },
+        "shadows-for-silence": {
+          "description": "Un relat de frontera tens, ambientat en un bosc on la violència atrau depredadors mortals i sobreviure depèn d'unes regles que ningú pot oblidar.",
+          "when": "En qualsevol moment; es pot llegir de manera independent.",
+          "context": "Presenta Threnody i mostra fins a quin punt pot variar un relat del Cosmere fora de la fantasia èpica."
+        },
+        "sixth-of-the-dusk": {
+          "description": "En una illa remota, un guia que caça amb ocells ensinistrats s'enfronta a un futur que podria deixar obsolet el mode de vida del seu poble.",
+          "when": "En qualsevol moment; pots reservar-lo per més endavant si prefereixes descobrir-ne les implicacions a poc a poc.",
+          "context": "Introdueix Primer del Sol i ofereix una de les mirades més llunyanes cap a l'horitzó del Cosmere."
+        },
+        "white-sand-excerpt": {
+          "description": "Un breu tast d'Arena Blanca que presenta Taldain, el seu món dividit i el domini de la sorra que sosté el conflicte.",
+          "when": "Abans d'Arena Blanca com a avançament, o pots saltar-te'l si ja has llegit la novel·la gràfica.",
+          "context": "És un fragment, no un final independent ni un substitut de la novel·la gràfica completa."
+        }
       }
     },
-    "sections": { "selishSystem": "Sistema selish · Sel", "scadrianSystem": "Sistema scadrià · Escàdriel", "rosharanSystem": "Sistema rosharià · Roshar", "threnoditeSystem": "Sistema threnodita · Threnody", "firstOfTheSunSystem": "Sistema de Primer del Sol", "taldainSystem": "Sistema taldainià · Taldain" },
-    "detailsAction": "Llegir el context", "whenLabel": "Quan llegir-la", "contextLabel": "Què aporta",
-    "essays": { "kicker": "Més enllà de les històries", "heading": "La col·lecció també ensenya a mirar cap enfora.", "text": "El volum inclou assaigs breus sobre diversos sistemes planetaris, un mapa del Cosmere i material visual de suport. Són opcionals, però converteixen l'antologia en alguna cosa més que un conjunt de relats extra: ajuden a orientar-se i a detectar connexions entre mons.", "drominadImageLabel": "El mapa del sistema Drominad", "shardImageLabel": "Símbols relacionats amb els poders del Cosmere", "nebulaImageLabel": "Una visió abstracta i acolorida del Cosmere" },
-    "tableOfContents": "Fitxa d'Arcanum Il·limitat", "toc": { "introduction": "Introducció", "purpose": "Per què existeix", "stories": "Històries", "essays": "Assaigs i mapa" }
+    "sections": {
+      "selishSystem": "Sistema selish · Sel",
+      "scadrianSystem": "Sistema scadrià · Escàdriel",
+      "rosharanSystem": "Sistema rosharià · Roshar",
+      "threnoditeSystem": "Sistema threnodita · Threnody",
+      "firstOfTheSunSystem": "Sistema de Primer del Sol",
+      "taldainSystem": "Sistema taldainià · Taldain"
+    },
+    "detailsAction": "Llegir el context",
+    "whenLabel": "Quan llegir-la",
+    "contextLabel": "Què aporta",
+    "essays": {
+      "kicker": "Més enllà de les històries",
+      "heading": "La col·lecció també ensenya a mirar cap enfora.",
+      "text": "El volum inclou assaigs breus sobre diversos sistemes planetaris, un mapa del Cosmere i material visual de suport. Són opcionals, però converteixen l'antologia en alguna cosa més que un conjunt de relats extra: ajuden a orientar-se i a detectar connexions entre mons.",
+      "drominadImageLabel": "El mapa del sistema Drominad",
+      "shardImageLabel": "Símbols relacionats amb els poders del Cosmere",
+      "nebulaImageLabel": "Una visió abstracta i acolorida del Cosmere"
+    },
+    "tableOfContents": "Fitxa d'Arcanum Il·limitat",
+    "toc": {
+      "introduction": "Introducció",
+      "purpose": "Per què existeix",
+      "stories": "Històries",
+      "essays": "Assaigs i mapa"
+    }
   },
   "whiteSandPage": {
     "back": "Tornar a Sagues",
@@ -786,5 +1390,145 @@
       "magic": "Sistema de Taldain",
       "curiosities": "Curiositats"
     }
+  },
+  "independentPage": {
+    "intro": {
+      "eyebrow": "Prestatgeria independent",
+      "description": "Aquestes novel·les no pertanyen a una saga llarga, però cadascuna crea un món, un to i una experiència complets. Són alguns dels punts d’entrada més clars al Cosmere.",
+      "imageLabel": "Una selecció de novel·les independents del Cosmere",
+      "countLabel": "Novel·les independents del catàleg",
+      "countText": "obres independents"
+    },
+    "planets": {
+      "sel": "Sel",
+      "nalthis": "Nalthis",
+      "lumar": "Lumar",
+      "komashi": "Komashi",
+      "canticle": "Càntic",
+      "firstOfTheSun": "Primer del Sol",
+      "multipleWorlds": "Diversos mons"
+    },
+    "sections": {
+      "earlyCosmere": {
+        "title": "La primera arquitectura",
+        "description": "Elantris (2005) va ser la primera novel·la publicada del Cosmere de Brandon Sanderson, seguida per Warbreaker (2009), l’esborrany del qual va compartir capítol a capítol a internet. En aquella etapa l’univers encara s’estava convertint en una arquitectura visible: cada llibre havia de funcionar per si sol mentre els patrons profunds tot just començaven a aparèixer."
+      },
+      "arcanum": {
+        "title": "Una prestatgeria per als relats dispersos",
+        "description": "Arcanum Il·limitat va reunir nou obres breus que en la seva majoria havien aparegut per separat, incloses històries publicades a Tor.com i altres espais. També hi va afegir Ballarí de tall com a obra nova, a més dels assaigs de Khriss, mapes planetaris, il·lustracions i un mapa estel·lar del Cosmere: portes disperses convertides en una guia dels sistemes que hi ha al darrere."
+      },
+      "secretProjects": {
+        "title": "Històries nascudes en secret",
+        "description": "Durant els anys en què quedar-se a casa va deixar espai per escriure més, Brandon va crear quatre novel·les secretes com a regals i experiments. La primera i la tercera estaven especialment dirigides a la seva esposa; la segona va néixer perquè necessitava escriure una cosa diferent i també li la va regalar. El 2022 va revelar els llibres mitjançant el rècord de Year of Sanderson a Kickstarter: Tress, Yumi i L’home il·luminat són les seves novel·les cosmereanes independents."
+      },
+      "emberdark": {
+        "title": "L’horitzó continua avançant",
+        "description": "Aquesta secció reuneix novel·les independents més recents que porten el Cosmere més enllà dels seus primers mons i cap a un escenari cada vegada més connectat i futur. Algunes amplien històries ja publicades o desenvolupen racons de l’univers que abans semblaven separats; d’altres obren portes completament noves."
+      }
+    },
+    "works": {
+      "kicker": "La prestatgeria",
+      "heading": "Set maneres d’entrar al Cosmere.",
+      "description": "Els grups segueixen el paper canviant de les obres independents: fonaments, portes recopilades, experiments privats i una expansió futura. Obre cada fitxa per llegir-ne la sinopsi i fes servir l’interrogant per consultar el context.",
+      "items": {
+        "elantris": {
+          "description": "Elantris va ser una ciutat resplendent els habitants de la qual eren tractats com déus. Quan la seva màgia va fallar, es va convertir en un lloc de decadència, i un príncep marcat per la mateixa maledicció ha de descobrir què va passar abans que el seu regne segueixi el mateix camí.",
+          "when": "En qualsevol moment; és la primera novel·la publicada del Cosmere.",
+          "context": "Una introducció autoconclusiva a Sel, l’AonDor i la primera capa publicada del Cosmere."
+        },
+        "warbreaker": {
+          "description": "Siri és enviada a casar-se amb el Déu Rei d’Hallandren en lloc de la seva germana, mentre Vivenna la segueix per rescatar-la. Al seu voltant, un déu retornat i un soldat misteriós queden atrapats en un regne on el color i l’Alè poden despertar allò inanimat.",
+          "when": "En qualsevol moment; funciona especialment bé com a experiència completa d’un sol llibre.",
+          "context": "Presenta Nalthis, el Despertar i idees que reapareixen en connexions posteriors del Cosmere."
+        },
+        "tressOfTheEmeraldSea": {
+          "description": "Tress ha viscut tranquil·lament en una illa del mar maragda, col·leccionant tasses i escoltant històries. Quan desapareix la persona que estima, s’amaga en un vaixell i travessa oceans d’espores mortals per trobar la Fetillera del Mar de Mitjanit.",
+          "when": "En qualsevol moment; és una entrada moderna i acollidora, amb connexions lleugeres.",
+          "context": "Una història situada a Lumar, amb veu de conte i una perspectiva cosmereana més àmplia en segon pla."
+        },
+        "yumiAndTheNightmarePainter": {
+          "description": "La Yumi ha passat la vida invocant esperits per a un món lluminós de pedres apilades. En Painter patrulla els carrers plens de malsons d’un altre món. Quan queden units de sobte, han de descobrir el misteri de la seva connexió abans que els dos mons canviïn per sempre.",
+          "when": "En qualsevol moment; convé abordar-la com una història independent centrada en els personatges.",
+          "context": "Explora Komashi, la tecnologia hion i la relació entre ofici, memòria i identitat."
+        },
+        "theSunlitMan": {
+          "description": "En Nomad ha sobreviscut durant anys fugint de la Brigada Nocturna de món en món. Ara, atrapat a Càntic, on l’alba pot fondre la pedra, es veu arrossegat a una rebel·lió i obligat a lluitar per alguna cosa més que la seva vida.",
+          "when": "Després de conèixer una part àmplia del Cosmere, perquè el seu context és deliberadament més gran.",
+          "context": "Transcorre a Càntic i conté implicacions cosmereanes importants, tot i mantenir una història immediata molt concreta."
+        },
+        "islesOfTheEmberdark": {
+          "description": "En Dusk és un caçador d’aviares sobrenaturals a la perillosa illa de Patji. Quan invasors arribats de les estrelles amenacen el seu poble, navega més enllà d’un portal místic, mentre la Starling i la seva tripulació d’exiliats persegueixen un mapa que podria canviar la seva sort i el destí de l’Emberdark.",
+          "when": "En qualsevol moment com a nova aventura independent; el relat anterior Sixth of the Dusk aporta context útil.",
+          "context": "Amplia la regió del Primer del Sol cap a una història cosmereana futura de portals, estrelles i poders enfrontats."
+        },
+        "arcanumUnbounded": {
+          "description": "Una antologia reuneix relats, novel·les curtes i fragments de diversos racons del Cosmere, i facilita explorar mons llunyans des d’una sola prestatgeria.",
+          "when": "Quan vulguis explorar obres breus; cada història té el seu propi context recomanat.",
+          "context": "És una col·lecció, no una saga: les nou històries continuen agrupades a la seva pàgina pròpia i no compten com a obres independents addicionals."
+        }
+      }
+    },
+    "connections": {
+      "kicker": "Més enllà de la prestatgeria",
+      "heading": "Independent no vol dir desconnectat.",
+      "description": "Cada novel·la té primer la seva pròpia promesa. L’univers més gran apareix mitjançant idees, llocs i visitants recurrents, i recompensa l’atenció sense exigir un ordre mestre de lectura.",
+      "entryPoints": {
+        "title": "Entrades flexibles",
+        "text": "Tria segons l’ambient: misteri, fantasia política, aventura de conte, romanç íntim o una visió més àmplia del Cosmere."
+      },
+      "worlds": {
+        "title": "Mons diferents",
+        "text": "Sel, Nalthis, Lumar, Komashi, Càntic i la regió del Primer del Sol mostren la varietat del Cosmere."
+      },
+      "cosmere": {
+        "title": "Un horitzó més gran",
+        "text": "Llegeix primer la història principal i deixa que els noms, símbols i preguntes recurrents es converteixin en invitacions per explorar més."
+      }
+    },
+    "detailsAction": "Llegir el context",
+    "planetLabel": "Món",
+    "whenLabel": "Quan llegir-la",
+    "contextLabel": "Què aporta",
+    "detailsHeading": "Una mica més de context",
+    "openDetails": "Obrir més context sobre {title}",
+    "closeDetails": "Tancar el context addicional",
+    "tableOfContents": "Fitxa d’independents",
+    "toc": {
+      "introduction": "Introducció",
+      "works": "La prestatgeria independent",
+      "connections": "Connexions més àmplies"
+    }
+  },
+  "creditsPage": {
+    "eyebrow": "Fonts i drets",
+    "heading": "Crèdits",
+    "description": "Registre de treball dels recursos visuals utilitzats per Cosmereando, les seves fonts i els permisos que encara s’han de confirmar.",
+    "notice": {
+      "heading": "Un projecte fan amb material de tercers",
+      "text": "Cosmereando és un projecte fan no oficial. Les portades, il·lustracions oficials i altres materials de tercers pertanyen als seus titulars respectius. Els recursos no verificats estan marcats per revisar-los abans de publicar."
+    },
+    "assetsKicker": "Arxiu visual",
+    "assetsHeading": "Imatges registrades actualment",
+    "groups": {
+      "ai": {
+        "title": "Imatges generades per a Cosmereando",
+        "description": "Aquestes il·lustracions ambientals i d’estudi s’han generat per al projecte i es consideren recursos originals de Cosmereando."
+      },
+      "legacy": {
+        "title": "Recursos visuals existents",
+        "description": "Aquests recursos ja eren al repositori. La font o llicència original encara no està registrada i s’han de revisar abans de publicar."
+      },
+      "covers": {
+        "title": "Portades de llibres",
+        "description": "Les portades s’utilitzen per a la navegació del catàleg, però els seus drets pertanyen als autors, artistes i editorials corresponents."
+      }
+    },
+    "fields": {
+      "author": "Autoria",
+      "source": "Font",
+      "license": "Llicència"
+    },
+    "tableOfContents": "Pàgina de crèdits",
+    "toc": { "introduction": "Introducció", "assets": "Imatges registrades" }
   }
 }

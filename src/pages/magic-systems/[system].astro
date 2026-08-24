@@ -1,0 +1,14 @@
+---
+import MagicSystemDetailPage from "../../components/MagicSystemDetailPage.astro";
+import { getMagicSystems } from "../../data/catalogue";
+
+export function getStaticPaths() {
+  return getMagicSystems("en").map((system) => ({
+    params: { system: system.id },
+  }));
+}
+
+const systemId = Astro.params.system as string;
+---
+
+<MagicSystemDetailPage locale="en" systemId={systemId} />

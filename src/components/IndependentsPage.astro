@@ -1,0 +1,280 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EditorialImage from "./EditorialImage.astro";
+import GlobalNavbar from "./GlobalNavbar.astro";
+import PageReturn from "./PageReturn.astro";
+import PageTrail from "./PageTrail.astro";
+import Sidebar from "./Sidebar.astro";
+import TableOfContents from "./TableOfContents.astro";
+import ContextPopover from "./ContextPopover.astro";
+import { getIndependentWorks } from "../data/catalogue";
+import { getLocalizedPath, getTranslation } from "../data/i18n";
+import type { Locale } from "../data/locales";
+import bookMashup from "../assets/images/general/cosmere_book_cover_mashup.webp";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = (key: string, replacements: Record<string, string> = {}) =>
+  getTranslation(locale, key, replacements);
+const works = getIndependentWorks(locale);
+const workDetails = new Map([
+  ["elantris", { planet: "sel", detailKey: "elantris" }],
+  ["warbreaker", { planet: "nalthis", detailKey: "warbreaker" }],
+  [
+    "tress-of-the-emerald-sea",
+    { planet: "lumar", detailKey: "tressOfTheEmeraldSea" },
+  ],
+  [
+    "yumi-and-the-nightmare-painter",
+    { planet: "komashi", detailKey: "yumiAndTheNightmarePainter" },
+  ],
+  ["the-sunlit-man", { planet: "canticle", detailKey: "theSunlitMan" }],
+  [
+    "isles-of-the-emberdark",
+    { planet: "firstOfTheSun", detailKey: "islesOfTheEmberdark" },
+  ],
+  [
+    "arcanum-unbounded",
+    { planet: "multipleWorlds", detailKey: "arcanumUnbounded" },
+  ],
+]);
+const getWorkDetails = (id: string) => {
+  const details = workDetails.get(id);
+  if (!details) throw new Error(`Missing independent work details: ${id}`);
+  return details;
+};
+const workSections = [
+  {
+    id: "early-cosmere",
+    titleKey: "independentPage.sections.earlyCosmere.title",
+    descriptionKey: "independentPage.sections.earlyCosmere.description",
+    workIds: ["elantris", "warbreaker"],
+  },
+  {
+    id: "arcanum-unbounded",
+    titleKey: "independentPage.sections.arcanum.title",
+    descriptionKey: "independentPage.sections.arcanum.description",
+    workIds: ["arcanum-unbounded"],
+  },
+  {
+    id: "secret-projects",
+    titleKey: "independentPage.sections.secretProjects.title",
+    descriptionKey: "independentPage.sections.secretProjects.description",
+    workIds: [
+      "tress-of-the-emerald-sea",
+      "yumi-and-the-nightmare-painter",
+      "the-sunlit-man",
+    ],
+  },
+  {
+    id: "emberdark",
+    titleKey: "independentPage.sections.emberdark.title",
+    descriptionKey: "independentPage.sections.emberdark.description",
+    workIds: ["isles-of-the-emberdark"],
+  },
+];
+const worksById = new Map(works.map((work) => [work.id, work]));
+const getWork = (id: string) => {
+  const work = worksById.get(id);
+  if (!work) throw new Error(`Missing independent work: ${id}`);
+  return work;
+};
+const count = String(works.length).padStart(2, "0");
+---
+
+<BaseLayout
+  title={`Cosmereando — ${t("pages.independents.title")}`}
+  description={t("pages.independents.description")}
+  locale={locale}
+>
+  <div class="documentation-shell">
+    <Sidebar locale={locale} />
+    <div class="page-layout">
+      <GlobalNavbar locale={locale} />
+      <PageTrail
+        locale={locale}
+        items={[
+          { label: t("common.home"), href: "/" },
+          { label: t("navigation.independents.title") },
+        ]}
+      />
+      <main class="main-content independents-page">
+        <header
+          class="page-intro independents-page__header"
+          id="introduction"
+          aria-labelledby="independents-heading"
+        >
+          <div>
+            <p class="eyebrow">{t("independentPage.intro.eyebrow")}</p>
+            <h1 id="independents-heading">
+              {t("navigation.independents.title")}
+            </h1>
+            <p>{t("independentPage.intro.description")}</p>
+          </div>
+          <div
+            class="independents-page__count"
+            aria-label={t("independentPage.intro.countLabel")}
+          >
+            <strong>{count}</strong>
+            <span>{t("independentPage.intro.countText")}</span>
+          </div>
+        </header>
+
+        <EditorialImage
+          src={bookMashup}
+          alt={t("independentPage.intro.imageLabel")}
+          variant="feature"
+        />
+
+        <section
+          class="independents-page__works"
+          id="works"
+          aria-labelledby="works-heading"
+        >
+          <div class="independents-page__section-intro">
+            <p class="section-kicker">{t("independentPage.works.kicker")}</p>
+            <h2 id="works-heading">{t("independentPage.works.heading")}</h2>
+            <p>{t("independentPage.works.description")}</p>
+          </div>
+
+          {
+            workSections.map((section, sectionIndex) => (
+              <section
+                class="independent-work-section"
+                id={section.id}
+                aria-labelledby={`${section.id}-heading`}
+              >
+                <div class="independent-work-section__intro">
+                  <span class="independent-work-section__number">
+                    {String(sectionIndex + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 id={`${section.id}-heading`}>{t(section.titleKey)}</h3>
+                    <p>{t(section.descriptionKey)}</p>
+                  </div>
+                </div>
+                <div class="independent-work-grid">
+                  {section.workIds.map((workId, workIndex) => {
+                    const work = getWork(workId);
+                    const details = getWorkDetails(work.id);
+                    return (
+                      <article class="independent-work" id={work.id}>
+                        <img
+                          src={work.image.src}
+                          alt={t("pages.imageLabel", { title: work.title })}
+                          class="independent-work__cover"
+                        />
+                        <div class="independent-work__body">
+                          <span class="independent-work__number">
+                            {String(workIndex + 1).padStart(2, "0")}
+                          </span>
+                          <h4>
+                            {work.id === "arcanum-unbounded" ? (
+                              <a
+                                href={getLocalizedPath(
+                                  locale,
+                                  "/independents/arcanum-unbounded",
+                                )}
+                              >
+                                {work.title}
+                              </a>
+                            ) : (
+                              work.title
+                            )}
+                          </h4>
+                          <div class="independent-work__meta">
+                            <span>{work.type}</span>
+                            <span>{work.publicationYear}</span>
+                            <span>
+                              {t(`independentPage.planets.${details.planet}`)}
+                            </span>
+                          </div>
+                          <p>
+                            {t(
+                              `independentPage.works.items.${details.detailKey}.description`,
+                            )}
+                          </p>
+                          <ContextPopover
+                            id={`${work.id}-context`}
+                            title={t("independentPage.detailsHeading")}
+                            triggerLabel={t("independentPage.openDetails", {
+                              title: work.title,
+                            })}
+                            closeLabel={t("independentPage.closeDetails")}
+                            rows={[
+                              {
+                                label: t("independentPage.whenLabel"),
+                                value: t(
+                                  `independentPage.works.items.${details.detailKey}.when`,
+                                ),
+                              },
+                              {
+                                label: t("independentPage.contextLabel"),
+                                value: t(
+                                  `independentPage.works.items.${details.detailKey}.context`,
+                                ),
+                              },
+                            ]}
+                          />
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            ))
+          }
+        </section>
+
+        <section
+          class="independents-page__connections"
+          id="connections"
+          aria-labelledby="connections-heading"
+        >
+          <div>
+            <p class="section-kicker">
+              {t("independentPage.connections.kicker")}
+            </p>
+            <h2 id="connections-heading">
+              {t("independentPage.connections.heading")}
+            </h2>
+          </div>
+          <p>{t("independentPage.connections.description")}</p>
+          <div class="independents-connection-grid">
+            {
+              ["entryPoints", "worlds", "cosmere"].map((item, index) => (
+                <article class="independents-connection-card">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{t(`independentPage.connections.${item}.title`)}</h3>
+                  <p>{t(`independentPage.connections.${item}.text`)}</p>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <PageReturn
+          locale={locale}
+          href="/books"
+          label={t("navigation.books.title")}
+        />
+      </main>
+      <TableOfContents
+        title={t("independentPage.tableOfContents")}
+        items={[
+          { id: "introduction", label: t("independentPage.toc.introduction") },
+          { id: "works", label: t("independentPage.toc.works") },
+          ...workSections.map((section) => ({
+            id: section.id,
+            label: t(section.titleKey),
+            level: 1 as const,
+          })),
+          { id: "connections", label: t("independentPage.toc.connections") },
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>

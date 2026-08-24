@@ -1,0 +1,8 @@
+{
+  "metallic-arts": ["overview", "classification", "tradeoffs", "failure"],
+  "surgebinding": ["overview", "access", "surges", "bond"],
+  "aondor": ["overview", "notation", "geography", "limits"],
+  "awakening": ["overview", "resources", "commands", "thresholds"],
+  "sand-mastery": ["overview", "material", "capacity", "risks"],
+  "forgery": ["overview", "process", "persistence", "limits"]
+}
