@@ -53,28 +53,36 @@
       "pace": {
         "title": "Lee a tu ritmo",
         "text": "Puedes seguir un camino recomendado, detenerte cuando quieras y hacer tuyo el recorrido."
+      },
+      "recommendation": {
+        "title": "La ruta es una recomendación",
+        "text": "No es una obligación ni una prueba que debas completar: es una herramienta para orientarte y decidir qué experiencia quieres tener."
+      },
+      "warning": {
+        "kicker": "Atención a los spoilers",
+        "text": "Algunas conexiones solo pueden explicarse mencionando información que ciertas historias prefieren mantener en secreto. Las rutas te avisarán cuando exista ese riesgo."
       }
     },
     "routes": {
       "kicker": "Tres formas de entrar",
       "heading": "Elige el viaje que encaje contigo.",
-      "description": "Cosmereando incluye tres rutas. Cada una tiene un propósito distinto y su lista completa de lectura se explicará en su propia página, sin spoilers aquí."
+      "description": "Cosmereando reúne tres formas de orientarte: una colección de rutas recomendadas por la comunidad, el orden de publicación y el recorrido personal del creador."
     },
     "cards": {
-      "community": "Una introducción pensada para lectores que quieren descubrir el universo de forma equilibrada.",
+      "community": "Una colección de rutas de lectura recomendadas por lectores de internet, para que elijas la que más te atraiga.",
       "publication": "Una forma de observar cómo crece el Cosmere siguiendo el orden en que aparecieron sus historias.",
       "myJourney": "Un recorrido personal que muestra cómo empezó y fue creciendo esta guía."
     },
     "details": {
       "community": {
-        "eyebrow": "Una ruta acogedora",
-        "intro": "{route} está pensada como una primera conversación equilibrada con el Cosmere: suficiente variedad para intuir su escala sin convertir el comienzo en una lista de tareas.",
+        "eyebrow": "Rutas recomendadas por la comunidad",
+        "intro": "{route} reunirá distintas propuestas de lectores de internet para descubrir el Cosmere. Podrás comparar sus órdenes de lectura y escoger el que mejor encaje contigo.",
         "imageLabel": "Una puerta de entrada a {route}",
         "imageDimensions": "16:9 · marcador de imagen de ruta",
         "overview": {
           "kicker": "La idea",
-          "heading": "Empieza con equilibrio y sigue tu curiosidad.",
-          "text": "Esta ruta pone la experiencia del lector en primer plano. Deja espacio para gustos distintos y mantiene las conexiones más amplias en segundo plano hasta que quieras buscarlas."
+          "heading": "Muchas rutas, una forma de empezar.",
+          "text": "Cada propuesta refleja una manera distinta de ordenar la lectura. La colección te permitirá explorar opciones y elegir la que te resulte más atractiva."
         },
         "cards": {
           "focus": {
@@ -92,8 +100,8 @@
         },
         "next": {
           "kicker": "Lo que añadirá esta página",
-          "heading": "Una guía práctica para elegir el siguiente paso.",
-          "text": "La ruta completa incluirá el orden de lectura, motivos breves para cada elección y notas con cuidado frente a los spoilers."
+          "heading": "Elige el recorrido que más te atraiga.",
+          "text": "La sección reunirá rutas completas, con sus órdenes de lectura y notas breves para ayudarte a comparar sus propuestas sin spoilers innecesarios."
         },
         "toc": {
           "overview": "Cómo funciona esta ruta",
@@ -191,26 +199,26 @@
       "indexText": "mundos y colecciones"
     },
     "orientation": {
-      "kicker": "Lee primero la forma",
-      "heading": "Cada saga es una puerta distinta.",
-      "description": "Algunas sagas se extienden a lo largo de varias novelas. Otras empiezan con un solo libro o reúnen historias que amplían el Cosmere alrededor de una idea central. Estas páginas se convertirán en un mapa con cuidado frente a los spoilers.",
+      "kicker": "Cómo leer este índice",
+      "heading": "Encuentra la saga que quieres explorar.",
+      "description": "Las sagas agrupan historias que comparten mundo, personajes, contexto o preguntas. Usa este índice para orientarte entre sus diferencias y abre una ficha para consultar sus obras, planeta y conexiones con cuidado frente a los spoilers.",
       "imageLabel": "Una vista amplia del Cosmere y sus mundos cambiantes",
       "imageDimensions": "3:2 · marcador de mapa de sagas"
     },
     "directory": {
       "kicker": "El índice",
       "heading": "Elige una familia de historias.",
-      "description": "Abre una ficha de saga para ver su estructura provisional y vuelve más adelante, cuando incorporemos sus obras, mundos y conexiones.",
+      "description": "Explora cada ficha para conocer sus obras, el planeta donde transcurren sus historias, sus sistemas de magia y las conexiones que amplían su contexto.",
       "cards": {
-        "mistborn": "Un ciclo de revoluciones, metales y eras cambiantes en Scadrial.",
-        "the-stormlight-archive": "Una historia épica de Roshar, los Radiantes y el regreso de las tormentas.",
-        "white-sand": "Una saga gráfica marcada por la luz implacable y las culturas de Taldain."
+        "mistborn": "Una saga de revoluciones, poderes metálicos y sociedades que cambian con el paso de las eras. En Scadrial, cada generación hereda los secretos y las preguntas de la anterior. Ideal si te atraen los misterios políticos, los sistemas de magia detallados y los mundos que evolucionan junto a sus personajes.",
+        "the-stormlight-archive": "Una fantasía épica ambientada en Roshar, un mundo azotado por tormentas extraordinarias y marcado por antiguas leyendas, juramentos y conflictos que atraviesan generaciones. Combina grandes batallas con personajes profundamente humanos y temas como la culpa, la identidad y la esperanza.",
+        "white-sand": "Una novela gráfica ambientada en Taldain, un planeta dividido entre una cara iluminada por varios soles y otra sumida en la oscuridad. Sus historias giran alrededor de la supervivencia, las culturas enfrentadas y una forma de magia vinculada a la arena."
       }
     },
     "tableOfContents": "En esta página",
     "toc": {
       "introduction": "La constelación",
-      "orientation": "Cómo leer el índice",
+      "orientation": "Cómo leer este índice",
       "directory": "El índice de sagas"
     },
     "detail": {
@@ -240,10 +248,30 @@
     "back": "Volver a Sagas",
     "intro": {
       "eyebrow": "Ficha de saga",
-      "description": "Nacidos de la bruma cuenta la historia de Scadrial a través de dos eras publicadas: una trilogía de fantasía épica y una serie posterior marcada por una sociedad cambiante, la nueva tecnología y el legado de lo ocurrido antes.",
+      "description": "Nacidos de la bruma cuenta la historia de Scadrial a través de distintas eras: una fantasía épica, sociedades cambiantes, nuevas tecnologías y el legado de lo ocurrido antes.",
       "planet": "Mundo",
       "imageLabel": "Scadrial y sus artes metálicas",
       "imageDimensions": "16:9 · marcador de imagen de Nacidos de la bruma"
+    },
+    "overview": {
+      "kicker": "La saga a vista de pájaro",
+      "heading": "Una historia construida por eras.",
+      "text": "Nacidos de la bruma es una de las grandes sagas del Cosmere y una de sus mejores puertas de entrada. Sus historias transcurren en Scadrial, un mundo donde la magia está vinculada a los metales y donde la sociedad, la tecnología y las formas de poder evolucionan con el paso de las generaciones. La saga está concebida como un proyecto de varias eras conectadas, con etapas de identidad propia que forman parte de una historia mucho más amplia. Puede cambiar de una fantasía de revolución a una aventura de investigación o una historia de acción con estética de frontera sin perder su identidad. Las conexiones entre eras recompensan la lectura continuada: el pasado deja huellas en el presente y Scadrial se convierte poco a poco en una pieza fundamental del Cosmere.",
+      "facts": {
+        "planet": { "label": "Planeta", "value": "Scadrial" },
+        "signature": {
+          "label": "Rasgo distintivo",
+          "value": "Las artes metálicas"
+        },
+        "structure": {
+          "label": "Estructura",
+          "value": "Varias eras conectadas"
+        },
+        "reading": {
+          "label": "Lectura recomendada",
+          "value": "Orden de publicación dentro de cada era"
+        }
+      }
     },
     "warning": {
       "kicker": "Aviso opcional",
@@ -253,18 +281,18 @@
     },
     "eras": {
       "kicker": "Mapa de publicación",
-      "heading": "Dos eras, un mundo en transformación.",
-      "description": "La lista reúne las novelas y relatos de cada era en orden de publicación. Las notas señalan cuándo conviene leer un relato complementario en otro momento."
+      "heading": "Un mundo que cambia con cada era.",
+      "description": "La lista agrupa novelas y relatos por era, siguiendo principalmente el orden de publicación. Si un relato publicado mucho después aparece dentro de una era con libros más antiguos, es porque pertenece a ese periodo de la historia y amplía su contexto."
     },
     "era1": {
       "kicker": "Era 1",
       "heading": "La trilogía original",
-      "description": "Una fantasía épica sobre rebelión, poder y el precio de rehacer un mundo. Estas tres novelas forman la historia principal completa."
+      "description": "En un mundo donde el mal ya ha vencido, un imperio inmortal lleva mil años gobernando con mano de hierro. Esta trilogía sigue a quienes se atreven a imaginar que el destino puede cambiar, entre rebelión, poder y secretos enterrados."
     },
     "era2": {
       "kicker": "Era 2",
       "heading": "La serie de Wax y Wayne",
-      "description": "Una nueva etapa de Scadrial, con ferrocarriles, armas de fuego, investigaciones y una relación distinta con las artes metálicas."
+      "description": "En Scadrial, la magia de los metales convive ahora con trenes, revólveres y ciudades en expansión. Esta nueva etapa sigue a Wax y Wayne mientras investigan crímenes, se enfrentan a amenazas inesperadas y descubren que el pasado todavía proyecta una sombra sobre el presente."
     },
     "books": {
       "finalEmpire": "La novela de entrada: un golpe contra un imperio aparentemente eterno y la primera gran puerta a la alomancia.",
@@ -286,7 +314,7 @@
       "whenLabel": "Cuándo leerlo",
       "works": {
         "eleventhMetal": {
-          "origin": "Es un relato precuela escrito para el juego de rol de Nacidos de la bruma. Después se incluyó en Arcanum Ilimitado, que hoy es la forma más sencilla de encontrarlo.",
+          "origin": "Es un relato precuela escrito para el juego de rol de Nacidos de la bruma.",
           "why": "Su valor está en el contexto adicional: una historia lateral que profundiza en la relación temprana de Kelsier con la alomancia y añade una pieza curiosa del lore de Scadrial.",
           "when": "Después de la trilogía original. Es opcional, pero resulta un añadido muy entretenido cuando ya conoces a Kelsier y Scadrial."
         },
@@ -330,6 +358,7 @@
     "tableOfContents": "Ficha de Nacidos de la bruma",
     "toc": {
       "introduction": "Introducción",
+      "overview": "Visión general",
       "readingNote": "Nota de lectura",
       "publicationOrder": "Orden de publicación",
       "magic": "Artes metálicas",
@@ -584,7 +613,7 @@
     "tressOfTheEmeraldSea": "Trenza del mar Esmeralda",
     "yumiAndTheNightmarePainter": "Yumi y el pintor de pesadillas",
     "theSunlitMan": "El hombre iluminado",
-    "islesOfTheEmberdark": "Islas del Mar de Brasas",
+    "islesOfTheEmberdark": "Islas de la Ascuaoscura",
     "arcanumUnbounded": "Arcanum Ilimitado"
   },
   "sagas": {
@@ -1008,6 +1037,8 @@
     "standalone": "Independientes",
     "arcanumUnbounded": "Arcanum Ilimitado",
     "viewSaga": "Explorar saga",
+    "viewIndependents": "Explorar independientes",
+    "viewArcanum": "Explora el Arcanum",
     "coverDimensions": "2:3 · marcador de portada",
     "tableOfContents": "En esta página",
     "toc": { "introduction": "Introducción", "catalogue": "El catálogo" },
@@ -1081,16 +1112,57 @@
         "title": "Conexiones por descubrir",
         "text": "Nombres, personajes e ideas recurrentes recompensan la atención, aunque la mayoría de historias también funcionan por sí solas."
       },
-      "mapLabel": "Mapa ilustrado de los mundos del Cosmere",
-      "mapCaption": "El mapa es una invitación a la curiosidad, no una ruta que tengas que memorizar."
+      "mapLabel": "Mapa ilustrado de los mundos del Cosmere"
+    },
+    "readerGuide": {
+      "kicker": "Una guía para empezar",
+      "heading": "Descubre el Cosmere sin spoilers.",
+      "text": "Cosmereando es una guía recopilatoria creada para quienes quieren acercarse al Cosmere sin sentirse perdidos entre sagas, planetas, sistemas de magia y conexiones aparentemente interminables. Aquí encontrarás información general explicada de forma clara, incluso si todavía no has leído ningún libro. El objetivo no es sustituir la experiencia de lectura, sino ayudarte a entender la magnitud del universo que tienes delante y encontrar una puerta de entrada que encaje contigo. La web evita revelar acontecimientos importantes y utiliza, siempre que es posible, información pública como las sinopsis editoriales. Cuando una sección pueda revelar algún detalle sensible, encontrarás un aviso antes de continuar.",
+      "closing": "Una guía del Cosmere para entender su grandeza sin perder la emoción de descubrirlo por ti mismo.",
+      "cards": {
+        "start": {
+          "title": "Pensada para empezar desde cero",
+          "text": "No necesitas conocer el Cosmere ni haber leído varias sagas para orientarte. Empieza por el mundo o la historia que más te llame la atención."
+        },
+        "spoilers": {
+          "title": "Sin destripar las historias",
+          "text": "Las conexiones se explican con cuidado y los detalles importantes están protegidos mediante avisos. La web despierta tu curiosidad sin adelantarte los descubrimientos."
+        },
+        "depth": {
+          "title": "Elige cuánto quieres saber",
+          "text": "Puedes quedarte con una visión general, explorar los mundos o seguir una ruta de lectura. Tú decides hasta dónde quieres adentrarte."
+        }
+      }
     },
     "author": {
       "kicker": "El autor",
       "heading": "Un constructor de mundos conectados",
       "text": "Brandon Sanderson es un autor estadounidense de fantasía conocido por su construcción de mundos, sus sistemas de magia innovadores y sus ambiciosas historias largas. Elantris, publicada en 2005, fue su primera novela publicada y la primera historia que lanzó dentro del Cosmere. Detrás de libros y sagas independientes, lleva años construyendo un universo mucho mayor.",
       "imageLabel": "Retrato del autor",
-      "imageCaption": "Brandon Sanderson · arquitecto del Cosmere",
-      "imageDimensions": "2:3 · retrato vertical"
+      "imageDimensions": "2:3 · retrato vertical",
+      "links": {
+        "website": {
+          "title": "Web oficial",
+          "text": "Libros, proyectos y noticias"
+        },
+        "blog": {
+          "title": "Blog y actualizaciones",
+          "text": "Avances y novedades periódicas"
+        },
+        "videos": {
+          "title": "Vídeos y actualizaciones",
+          "text": "Escritura, entrevistas y noticias"
+        },
+        "youtube": {
+          "title": "Canal oficial de YouTube",
+          "text": "Charlas, eventos y vídeos"
+        },
+        "coppermind": {
+          "title": "Coppermind",
+          "text": "La enciclopedia comunitaria del Cosmere"
+        }
+      },
+      "warning": "La Coppermind puede contener spoilers importantes de todo el Cosmere. Consulta sus artículos cuando hayas terminado las historias relacionadas o bajo tu propia responsabilidad."
     },
     "whyRead": {
       "kicker": "Una razón para empezar",
@@ -1130,6 +1202,7 @@
       "atlas": "El índice de trabajo",
       "explore": "Elige una mirada",
       "cosmere": "¿Qué es el Cosmere?",
+      "readerGuide": "Guía sin spoilers",
       "routes": "Rutas de lectura",
       "author": "El autor"
     }

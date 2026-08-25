@@ -214,6 +214,7 @@
     .home-section-heading,
     .home-map,
     .home-editorial,
+    .home-reader-note,
     .author-layout,
     .books-page__intro,
     .books-page__section-heading,
@@ -319,6 +320,11 @@
     .mistborn-page__section-intro > p:last-child {
       grid-column: 1;
       grid-row: auto;
+    }
+
+    .mistborn-fact-list,
+    .home-author-links {
+      grid-template-columns: 1fr;
     }
 
     .arcanum-page__section-intro > p:last-child {

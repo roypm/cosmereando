@@ -56,24 +56,24 @@ const explorationItems = [
   },
   {
     number: "03",
+    symbol: "∞",
+    href: path("/independents"),
+    label: t("pages.independents.title"),
+    text: t("home.explore.independentsText"),
+  },
+  {
+    number: "04",
     symbol: "✦",
     href: path("/planets"),
     label: t("pages.planets.title"),
     text: t("home.explore.planetsText"),
   },
   {
-    number: "04",
+    number: "05",
     symbol: "⌁",
     href: path("/magic-systems"),
     label: t("pages.magic-systems.title"),
     text: t("home.explore.magicText"),
-  },
-  {
-    number: "05",
-    symbol: "∞",
-    href: path("/independents"),
-    label: t("pages.independents.title"),
-    text: t("home.explore.independentsText"),
   },
 ];
 ---
@@ -207,8 +207,33 @@ const explorationItems = [
                 alt={t("home.cosmere.mapLabel")}
                 variant="feature"
               />
-              <figcaption>{t("home.cosmere.mapCaption")}</figcaption>
             </figure>
+          </section>
+
+          <section
+            class="home-reader-note"
+            id="reader-guide"
+            aria-labelledby="reader-guide-heading"
+          >
+            <div class="home-reader-note__intro">
+              <p class="section-kicker">{t("home.readerGuide.kicker")}</p>
+              <h2 id="reader-guide-heading">{t("home.readerGuide.heading")}</h2>
+              <p>{t("home.readerGuide.text")}</p>
+              <p class="home-reader-note__closing">
+                {t("home.readerGuide.closing")}
+              </p>
+            </div>
+            <div class="home-reader-note__cards">
+              {
+                ["start", "spoilers", "depth"].map((item, index) => (
+                  <article class="home-reader-note__card">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{t(`home.readerGuide.cards.${item}.title`)}</h3>
+                    <p>{t(`home.readerGuide.cards.${item}.text`)}</p>
+                  </article>
+                ))
+              }
+            </div>
           </section>
 
           <section
@@ -254,12 +279,35 @@ const explorationItems = [
                 alt={t("home.author.imageLabel")}
                 variant="portrait"
               />
-              <span>{t("home.author.imageCaption")}</span>
             </div>
             <div class="home-editorial__copy">
               <p class="section-kicker">{t("home.author.kicker")}</p>
               <h2 id="author-heading">{t("home.author.heading")}</h2>
               <p>{t("home.author.text")}</p>
+              <div class="home-author-links">
+                {
+                  [
+                    ["website", "https://www.brandonsanderson.com/"],
+                    ["blog", "https://www.brandonsanderson.com/blogs/blog"],
+                    [
+                      "videos",
+                      "https://www.brandonsanderson.com/blogs/blog/videos-updates",
+                    ],
+                    ["youtube", "https://www.youtube.com/@BrandSanderson"],
+                    [
+                      "coppermind",
+                      "https://coppermind.net/wiki/Coppermind:Welcome",
+                    ],
+                  ].map(([key, href]) => (
+                    <a href={href} target="_blank" rel="noreferrer">
+                      <span>{t(`home.author.links.${key}.title`)}</span>
+                      <small>{t(`home.author.links.${key}.text`)}</small>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ))
+                }
+              </div>
+              <p class="home-author-warning">{t("home.author.warning")}</p>
               <div class="home-principles">
                 <article>
                   <h3>{t("home.whyRead.start.title")}</h3>
@@ -285,6 +333,7 @@ const explorationItems = [
           { id: "atlas", label: t("home.toc.atlas") },
           { id: "explore", label: t("home.toc.explore") },
           { id: "cosmere", label: t("home.toc.cosmere") },
+          { id: "reader-guide", label: t("home.toc.readerGuide") },
           { id: "routes", label: t("home.toc.routes") },
           { id: "author", label: t("home.toc.author") },
         ]}
