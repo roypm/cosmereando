@@ -45,6 +45,7 @@ const eraOneBooks = [
     note: "mistbornPage.books.eleventhMetal",
     typeKey: "short-story",
     contextKey: "eleventhMetal",
+    inArcanum: true,
   },
   {
     id: "mistborn-secret-history",
@@ -52,6 +53,7 @@ const eraOneBooks = [
     note: "mistbornPage.books.secretHistory",
     typeKey: "novella",
     contextKey: "secretHistory",
+    inArcanum: true,
   },
 ];
 
@@ -68,6 +70,7 @@ const eraTwoBooks = [
     note: "mistbornPage.books.allomancerJak",
     typeKey: "short-story",
     contextKey: "allomancerJak",
+    inArcanum: true,
   },
   {
     id: "shadows-of-self",
@@ -148,6 +151,42 @@ const workTitle = (id: string) => {
           />
 
           <section
+            class="mistborn-page__overview"
+            id="overview"
+            aria-labelledby="overview-heading"
+          >
+            <div class="mistborn-page__section-intro">
+              <p class="section-kicker">{t("mistbornPage.overview.kicker")}</p>
+              <h2 id="overview-heading">
+                {t("mistbornPage.overview.heading")}
+              </h2>
+              <p>{t("mistbornPage.overview.text")}</p>
+            </div>
+            <dl class="mistborn-fact-list">
+              <div>
+                <dt>{t("mistbornPage.overview.facts.planet.label")}</dt><dd>
+                  {t("mistbornPage.overview.facts.planet.value")}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("mistbornPage.overview.facts.signature.label")}</dt><dd>
+                  {t("mistbornPage.overview.facts.signature.value")}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("mistbornPage.overview.facts.structure.label")}</dt><dd>
+                  {t("mistbornPage.overview.facts.structure.value")}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("mistbornPage.overview.facts.reading.label")}</dt><dd>
+                  {t("mistbornPage.overview.facts.reading.value")}
+                </dd>
+              </div>
+            </dl>
+          </section>
+
+          <section
             class="mistborn-page__eras"
             id="publication-order"
             aria-labelledby="publication-order-heading"
@@ -178,6 +217,9 @@ const workTitle = (id: string) => {
                         <h4>{workTitle(book.id)}</h4>
                         <span class="mistborn-book-list__type">
                           {t(`books.types.${book.typeKey}`)}
+                          {book.inArcanum && (
+                            <> · {t("books.arcanumUnbounded")}</>
+                          )}
                         </span>
                         <p>{t(book.note)}</p>
                         {book.contextKey && (
@@ -192,6 +234,11 @@ const workTitle = (id: string) => {
                               "mistbornPage.supplementary.typeLabel",
                             )}
                             type={t(`books.types.${book.typeKey}`)}
+                            showType={
+                              book.contextKey !== "eleventhMetal" &&
+                              book.contextKey !== "secretHistory" &&
+                              book.contextKey !== "allomancerJak"
+                            }
                             originLabel={t(
                               "mistbornPage.supplementary.originLabel",
                             )}
@@ -255,6 +302,9 @@ const workTitle = (id: string) => {
                         <h4>{workTitle(book.id)}</h4>
                         <span class="mistborn-book-list__type">
                           {t(`books.types.${book.typeKey}`)}
+                          {book.inArcanum && (
+                            <> · {t("books.arcanumUnbounded")}</>
+                          )}
                         </span>
                         <p>{t(book.note)}</p>
                         {book.contextKey && (
@@ -269,6 +319,11 @@ const workTitle = (id: string) => {
                               "mistbornPage.supplementary.typeLabel",
                             )}
                             type={t(`books.types.${book.typeKey}`)}
+                            showType={
+                              book.contextKey !== "eleventhMetal" &&
+                              book.contextKey !== "secretHistory" &&
+                              book.contextKey !== "allomancerJak"
+                            }
                             originLabel={t(
                               "mistbornPage.supplementary.originLabel",
                             )}
@@ -351,6 +406,7 @@ const workTitle = (id: string) => {
         title={t("mistbornPage.tableOfContents")}
         items={[
           { id: "introduction", label: t("mistbornPage.toc.introduction") },
+          { id: "overview", label: t("mistbornPage.toc.overview") },
           { id: "reading-note", label: t("mistbornPage.toc.readingNote") },
           {
             id: "publication-order",

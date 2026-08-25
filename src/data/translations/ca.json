@@ -53,28 +53,36 @@
       "pace": {
         "title": "Llegeix al teu ritme",
         "text": "Pots seguir un camí recomanat, aturar-te quan vulguis i fer teu el recorregut."
+      },
+      "recommendation": {
+        "title": "La ruta és una recomanació",
+        "text": "No és una obligació ni una prova que hagis de completar: és una eina per orientar-te i decidir quina experiència vols tenir."
+      },
+      "warning": {
+        "kicker": "Atenció als espòilers",
+        "text": "Algunes connexions només es poden explicar mencionant informació que certes històries prefereixen mantenir en secret. Les rutes t’avisaran quan hi hagi aquest risc."
       }
     },
     "routes": {
       "kicker": "Tres maneres d’entrar-hi",
       "heading": "Tria el viatge que encaixi amb tu.",
-      "description": "Cosmereando inclou tres rutes. Cadascuna té un propòsit diferent i la seva llista completa de lectura s’explicarà a la seva pròpia pàgina, sense espòilers aquí."
+      "description": "Cosmereando reuneix tres maneres d’orientar-te: una col·lecció de rutes recomanades per la comunitat, l’ordre de publicació i el recorregut personal del creador."
     },
     "cards": {
-      "community": "Una introducció pensada per a lectors que volen descobrir l’univers d’una manera equilibrada.",
+      "community": "Una col·lecció de rutes de lectura recomanades per lectors d’internet, perquè triïs la que més t’atrau.",
       "publication": "Una manera d’observar com creix el Cosmere seguint l’ordre en què van aparèixer les seves històries.",
       "myJourney": "Un recorregut personal que mostra com va començar i créixer aquesta guia."
     },
     "details": {
       "community": {
-        "eyebrow": "Una ruta acollidora",
-        "intro": "{route} està pensada com una primera conversa equilibrada amb el Cosmere: prou varietat per intuir-ne l’escala sense convertir el començament en una llista de tasques.",
+        "eyebrow": "Rutes recomanades per la comunitat",
+        "intro": "{route} reunirà propostes diferents de lectors d’internet per descobrir el Cosmere. Podràs comparar-ne els ordres de lectura i triar el que encaixi millor amb tu.",
         "imageLabel": "Una porta d’entrada a {route}",
         "imageDimensions": "16:9 · marcador d’imatge de ruta",
         "overview": {
           "kicker": "La idea",
-          "heading": "Comença amb equilibri i segueix la teva curiositat.",
-          "text": "Aquesta ruta posa l’experiència del lector en primer pla. Deixa espai per a gustos diferents i manté les connexions més àmplies en segon pla fins que les vulguis buscar."
+          "heading": "Moltes rutes, una manera de començar.",
+          "text": "Cada proposta reflecteix una manera diferent d’ordenar la lectura. La col·lecció et permetrà explorar les opcions i triar la que més t’atrau."
         },
         "cards": {
           "focus": {
@@ -92,8 +100,8 @@
         },
         "next": {
           "kicker": "El que afegirà aquesta pàgina",
-          "heading": "Una guia pràctica per triar el pas següent.",
-          "text": "La ruta completa inclourà l’ordre de lectura, motius breus per a cada elecció i notes curoses amb els espòilers."
+          "heading": "Tria el recorregut que més t’atrau.",
+          "text": "La secció reunirà rutes completes, amb els seus ordres de lectura i notes breus per ajudar-te a comparar-ne les propostes sense espòilers innecessaris."
         },
         "toc": {
           "overview": "Com funciona aquesta ruta",
@@ -191,26 +199,26 @@
       "indexText": "mons i col·leccions"
     },
     "orientation": {
-      "kicker": "Llegeix primer la forma",
-      "heading": "Cada saga és una porta diferent.",
-      "description": "Algunes sagues s’estenen al llarg de diverses novel·les. D’altres comencen amb un sol llibre o reuneixen històries que amplien el Cosmere al voltant d’una idea central. Aquestes pàgines es convertiran en un mapa amb cura davant dels espòilers.",
+      "kicker": "Com llegir aquest índex",
+      "heading": "Troba la saga que vols explorar.",
+      "description": "Les sagues agrupen històries que comparteixen món, personatges, context o preguntes. Fes servir aquest índex per entendre’n les diferències i obre una fitxa per consultar-ne les obres, el planeta i les connexions amb cura davant dels espòilers.",
       "imageLabel": "Una visió àmplia del Cosmere i els seus mons canviants",
       "imageDimensions": "3:2 · marcador de mapa de sagues"
     },
     "directory": {
       "kicker": "L’índex",
       "heading": "Tria una família d’històries.",
-      "description": "Obre una fitxa de saga per veure’n l’estructura provisional i torna més endavant, quan hi incorporem les obres, els mons i les connexions.",
+      "description": "Explora cada fitxa per conèixer-ne les obres, el planeta on transcorren les històries, els sistemes de màgia i les connexions que n’amplien el context.",
       "cards": {
-        "mistborn": "Un cicle de revolucions, metalls i eres canviants a Scadrial.",
-        "the-stormlight-archive": "Una història èpica de Roshar, els Radiants i el retorn de les tempestes.",
-        "white-sand": "Una saga gràfica marcada per la llum implacable i les cultures de Taldain."
+        "mistborn": "Una saga de revolucions, poders metàl·lics i societats que canvien amb el pas de les eres. A Scadrial, cada generació hereta els secrets i les preguntes de l’anterior. Ideal si t’atreuen els misteris polítics, els sistemes de màgia detallats i els mons que evolucionen amb els seus personatges.",
+        "the-stormlight-archive": "Una fantasia èpica ambientada a Roshar, un món assotat per tempestes extraordinàries i marcat per llegendes antigues, juraments i conflictes que travessen generacions. Combina grans batalles amb personatges profundament humans i temes com la culpa, la identitat i l’esperança.",
+        "white-sand": "Una novel·la gràfica ambientada a Taldain, un planeta dividit entre una cara il·luminada per diversos sols i una altra submergida en la foscor. Les seves històries giren al voltant de la supervivència, les cultures enfrontades i una forma de màgia vinculada a la sorra."
       }
     },
     "tableOfContents": "En aquesta pàgina",
     "toc": {
       "introduction": "La constel·lació",
-      "orientation": "Com llegir l’índex",
+      "orientation": "Com llegir aquest índex",
       "directory": "L’índex de sagues"
     },
     "detail": {
@@ -240,10 +248,30 @@
     "back": "Tornar a Sagues",
     "intro": {
       "eyebrow": "Fitxa de saga",
-      "description": "Nascuts de la boira explica la història de Scadrial a través de dues eres publicades: una trilogia de fantasia èpica i una sèrie posterior marcada per una societat canviant, la nova tecnologia i el llegat del que va passar abans.",
+      "description": "Nascuts de la boira explica la història d’Scadrial a través de diferents eres: fantasia èpica, societats canviants, noves tecnologies i el llegat del que va passar abans.",
       "planet": "Món",
       "imageLabel": "Scadrial i les seves arts metàl·liques",
       "imageDimensions": "16:9 · marcador d’imatge de Nascuts de la boira"
+    },
+    "overview": {
+      "kicker": "La saga d’un cop d’ull",
+      "heading": "Una història construïda per eres.",
+      "text": "Nascuts de la boira és una de les grans sagues del Cosmere i una de les seves millors portes d’entrada. Les seves històries transcorren a Scadrial, un món on la màgia està vinculada als metalls i on la societat, la tecnologia i les formes de poder evolucionen amb les generacions. La saga està concebuda com un projecte de diverses eres connectades, amb etapes pròpies que formen part d’una història molt més gran. Pot passar de la fantasia revolucionària a l’aventura d’investigació o a l’acció amb aire de frontera sense perdre la seva identitat. Les connexions entre eres recompensen la lectura continuada: el passat deixa empremtes en el present i Scadrial es converteix a poc a poc en una peça fonamental del Cosmere.",
+      "facts": {
+        "planet": { "label": "Planeta", "value": "Scadrial" },
+        "signature": {
+          "label": "Tret distintiu",
+          "value": "Les arts metàl·liques"
+        },
+        "structure": {
+          "label": "Estructura",
+          "value": "Diverses eres connectades"
+        },
+        "reading": {
+          "label": "Lectura recomanada",
+          "value": "Ordre de publicació dins de cada era"
+        }
+      }
     },
     "warning": {
       "kicker": "Avís opcional",
@@ -253,18 +281,18 @@
     },
     "eras": {
       "kicker": "Mapa de publicació",
-      "heading": "Dues eres, un món en transformació.",
-      "description": "La llista reuneix les novel·les i els relats de cada era en ordre de publicació. Les notes assenyalen quan convé llegir un relat complementari en un altre moment."
+      "heading": "Un món que canvia amb cada era.",
+      "description": "La llista agrupa novel·les i relats per era, seguint principalment l’ordre de publicació. Si un relat publicat molt més tard apareix dins d’una era amb llibres més antics, és perquè pertany a aquell període de la història i n’amplia el context."
     },
     "era1": {
       "kicker": "Era 1",
       "heading": "La trilogia original",
-      "description": "Una fantasia èpica sobre rebel·lió, poder i el preu de refer un món. Aquestes tres novel·les formen la història principal completa."
+      "description": "En un món on el mal ja ha vençut, un imperi immortal governa amb mà de ferro des de fa mil anys. Aquesta trilogia segueix aquells qui s’atreveixen a imaginar que el destí pot canviar, entre rebel·lió, poder i secrets enterrats."
     },
     "era2": {
       "kicker": "Era 2",
       "heading": "La sèrie de Wax i Wayne",
-      "description": "Una nova etapa de Scadrial, amb ferrocarrils, armes de foc, investigacions i una relació diferent amb les arts metàl·liques."
+      "description": "A Scadrial, la màgia dels metalls conviu ara amb trens, revòlvers i ciutats en expansió. Aquesta nova etapa segueix Wax i Wayne mentre investiguen crims, s’enfronten a amenaces inesperades i descobreixen que el passat encara projecta una ombra sobre el present."
     },
     "books": {
       "finalEmpire": "La novel·la d’entrada: un cop contra un imperi aparentment etern i la primera gran porta a l’alomància.",
@@ -286,7 +314,7 @@
       "whenLabel": "Quan llegir-lo",
       "works": {
         "eleventhMetal": {
-          "origin": "És un relat preqüela escrit per al joc de rol de Nascuts de la boira. Després es va incloure a Arcanum Il·limitat, que avui és la manera més senzilla de trobar-lo.",
+          "origin": "És un relat preqüela escrit per al joc de rol de Nascuts de la boira.",
           "why": "El seu valor és el context addicional: una història lateral que aprofundeix en la relació primerenca de Kelsier amb l’alomància i afegeix una peça curiosa del lore d’Scadrial.",
           "when": "Després de la trilogia original. És opcional, però resulta un afegit molt entretingut quan ja coneixes Kelsier i Scadrial."
         },
@@ -330,6 +358,7 @@
     "tableOfContents": "Fitxa de Nascuts de la boira",
     "toc": {
       "introduction": "Introducció",
+      "overview": "Visió general",
       "readingNote": "Nota de lectura",
       "publicationOrder": "Ordre de publicació",
       "magic": "Arts metàl·liques",
@@ -1008,6 +1037,8 @@
     "standalone": "Independents",
     "arcanumUnbounded": "Arcanum Il·limitat",
     "viewSaga": "Explora la saga",
+    "viewIndependents": "Explora les obres independents",
+    "viewArcanum": "Explora l’Arcanum",
     "coverDimensions": "2:3 · marcador de portada",
     "tableOfContents": "En aquesta pàgina",
     "toc": { "introduction": "Introducció", "catalogue": "El catàleg" },
@@ -1081,16 +1112,57 @@
         "title": "Connexions per descobrir",
         "text": "Noms, personatges i idees recurrents recompensen l’atenció, encara que la majoria d’històries també funcionen per si soles."
       },
-      "mapLabel": "Mapa il·lustrat dels mons del Cosmere",
-      "mapCaption": "El mapa és una invitació a la curiositat, no una ruta que hagis de memoritzar."
+      "mapLabel": "Mapa il·lustrat dels mons del Cosmere"
+    },
+    "readerGuide": {
+      "kicker": "Una guia per començar",
+      "heading": "Descobreix el Cosmere sense espòilers.",
+      "text": "Cosmereando és una guia recopiladora creada per a qui vol acostar-se al Cosmere sense perdre’s entre sagues, planetes, sistemes de màgia i connexions aparentment interminables. Hi trobaràs informació general explicada de manera clara, encara que no hagis llegit cap llibre. L’objectiu no és substituir l’experiència de lectura, sinó ajudar-te a entendre la magnitud de l’univers i trobar una porta d’entrada que encaixi amb tu. La web evita revelar esdeveniments importants i utilitza, sempre que és possible, informació pública com les sinopsis editorials. Quan una secció pugui revelar algun detall sensible, hi trobaràs un avís abans de continuar.",
+      "closing": "Una guia del Cosmere per entendre’n la grandesa sense perdre l’emoció de descobrir-lo tu mateix.",
+      "cards": {
+        "start": {
+          "title": "Pensada per començar des de zero",
+          "text": "No necessites conèixer el Cosmere ni haver llegit diverses sagues per orientar-te. Comença pel món o la història que més et cridi l’atenció."
+        },
+        "spoilers": {
+          "title": "Sense destripar les històries",
+          "text": "Les connexions s’expliquen amb cura i els detalls importants estan protegits amb avisos. La web desperta la curiositat sense avançar-te els descobriments."
+        },
+        "depth": {
+          "title": "Tria quant vols saber",
+          "text": "Pots quedar-te amb una visió general, explorar els mons o seguir una ruta de lectura. Tu decideixes fins on vols endinsar-te."
+        }
+      }
     },
     "author": {
       "kicker": "L’autor",
       "heading": "Un constructor de mons connectats",
       "text": "Brandon Sanderson és un autor estatunidenc de fantasia conegut per la seva construcció de mons, els seus sistemes de màgia innovadors i les seves ambicioses històries llargues. Elantris, publicada el 2005, va ser la seva primera novel·la publicada i la primera història que va llançar dins del Cosmere. Darrere de llibres i sagues independents, fa anys que construeix un univers molt més gran.",
       "imageLabel": "Retrat de l’autor",
-      "imageCaption": "Brandon Sanderson · arquitecte del Cosmere",
-      "imageDimensions": "2:3 · retrat vertical"
+      "imageDimensions": "2:3 · retrat vertical",
+      "links": {
+        "website": {
+          "title": "Web oficial",
+          "text": "Llibres, projectes i notícies"
+        },
+        "blog": {
+          "title": "Blog i actualitzacions",
+          "text": "Avanços i novetats periòdiques"
+        },
+        "videos": {
+          "title": "Vídeos i actualitzacions",
+          "text": "Escriptura, entrevistes i notícies"
+        },
+        "youtube": {
+          "title": "Canal oficial de YouTube",
+          "text": "Xerrades, esdeveniments i vídeos"
+        },
+        "coppermind": {
+          "title": "Coppermind",
+          "text": "L’enciclopèdia comunitària del Cosmere"
+        }
+      },
+      "warning": "La Coppermind pot contenir espòilers importants de tot el Cosmere. Consulta els seus articles quan hagis acabat les històries relacionades o sota la teva responsabilitat."
     },
     "whyRead": {
       "kicker": "Una raó per començar",
@@ -1130,6 +1202,7 @@
       "atlas": "L’índex de treball",
       "explore": "Tria una mirada",
       "cosmere": "Què és el Cosmere?",
+      "readerGuide": "Guia sense espòilers",
       "routes": "Rutes de lectura",
       "author": "L’autor"
     }

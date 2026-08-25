@@ -53,28 +53,36 @@
       "pace": {
         "title": "Read at your pace",
         "text": "You can follow a suggested path, pause whenever you like and make the journey your own."
+      },
+      "recommendation": {
+        "title": "A route is a recommendation",
+        "text": "It is not a rule or a test to complete: it is a tool for finding your bearings and choosing the experience you want."
+      },
+      "warning": {
+        "kicker": "A note about spoilers",
+        "text": "Some connections can only be explained by mentioning information certain stories prefer to keep hidden. The routes will warn you when that risk exists."
       }
     },
     "routes": {
       "kicker": "Three ways in",
       "heading": "Choose the journey that suits you.",
-      "description": "Cosmereando includes three routes. Each one has a different purpose, and its complete reading list will be explained on its own page without spoilers here."
+      "description": "Cosmereando brings together three ways to find your way in: a collection of community-recommended routes, publication order and the creator’s personal journey."
     },
     "cards": {
-      "community": "A reader-friendly introduction shaped around a balanced way to discover the universe.",
+      "community": "A collection of reading routes recommended by readers online, so you can choose the one that appeals to you most.",
       "publication": "A way to watch the Cosmere develop through the order in which its stories appeared.",
       "myJourney": "A personal reading path that shows how this guide began and grew over time."
     },
     "details": {
       "community": {
-        "eyebrow": "A welcoming route",
-        "intro": "{route} is designed as a balanced first conversation with the Cosmere: enough variety to feel its scale, without turning the beginning into a checklist.",
+        "eyebrow": "Community-recommended routes",
+        "intro": "{route} will bring together different proposals from readers online for discovering the Cosmere. Compare their reading orders and choose the one that suits you best.",
         "imageLabel": "A welcoming doorway into {route}",
         "imageDimensions": "16:9 · route image placeholder",
         "overview": {
           "kicker": "The idea",
-          "heading": "Start with balance, then follow your curiosity.",
-          "text": "This route puts the reader’s experience first. It leaves room for different tastes and keeps the wider connections in the background until you are ready to look for them."
+          "heading": "Many routes, one way to begin.",
+          "text": "Each proposal reflects a different way to order the reading. The collection will let you explore the options and choose the one that appeals to you most."
         },
         "cards": {
           "focus": {
@@ -92,8 +100,8 @@
         },
         "next": {
           "kicker": "What this page will add",
-          "heading": "A practical guide for choosing your next step.",
-          "text": "The complete route will include the reading order, short reasons for each choice and spoiler-aware notes to help you decide when to continue or pause."
+          "heading": "Choose the journey that appeals to you.",
+          "text": "The section will collect complete routes, with their reading orders and brief notes to help you compare their approaches without unnecessary spoilers."
         },
         "toc": {
           "overview": "How this route works",
@@ -188,26 +196,26 @@
       "indexText": "worlds and collections"
     },
     "orientation": {
-      "kicker": "Read the shape first",
-      "heading": "Every saga is a different kind of door.",
-      "description": "Some sagas unfold across several novels. Others begin with a single book or collect stories that widen the Cosmere around a central idea. The pages below will grow into a spoiler-aware map of those differences.",
+      "kicker": "How to read this index",
+      "heading": "Find the saga you want to explore.",
+      "description": "Sagas group stories that share a world, characters, context or questions. Use this index to understand their differences, then open a file for its works, planet and connections with spoiler-aware guidance.",
       "imageLabel": "A wide view of the Cosmere and its changing worlds",
       "imageDimensions": "3:2 · saga map placeholder"
     },
     "directory": {
       "kicker": "The index",
       "heading": "Choose a story family.",
-      "description": "Open a saga file for its current placeholder structure, then return later as its works, worlds and connections are added.",
+      "description": "Explore each file to discover its works, the planet where its stories unfold, its magic systems and the connections that broaden its context.",
       "cards": {
-        "mistborn": "A cycle of revolutions, metals and changing eras on Scadrial.",
-        "the-stormlight-archive": "An epic history of Roshar, Radiants and returning storms.",
-        "white-sand": "A graphic saga shaped by the harsh light and cultures of Taldain."
+        "mistborn": "A saga of revolutions, metallic powers and societies transformed across the eras. On Scadrial, each generation inherits the secrets and questions of the one before it. A strong fit for readers who enjoy political mysteries, detailed magic systems and worlds that evolve alongside their characters.",
+        "the-stormlight-archive": "An epic fantasy set on Roshar, a world battered by extraordinary storms and shaped by ancient legends, oaths and conflicts that span generations. It combines immense battles with deeply human characters and themes of guilt, identity and hope.",
+        "white-sand": "A graphic novel saga set on Taldain, a planet divided between a face lit by several suns and another plunged into darkness. Its stories turn on survival, rival cultures and a form of magic tied to sand."
       }
     },
     "tableOfContents": "On this page",
     "toc": {
       "introduction": "The constellation",
-      "orientation": "How to read the index",
+      "orientation": "How to read this index",
       "directory": "The saga index"
     },
     "detail": {
@@ -237,10 +245,30 @@
     "back": "Back to sagas",
     "intro": {
       "eyebrow": "Saga file",
-      "description": "Mistborn is the story of Scadrial across two published eras: an original epic fantasy trilogy and a later series shaped by a changing society, new technology and the legacy of what came before.",
+      "description": "Mistborn tells Scadrial’s story across different eras: epic fantasy, changing societies, new technology and the legacy of what came before.",
       "planet": "World",
       "imageLabel": "Scadrial and its metallic arts",
       "imageDimensions": "16:9 · Mistborn image placeholder"
+    },
+    "overview": {
+      "kicker": "The saga at a glance",
+      "heading": "A story built across eras.",
+      "text": "Mistborn is one of the Cosmere’s major sagas and one of its strongest entry points. Its stories unfold on Scadrial, a world where magic is tied to metals and society, technology and power change across generations. The saga is designed as a project of connected eras, each with its own identity but part of a much larger story. It can shift from revolutionary fantasy to investigative adventure or frontier-flavoured action without losing its character. Reading across the eras rewards attention: the past leaves marks on the present, and Scadrial gradually becomes a key piece of the wider Cosmere.",
+      "facts": {
+        "planet": { "label": "Planet", "value": "Scadrial" },
+        "signature": {
+          "label": "Signature feature",
+          "value": "The Metallic Arts"
+        },
+        "structure": {
+          "label": "Structure",
+          "value": "Several connected eras"
+        },
+        "reading": {
+          "label": "Suggested reading",
+          "value": "Publication order within each era"
+        }
+      }
     },
     "warning": {
       "kicker": "Optional spoiler note",
@@ -250,18 +278,18 @@
     },
     "eras": {
       "kicker": "Publication map",
-      "heading": "Two eras, one changing world.",
-      "description": "The list below presents the novels and short fiction from each era in publication order. Notes indicate when a companion story is best read at a different point."
+      "heading": "A world that changes with every era.",
+      "description": "The list groups novels and short fiction by era, while primarily following publication order. If a story published much later appears within an era whose books are older, it is because the story belongs to that period and expands its context."
     },
     "era1": {
       "kicker": "Era 1",
       "heading": "The original trilogy",
-      "description": "An epic fantasy of rebellion, power and the cost of remaking a world. These three novels form a complete main story."
+      "description": "In a world where evil has already won, an immortal empire has ruled with an iron hand for a thousand years. This trilogy follows those brave enough to imagine that fate can change, amid rebellion, power and buried secrets."
     },
     "era2": {
       "kicker": "Era 2",
       "heading": "The Wax and Wayne series",
-      "description": "A new stage of Scadrial, with railways, firearms, investigation and a different relationship with the Metallic Arts."
+      "description": "On Scadrial, metal magic now shares the world with railways, revolvers and expanding cities. This new stage follows Wax and Wayne through investigations, unexpected threats and the discovery that the past still casts a shadow over the present."
     },
     "books": {
       "finalEmpire": "The opening novel: a heist against an apparently eternal empire and the first major doorway into Allomancy.",
@@ -283,7 +311,7 @@
       "whenLabel": "When to read it",
       "works": {
         "eleventhMetal": {
-          "origin": "A short prequel written for the Mistborn Adventure Game. It was later republished in Arcanum Unbounded, so that collection is now the easiest way to find it.",
+          "origin": "A short prequel written for the Mistborn Adventure Game.",
           "why": "Its value is in the extra texture: a small side story that deepens Kelsier’s early relationship with Allomancy and adds a curious piece of Scadrian lore.",
           "when": "After the original trilogy. It is optional, but it is a fun extra once you know Kelsier and Scadrial."
         },
@@ -327,6 +355,7 @@
     "tableOfContents": "Mistborn file",
     "toc": {
       "introduction": "Introduction",
+      "overview": "The bigger picture",
       "readingNote": "Reading note",
       "publicationOrder": "Publication order",
       "magic": "Metallic Arts",
@@ -1258,6 +1287,8 @@
     "standalone": "Standalone",
     "arcanumUnbounded": "Arcanum Unbounded",
     "viewSaga": "Explore saga",
+    "viewIndependents": "Explore independents",
+    "viewArcanum": "Explore Arcanum",
     "coverDimensions": "2:3 · cover placeholder",
     "tableOfContents": "On this page",
     "toc": { "introduction": "Introduction", "catalogue": "The catalogue" },
@@ -1331,16 +1362,57 @@
         "title": "Connections to notice",
         "text": "Recurring names, characters and ideas reward attention, while most stories still work as complete experiences on their own."
       },
-      "mapLabel": "Illustrated map of the Cosmere worlds",
-      "mapCaption": "The map is a prompt for curiosity, not a route you have to memorise."
+      "mapLabel": "Illustrated map of the Cosmere worlds"
+    },
+    "readerGuide": {
+      "kicker": "A guide for starting out",
+      "heading": "Discover the Cosmere without spoilers.",
+      "text": "Cosmereando is a collected guide for readers who want to approach the Cosmere without getting lost among sagas, planets, magic systems and seemingly endless connections. It offers clear, general information even if you have not read a book yet. The aim is not to replace the reading experience, but to show you the scale of the universe and help you find an entry point that fits. The site avoids major revelations and uses public information such as publisher synopses whenever possible. When a section may reveal a sensitive detail, you will see a warning before continuing.",
+      "closing": "A Cosmere guide for understanding its greatness without losing the joy of discovering it yourself.",
+      "cards": {
+        "start": {
+          "title": "Made for first-time readers",
+          "text": "You do not need to know the Cosmere or have read several sagas to find your bearings. Start with the world or story that catches your attention."
+        },
+        "spoilers": {
+          "title": "Without spoiling the stories",
+          "text": "Connections are explained carefully and important details are protected with warnings. The site sparks curiosity without taking discoveries away from you."
+        },
+        "depth": {
+          "title": "Choose how much to know",
+          "text": "Stay with the big picture, explore worlds or follow a reading route. You decide how far into the Cosmere you want to go."
+        }
+      }
     },
     "author": {
       "kicker": "The author",
       "heading": "A builder of connected worlds",
       "text": "Brandon Sanderson is an American fantasy author known for detailed worldbuilding, inventive magic systems and ambitious long-form storytelling. Elantris, published in 2005, was his first published novel and the first story he released in the Cosmere. Behind separate books and sagas, he has been building a much larger universe.",
       "imageLabel": "Author portrait",
-      "imageCaption": "Brandon Sanderson · architect of the Cosmere",
-      "imageDimensions": "2:3 · vertical portrait"
+      "imageDimensions": "2:3 · vertical portrait",
+      "links": {
+        "website": {
+          "title": "Official website",
+          "text": "Books, projects and news"
+        },
+        "blog": {
+          "title": "Blog and updates",
+          "text": "Progress and regular news"
+        },
+        "videos": {
+          "title": "Videos and updates",
+          "text": "Writing, interviews and news"
+        },
+        "youtube": {
+          "title": "Official YouTube channel",
+          "text": "Talks, events and videos"
+        },
+        "coppermind": {
+          "title": "Coppermind",
+          "text": "The community Cosmere encyclopaedia"
+        }
+      },
+      "warning": "Coppermind may contain major spoilers for the entire Cosmere. Visit its articles after finishing the related stories, or at your own risk."
     },
     "whyRead": {
       "kicker": "A reason to begin",
@@ -1380,6 +1452,7 @@
       "atlas": "The working index",
       "explore": "Choose a lens",
       "cosmere": "What is the Cosmere?",
+      "readerGuide": "A spoiler-aware guide",
       "routes": "Reading routes",
       "author": "The author"
     }

@@ -7,7 +7,7 @@ import PageTrail from "./PageTrail.astro";
 import PageReturn from "./PageReturn.astro";
 import PageContent from "./PageContent.astro";
 import { getBookCollections, getBookCount } from "../data/catalogue";
-import { getTranslation } from "../data/i18n";
+import { getLocalizedPath, getTranslation } from "../data/i18n";
 import type { Locale } from "../data/locales";
 import EditorialImage from "./EditorialImage.astro";
 import bookMashup from "../assets/images/general/cosmere_book_cover_mashup.webp";
@@ -21,6 +21,12 @@ const t = (key: string, replacements: Record<string, string> = {}) =>
   getTranslation(locale, key, replacements);
 const collections = getBookCollections(locale);
 const bookCount = getBookCount();
+const getCollectionHref = (collection: (typeof collections)[number]) =>
+  collection.id === "standalone"
+    ? getLocalizedPath(locale, "/independents")
+    : collection.id === "arcanum-unbounded"
+      ? getLocalizedPath(locale, "/independents/arcanum-unbounded")
+      : collection.sagaHref;
 const tableOfContentsItems = [
   { id: "introduction", label: t("books.toc.introduction"), level: 0 as const },
   { id: "catalogue", label: t("books.toc.catalogue"), level: 0 as const },
@@ -104,9 +110,13 @@ const tableOfContentsItems = [
                       <h3 id={`${collection.id}-heading`}>
                         {collection.label}
                       </h3>
-                      {collection.sagaHref && (
-                        <a href={collection.sagaHref}>
-                          {t("books.viewSaga")}{" "}
+                      {getCollectionHref(collection) && (
+                        <a href={getCollectionHref(collection)}>
+                          {collection.id === "standalone"
+                            ? t("books.viewIndependents")
+                            : collection.id === "arcanum-unbounded"
+                              ? t("books.viewArcanum")
+                              : t("books.viewSaga")}{" "}
                           <span aria-hidden="true">→</span>
                         </a>
                       )}
