@@ -1,0 +1,8 @@
+overrides:
+  devalue: ">=5.9.2"
+  js-yaml: ">=4.3.2"
+  sharp: ">=0.35.4"
+  svgo: ">=4.1.0"
+  undici: ">=8.10.2"
+onlyBuiltDependencies:
+  - esbuild

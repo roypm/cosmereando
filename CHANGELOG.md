@@ -5,6 +5,7 @@ All notable changes to Cosmereando are documented in this file.
 ## [Unreleased]
 
 - Published the site at https://cosmereando.roypm.es.
+- Updated Astro and its image, YAML, SVG and HTTP dependencies to patched releases.
 
 ## [0.2.0] - 2026-08-24
 
