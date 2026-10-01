@@ -196,8 +196,8 @@ Incluirá:
 
 ## Publicación
 
-- El proyecto quedará preparado para GitHub Pages, Vercel, Netlify u otra plataforma.
-- El dominio todavía no se decidirá.
+- El sitio se publica en GitHub Pages.
+- El dominio público es https://cosmereando.roypm.es y el sitio se sirve desde la raíz, sin el prefijo `/cosmereando`.
 - El repositorio remoto es https://github.com/roypm/cosmereando.
 
 ## Estado inicial
