@@ -4,6 +4,8 @@ All notable changes to Cosmereando are documented in this file.
 
 ## [Unreleased]
 
+- Published the site at https://cosmereando.roypm.es.
+
 ## [0.2.0] - 2026-08-24
 
 - Added strict catalogue and relationship validation.
